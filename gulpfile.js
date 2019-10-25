@@ -1,5 +1,6 @@
 "use strict";
 
+var dist = '../ehrle-build';
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
@@ -27,14 +28,14 @@ gulp.task("minifyScripts", ["concatScripts"], function() {
   return gulp.src("assets/js/main.js")
     .pipe(uglify())
     .pipe(rename('main.js'))
-    .pipe(gulp.dest('dist/assets/js'));
+    .pipe(gulp.dest(dist + '/assets/js'));
 });
 
 gulp.task("minifyCss", ["compileSass"], function() {
   return gulp.src("assets/css/main.css")
     .pipe(cssmin())
     .pipe(rename('main.css'))
-    .pipe(gulp.dest('dist/assets/css'));
+    .pipe(gulp.dest(dist + '/assets/css'));
 });
 
 gulp.task('watchFiles', function() {
@@ -42,7 +43,7 @@ gulp.task('watchFiles', function() {
 });
 
 gulp.task('clean', function() {
-  del(['dist', 'assets/css/main.css*', 'assets/js/main*.js*']);
+  del([dist, 'assets/css/main.css*', 'assets/js/main*.js*']);
 });
 
 gulp.task('renameSources', function() {
@@ -51,7 +52,7 @@ gulp.task('renameSources', function() {
       'js': 'assets/js/main.js',
       'css': 'assets/css/main.css'
     }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest(dist + '/'));
 });
 
 gulp.task("build", ['minifyScripts', 'minifyCss'], function() {
@@ -61,7 +62,7 @@ gulp.task("build", ['minifyScripts', 'minifyCss'], function() {
     'favicon.ico',
     "assets/img/**"
   ], { base: './'})
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest(dist));
 });
 
 gulp.task('serve', ['watchFiles'], function(){
