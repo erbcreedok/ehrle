@@ -6,6 +6,8 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
   maps = require('gulp-sourcemaps'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
   del = require('del'),
   browserSync = require('browser-sync').create(),
   htmlreplace = require('gulp-html-replace'),
@@ -31,6 +33,16 @@ gulp.task("minifyScripts", ["concatScripts"], function() {
     .pipe(gulp.dest(dist + '/assets/js'));
 });
 
+gulp.task('compileSass', function() {
+  return gulp.src("assets/css/main.scss")
+    .pipe(maps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('assets/css'))
+    .pipe(browserSync.stream());
+});
+
 gulp.task("minifyCss", ["compileSass"], function() {
   return gulp.src("assets/css/main.css")
     .pipe(cssmin())
@@ -39,6 +51,7 @@ gulp.task("minifyCss", ["compileSass"], function() {
 });
 
 gulp.task('watchFiles', function() {
+  gulp.watch('assets/css/**/*.scss', ['compileSass']);
   gulp.watch('assets/js/*.js', ['concatScripts']);
 });
 

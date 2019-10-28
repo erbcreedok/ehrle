@@ -1,0 +1,42 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+
+.product {
+  $block_width: 176px;
+  $margin: 24px;
+  &_container {
+    max-width: $block_width*4 + $margin*3;
+    margin: auto;
+  }
+  &_line {
+    position: absolute;
+    height: 8px;
+    left: 0;
+    right: 0;
+    background: $c_gray_1;
+  }
+  &_item {
+    width: $block_width;
+    position: relative;
+    &_label {
+      font-family: Qanelas, sans-serif;
+      font-size: 14px;
+      text-align: center;
+      color: $c_dark;
+    }
+    &_active &_label  {
+      color: $c_red;
+    }
+    &_active {
+      &:after {
+        content: '';
+        display: block;
+        bottom: 0;
+        margin: auto;
+        @include arrow_up($c_gray_1, 32px, 20px);
+      }
+    }
+  }
+
+}

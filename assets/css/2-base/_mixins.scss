@@ -1,0 +1,7 @@
+@mixin arrow_up($color, $width, $height: $width){
+  width: 0;
+  height: 0;
+  border-left: $width/2 solid transparent;
+  border-right: $width/2 solid transparent;
+  border-bottom: $height solid $color;
+}

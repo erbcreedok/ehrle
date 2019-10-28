@@ -1,0 +1,31 @@
+@import "variables";
+
+body {
+  font-family: 'Qanelas', sans-serif;
+}
+.text-center {
+  text-align: center;
+}
+.ul_custom {
+  list-style: none;
+  padding: 0;
+}
+.p-static {
+  position: static;
+}
+
+.section_title {
+  font-size: 48px;
+  font-weight: 800;
+  color: $c_dark;
+}
+.heading {
+  font-size: 36px;
+  font-weight: 600;
+  color: $c_dark;
+}
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: $c_dark;
+}

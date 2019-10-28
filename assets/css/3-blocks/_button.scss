@@ -1,0 +1,40 @@
+@import "../2-base/variables";
+
+@mixin button_color($color, $text) {
+  background: $color;
+  border: 2px solid $color;
+  color: $text;
+  transition: .15s;
+  outline: none;
+  &:hover {
+    transition: 0s;
+    background: darken($color, 10);
+    border-color: darken($color, 10);
+  }
+  &:active {
+    transition: 0s;
+    background: lighten($color, 10);
+    border-color: lighten($color, 10);
+  }
+  &:focus {
+    transition: 0s;
+    outline: none;
+    box-shadow: 0 0 20px 10px rgba($color, .7);
+  }
+}
+
+.btn {
+  width: 263px;
+  height: 54px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+  transition: .15s;
+  line-height: normal;
+  vertical-align: middle;
+  @include button_color($c_gray, white);
+  &_primary {
+    @include button_color($c_red, white);
+  }
+}

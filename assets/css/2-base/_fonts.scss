@@ -1,0 +1,18 @@
+$font_folder: '../fonts';
+$font_family: 'Qanelas';
+$font_type: 'ttf';
+
+$font_url: $font_folder + '/' + $font_family +  '/' + $font_family + '-';
+
+$font_weights_names: 'Regular', 'Medium', 'SemiBold', 'Bold', 'ExtraBold',  'Black';
+$font_weights_sizes: normal,     500,     600,        700,    800,           900;
+
+@for $i from 1 through length($font_weights_names) {
+  $name: nth($font_weights_names, $i);
+  $size: nth($font_weights_sizes, $i);
+  @font-face {
+    font-family: 'Qanelas';
+    src: url($font_url + $name + '.' + $font_type);
+    font-weight: $size;
+  }
+}
