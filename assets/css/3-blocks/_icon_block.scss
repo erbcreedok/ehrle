@@ -1,0 +1,6 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.icon_block {
+  @include icon_block;
+}

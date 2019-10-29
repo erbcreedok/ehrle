@@ -80,6 +80,9 @@ body {
 .fw-600 {
   font-weight: 600; }
 
+.fw-bold {
+  font-weight: bold; }
+
 .section_title {
   max-width: 720px;
   margin-left: auto;
@@ -175,6 +178,9 @@ body {
 
 .fw-600 {
   font-weight: 600; }
+
+.fw-bold {
+  font-weight: bold; }
 
 .section_title {
   max-width: 720px;
@@ -1230,9 +1236,126 @@ a.a_custom, a.a_custom:hover {
           margin-left: 0;
           margin-right: 0; } }
 
+.icon_block {
+  position: relative;
+  padding-left: 65px;
+  min-height: 50px;
+  overflow: auto; }
+  .icon_block_icon {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #f4f4f4;
+    border-radius: 50%; }
+    .icon_block_icon img {
+      width: 100%; }
+    .icon_block_icon_text {
+      line-height: 50px;
+      text-align: center;
+      display: block; }
+  .icon_block_value {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    line-height: normal; }
+  .icon_block_subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1.29;
+    color: #7f8c8d; }
+
+.link_contact a:hover {
+  text-decoration: none; }
+  .link_contact a:hover .pseudo_link {
+    text-decoration: underline; }
+
 .section {
   padding-top: 80px;
   padding-bottom: 80px; }
+
+.nav {
+  position: relative;
+  background: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.hero_section {
+  background-image: linear-gradient(65deg, #d83139, #820707 98%); }
+  .hero_section .slide {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url("../images/main_bg.jpg"); }
+    .hero_section .slide:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.9); }
+    .hero_section .slide:after {
+      content: '';
+      display: block;
+      position: absolute;
+      display: inline-block;
+      width: 1500px;
+      height: 1500px;
+      background: #820707;
+      border-radius: 50%;
+      top: 0;
+      right: 50%;
+      bottom: 0;
+      left: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-image: url("../images/main_bg.jpg"); }
+  .hero_section .landing_header {
+    max-width: 440px;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: normal;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    left: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 370px; }
+  .hero_section .section_title {
+    text-align: left;
+    color: #d83139;
+    margin-bottom: 30px; }
+  .hero_section .container {
+    display: -webkit-box;
+    display: flex;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    position: relative;
+    z-index: 2; }
+  .hero_section .hero_container {
+    max-width: 500px;
+    margin-left: auto; }
+  .hero_section .paragraph {
+    margin-bottom: 80px; }
+  .hero_section .hero_logo {
+    max-width: 327px;
+    margin-bottom: 50px; }
+    .hero_section .hero_logo img {
+      width: 100%; }
 
 .products_section {
   position: relative; }
@@ -1374,38 +1497,7 @@ a.a_custom, a.a_custom:hover {
       font-size: 16px;
       font-weight: 600; }
     .footer_link_contact {
-      position: relative;
-      margin-bottom: 25px;
-      padding-left: 65px;
-      min-height: 50px;
-      overflow: auto; }
-      .footer_link_contact_icon {
-        position: absolute;
-        top: 0;
-        right: auto;
-        bottom: 0;
-        left: 0;
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        background: #f4f4f4;
-        border-radius: 50%; }
-        .footer_link_contact_icon img {
-          width: 100%; }
-      .footer_link_contact a:hover {
-        text-decoration: none; }
-        .footer_link_contact a:hover .pseudo_link {
-          text-decoration: underline; }
-      .footer_link_contact_value {
-        margin-top: 3px;
-        margin-bottom: 5px;
-        line-height: normal; }
-      .footer_link_contact_subtitle {
-        font-size: 14px;
-        font-weight: normal;
-        text-decoration: none;
-        line-height: 1.29;
-        color: #7f8c8d; }
+      margin-bottom: 25px; }
   .footer_social {
     display: -webkit-box;
     display: flex;

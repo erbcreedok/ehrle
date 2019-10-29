@@ -1,0 +1,66 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.hero_section {
+  @mixin fixed_bg() {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url($images + '/main_bg.jpg');
+  }
+  background-image: linear-gradient(65deg, $c_red, $c_red-2 98%);
+  .slide {
+    position: relative;
+    overflow: hidden;
+    @include fixed_bg;
+    &:before {
+      @include pseudo_absolute;
+      @include trbl(0, 0, 0, 0);
+      background: rgba(white, .9);
+    }
+    &:after {
+      @include pseudo_absolute;
+      @include circle(1500px, $c_red-2);
+      @include trbl(0, 50%, 0, auto);
+      @include my(auto);
+      @include fixed_bg;
+    }
+  }
+  .landing_header {
+    max-width: 440px;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: normal;
+    color: white;
+    position: absolute;
+    @include trbl(0, 50%, 0, 15px);
+    @include my(auto);
+    height: 370px;
+
+  }
+  .section_title {
+    text-align: left;
+    color: $c_red;
+    margin-bottom: 30px;
+  }
+  .container {
+    @include flex;
+    @include py(160px);
+    position: relative;
+    z-index: 2;
+  }
+  .hero_container {
+    max-width: 500px;
+    margin-left: auto;
+  }
+  .paragraph {
+    margin-bottom: 80px;
+  }
+  .hero_logo {
+    max-width: 327px;
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+    }
+  }
+}

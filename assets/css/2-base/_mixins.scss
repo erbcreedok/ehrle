@@ -106,3 +106,34 @@
     object-fit: cover;
   }
 }
+
+@mixin icon_block() {
+  position: relative;
+  padding-left: 65px;
+  min-height: 50px;
+  overflow: auto;
+  &_icon {
+    position: absolute;
+    @include trbl(0, auto, 0, 0);
+    @include circle(50px, $c_gray_3);
+    img {
+      width: 100%;
+    }
+    &_text {
+      line-height: 50px;
+      text-align: center;
+      display: block;
+    }
+  }
+  &_value {
+    @include my(3px, 5px);
+    line-height: normal;
+  }
+  &_subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1.29;
+    color: $c_gray_4;
+  }
+}
