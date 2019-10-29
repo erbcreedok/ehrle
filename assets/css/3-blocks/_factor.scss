@@ -1,0 +1,50 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.factor {
+  $item_width: 360px;
+  $item_distance: 30px;
+  &_container {
+    @include mx(auto);
+    @include row(3, '.factor_item', $item_width, $item_distance);
+  }
+  &_item {
+    padding-top: 20px;
+    margin-bottom: 50px - 16px !important;
+    &_image {
+      $size: 180px;
+      width: $size;
+      height: $size;
+      overflow: hidden;
+      position: relative;
+      @include mx(auto);
+      img {
+        width: 100%;
+      }
+      .title {
+        top: 0;
+        left: 0;
+        position: absolute;
+        color: $c_red;
+        width: 100%;
+        line-height: $size;
+        text-align: center;
+      }
+    }
+    &_title {
+      margin-top: 28px;
+      text-align: center;
+    }
+    &_list {
+      @include flex;
+      @include flex_column;
+      @include align_items(center);
+      & > li {
+        @include my(0, 16px);
+        &:first-child {
+          @include my(16px);
+        }
+      }
+    }
+  }
+}

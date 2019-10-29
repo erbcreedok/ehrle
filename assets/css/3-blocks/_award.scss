@@ -1,0 +1,23 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.award {
+  $item_width: 165px;
+  $item_distance: 60px;
+  &_container {
+    @include mx(auto);
+    @include row(5, '.award_item', $item_width, $item_distance);
+  }
+  &_item {
+    text-align: center;
+  }
+  &_image {
+    height: 80px;
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+    img {
+      height: 80px;
+    }
+  }
+}

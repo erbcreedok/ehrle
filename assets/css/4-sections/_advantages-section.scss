@@ -1,0 +1,10 @@
+@import '../2-base/mixins';
+
+.advantages_section {
+  .paragraph {
+    text-align: center;
+    max-width: 555px;
+    @include mx(auto);
+    margin-bottom: 48px;
+  }
+}

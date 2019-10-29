@@ -1,0 +1,9 @@
+@import "../2-base/variables";
+
+.qualities_section {
+  position: relative;
+  background: $c-gray_1;
+  .quality_container {
+    margin-bottom: 50px;
+  }
+}

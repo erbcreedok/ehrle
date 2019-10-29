@@ -19,11 +19,16 @@
   &_item {
     width: $block_width;
     position: relative;
+    color: $c_dark;
+    text-align: center;
+    &_image {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
     &_label {
       font-family: Qanelas, sans-serif;
       font-size: 14px;
-      text-align: center;
-      color: $c_dark;
     }
     &_active &_label  {
       color: $c_red;
@@ -38,5 +43,20 @@
       }
     }
   }
-
+  &_description {
+    position: relative;
+    max-width: 578px;
+    &_list {
+      & > li {
+        margin-bottom: 8px;
+      }
+    }
+    &_image {
+      position: absolute;
+      width: 456px;
+      left: 100%;
+      top: 0;
+      @include mx(100px, 0);
+    }
+  }
 }

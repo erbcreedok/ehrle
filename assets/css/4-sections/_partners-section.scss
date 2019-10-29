@@ -1,0 +1,16 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.partners_section {
+  position: relative;
+  .section_subtitle {
+    max-width: 400px;
+    @include mx(auto);
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .partner_images {
+    @include mx(auto);
+    text-align: center;
+  }
+}

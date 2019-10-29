@@ -1,0 +1,141 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+@function calc_max_width($cols, $width, $gap) {
+  @return $cols*$width + $gap*$cols;
+}
+@function calc_width($cols, $width, $gap) {
+  @return $cols*$width + $gap*($cols - 1);
+}
+@mixin set_medias($cols, $width, $gap, $step: 1) {
+  $max_width: calc_max_width($cols, $width, $gap);
+  max-width: $max_width - $gap;
+  @media (max-width: $max_width) {
+    @if ($cols > $step) {
+      @include set_medias($cols - $step, $width, $gap, $step);
+    }
+  }
+}
+@mixin set_row_medias($cols, $width, $gap, $step: 1) {
+  $max_width: calc_max_width($cols, $width, $gap);
+  max-width: $max_width;
+  @include flex;
+  @include flex_wrap;
+  .item {
+    @include mx($gap/2);
+    margin-bottom: $gap;
+    width: calc_width(1, $width, $gap);
+    max-width: 100%;
+    &-wide {
+      width: calc_width(2, $width, $gap);
+    }
+  }
+  @media (max-width: $max_width) {
+    @if ($cols > $step) {
+      @include set_row_medias($cols - $step, $width, $gap, $step);
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  background: $c-gray_1;
+  $col_width: 263px;
+  $col_gap: 30px;
+  @include py(80px, 24px);
+  &_container {
+    @include mx(auto);
+    @include set_medias(4, $col_width, $col_gap, 2);
+    &_row {
+      @include mx(auto);
+      @include set_row_medias(4, $col_width, $col_gap, 2);
+    }
+  }
+  &_label {
+    font-size: 20px;
+    line-height: normal;
+    margin-bottom: 25px;
+  }
+  &_link {
+    a {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    margin-bottom: 16px;
+    &_contact {
+      position: relative;
+      margin-bottom: 25px;
+      padding-left: 65px;
+      min-height: 50px;
+      overflow: auto;
+      &_icon {
+        position: absolute;
+        @include trbl(0, auto, 0, 0);
+        @include circle(50px, $c_gray_3);
+        img {
+          width: 100%;
+        }
+      }
+      a:hover {
+        text-decoration: none;
+        .pseudo_link {
+          text-decoration: underline;
+        }
+      }
+      &_value {
+        @include my(3px, 5px);
+        line-height: normal;
+      }
+      &_subtitle {
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: none;
+        line-height: 1.29;
+        color: $c_gray_4;
+      }
+    }
+  }
+  &_social {
+    @include flex;
+    margin-left: auto;
+    .footer_label {
+      margin-right: 10px;
+    }
+    &_link {
+      display: inline-block;
+      @include circle(20px, $c_red);
+      @include mx(2px);
+      @include my(2px);
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &_map {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+  &_line {
+    width: 100%;
+    height: 1px;
+    background: $c_gray_5;
+    margin-bottom: 24px;
+  }
+  &_external_links {
+    @include flex;
+    @include flex_wrap;
+    & > a {
+      color: $c_gray_2;
+      margin-right: 50px;
+      &:hover {
+        color: $c_red;
+      }
+    }
+    & > span {
+      margin-left: auto;
+    }
+  }
+
+}

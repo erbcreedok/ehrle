@@ -1,0 +1,47 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.step {
+  &_item {
+    @include flex;
+    margin-bottom: 16px;
+    &_number {
+      margin-right: 24px;
+      position: relative;
+      span {
+        @include circle(32px, $c_red);
+        position: relative;
+        color: white;
+        line-height: 32px;
+        text-align: center;
+        font-size: 16px;
+      }
+      &:before {
+        @include pseudo_absolute;
+        @include trbl(0, 0, -16px);
+        width: 1px;
+        margin: auto;
+        border-left: 2px dashed $c_red;
+      }
+    }
+    &_label {
+      width: 100%;
+      font-size: 18px;
+      line-height: 1.44;
+      padding-top: 3px;
+    }
+    &_description {
+      min-width: 50px;
+      color: $c_red;
+      font-size: 18px;
+      line-height: 1.44;
+      padding-top: 3px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:last-child &_number:before {
+      content: none;
+    }
+  }
+}

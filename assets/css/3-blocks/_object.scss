@@ -1,0 +1,62 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.object {
+  &_basic {
+    margin-bottom: 24px;
+    &_title {
+      img {
+        height: 32px;
+        margin-right: 8px;
+      }
+      font-size: 18px;
+      font-weight: 600;
+      color: $c_dark;
+      margin-bottom: 16px;
+    }
+  }
+  &_body {
+    @include flex;
+    @include flex-wrap;
+  }
+  &_gallery {
+    width: 360px;
+    overflow: hidden;
+    &_selected_image {
+      @include square_image_container(100%, 8px);
+      margin-bottom: 20px;
+    }
+    &_thumbnails {
+      width: 100%;
+      @include flex();
+    }
+    &_thumbnail {
+      @include square_image_container(20.8333333333%, 8px);
+      &-blurred {
+        &:before {
+          @include pseudo_absolute;
+          @include trbl(0);
+          background: rgba($c_dark, .5);
+        }
+        & > span {
+          position: absolute;
+          @include trbl(0);
+          @include my(auto);
+          text-align: center;
+          z-index: 1;
+          color: white;
+          font-size: 20px;
+          height: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+    &_thumbnail + &_thumbnail {
+      margin-left: 5.5555555556%;
+    }
+  }
+  &_information {
+    margin-left: auto;
+    width: 653px;
+  }
+}

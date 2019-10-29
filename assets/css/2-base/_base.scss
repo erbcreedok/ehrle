@@ -1,7 +1,11 @@
 @import "variables";
+@import "mixins";
 
 body {
   font-family: 'Qanelas', sans-serif;
+  font-size: 14px;
+  color: $c_dark;
+  line-height: normal;
 }
 .text-center {
   text-align: center;
@@ -9,15 +13,48 @@ body {
 .ul_custom {
   list-style: none;
   padding: 0;
+  @include my(0);
+}
+.ul_classic {
+  list-style: none;
+  padding: 0;
+  @include my(0);
+  & > li {
+    padding-left: 13px;
+    position: relative;
+    &:before {
+      @include pseudo_absolute();
+      @include circle(5px, $c_red);
+      left: 0;
+      top: 9px;
+    }
+  }
 }
 .p-static {
   position: static;
 }
 
+.color_dark {
+  color: $c_dark;
+}
+.color_red {
+  color: $c_red;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
 .section_title {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   font-size: 48px;
   font-weight: 800;
   color: $c_dark;
+  line-height: normal;
 }
 .heading {
   font-size: 36px;
@@ -28,4 +65,35 @@ body {
   font-size: 24px;
   font-weight: 600;
   color: $c_dark;
+}
+.label {
+  font-size: 20px;
+  font-weight: 600;
+  color: $c_dark;
+}
+.paragraph {
+  font-size: 18px;
+  line-height: 1.44;
+  color: $c_dark;
+}
+a.a_custom {
+  &, &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+.pseudo_link, a {
+  color: $c_red;
+  cursor: pointer;
+  &:hover {
+    color: $c_red;
+    text-decoration: underline;
+  }
+  &.link_masked {
+    color: inherit;
+    &:hover {
+      color: $c_red;
+      text-decoration: none;
+    }
+  }
 }

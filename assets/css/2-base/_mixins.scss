@@ -5,3 +5,104 @@
   border-right: $width/2 solid transparent;
   border-bottom: $height solid $color;
 }
+@mixin pseudo_block {
+  content: '';
+  display: block;
+}
+@mixin pseudo_absolute {
+  @include pseudo_block();
+  position: absolute;
+}
+@mixin trbl($top, $right: $top, $bottom: $top, $left: $right) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin square($size, $color: 'transparent') {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background: $color;
+}
+@mixin circle($size, $color: 'transparent') {
+  @include square($size, $color);
+  border-radius: 50%;
+}
+@mixin mx($left, $right: $left) {
+  margin-left: $left;
+  margin-right: $right;
+}
+@mixin my($top, $bottom: $top) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+@mixin py($top, $bottom: $top) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+@mixin px($left, $right: $left) {
+  padding-left: $left;
+  padding-right: $right;
+}
+@mixin flex() {
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex_wrap() {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+@mixin flex_column() {
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@mixin align_items($position) {
+  -ms-flex-align: $position;
+  align-items: $position;
+}
+
+@mixin row($cols, $item_selector, $item_width, $item_margin, $side_padding: 15px, $step: 1) {
+  @include flex();
+  @include flex_wrap();
+  @include px($side_padding);
+  $maxWidth: $cols * $item_width + ($cols - 1) * $item_margin + ($side_padding * 2);
+  max-width: $maxWidth;
+  #{$item_selector} {
+    width: $item_width;
+    max-width: 100%;
+    @include mx($item_margin, 0);
+    @include my(0, $item_margin);
+    &:nth-child(#{$cols + 1}n + 1) {
+      @include mx($item_margin, 0);
+      @include my(0, $item_margin);
+    }
+    &:nth-child(#{$cols}n + 1) {
+      @include mx(0);
+    }
+  }
+  @media (max-width: $maxWidth){
+    @if($cols > $step) {
+      @include row($cols - $step, $item_selector, $item_width, $item_margin);
+    }
+    @else if ($cols > 1) {
+      @include row(1, $item_selector, $item_width, $item_margin);
+    }
+  }
+}
+
+@mixin square_image_container($size, $border_radius) {
+  min-width: $size;
+  height: 0;
+  padding-bottom: $size;
+  position: relative;
+  overflow: hidden;
+  border-radius: $border_radius;
+  background: $c_gray_1;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

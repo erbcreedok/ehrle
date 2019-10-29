@@ -1,0 +1,36 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.advantage {
+  $box_width: 360px;
+  $box_distance: 30px;
+  $box_padding_x: 24px;
+  $box_label_width: $box_width - $box_padding_x;
+  &_box {
+    text-align: center;
+    width: $box_width;
+    height: 229px;
+    border-radius: 8px;
+    background-color: $c_gray_1;
+    @include mx($box_distance/2);
+    @include my($box_distance/2);
+    &_container {
+      @include mx(auto);
+      @include row(3, '.advantage_box', $box_width, $box_distance);
+    }
+    &_image {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      @include my(32px, 20px);
+    }
+    &_label {
+      max-width: $box_label_width;
+      display: block;
+      font-size: 24px;
+      font-weight: 600;
+      color: $c_dark;
+      @include mx(auto);
+    }
+  }
+}

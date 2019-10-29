@@ -1,0 +1,34 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.quality {
+  $item_width: 360px;
+  $item_distance: 30px;
+  &_container {
+    @include my(48px, 0);
+    @include mx(auto);
+    @include row(3, '.quality_item', $item_width, $item_distance);
+  }
+  &_item {
+    background: white;
+    height: 106px;
+    border-radius: 8px;
+    padding-left: 97px;
+    overflow: hidden;
+    position: relative;
+  }
+  &_title {
+    max-width: 247px;
+    line-height: normal;
+    @include my(24px);
+  }
+  &_image {
+    @include square(64px, $c_red);
+    border-bottom-right-radius: 8px;
+    line-height: 60px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,51 @@
+@import "../2-base/variables";
+.radio_field {
+  &_label {
+    vertical-align: top;
+    display: inline-block;
+    max-width: 228px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $c_dark;
+  }
+  .input_radio {
+    margin-right: 16px;
+    margin-top: 4px;
+  }
+}
+.input_radio {
+  @mixin dot($color) {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $color;
+  }
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: transparent;
+  border: 2px solid $c_gray_2;
+  position: relative;
+  cursor: pointer;
+  &:after {
+    @include dot(transparent);
+    transition: .15s;
+  }
+  &:hover {
+    &:after {
+      @include dot($c_gray_2);
+    }
+  }
+  &_checked {
+    border-color: $c_red;
+    &:after, &:hover:after {
+      @include dot($c_red)
+    }
+  }
+}

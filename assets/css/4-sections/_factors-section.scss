@@ -1,0 +1,12 @@
+@import '../2-base/mixins';
+
+.factors_section {
+  .paragraph {
+    text-align: center;
+    max-width: 555px;
+    @include mx(auto);
+  }
+  .section_title {
+    margin-bottom: 48px;
+  }
+}
