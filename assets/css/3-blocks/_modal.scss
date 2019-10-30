@@ -1,0 +1,82 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.modal {
+  &_wrapper {
+    position: fixed;
+    display: none;
+    z-index: 1000;
+    @include trbl(0);
+    @include align_items(center);
+    opacity: 0;
+    &-show {
+      opacity: 1;
+      @include flex;
+      animation: fade_in .15s forwards;
+    }
+  }
+  &_backdrop {
+    position: absolute;
+    @include trbl(0);
+    background: rgba(0,0,0,.5);
+    cursor: pointer;
+  }
+  &_wrapper-show &_container {
+    opacity: 0;
+    animation: fall_down .2s .1s ease-in forwards, fade_in .2s .1s ease-in forwards;
+  }
+  &_container {
+    position: absolute;
+    @include trbl(auto, 0);
+    margin: auto;
+    background: white;
+    max-width: 750px;
+    min-height: 442px;
+    border-radius: 8px;
+  }
+  &_body {
+    max-width: 382px;
+    @include mx(auto);
+    .heading {
+      @include my(48px, 32px);
+      text-align: center;
+    }
+  }
+  &_close {
+    position: absolute;
+    @include trbl(0, 0, auto, auto);
+  }
+  &_form {
+    margin: auto;
+    width: 263px;
+    & .form_field {
+      margin-bottom: 16px;
+    }
+  }
+  @media (max-width: 767.98px) {
+    &_container {
+      height: auto;
+      @include trbl(10px);
+    }
+    &_close {
+      position: fixed;
+    }
+  }
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fall_down {
+  0% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,6 +1,7 @@
 "use strict";
 
 var dist = '../ehrle-build';
+var build_type = 'dev';
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
@@ -13,12 +14,28 @@ var gulp = require('gulp'),
   htmlreplace = require('gulp-html-replace'),
   cssmin = require('gulp-cssmin');
 
+const scripts = [
+  'assets/js/functions.js'
+];
+const devScripts = [
+  'assets/js/vue.js',
+  ...scripts
+];
+const prodScripts = [
+  'assets/js/vue.min.js',
+  ...scripts
+];
+
 gulp.task("concatScripts", function() {
-  return gulp.src([
-    'assets/js/vendor/jquery-3.2.1.js',
-    'assets/js/vendor/jquery.waypoints.js',
-    'assets/js/functions.js'
-  ])
+  return gulp.src(devScripts)
+    .pipe(maps.init())
+    .pipe(concat('main.js'))
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('assets/js'))
+    .pipe(browserSync.stream());
+});
+gulp.task("concatProdScripts", function() {
+  return gulp.src(prodScripts)
     .pipe(maps.init())
     .pipe(concat('main.js'))
     .pipe(maps.write('./'))
@@ -27,6 +44,12 @@ gulp.task("concatScripts", function() {
 });
 
 gulp.task("minifyScripts", ["concatScripts"], function() {
+  return gulp.src("assets/js/main.js")
+    .pipe(uglify())
+    .pipe(rename('main.js'))
+    .pipe(gulp.dest(dist + '/assets/js'));
+});
+gulp.task("minifyProdScripts", ["concatProdScripts"], function() {
   return gulp.src("assets/js/main.js")
     .pipe(uglify())
     .pipe(rename('main.js'))
@@ -68,7 +91,7 @@ gulp.task('renameSources', function() {
     .pipe(gulp.dest(dist + '/'));
 });
 
-gulp.task("build", ['minifyScripts', 'minifyCss'], function() {
+gulp.task("build", ['minifyProdScripts', 'minifyCss'], function() {
   return gulp.src([
     '*.html',
     '*.php',

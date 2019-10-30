@@ -61,6 +61,10 @@
   -ms-flex-align: $position;
   align-items: $position;
 }
+@mixin justify_content($position) {
+  -ms-flex-pack: $position;
+  justify-content: $position;
+}
 
 @mixin row($cols, $item_selector, $item_width, $item_margin, $side_padding: 15px, $step: 1) {
   @include flex();
