@@ -1432,7 +1432,6 @@ a.a_custom, a.a_custom:hover {
 
 .modal_wrapper {
   position: fixed;
-  display: none;
   z-index: 1000;
   top: 0;
   right: 0;
@@ -1441,12 +1440,17 @@ a.a_custom, a.a_custom:hover {
   -ms-flex-align: center;
   align-items: center;
   opacity: 0;
+  display: block;
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
 }
 .modal_wrapper-show {
   opacity: 1;
   display: -ms-flexbox;
   display: flex;
   animation: fade_in 0.15s forwards;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .modal_backdrop {
   position: absolute;
@@ -1454,7 +1458,7 @@ a.a_custom, a.a_custom:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(44, 62, 80, 0.6);
   cursor: pointer;
 }
 .modal_wrapper-show .modal_container {
@@ -1472,6 +1476,7 @@ a.a_custom, a.a_custom:hover {
   max-width: 750px;
   min-height: 442px;
   border-radius: 8px;
+  animation: go_up 0.2s 0.1s ease-in forwards, fade_out 0.2s 0.1s ease-in forwards;
 }
 .modal_body {
   max-width: 382px;
@@ -1518,12 +1523,32 @@ a.a_custom, a.a_custom:hover {
     opacity: 1;
   }
 }
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
 @keyframes fall_down {
   0% {
     transform: translateY(-300px);
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes go_up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-300px);
   }
 }
 .section {

@@ -4,21 +4,25 @@
 .modal {
   &_wrapper {
     position: fixed;
-    display: none;
     z-index: 1000;
     @include trbl(0);
     @include align_items(center);
     opacity: 0;
+    display: block;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
     &-show {
       opacity: 1;
       @include flex;
       animation: fade_in .15s forwards;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
     }
   }
   &_backdrop {
     position: absolute;
     @include trbl(0);
-    background: rgba(0,0,0,.5);
+    background: rgba($c_dark, .6);
     cursor: pointer;
   }
   &_wrapper-show &_container {
@@ -33,6 +37,7 @@
     max-width: 750px;
     min-height: 442px;
     border-radius: 8px;
+    animation: go_up .2s .1s ease-in forwards, fade_out .2s .1s ease-in forwards;
   }
   &_body {
     max-width: 382px;
@@ -72,11 +77,31 @@
     opacity: 1;
   }
 }
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
 @keyframes fall_down {
   0% {
     transform: translateY(-300px);
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes go_up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-300px);
   }
 }
