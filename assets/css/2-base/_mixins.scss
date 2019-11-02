@@ -1,3 +1,5 @@
+@import "./variables";
+
 @mixin arrow_up($color, $width, $height: $width){
   width: 0;
   height: 0;
@@ -139,5 +141,19 @@
     text-decoration: none;
     line-height: 1.29;
     color: $c_gray_4;
+  }
+  @media (max-width: 767.98px) {
+    padding-left: 50px;
+    min-height: 40px;
+    &_icon {
+      @include circle(40px, $c_gray_3);
+      &_text {
+        line-height: 40px;
+      }
+    }
+    &_value {
+      @include my(0, 3px);
+      line-height: normal;
+    }
   }
 }
