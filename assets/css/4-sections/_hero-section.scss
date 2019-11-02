@@ -3,8 +3,8 @@
 
 .hero_section {
   @mixin fixed_bg() {
+    background: url($images + '/main_bg.jpg') center fixed;
     background-size: cover;
-    background-image: url($images + '/main_bg.jpg') center fixed;
   }
   background-image: linear-gradient(65deg, $c_red, $c_red-2 98%);
   .slide {
@@ -53,12 +53,66 @@
   }
   .paragraph {
     margin-bottom: 80px;
+    .colored {
+      color: $c_red;
+    }
   }
   .hero_logo {
     max-width: 327px;
     margin-bottom: 50px;
     img {
       width: 100%;
+    }
+  }
+  @media (max-width: 1199.98px) {
+    .hero_container {
+      max-width: 400px;
+    }
+    .container {
+      @include py(120px);
+    }
+  }
+  @media (max-width: 991.98px) {
+    .hero_container {
+      max-width: 320px;
+    }
+    .landing_header {
+      font-size: 58px;
+    }
+    .container {
+      @include py(80px);
+    }
+  }
+  @media (max-width: 767.98px) {
+    .slide {
+      &:after, &:before {
+        content: none;
+      }
+    }
+    .container {
+      @include py(40px, 80px);
+    }
+    .hero_container {
+      max-width: 100%;
+      min-width: 320px;
+      @include mx(auto);
+    }
+    .landing_header {
+      position: static;
+      height: auto;
+      max-width: none;
+    }
+    .hero_logo, .section_title {
+      display: none;
+    }
+    .paragraph, .paragraph .colored {
+      color: white;
+      .pseudo_link {
+        text-decoration: underline;
+      }
+    }
+    .btn.btn_primary {
+      @include button_color('&', white, $c_red);
     }
   }
 }
