@@ -101,12 +101,15 @@
       position: static;
       height: auto;
       max-width: none;
+      font-size: 36px;
+      margin-bottom: 24px;
     }
     .hero_logo, .section_title {
       display: none;
     }
     .paragraph, .paragraph .colored {
       color: white;
+      margin-bottom: 48px;
       .pseudo_link {
         text-decoration: underline;
       }

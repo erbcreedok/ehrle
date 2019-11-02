@@ -1594,11 +1594,14 @@ header {
     .hero_section .landing_header {
       position: static;
       height: auto;
-      max-width: none; }
+      max-width: none;
+      font-size: 36px;
+      margin-bottom: 24px; }
     .hero_section .hero_logo, .hero_section .section_title {
       display: none; }
     .hero_section .paragraph, .hero_section .paragraph .colored {
-      color: white; }
+      color: white;
+      margin-bottom: 48px; }
       .hero_section .paragraph .pseudo_link, .hero_section .paragraph .colored .pseudo_link {
         text-decoration: underline; }
     .hero_section .btn.btn_primary {
