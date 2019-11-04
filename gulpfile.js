@@ -1,7 +1,6 @@
 "use strict";
 
 var dist = '../ehrle-build';
-var build_type = 'dev';
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
@@ -52,7 +51,7 @@ gulp.task("minifyScripts", ["concatScripts"], function() {
 });
 gulp.task("minifyProdScripts", ["concatProdScripts"], function() {
   return gulp.src("assets/js/main.js")
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(rename('main.js'))
     .pipe(gulp.dest(dist + '/assets/js'));
 });

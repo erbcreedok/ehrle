@@ -60,6 +60,9 @@
     width: 653px;
   }
   @media (max-width: 1199.98px) {
+    &_gallery {
+      @include mx(auto);
+    }
     &_information {
       margin-left: 0;
       @include my(30px)

@@ -5,4 +5,7 @@
   max-width: 100vw;
   overflow-x: hidden;
   overflow-y: visible;
+  @media (max-width: 768px) {
+    @include py(40px);
+  }
 }

@@ -21,6 +21,7 @@
       @include my(15px);
       position: relative;
       cursor: pointer;
+      padding-right: 30px;
       &:after {
         @include pseudo_absolute;
         @include trbl(0, 10px, 0, auto);
@@ -30,17 +31,42 @@
       }
     }
     &_body {
-      display: none;
-      @include my(25px);
+      max-height: 0;
+      @include my(0);
+      transition: .3s ease-in;
     }
     &-selected &_label {
-       color: $c_red;
+      color: $c_red;
     }
     &-selected &_label:after {
-       transform: rotate(180deg);
+      transform: rotate(180deg);
     }
     &-selected &_body{
-       display: block;
+      overflow: hidden;
+      display: block;
+      max-height: 800px;
+      @include my(25px);
     }
+  }
+}
+
+@keyframes slide_down {
+  from {
+    max-height: 0;
+    @include my(0);
+  }
+  to {
+    max-height: 800px;
+    @include my(25px);
+  }
+}
+@keyframes slide_down {
+  from {
+    max-height: 0;
+    @include my(0);
+  }
+  to {
+    max-height: 800px;
+    @include my(25px);
   }
 }

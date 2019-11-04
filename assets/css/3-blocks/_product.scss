@@ -119,17 +119,28 @@
     }
     @media (max-width: $maxWidth) {
       width: 100%;
-      max-width: 580px;
+      max-width: 635px;
+      @include px(20px);
       @include my(10px, 50px);
       @include mx(auto);
     }
+  }
+  &_item &_description {
+    max-height: 0;
+    @include my(0);
+    overflow-y: hidden;
+    transition: .3s ease-in;
+  }
+  &_item_active &_description {
+    max-height: 800px;
+    @include my(15px, 50px);
   }
   @media (max-width: $maxWidth) {
     &-hide_desktop {
       display: none !important;
     }
   }
-  @media (min-width: $maxWidth) {
+  @media (min-width: $maxWidth+1px) {
     &-hide_mobile {
       display: none !important;
     }

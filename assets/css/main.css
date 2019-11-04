@@ -675,19 +675,33 @@ a.a_custom, a.a_custom:hover {
 @media (max-width: 776px) {
   .product_description {
     width: 100%;
-    max-width: 580px;
+    max-width: 635px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-top: 10px;
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
   }
 }
+.product_item .product_description {
+  max-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow-y: hidden;
+  transition: 0.3s ease-in;
+}
+.product_item_active .product_description {
+  max-height: 800px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
 @media (max-width: 776px) {
   .product-hide_desktop {
     display: none !important;
   }
 }
-@media (min-width: 776px) {
+@media (min-width: 777px) {
   .product-hide_mobile {
     display: none !important;
   }
@@ -937,6 +951,7 @@ a.a_custom, a.a_custom:hover {
   margin-bottom: 15px;
   position: relative;
   cursor: pointer;
+  padding-right: 30px;
 }
 .accordion_option_label:after {
   content: "";
@@ -956,9 +971,10 @@ a.a_custom, a.a_custom:hover {
   transition: 0.3s;
 }
 .accordion_option_body {
-  display: none;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  max-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: 0.3s ease-in;
 }
 .accordion_option-selected .accordion_option_label {
   color: #d83139;
@@ -967,9 +983,37 @@ a.a_custom, a.a_custom:hover {
   transform: rotate(180deg);
 }
 .accordion_option-selected .accordion_option_body {
+  overflow: hidden;
   display: block;
+  max-height: 800px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
+@keyframes slide_down {
+  from {
+    max-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  to {
+    max-height: 800px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+@keyframes slide_down {
+  from {
+    max-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  to {
+    max-height: 800px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
 .factor_container {
   margin-left: auto;
   margin-right: auto;
@@ -1633,6 +1677,10 @@ a.a_custom, a.a_custom:hover {
   width: 653px;
 }
 @media (max-width: 1199.98px) {
+  .object_gallery {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .object_information {
     margin-left: 0;
     margin-top: 30px;
@@ -1971,6 +2019,12 @@ a.a_custom, a.a_custom:hover {
   overflow-x: hidden;
   overflow-y: visible;
 }
+@media (max-width: 768px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 
 header {
   position: relative;
@@ -2018,7 +2072,7 @@ header {
 .hero_section .slide {
   position: relative;
   overflow: hidden;
-  background: url("../images/main_bg.jpg") center fixed;
+  background: url("../images/main_bg-dark.jpg") center fixed;
   background-size: cover;
 }
 .hero_section .slide:before {
@@ -2046,7 +2100,7 @@ header {
   left: auto;
   margin-top: auto;
   margin-bottom: auto;
-  background: url("../images/main_bg.jpg") center fixed;
+  background: url("../images/main_bg-dark.jpg") center fixed;
   background-size: cover;
 }
 .hero_section .landing_header {
@@ -2201,6 +2255,12 @@ header {
 .concepts_section .concept_description {
   margin-left: auto;
   margin-right: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .concepts_section .concept_description_image {
   width: 250px;
@@ -2261,6 +2321,12 @@ header {
   position: relative;
   background: url("../images/earth_dots.jpg") center no-repeat;
   background-size: contain;
+}
+@media (max-width: 768px) {
+  .numbers_section {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
 }
 
 .awards_section {

@@ -1,3 +1,5 @@
+@import "../2-base/mixins";
+
 .concepts_section {
   .radio_field {
     margin-left: 12px;
@@ -6,6 +8,9 @@
   .concept_description {
     margin-left: auto;
     margin-right: auto;
+    @include flex;
+    @include flex_wrap;
+    @include justify_content(center);
     &_image {
       width: 250px;
       height: 250px;

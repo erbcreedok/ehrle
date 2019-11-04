@@ -3,7 +3,7 @@
 
 .hero_section {
   @mixin fixed_bg() {
-    background: url($images + '/main_bg.jpg') center fixed;
+    background: url($images + '/main_bg-dark.jpg') center fixed;
     background-size: cover;
   }
   background-image: linear-gradient(65deg, $c_red, $c_red-2 98%);

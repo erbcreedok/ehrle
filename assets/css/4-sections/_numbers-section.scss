@@ -7,4 +7,7 @@
   position: relative;
   background: url($images + '/earth_dots.jpg') center no-repeat;
   background-size: contain;
+  @media (max-width: 768px) {
+    @include my(80px, 40px);
+  }
 }
