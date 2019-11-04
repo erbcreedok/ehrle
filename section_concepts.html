@@ -2,21 +2,21 @@
   <h2 class="section_title mb-5">
     Легкая концепция бизнеса подходит для каждого сегмента
   </h2>
-  <ul class="ul_custom d-flex flex-wrap justify-content-center mb-5 pb-5">
-    <li class="radio_field">
-      <div class="input_radio input_radio_checked"></div>
+  <ul class="ul_custom d-flex flex-wrap justify-content-center mb-5 pb-5 hide_mobile">
+    <li class="radio_field" @click="conceptActiveIndex=0">
+      <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===0}"></div>
       <span class="radio_field_label">Для частных инвесторов</span>
     </li>
-    <li class="radio_field">
-      <div class="input_radio"></div>
+    <li class="radio_field" @click="conceptActiveIndex=1">
+      <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===1}"></div>
       <span class="radio_field_label">Для действующих владельцев автомоек</span>
     </li>
-    <li class="radio_field">
-      <div class="input_radio"></div>
+    <li class="radio_field" @click="conceptActiveIndex=2">
+      <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===2}"></div>
       <span class="radio_field_label">Для сетей АЗС, Супермаркетов, ТРЦ</span>
     </li>
   </ul>
-  <div class="concept_description d-flex flex-wrap justify-content-center">
+  <div class="concept_description d-flex flex-wrap justify-content-center hide_mobile">
     <div class="concept_description_image">
       <img src="./assets/images/1-concept.svg" alt="">
     </div>
@@ -27,9 +27,74 @@
       <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
         и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
       </p>
-      <button class="btn btn_primary">
+      <button class="btn btn_primary" @click="openModal">
         Оставить заявку
       </button>
     </div>
   </div>
+  <ul class="hide_desktop accordion_list">
+    <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===0}">
+      <div class="accordion_option_label" @click="conceptActiveIndex=0">Для частных инвесторов</div>
+      <div class="accordion_option_body">
+        <div class="concept_description">
+          <div class="concept_description_image">
+            <img src="./assets/images/1-concept.svg" alt="">
+          </div>
+          <div class="concept_description_body">
+            <h3 class="heading mb-3">
+              Для частного инвестирования
+            </h3>
+            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
+              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
+            </p>
+            <button class="btn btn_primary" @click="openModal">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===1}">
+      <div class="accordion_option_label" @click="conceptActiveIndex=1">Для действующих владельцев автомоек</div>
+      <div class="accordion_option_body">
+        <div class="concept_description">
+          <div class="concept_description_image">
+            <img src="./assets/images/1-concept.svg" alt="">
+          </div>
+          <div class="concept_description_body">
+            <h3 class="heading mb-3">
+              Для действующих владельцев автомоек
+            </h3>
+            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
+              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
+            </p>
+            <button class="btn btn_primary" @click="openModal">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===2}">
+      <div class="accordion_option_label" @click="conceptActiveIndex=2">Для сетей АЗС, Супермаркетов, ТРЦ</div>
+      <div class="accordion_option_body">
+        <div class="concept_description">
+          <div class="concept_description_image">
+            <img src="./assets/images/1-concept.svg" alt="">
+          </div>
+          <div class="concept_description_body">
+            <h3 class="heading mb-3">
+              Для сетей АЗС, Супермаркетов, ТРЦ
+            </h3>
+            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
+              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
+            </p>
+            <button class="btn btn_primary" @click="openModal">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
 </section>

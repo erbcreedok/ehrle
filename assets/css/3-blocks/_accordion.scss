@@ -1,0 +1,46 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.accordion {
+  &_list {
+    @include ul_custom;
+  }
+  &_option {
+    @include px(18px);
+    position: relative;
+    overflow: auto;
+    &:after {
+      @include pseudo_absolute;
+      @include trbl(auto, 0, 0);
+      height: 1px;
+      background: $c_gray_1;
+    }
+    &_label {
+      font-size: 20px;
+      font-weight: 600;
+      @include my(15px);
+      position: relative;
+      cursor: pointer;
+      &:after {
+        @include pseudo_absolute;
+        @include trbl(0, 10px, 0, auto);
+        @include my(auto);
+        @include arrow_down(16px);
+        transition: .3s;
+      }
+    }
+    &_body {
+      display: none;
+      @include my(25px);
+    }
+    &-selected &_label {
+       color: $c_red;
+    }
+    &-selected &_label:after {
+       transform: rotate(180deg);
+    }
+    &-selected &_body{
+       display: block;
+    }
+  }
+}

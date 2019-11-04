@@ -1,0 +1,22 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.select_field {
+  @include ul_custom;
+  width: 100%;
+  @include my(0, 20px);
+  @include px(20px);
+}
+.option {
+  &_field {
+    @include my(10px);
+    &_label {
+      font-size: 20px;
+      font-weight: 600;
+      color: $c_dark
+    }
+    &-selected &_label {
+      color: $c_red;
+    }
+  }
+}

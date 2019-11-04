@@ -15,14 +15,15 @@ var gulp = require('gulp'),
   cssmin = require('gulp-cssmin');
 
 const scripts = [
-  'assets/js/functions.js'
+  'assets/js/functions.js',
+  'assets/js/app.js',
 ];
 const devScripts = [
-  'assets/js/vue.js',
+  'assets/js/vendor/vue.js',
   ...scripts
 ];
 const prodScripts = [
-  'assets/js/vue.min.js',
+  'assets/js/vendor/vue.min.js',
   ...scripts
 ];
 

@@ -5,8 +5,9 @@
 .product {
   $block_width: 176px;
   $margin: 24px;
+  $maxWidth: $block_width*4 + $margin*3;
   &_container {
-    max-width: $block_width*4 + $margin*3;
+    max-width: $maxWidth;
     margin: auto;
   }
   &_line {
@@ -15,6 +16,9 @@
     left: 0;
     right: 0;
     background: $c_gray_1;
+    @media (max-width: $maxWidth) {
+      display: none;
+    }
   }
   &_item {
     width: $block_width;
@@ -39,7 +43,47 @@
         display: block;
         bottom: 0;
         margin: auto;
-        @include arrow_up($c_gray_1, 32px, 20px);
+        @include arrow_triangle_up($c_gray_1, 32px, 20px);
+      }
+    }
+    @media (max-width: $maxWidth) {
+      width: 100%;
+      text-align: left;
+      &_body {
+        width: 100%;
+        position: relative;
+        @include flex;
+        @include align_items(center);
+        padding-right: 26px;
+      }
+
+      &_body:after {
+        @include pseudo_absolute;
+        @include my(auto);
+        @include trbl(0, 10px, 0, auto);
+        @include arrow_down(16px);
+      }
+      &_active &_body:after {
+        transform: rotate(180deg);
+      }
+      &_image {
+        width: 60px;
+        @include mx(16px);
+      }
+      &_label {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+        margin-bottom: 0;
+      }
+      &:after {
+        @include pseudo_block;
+        position: absolute;
+        height: 1px;
+        bottom: 0;
+        width: 100%;
+        border: none;
+        background: $c_gray_1;
       }
     }
   }
@@ -48,6 +92,7 @@
     max-width: 578px;
     &_list {
       & > li {
+        color: $c_dark;
         margin-bottom: 8px;
       }
     }
@@ -57,6 +102,36 @@
       left: 100%;
       top: 0;
       @include mx(100px, 0);
+    }
+    @media (max-width: 1199.98px) {
+      &_image {
+        right: 0;
+        @include mx(0);
+      }
+    }
+    @media (max-width: 991.98px) {
+      &_image {
+        position: static;
+        width: 75%;
+        @include mx(0);
+        @include my(0, 30px);
+      }
+    }
+    @media (max-width: $maxWidth) {
+      width: 100%;
+      max-width: 580px;
+      @include my(10px, 50px);
+      @include mx(auto);
+    }
+  }
+  @media (max-width: $maxWidth) {
+    &-hide_desktop {
+      display: none !important;
+    }
+  }
+  @media (min-width: $maxWidth) {
+    &-hide_mobile {
+      display: none !important;
     }
   }
 }

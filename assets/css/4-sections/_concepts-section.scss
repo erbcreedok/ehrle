@@ -21,4 +21,14 @@
       max-width: 556px;
     }
   }
+  @media (max-width: 919.98px) {
+    .hide_mobile {
+      display: none !important;
+    }
+  }
+  @media (min-width: 920px) {
+    .hide_desktop {
+      display: none !important;
+    }
+  }
 }

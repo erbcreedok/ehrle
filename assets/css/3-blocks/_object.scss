@@ -59,4 +59,10 @@
     margin-left: auto;
     width: 653px;
   }
+  @media (max-width: 1199.98px) {
+    &_information {
+      margin-left: 0;
+      @include my(30px)
+    }
+  }
 }

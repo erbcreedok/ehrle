@@ -12,5 +12,8 @@
   .partner_images {
     @include mx(auto);
     text-align: center;
+    img {
+      max-width: 100%;
+    }
   }
 }

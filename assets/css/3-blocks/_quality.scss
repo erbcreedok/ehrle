@@ -31,4 +31,10 @@
     top: 0;
     left: 0;
   }
+  @media (max-width: 768px) {
+    &_item {
+      padding-left: 84px;
+      height: 84px;
+    }
+  }
 }

@@ -25,3 +25,13 @@
   @include button_color('&', $c_gray, white);
   @include button_color('&_primary', $c_red, white);
 }
+.btn_circle {
+  @include circle(50px, $c_gray_1);
+  @include button_color('&', $c_gray_1, $c_dark);
+  padding: 0;
+  border: none;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}

@@ -47,4 +47,19 @@
       }
     }
   }
+  @media (max-width: 795px) {
+    &_container {
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+    }
+    &_item {
+      min-width: 100%;
+      transition: .3s;
+    }
+  }
+  @media (min-width: 796px) {
+    &-hide_desktop {
+      display: none !important;
+    }
+  }
 }

@@ -7,28 +7,35 @@
     Продукт европейского производства
   </p>
   <ul class="ul_custom number_container py-4">
-    <li class="number_item">
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
       <div class="label">Мойки Ehrle есть</div>
       <div class="heading">в 34</div>
       <div>странах</div>
     </li>
-    <li class="number_item">
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
       <div class="label">Рентабельность более</div>
       <div class="heading">65%</div>
       <div>за один пост</div>
     </li>
-    <li class="number_item">
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
       <div class="label">Установлено более</div>
       <div class="heading">120</div>
       <div>моек</div>
     </li>
-    <li class="number_item">
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
       <div class="label">Установлено более</div>
       <div class="heading">2000</div>
       <div>постов</div>
     </li>
   </ul>
-  <button class="btn btn_primary d-block mx-auto">
+  <div class="number-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
+    <button class="btn_circle mr-auto" @click="prevNumber"><img src="./assets/images/arrow_prev.svg" alt=""></button>
+    <ul class="ul_custom dot_list">
+      <li class="dot_list_item" v-for="i in numbersLength" :class="{'dot_list_item-selected': selectedNumber === i-1}" :key="i"></li>
+    </ul>
+    <button class="btn_circle ml-auto" @click="nextNumber"><img src="./assets/images/arrow_next.svg" alt=""></button>
+  </div>
+  <button class="btn btn_primary d-block mx-auto" @click="openModal">
     Оставить заявку
   </button>
 </section>

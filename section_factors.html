@@ -3,7 +3,7 @@
     Факторы успеха автомойки
   </h2>
   <ul class="ul_custom factor_container">
-    <li class="factor_item">
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <div class="factor_item_image">
         <img src="./assets/images/circle-41.svg" alt="">
         <div class="title">41%</div>
@@ -18,7 +18,7 @@
         <li>Дороги с большим трафиком;</li>
       </ul>
     </li>
-    <li class="factor_item">
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <div class="factor_item_image">
         <img src="./assets/images/circle-35.svg" alt="">
         <div class="title">35%</div>
@@ -33,7 +33,7 @@
         <li>Эстетичный внешний вид;</li>
       </ul>
     </li>
-    <li class="factor_item">
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <div class="factor_item_image">
         <img src="./assets/images/circle-24.svg" alt="">
         <div class="title">24%</div>
@@ -48,7 +48,7 @@
         <li>Разнообразие систем оплат и кассовые чеки;</li>
       </ul>
     </li>
-    <li class="factor_item">
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <div class="factor_item_image">
         <img src="./assets/images/circle-41.svg" alt="">
         <div class="title">41%</div>
@@ -63,7 +63,7 @@
         <li>Дороги с большим трафиком;</li>
       </ul>
     </li>
-    <li class="factor_item">
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <div class="factor_item_image">
         <img src="./assets/images/circle-35.svg" alt="">
         <div class="title">35%</div>
@@ -78,7 +78,7 @@
         <li>Эстетичный внешний вид;</li>
       </ul>
     </li>
-    <li class="factor_item">
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <div class="factor_item_image">
         <img src="./assets/images/circle-24.svg" alt="">
         <div class="title">24%</div>
@@ -94,7 +94,15 @@
       </ul>
     </li>
   </ul>
-  <button class="btn btn_primary mx-auto d-block">
+  <div class="factor-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
+    <button class="btn_circle mr-auto" @click="prevFactor"><img src="./assets/images/arrow_prev.svg" alt=""></button>
+    <ul class="ul_custom dot_list">
+      <li class="dot_list_item" v-for="i in factorsLength" :class="{'dot_list_item-selected': selectedFactor === i-1}" :key="i"></li>
+    </ul>
+    <button class="btn_circle ml-auto" @click="nextFactor"><img src="./assets/images/arrow_next.svg" alt=""></button>
+  </div>
+
+  <button class="btn btn_primary mx-auto d-block" @click="openModal">
     Оставить заявку
   </button>
 </section>

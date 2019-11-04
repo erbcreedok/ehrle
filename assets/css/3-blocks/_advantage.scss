@@ -32,5 +32,16 @@
       color: $c_dark;
       @include mx(auto);
     }
+    @media (max-width: 795px) {
+      text-align: left;
+      padding: 24px;
+      height: auto;
+      &_image {
+        margin-top: 0;
+      }
+      &_label {
+        font-size: 20px;
+      }
+    }
   }
 }

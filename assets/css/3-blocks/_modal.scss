@@ -13,6 +13,7 @@
     backdrop-filter: blur(0);
     &-show {
       opacity: 1;
+      display: block;
       @include flex;
       animation: fade_in .15s forwards;
       -webkit-backdrop-filter: blur(10px);

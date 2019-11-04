@@ -1,27 +1,87 @@
-<section class="section products_section">
+<section class="section products_section" id="section_products">
   <h2 class="section_title">
     Основные продукты
   </h2>
   <ul class="ul_custom d-flex flex-wrap justify-content-between product_container">
-    <li class="product_item product_item_active pseudo_link link_masked">
-      <img class="product_item_image" src="./assets/images/1-prod.jpg" alt="">
-      <p class="product_item_label">Контейнер автомойки CarWash</p>
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===0}" @click="productActiveIndex=0">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/1-prod.jpg" alt="">
+        <p class="product_item_label">Контейнер автомойки CarWash</p>
+      </div>
+      <div class="product_description product-hide_mobile mt-2 px-2" v-if="productActiveIndex===0">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
     </li>
-    <li class="product_item pseudo_link link_masked">
-      <img class="product_item_image" src="./assets/images/2-prod.jpg" alt="">
-      <p class="product_item_label">Модульные автомойки</p>
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===1}" @click="productActiveIndex=1">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/2-prod.jpg" alt="">
+        <p class="product_item_label">Модульные автомойки</p>
+      </div>
+      <div class="product_description product-hide_mobile mt-2 px-2" v-if="productActiveIndex===1">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
     </li>
-    <li class="product_item pseudo_link link_masked">
-      <img class="product_item_image" src="./assets/images/3-prod.jpg" alt="">
-      <p class="product_item_label">Автомойка CarWash</p>
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===2}" @click="productActiveIndex=2">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/3-prod.jpg" alt="">
+        <p class="product_item_label">Автомойка CarWash</p>
+      </div>
+      <div class="product_description product-hide_mobile mt-2 px-2" v-if="productActiveIndex===2">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
     </li>
-    <li class="product_item pseudo_link link_masked">
-      <img class="product_item_image" src="./assets/images/4-prod.jpg" alt="">
-      <p class="product_item_label">Собственная продукция<br/>по химии</p>
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===3}" @click="productActiveIndex=3">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/4-prod.jpg" alt="">
+        <p class="product_item_label">Собственная продукция<br/>по химии</p>
+      </div>
+      <div class="product_description product-hide_mobile mt-2 px-2" v-if="productActiveIndex===3">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
     </li>
   </ul>
   <div class="product_line"></div>
-  <div class="container mt-5">
+  <div class="container mt-5 product-hide_desktop">
     <ul class="ul_custom">
       <li class="product_description">
         <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>

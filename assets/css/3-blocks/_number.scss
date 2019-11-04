@@ -28,4 +28,20 @@
       @include my(0, 4px);
     }
   }
+  @media (max-width: 601px) {
+    &_container {
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+    }
+    &_item {
+      min-width: 263px;
+      @include mx(0px !important, 30px !important);
+      transition: .3s;
+    }
+  }
+  @media (min-width: 602px) {
+    &-hide_desktop {
+      display: none !important;
+    }
+  }
 }

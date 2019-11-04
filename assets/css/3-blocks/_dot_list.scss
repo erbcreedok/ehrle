@@ -1,0 +1,17 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.dot_list {
+  @include ul_custom;
+  @include flex;
+  &_item {
+    @include mx(6px);
+    @include circle(6px, $c_dark);
+    transition: .3s;
+    box-shadow: 0 0 0 0 rgba($c_red, .3);
+    &-selected {
+      background-color: $c_red;
+      box-shadow: 0 0 0 6px rgba($c_red, .3);
+    }
+  }
+}

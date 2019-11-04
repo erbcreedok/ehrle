@@ -1,6 +1,6 @@
 @import "./variables";
 
-@mixin arrow_up($color, $width, $height: $width){
+@mixin arrow_triangle_up($color, $width, $height: $width){
   width: 0;
   height: 0;
   border-left: $width/2 solid transparent;
@@ -72,7 +72,7 @@
   @include flex();
   @include flex_wrap();
   @include px($side_padding);
-  $maxWidth: $cols * $item_width + ($cols - 1) * $item_margin + ($side_padding * 2);
+  $maxWidth: $cols * $item_width + ($cols - 1) * $item_margin + $side_padding * 2;
   max-width: $maxWidth;
   #{$item_selector} {
     width: $item_width;
@@ -87,7 +87,7 @@
       @include mx(0);
     }
   }
-  @media (max-width: $maxWidth){
+  @media (max-width: $maxWidth + 15px){
     @if($cols > $step) {
       @include row($cols - $step, $item_selector, $item_width, $item_margin);
     }
@@ -201,4 +201,18 @@
       color: darken($color, 20);
     }
   }
+}
+
+@mixin ul_custom() {
+  list-style: none;
+  padding: 0;
+  @include my(0);
+}
+
+@mixin arrow_down($size: 16px) {
+  width: $size;
+  height: $size;
+  border: none;
+  background: url($images + '/arrow_down.svg') center no-repeat;
+  background-size: contain;
 }
