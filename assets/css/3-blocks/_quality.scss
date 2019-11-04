@@ -36,5 +36,8 @@
       padding-left: 84px;
       height: 84px;
     }
+    &_title {
+      @include my(16px);
+    }
   }
 }

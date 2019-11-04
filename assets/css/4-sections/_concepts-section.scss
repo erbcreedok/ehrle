@@ -26,6 +26,8 @@
       max-width: 556px;
     }
   }
+
+  //radio
   @media (max-width: 919.98px) {
     .hide_mobile {
       display: none !important;
@@ -34,6 +36,26 @@
   @media (min-width: 920px) {
     .hide_desktop {
       display: none !important;
+    }
+  }
+
+  //mobile paragraph
+  @media (max-width: 575.98px) {
+    .concept_description .heading {
+      font-size: 20px;
+    }
+  }
+
+  //description position
+  @media (max-width: 905px) {
+    .concept_description {
+      text-align: center;
+      &_image {
+        @include mx(0);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+      }
     }
   }
 }

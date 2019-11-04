@@ -3,7 +3,7 @@
     Легкая концепция бизнеса подходит для каждого сегмента
   </h2>
   <ul class="ul_custom d-flex flex-wrap justify-content-center mb-5 pb-5 hide_mobile">
-    <li class="radio_field" @click="conceptActiveIndex=0">
+    <li class="radio_field" @click="setConcept(0)">
       <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===0}"></div>
       <span class="radio_field_label">Для частных инвесторов</span>
     </li>
@@ -34,7 +34,7 @@
   </div>
   <ul class="hide_desktop accordion_list">
     <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===0}">
-      <div class="accordion_option_label" @click="conceptActiveIndex=0">Для частных инвесторов</div>
+      <div class="accordion_option_label" @click="setConcept(0)">Для частных инвесторов</div>
       <div class="accordion_option_body">
         <div class="concept_description">
           <div class="concept_description_image">
@@ -55,7 +55,7 @@
       </div>
     </li>
     <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===1}">
-      <div class="accordion_option_label" @click="conceptActiveIndex=1">Для действующих владельцев автомоек</div>
+      <div class="accordion_option_label" @click="setConcept(1)">Для действующих владельцев автомоек</div>
       <div class="accordion_option_body">
         <div class="concept_description">
           <div class="concept_description_image">

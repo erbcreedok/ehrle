@@ -24,6 +24,10 @@
   vertical-align: middle;
   @include button_color('&', $c_gray, white);
   @include button_color('&_primary', $c_red, white);
+  @media (max-width: 576px) {
+    display: block;
+    width: 100%;
+  }
 }
 .btn_circle {
   @include circle(50px, $c_gray_1);

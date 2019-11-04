@@ -18,10 +18,12 @@ const scripts = [
   'assets/js/app.js',
 ];
 const devScripts = [
+  'assets/js/vendor/vue-view.js',
   'assets/js/vendor/vue.js',
   ...scripts
 ];
 const prodScripts = [
+  'assets/js/vendor/vue-view.js',
   'assets/js/vendor/vue.min.js',
   ...scripts
 ];

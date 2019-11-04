@@ -3,7 +3,7 @@
     Основные продукты
   </h2>
   <ul class="ul_custom d-flex flex-wrap justify-content-between product_container">
-    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===0}" @click="productActiveIndex=0">
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===0}" @click="setProduct(0)">
       <div class="product_item_body">
         <img class="product_item_image" src="./assets/images/1-prod.jpg" alt="">
         <p class="product_item_label">Контейнер автомойки CarWash</p>
@@ -22,7 +22,7 @@
         </button>
       </div>
     </li>
-    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===1}" @click="productActiveIndex=1">
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===1}" @click="setProduct(1)">
       <div class="product_item_body">
         <img class="product_item_image" src="./assets/images/2-prod.jpg" alt="">
         <p class="product_item_label">Модульные автомойки</p>
@@ -41,7 +41,7 @@
         </button>
       </div>
     </li>
-    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===2}" @click="productActiveIndex=2">
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===2}" @click="setProduct(2)">
       <div class="product_item_body">
         <img class="product_item_image" src="./assets/images/3-prod.jpg" alt="">
         <p class="product_item_label">Автомойка CarWash</p>
@@ -60,7 +60,7 @@
         </button>
       </div>
     </li>
-    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===3}" @click="productActiveIndex=3">
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===3}" @click="setProduct(3)">
       <div class="product_item_body">
         <img class="product_item_image" src="./assets/images/4-prod.jpg" alt="">
         <p class="product_item_label">Собственная продукция<br/>по химии</p>

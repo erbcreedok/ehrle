@@ -4,10 +4,7 @@
   </h2>
   <ul class="ul_custom factor_container">
     <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <div class="factor_item_image">
-        <img src="./assets/images/circle-41.svg" alt="">
-        <div class="title">41%</div>
-      </div>
+      <factor-circle :percent="41" :is-selected="selectedFactor===0"></factor-circle>
       <div class="title factor_item_title">
         Месторасположение
       </div>
@@ -19,10 +16,7 @@
       </ul>
     </li>
     <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <div class="factor_item_image">
-        <img src="./assets/images/circle-35.svg" alt="">
-        <div class="title">35%</div>
-      </div>
+      <factor-circle :percent="35" :is-selected="selectedFactor===1"></factor-circle>
       <div class="title factor_item_title">
         Качество оборудования
       </div>
@@ -34,10 +28,7 @@
       </ul>
     </li>
     <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <div class="factor_item_image">
-        <img src="./assets/images/circle-24.svg" alt="">
-        <div class="title">24%</div>
-      </div>
+      <factor-circle :percent="24" :is-selected="selectedFactor===2"></factor-circle>
       <div class="title factor_item_title">
         Маркетинговая стратегия
       </div>
@@ -49,10 +40,7 @@
       </ul>
     </li>
     <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <div class="factor_item_image">
-        <img src="./assets/images/circle-41.svg" alt="">
-        <div class="title">41%</div>
-      </div>
+      <factor-circle :percent="41" :is-selected="selectedFactor===3"></factor-circle>
       <div class="title factor_item_title">
         Месторасположение
       </div>
@@ -64,10 +52,7 @@
       </ul>
     </li>
     <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <div class="factor_item_image">
-        <img src="./assets/images/circle-35.svg" alt="">
-        <div class="title">35%</div>
-      </div>
+      <factor-circle :percent="35" :is-selected="selectedFactor===4"></factor-circle>
       <div class="title factor_item_title">
         Качество оборудования
       </div>
@@ -79,10 +64,7 @@
       </ul>
     </li>
     <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <div class="factor_item_image">
-        <img src="./assets/images/circle-24.svg" alt="">
-        <div class="title">24%</div>
-      </div>
+      <factor-circle :percent="24" :is-selected="selectedFactor===5"></factor-circle>
       <div class="title factor_item_title">
         Маркетинговая стратегия
       </div>
@@ -101,8 +83,9 @@
     </ul>
     <button class="btn_circle ml-auto" @click="nextFactor"><img src="./assets/images/arrow_next.svg" alt=""></button>
   </div>
-
-  <button class="btn btn_primary mx-auto d-block" @click="openModal">
-    Оставить заявку
-  </button>
+  <div class="px-3">
+    <button class="btn btn_primary mx-auto d-block" @click="openModal">
+      Оставить заявку
+    </button>
+  </div>
 </section>

@@ -127,6 +127,9 @@ body {
   font-size: 18px;
   line-height: 1.44;
   color: #2c3e50; }
+  @media (max-width: 767.98px) {
+    .paragraph {
+      font-size: 14px; } }
 
 a.a_custom, a.a_custom:hover {
   color: inherit;
@@ -241,6 +244,9 @@ body {
   font-size: 18px;
   line-height: 1.44;
   color: #2c3e50; }
+  @media (max-width: 767.98px) {
+    .paragraph {
+      font-size: 14px; } }
 
 a.a_custom, a.a_custom:hover {
   color: inherit;
@@ -358,6 +364,10 @@ a.a_custom, a.a_custom:hover {
     .btn_primary.btn_outline:focus:not(:active) {
       background: rgba(216, 49, 57, 0.3);
       color: #891a1f; }
+  @media (max-width: 576px) {
+    .btn {
+      display: block;
+      width: 100%; } }
 
 .btn_circle {
   display: inline-block;
@@ -1021,8 +1031,8 @@ a.a_custom, a.a_custom:hover {
   padding-top: 20px;
   margin-bottom: 34px !important; }
   .factor_item_image {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
     overflow: hidden;
     position: relative;
     margin-left: auto;
@@ -1035,7 +1045,7 @@ a.a_custom, a.a_custom:hover {
       position: absolute;
       color: #d83139;
       width: 100%;
-      line-height: 180px;
+      line-height: 190px;
       text-align: center; }
   .factor_item_title {
     margin-top: 28px;
@@ -1170,7 +1180,10 @@ a.a_custom, a.a_custom:hover {
 @media (max-width: 768px) {
   .quality_item {
     padding-left: 84px;
-    height: 84px; } }
+    height: 84px; }
+  .quality_title {
+    margin-top: 16px;
+    margin-bottom: 16px; } }
 
 .number_container {
   margin-left: auto;
@@ -1736,9 +1749,9 @@ a.a_custom, a.a_custom:hover {
 @media (max-width: 767.98px) {
   .modal_container {
     height: auto;
-    top: 10px;
+    top: auto;
     right: 10px;
-    bottom: 10px;
+    bottom: auto;
     left: 10px; }
   .modal_close {
     position: fixed; } }
@@ -2051,6 +2064,20 @@ header {
 @media (min-width: 920px) {
   .concepts_section .hide_desktop {
     display: none !important; } }
+
+@media (max-width: 575.98px) {
+  .concepts_section .concept_description .heading {
+    font-size: 20px; } }
+
+@media (max-width: 905px) {
+  .concepts_section .concept_description {
+    text-align: center; }
+    .concepts_section .concept_description_image {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px; } }
 
 .advantages_section .paragraph {
   text-align: center;

@@ -89,6 +89,9 @@ body {
   font-size: 18px;
   line-height: 1.44;
   color: $c_dark;
+  @media (max-width: 767.98px) {
+    font-size: 14px;
+  }
 }
 a.a_custom {
   &, &:hover {

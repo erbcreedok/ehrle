@@ -62,7 +62,7 @@
   @media (max-width: 767.98px) {
     &_container {
       height: auto;
-      @include trbl(10px);
+      @include trbl(auto, 10px);
     }
     &_close {
       position: fixed;
