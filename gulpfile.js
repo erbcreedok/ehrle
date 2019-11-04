@@ -96,7 +96,9 @@ gulp.task("build", ['minifyProdScripts', 'minifyCss'], function() {
     '*.html',
     '*.php',
     'favicon.ico',
-    "assets/img/**"
+    "assets/images/**",
+    "assets/fonts/**",
+    "assets/css/**/*.css"
   ], { base: './'})
     .pipe(gulp.dest(dist));
 });
