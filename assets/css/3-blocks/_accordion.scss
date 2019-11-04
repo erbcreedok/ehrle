@@ -8,7 +8,7 @@
   &_option {
     @include px(18px);
     position: relative;
-    overflow: auto;
+    overflow: hidden;
     &:after {
       @include pseudo_absolute;
       @include trbl(auto, 0, 0);
