@@ -2,4 +2,6 @@
 @import "../2-base/mixins";
 .section {
   @include py(80px);
+  max-width: 100vw;
+  overflow-x: hidden;
 }

@@ -8,7 +8,7 @@
     @include trbl(0);
     @include align_items(center);
     opacity: 0;
-    display: block;
+    display: none;
     -webkit-backdrop-filter: blur(0);
     backdrop-filter: blur(0);
     &-show {
