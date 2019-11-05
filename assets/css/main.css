@@ -541,8 +541,9 @@ a.a_custom, a.a_custom:hover {
 .product_line {
   position: absolute;
   height: 8px;
-  left: 0;
-  right: 0;
+  left: 15px;
+  right: 15px;
+  max-width: 100%;
   background: #ecf0f1; }
   @media (max-width: 776px) {
     .product_line {
@@ -560,7 +561,8 @@ a.a_custom, a.a_custom:hover {
        object-fit: contain; }
   .product_item_label {
     font-family: Qanelas, sans-serif;
-    font-size: 14px; }
+    font-size: 14px;
+    height: 32px; }
   .product_item_active .product_item_label {
     color: #d83139; }
   .product_item_active:after {
@@ -611,7 +613,8 @@ a.a_custom, a.a_custom:hover {
         font-size: 20px;
         font-weight: 600;
         text-align: left;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        height: auto; }
       .product_item:after {
         content: '';
         display: block;
@@ -777,7 +780,6 @@ a.a_custom, a.a_custom:hover {
     margin-right: auto; }
   @media (max-width: 795px) {
     .advantage_box {
-      text-align: left;
       padding: 24px;
       height: auto; }
       .advantage_box_image {
@@ -1300,7 +1302,9 @@ a.a_custom, a.a_custom:hover {
   flex-wrap: wrap;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1095px; }
+  max-width: 1095px;
+  -webkit-box-pack: around;
+          justify-content: around; }
   .award_container .award_item {
     width: 165px;
     max-width: 100%;
@@ -1323,29 +1327,6 @@ a.a_custom, a.a_custom:hover {
       flex-wrap: wrap;
       padding-left: 15px;
       padding-right: 15px;
-      max-width: 870px; }
-      .award_container .award_item {
-        width: 165px;
-        max-width: 100%;
-        margin-left: 60px;
-        margin-right: 0;
-        margin-top: 0;
-        margin-bottom: 60px; }
-        .award_container .award_item:nth-child(5n + 1) {
-          margin-left: 60px;
-          margin-right: 0;
-          margin-top: 0;
-          margin-bottom: 60px; }
-        .award_container .award_item:nth-child(4n + 1) {
-          margin-left: 0;
-          margin-right: 0; } }
-  @media (max-width: 1110px) and (max-width: 885px) {
-    .award_container {
-      display: -webkit-box;
-      display: flex;
-      flex-wrap: wrap;
-      padding-left: 15px;
-      padding-right: 15px;
       max-width: 645px; }
       .award_container .award_item {
         width: 165px;
@@ -1362,7 +1343,7 @@ a.a_custom, a.a_custom:hover {
         .award_container .award_item:nth-child(3n + 1) {
           margin-left: 0;
           margin-right: 0; } }
-  @media (max-width: 1110px) and (max-width: 885px) and (max-width: 660px) {
+  @media (max-width: 1110px) and (max-width: 660px) {
     .award_container {
       display: -webkit-box;
       display: flex;
@@ -1385,7 +1366,7 @@ a.a_custom, a.a_custom:hover {
         .award_container .award_item:nth-child(2n + 1) {
           margin-left: 0;
           margin-right: 0; } }
-  @media (max-width: 1110px) and (max-width: 885px) and (max-width: 660px) and (max-width: 435px) {
+  @media (max-width: 1110px) and (max-width: 660px) and (max-width: 435px) {
     .award_container {
       display: -webkit-box;
       display: flex;
@@ -1411,6 +1392,10 @@ a.a_custom, a.a_custom:hover {
 
 .award_item {
   text-align: center; }
+  @media (max-width: 1110px) {
+    .award_item {
+      margin-left: auto !important;
+      margin-right: auto !important; } }
 
 .award_image {
   height: 80px;
@@ -1522,7 +1507,8 @@ a.a_custom, a.a_custom:hover {
     margin-left: auto;
     margin-right: auto; }
   .object_information {
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 30px;
     margin-bottom: 30px; } }
 
@@ -1974,7 +1960,6 @@ header {
       padding-bottom: 80px; }
     .hero_section .hero_container {
       max-width: 100%;
-      min-width: 320px;
       margin-left: auto;
       margin-right: auto; }
     .hero_section .landing_header {

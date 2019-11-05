@@ -64,8 +64,8 @@
       @include mx(auto);
     }
     &_information {
-      margin-left: 0;
-      @include my(30px)
+      @include mx(auto);
+      @include my(30px);
     }
   }
 }

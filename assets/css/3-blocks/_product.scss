@@ -13,8 +13,9 @@
   &_line {
     position: absolute;
     height: 8px;
-    left: 0;
-    right: 0;
+    left: 15px;
+    right: 15px;
+    max-width: 100%;
     background: $c_gray_1;
     @media (max-width: $maxWidth) {
       display: none;
@@ -33,6 +34,7 @@
     &_label {
       font-family: Qanelas, sans-serif;
       font-size: 14px;
+      height: 32px;
     }
     &_active &_label  {
       color: $c_red;
@@ -75,6 +77,7 @@
         font-weight: 600;
         text-align: left;
         margin-bottom: 0;
+        height: auto;
       }
       &:after {
         @include pseudo_block;

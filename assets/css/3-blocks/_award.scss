@@ -6,10 +6,14 @@
   $item_distance: 60px;
   &_container {
     @include mx(auto);
-    @include row(5, '.award_item', $item_width, $item_distance);
+    @include row(5, '.award_item', $item_width, $item_distance, 15px, 2);
+    @include justify_content(around)
   }
   &_item {
     text-align: center;
+    @media (max-width: 1110px) {
+      @include mx(auto !important);
+    }
   }
   &_image {
     height: 80px;
