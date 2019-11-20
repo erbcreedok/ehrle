@@ -22,30 +22,840 @@
     <meta property="og:locale" content="ru-RU">
     <meta name="twitter:url" content="">
     <meta name="yandex-verification" content=""/>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
     <!-- endbuild -->
 </head>
 <body class="lang-ru">
 <div id="app">
-    <input type="hidden" value="index" id="sitepage">
-    <header w3-include-html="./components/nav.html"></header>
-    <section class="hero_section" w3-include-html="./sections/section_hero.html"></section>
-    <section class="products_section" w3-include-html="./sections/section_products.html"></section>
-    <section class="concepts_section" w3-include-html="./sections/section_concepts.html"></section>
-    <section class="advantages_section" w3-include-html="./sections/section_advantages.html"></section>
-    <section class="factors_section" w3-include-html="./sections/section_factors.html"></section>
-    <section class="qualities_section" w3-include-html="./sections/section_qualities.html"></section>
-    <section class="numbers_section" w3-include-html="./sections/section_numbers.html"></section>
-    <section class="awards_section" w3-include-html="./sections/section_awards.html"></section>
-    <section class="partners_section" w3-include-html="./sections/section_partners.html"></section>
-    <section class="examples_section" w3-include-html="./sections/section_examples.html"></section>
-    <section class="form_section" w3-include-html="./sections/section_form.html"></section>
-    <footer class="footer" w3-include-html="./components/footer.html"></footer>
-    <div class="modal-wrapper" w3-include-html="./components/modal_form.html"></div>
+    <input type="hidden" value="index" id="sitepage"/>
+    <header>
+<nav class="nav">
+  <div class="container d-flex">
+    <a href="/" class="mr-xl-3 mr-1"><img class="nav_brand" src="./assets/images/ehrle_logo.png" height="40px" alt=""></a>
+    <img class="nav_second_logo mr-xl-4 mr-2" src="./assets/images/german_logo.png" height="44px" alt="">
+    <div class="link_contact icon_block d-none d-md-block ml-auto mr-xl-3 mr-0">
+      <a href="tel: +77025026285" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/phone.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Номер телефона</div>
+      </a>
+    </div>
+    <div class="link_contact icon_block d-none d-md-block ml-xl-3 ml-1 mr-auto">
+      <a href="mailto: ehrle_carwash@gmail.com" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/email.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Адрес почты</div>
+      </a>
+    </div>
+    <div class="icon_block ml-auto">
+      <button class="btn_custom">
+        <div class="icon_block_icon">
+          <img src="./assets/images/menu.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value">Меню</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Все для бизнеса</div>
+      </button>
+    </div>
+    <div class="icon_block ml-xl-3 ml-1">
+      <button class="btn_custom">
+        <div class="icon_block_icon">
+          <span class="icon_block_icon_text fw-bold">RU</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</nav>
+</header>
+    <section class="hero_section">
+  <div class="slide">
+    <div class="container">
+      <div class="hero_container">
+        <h1 class="landing_header">
+          Инвестируй в автомойки с мировым лидером!
+        </h1>
+        <div class="hero_logo"><img src="./assets/images/ehrle_logo.png" alt=""></div>
+        <div class="section_title">
+          Быть с EHRLE –<br/>
+          быть первым<br/>
+          в бизнесе!
+        </div>
+        <p class="paragraph">
+          <span class="colored">Бесконтактная мойка для бережливых и заботливых автолюбителей.</span> <span class="pseudo_link link_masked">Подробнее</span>
+        </p>
+        <button class="btn btn_primary" @click="openModal">
+          Оставить заявку
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="section products_section" id="section_products">
+  <h2 class="section_title">
+    Основные продукты
+  </h2>
+  <ul class="ul_custom d-flex flex-wrap justify-content-between product_container">
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===0}" @click="setProduct(0)">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/1-prod.jpg" alt="">
+        <p class="product_item_label">Контейнер автомойки CarWash</p>
+      </div>
+      <div class="product_description product-hide_mobile">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
+    </li>
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===1}" @click="setProduct(1)">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/2-prod.jpg" alt="">
+        <p class="product_item_label">Модульные автомойки</p>
+      </div>
+      <div class="product_description product-hide_mobile">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
+    </li>
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===2}" @click="setProduct(2)">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/3-prod.jpg" alt="">
+        <p class="product_item_label">Автомойка CarWash</p>
+      </div>
+      <div class="product_description product-hide_mobile">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
+    </li>
+    <li class="product_item pseudo_link link_masked" :class="{product_item_active: productActiveIndex===3}" @click="setProduct(3)">
+      <div class="product_item_body">
+        <img class="product_item_image" src="./assets/images/4-prod.jpg" alt="">
+        <p class="product_item_label">Собственная продукция<br/>по химии</p>
+      </div>
+      <div class="product_description product-hide_mobile">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="container" style="position: relative">
+    <div class="product_line"></div>
+  </div>
+  <div class="container mt-5 product-hide_desktop">
+    <ul class="ul_custom">
+      <li class="product_description">
+        <h3 class="heading mb-4">Контейнерные автомойки CarWash</h3>
+        <img class="product_description_image" src="./assets/images/1_prod_desc.jpg" alt="">
+        <h4 class="title">Преимущества</h4>
+        <ul class="ul_custom my-3 product_description_list">
+          <li>1. Удаленный доступ к клиентской и финансовой статистике</li>
+          <li>2. Индивидуальные подход к каждому клиенту</li>
+          <li>3. Полный пакет необходимых документов и споровождение</li>
+        </ul>
+        <button class="btn btn_primary btn_big mt-5">
+          Узнать подробнее
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    <section class="section concepts_section">
+  <h2 class="section_title mb-5">
+    Легкая концепция бизнеса подходит для каждого сегмента
+  </h2>
+  <ul class="ul_custom d-flex flex-wrap justify-content-center mb-5 pb-5 hide_mobile">
+    <li class="radio_field" @click="setConcept(0)">
+      <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===0}"></div>
+      <span class="radio_field_label">Для частных инвесторов</span>
+    </li>
+    <li class="radio_field" @click="conceptActiveIndex=1">
+      <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===1}"></div>
+      <span class="radio_field_label">Для действующих владельцев автомоек</span>
+    </li>
+    <li class="radio_field" @click="conceptActiveIndex=2">
+      <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===2}"></div>
+      <span class="radio_field_label">Для сетей АЗС, Супермаркетов, ТРЦ</span>
+    </li>
+  </ul>
+  <div class="concept_description d-flex flex-wrap justify-content-center hide_mobile">
+    <div class="concept_description_image">
+      <img src="./assets/images/1-concept.svg" alt="">
+    </div>
+    <div class="concept_description_body">
+      <h3 class="heading mb-3">
+        Для частного инвестирования
+      </h3>
+      <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
+        и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
+      </p>
+      <button class="btn btn_primary" @click="openModal">
+        Оставить заявку
+      </button>
+    </div>
+  </div>
+  <ul class="hide_desktop accordion_list">
+    <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===0}">
+      <div class="accordion_option_label" @click="setConcept(0)">Для частных инвесторов</div>
+      <div class="accordion_option_body">
+        <div class="concept_description">
+          <div class="concept_description_image">
+            <img src="./assets/images/1-concept.svg" alt="">
+          </div>
+          <div class="concept_description_body">
+            <h3 class="heading mb-3">
+              Для частного инвестирования
+            </h3>
+            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
+              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
+            </p>
+            <button class="btn btn_primary" @click="openModal">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===1}">
+      <div class="accordion_option_label" @click="setConcept(1)">Для действующих владельцев автомоек</div>
+      <div class="accordion_option_body">
+        <div class="concept_description">
+          <div class="concept_description_image">
+            <img src="./assets/images/1-concept.svg" alt="">
+          </div>
+          <div class="concept_description_body">
+            <h3 class="heading mb-3">
+              Для действующих владельцев автомоек
+            </h3>
+            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
+              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
+            </p>
+            <button class="btn btn_primary" @click="openModal">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===2}">
+      <div class="accordion_option_label" @click="conceptActiveIndex=2">Для сетей АЗС, Супермаркетов, ТРЦ</div>
+      <div class="accordion_option_body">
+        <div class="concept_description">
+          <div class="concept_description_image">
+            <img src="./assets/images/1-concept.svg" alt="">
+          </div>
+          <div class="concept_description_body">
+            <h3 class="heading mb-3">
+              Для сетей АЗС, Супермаркетов, ТРЦ
+            </h3>
+            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
+              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
+            </p>
+            <button class="btn btn_primary" @click="openModal">
+              Оставить заявку
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+    <section class="section advantages_section">
+  <h2 class="section_title">
+    Готовый бизнес под ключ
+  </h2>
+  <p class="paragraph">
+    Мы не просто предлагаем вам строительство мойки самообслуживания под ключ, а готовую бизнес-модель, которая будет приносить гарантированный доход с первых дней открытия
+  </p>
+  <ul class="ul_custom advantage_box_container">
+    <li class="advantage_box">
+      <img class="advantage_box_image" src="./assets/images/1-ready-business.svg" alt="">
+      <span class="advantage_box_label">
+        Подбор и оценка земельного участка
+      </span>
+    </li>
+    <li class="advantage_box">
+      <img class="advantage_box_image" src="./assets/images/2-ready-business.svg" alt="">
+      <span class="advantage_box_label">
+        Заключение договора на покупку оборудования
+      </span>
+    </li>
+    <li class="advantage_box">
+      <img class="advantage_box_image" src="./assets/images/3-ready-business.svg" alt="">
+      <span class="advantage_box_label">
+        Подбор опытных и профессиональных подрядчиков на все этапы
+      </span>
+    </li>
+    <li class="advantage_box">
+      <img class="advantage_box_image" src="./assets/images/4-ready-business.svg" alt="">
+      <span class="advantage_box_label">
+        Бесплатная франшиза “Ehrle”
+      </span>
+    </li>
+    <li class="advantage_box">
+      <img class="advantage_box_image" src="./assets/images/5-ready-business.svg" alt="">
+      <span class="advantage_box_label">
+        Запуск мойки и обучение персонала
+      </span>
+    </li>
+    <li class="advantage_box">
+      <img class="advantage_box_image" src="./assets/images/6-ready-business.svg" alt="">
+      <span class="advantage_box_label">
+        Сервисное обслуживание
+      </span>
+    </li>
+  </ul>
+</section>
+    <section class="section factors_section">
+  <h2 class="section_title">
+    Факторы успеха автомойки
+  </h2>
+  <ul class="ul_custom factor_container">
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+      <factor-circle :percent="41" :is-selected="selectedFactor===0"></factor-circle>
+      <div class="title factor_item_title">
+        Месторасположение
+      </div>
+      <ul class="ul_classic factor_item_list">
+        <li>Парковки ТЦ и ГМ;</li>
+        <li>Первая линия;</li>
+        <li>Спальные районы;</li>
+        <li>Дороги с большим трафиком;</li>
+      </ul>
+    </li>
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+      <factor-circle :percent="35" :is-selected="selectedFactor===1"></factor-circle>
+      <div class="title factor_item_title">
+        Качество оборудования
+      </div>
+      <ul class="ul_classic factor_item_list">
+        <li>Качество мойки;</li>
+        <li>Бесперебойность оборудования;</li>
+        <li>Гарантия на оборудование;</li>
+        <li>Эстетичный внешний вид;</li>
+      </ul>
+    </li>
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+      <factor-circle :percent="24" :is-selected="selectedFactor===2"></factor-circle>
+      <div class="title factor_item_title">
+        Маркетинговая стратегия
+      </div>
+      <ul class="ul_classic factor_item_list">
+        <li>План развития;</li>
+        <li>Бонусные программы;</li>
+        <li>Корпоративные клиенты;</li>
+        <li>Разнообразие систем оплат и кассовые чеки;</li>
+      </ul>
+    </li>
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+      <factor-circle :percent="41" :is-selected="selectedFactor===3"></factor-circle>
+      <div class="title factor_item_title">
+        Месторасположение
+      </div>
+      <ul class="ul_classic factor_item_list">
+        <li>Парковки ТЦ и ГМ;</li>
+        <li>Первая линия;</li>
+        <li>Спальные районы;</li>
+        <li>Дороги с большим трафиком;</li>
+      </ul>
+    </li>
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+      <factor-circle :percent="35" :is-selected="selectedFactor===4"></factor-circle>
+      <div class="title factor_item_title">
+        Качество оборудования
+      </div>
+      <ul class="ul_classic factor_item_list">
+        <li>Качество мойки;</li>
+        <li>Бесперебойность оборудования;</li>
+        <li>Гарантия на оборудование;</li>
+        <li>Эстетичный внешний вид;</li>
+      </ul>
+    </li>
+    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+      <factor-circle :percent="24" :is-selected="selectedFactor===5"></factor-circle>
+      <div class="title factor_item_title">
+        Маркетинговая стратегия
+      </div>
+      <ul class="ul_classic factor_item_list">
+        <li>План развития;</li>
+        <li>Бонусные программы;</li>
+        <li>Корпоративные клиенты;</li>
+        <li>Разнообразие систем оплат и кассовые чеки;</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="factor-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
+    <button class="btn_circle mr-auto" @click="prevFactor"><img src="./assets/images/arrow_prev.svg" alt=""></button>
+    <ul class="ul_custom dot_list">
+      <li class="dot_list_item" v-for="i in factorsLength" :class="{'dot_list_item-selected': selectedFactor === i-1}" :key="i"></li>
+    </ul>
+    <button class="btn_circle ml-auto" @click="nextFactor"><img src="./assets/images/arrow_next.svg" alt=""></button>
+  </div>
+  <div class="px-3">
+    <button class="btn btn_primary mx-auto d-block" @click="openModal">
+      Оставить заявку
+    </button>
+  </div>
+</section>
+
+    <section class="section qualities_section">
+  <h2 class="section_title">
+    Фокус на качество оборудования и мойки
+  </h2>
+  <ul class="ul_custom quality_container">
+    <li class="quality_item">
+      <div class="quality_image">
+        <img src="./assets/images/1_focus.svg" alt="">
+      </div>
+      <p class="title quality_title">
+        Немецкое качество
+      </p>
+    </li>
+    <li class="quality_item">
+      <div class="quality_image">
+        <img src="./assets/images/2_focus.svg" alt="">
+      </div>
+      <p class="title quality_title">
+        Собственная химия и все части
+      </p>
+    </li>
+    <li class="quality_item">
+      <div class="quality_image">
+        <img src="./assets/images/3_focus.svg" alt="">
+      </div>
+      <p class="title quality_title">
+        Опыт - 100 лет
+      </p>
+    </li>
+    <li class="quality_item">
+      <div class="quality_image">
+        <img src="./assets/images/4_focus.svg" alt="">
+      </div>
+      <p class="title quality_title">
+        Работа под ключ
+      </p>
+    </li>
+    <li class="quality_item">
+      <div class="quality_image">
+        <img src="./assets/images/5_focus.svg" alt="">
+      </div>
+      <p class="title quality_title">
+        Быстрая окупаемость
+      </p>
+    </li>
+    <li class="quality_item">
+      <div class="quality_image">
+        <img src="./assets/images/6_focus.svg" alt="">
+      </div>
+      <p class="title quality_title">
+        Безлюдная техника
+      </p>
+    </li>
+  </ul>
+
+  <div class="px-3">
+    <button class="btn btn_primary mx-auto d-block" @click="openModal">
+      Оставить заявку
+    </button>
+  </div>
+
+</section>
+
+    <section class="section numbers_section">
+  <img src="./assets/images/german_logo.jpg" alt="" class="number_header_image">
+  <h2 class="section_title mb-3">
+    Ehrle в цифрах
+  </h2>
+  <p class="paragraph text-center mb-5">
+    Продукт европейского производства
+  </p>
+  <ul class="ul_custom number_container py-4">
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
+      <div class="label">Мойки Ehrle есть</div>
+      <div class="heading">в 34</div>
+      <div>странах</div>
+    </li>
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
+      <div class="label">Рентабельность более</div>
+      <div class="heading">65%</div>
+      <div>за один пост</div>
+    </li>
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
+      <div class="label">Установлено более</div>
+      <div class="heading">120</div>
+      <div>моек</div>
+    </li>
+    <li class="number_item" :style="{transform: 'translateX(' + (-numberContainerWidth * selectedNumber) + 'px)'}">
+      <div class="label">Установлено более</div>
+      <div class="heading">2000</div>
+      <div>постов</div>
+    </li>
+  </ul>
+  <div class="number-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
+    <button class="btn_circle mr-auto" @click="prevNumber"><img src="./assets/images/arrow_prev.svg" alt=""></button>
+    <ul class="ul_custom dot_list">
+      <li class="dot_list_item" v-for="i in numbersLength" :class="{'dot_list_item-selected': selectedNumber === i-1}" :key="i"></li>
+    </ul>
+    <button class="btn_circle ml-auto" @click="nextNumber"><img src="./assets/images/arrow_next.svg" alt=""></button>
+  </div>
+
+  <div class="px-3">
+    <button class="btn btn_primary mx-auto d-block" @click="openModal">
+      Оставить заявку
+    </button>
+  </div>
+</section>
+
+    <section class="section awards_section">
+  <h2 class="section_title">
+    Лучшие в своём деле
+    много лет подряд
+  </h2>
+  <ul class="ul_custom award_container">
+    <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
+      <div class="award_image">
+        <img src="./assets/images/1_reward.jpg" alt="">
+      </div>
+      <div class="award_title">
+        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+      </div>
+    </li>
+    <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
+      <div class="award_image">
+        <img src="./assets/images/2_reward.jpg" alt="">
+      </div>
+      <div class="award_title">
+        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+      </div>
+    </li>
+    <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
+      <div class="award_image">
+        <img src="./assets/images/3_reward.jpg" alt="">
+      </div>
+      <div class="award_title">
+        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+      </div>
+    </li>
+    <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
+      <div class="award_image">
+        <img src="./assets/images/4_reward.jpg" alt="">
+      </div>
+      <div class="award_title">
+        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+      </div>
+    </li>
+    <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
+      <div class="award_image">
+        <img src="./assets/images/5_reward.jpg" alt="">
+      </div>
+      <div class="award_title">
+        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+      </div>
+    </li>
+  </ul>
+  <div class="number-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
+    <button class="btn_circle mr-auto" @click="prevAward"><img src="./assets/images/arrow_prev.svg" alt=""></button>
+    <ul class="ul_custom dot_list">
+      <li class="dot_list_item" v-for="i in awardsLength" :class="{'dot_list_item-selected': selectedAward === i-1}" :key="i"></li>
+    </ul>
+    <button class="btn_circle ml-auto" @click="nextAward"><img src="./assets/images/arrow_next.svg" alt=""></button>
+  </div>
+</section>
+
+    <section class="section partners_section">
+  <div class="section_title mb-3">
+    Наши партнеры
+  </div>
+  <p class="section_subtitle">
+    Нам доверились самые крупные компании с мировым именем,
+    мы дорожим каждым партнером
+  </p>
+  <div class="partner_images">
+    <img class="d-none d-md-inline-block" src="./assets/images/brands.jpg" srcset="./assets/images/brands@2x.jpg 2x" alt="">
+    <img class="d-md-none" src="./assets/images/brands_mobile.jpg" srcset="./assets/images/brands_mobile@2x.jpg 2x" alt="">
+  </div>
+</section>
+
+    <section class="section examples_section">
+  <div class="container">
+    <h2 class="section_title">
+      Примеры работающих объектов партнеров
+    </h2>
+    <div class="object">
+      <div class="object_select">
+
+      </div>
+      <div class="object_basic">
+        <div class="object_basic_title">
+          <img src="./assets/images/location.svg" alt="">
+          <span>Автомойка в Алматы, ул. Достык 5/3</span>
+        </div>
+        <ul class="ul_classic d-flex object_basic_info">
+          <li class="mr-3 mb-2">Открылась - 21 Сен, 2017</li>
+          <li class="mr-3 mb-2">Кол-во постов - 8</li>
+        </ul>
+      </div>
+      <div class="object_body">
+        <div class="object_gallery">
+          <div class="object_gallery_selected_image"><img src="" alt=""></div>
+          <ul class="ul_custom object_gallery_thumbnails">
+            <li class="object_gallery_thumbnail"><img src="" alt=""></li>
+            <li class="object_gallery_thumbnail"><img src="" alt=""></li>
+            <li class="object_gallery_thumbnail"><img src="" alt=""></li>
+            <li class="object_gallery_thumbnail object_gallery_thumbnail-blurred">
+              <img src="" alt="">
+              <span class="object_gallery_thumbnail_info">+4</span>
+            </li>
+          </ul>
+        </div>
+        <div class="object_information">
+          <div class="object_information_steps mb-4">
+            <div class="label mb-2">Этапы работ:</div>
+            <ul class="ul_custom step_list">
+              <li class="step_item">
+                <div class="step_item_number">
+                  <span>1</span>
+                </div>
+                <div class="step_item_label">
+                  Выбор участка и изменение целевого назначения земли
+                </div>
+                <div class="step_item_description">6 мес.</div>
+              </li>
+              <li class="step_item">
+                <div class="step_item_number">
+                  <span>2</span>
+                </div>
+                <div class="step_item_label">
+                  Разработали строительный проект и дизайн проект
+                </div>
+                <div class="step_item_description">2 мес.</div>
+              </li>
+              <li class="step_item">
+                <div class="step_item_number">
+                  <span>3</span>
+                </div>
+                <div class="step_item_label">
+                  Построили автомойку с нуля
+                </div>
+                <div class="step_item_description">6 мес.</div>
+              </li>
+              <li class="step_item">
+                <div class="step_item_number">
+                  <span>4</span>
+                </div>
+                <div class="step_item_label">
+                  Монтаж оборудования и запуск
+                </div>
+                <div class="step_item_description">2 нед.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="object_information_results mb-5">
+            <div class="label mb-2">Результаты:</div>
+            <ul class="ul_classic pl-1">
+              <li class="paragraph mb-2">
+                Открылись за - 430 дней
+              </li>
+              <li class="paragraph mb-2">
+                Общие инвестиции - 21 млн. тенге
+              </li>
+              <li class="paragraph mb-2">
+                Окупились за - 2,5 года
+              </li>
+              <li class="paragraph mb-2">
+                Прибыль в год - 8 млн. тенге
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn_primary btn_outline">
+            Подробнее о примере
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="section form_section">
+  <h2 class="section_title">
+    Пора открывать свой бизнес
+  </h2>
+  <form class="form_container">
+    <div class="form_item form_field">
+      <input type="text" class="input" id="name" placeholder=" ">
+      <label for="name" class="input_label"><span>Имя Фамилия</span></label>
+    </div>
+    <div class="form_item form_field">
+      <input type="text" class="input" id="phone" placeholder="+7 (000) 000 - 00 - 00">
+      <label for="phone" class="input_label"><span>Телефон</span></label>
+    </div>
+    <div class="form_item">
+      <button type="submit" class="btn btn_primary">Оставить заявку</button>
+    </div>
+  </form>
+  <p class="form_subtitle">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>
+</section>
+    <footer class="footer">
+  <div class="footer_container_row">
+    <div class="item">
+      <div class="footer_label">
+        Еще больше информации
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link">
+          <a href="#" target="_blank">Реализованные проекты</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Пакеты для инвесторов</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Новости</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">О компании</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Команда</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Часто задаваемые вопросы</a>
+        </li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="footer_label">
+        Контакты для связи
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/phone.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+            <div class="icon_block_subtitle">Номер телефона</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/email.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+            <div class="icon_block_subtitle">Адрес почты</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/map.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">г. Алматы, <br/>ул. Фурманова 38б</div>
+            <div class="icon_block_subtitle">Наш офис</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="item item-wide">
+      <div class="d-flex flex-wrap">
+        <div class="footer_label">Приходите к нам в гости</div>
+        <div class="footer_social">
+          <div class="footer_label">Мы в соц. сетях:</div>
+          <a class="footer_social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="footer_social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="footer_social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="footer_social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <a href="#" target="_blank" class="footer_map">
+        <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="footer_container">
+    <div class="footer_line"></div>
+    <div class="footer_external_links">
+      <a href="#" target="_blank">Обработка персональных данных</a>
+      <a href="#" target="_blank">Условия бронирования счёта</a>
+      <a href="#" target="_blank">Пользовательское соглашение</a>
+      <span>Copyright © 2014 - 2019 <a href="/">EHRLE.</a> Все права защищены.</span>
+    </div>
+  </div>
+</footer>
+
+    <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
+    <div class="modal_backdrop" @click="closeModal"></div>
+    <div class="modal_container justify-content-between">
+        <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+        <div class="modal_body">
+            <h2 class="heading ">Введите ваши данные</h2>
+            <form class="modal_form">
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_name" placeholder=" ">
+                    <label for="modal_name" class="input_label"><span>Имя Фамилия</span></label>
+                </div>
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_phone" placeholder="+7 (000) 000 - 00 - 00">
+                    <label for="modal_phone" class="input_label"><span>Телефон</span></label>
+                </div>
+                <div class="form_item">
+                    <button type="submit" class="btn btn_primary">Оставить заявку</button>
+                </div>
+            </form>
+            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>
+        </div>
+    </div>
 </div>
-<script src="./assets/js/main.js"></script>
-<script src="w3-include.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+</div>
 </body>
 
 </html>

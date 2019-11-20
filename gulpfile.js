@@ -11,6 +11,7 @@ var gulp = require('gulp'),
   del = require('del'),
   browserSync = require('browser-sync').create(),
   htmlreplace = require('gulp-html-replace'),
+  fileInclude = require('gulp-file-include'),
   cssmin = require('gulp-cssmin');
 
 const scripts = [
@@ -27,6 +28,17 @@ const prodScripts = [
   'assets/js/vendor/vue.min.js',
   ...scripts
 ];
+
+gulp.task('fileInclude', function() {
+  gulp.src(['./pages/*.html'])
+      .pipe(fileInclude({
+        filters: {
+          prefix: '@@',
+          basepath: '../',
+        }
+      }))
+      .pipe(gulp.dest('./'));
+});
 
 gulp.task("concatScripts", function() {
   return gulp.src(devScripts)
@@ -105,13 +117,12 @@ gulp.task("build", ['minifyProdScripts', 'minifyCss'], function() {
     .pipe(gulp.dest(dist));
 });
 
-gulp.task('serve', ['watchFiles'], function(){
+gulp.task('serve', ['watchFiles', 'fileInclude'], function(){
   browserSync.init({
     server: "./"
   });
-  
   gulp.watch("assets/css/**/*.scss", ['watchFiles']);
-  gulp.watch(['*.html', '*.php']).on('change', browserSync.reload);
+  gulp.watch(['**/*.html', '**/*.php'], ['fileInclude']).on('change', browserSync.reload);
 });
 
 gulp.task("default", ["clean", 'build'], function() {

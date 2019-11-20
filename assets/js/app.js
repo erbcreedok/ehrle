@@ -1,7 +1,6 @@
 var factorBreakpoint = 795;
 var conceptsBreakpoint = 920;
 var productsBreakpoint = 776;
-
 Vue.use(vueView());
 
 Vue.component('percent-svg', {
@@ -104,7 +103,7 @@ Vue.component('factor-circle', {
   },
 });
 
-doAfterRender.push((function () {
+(function () {
   new Vue({
     el: '#app',
     data: {
@@ -236,4 +235,4 @@ doAfterRender.push((function () {
       this.setDefaultIndexes();
     },
   });
-}));
+})();
