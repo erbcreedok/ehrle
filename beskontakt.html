@@ -30,6 +30,76 @@
 <div id="app">
     <input type="hidden" value="beskontakt" id="sitepage">
     <header>
+<div class="menu" :class="{'menu-opened': isMenuOpened}">
+  <div class="container">
+    <div class="menu_nav menu_row">
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Ehrle</a>
+        <div class="menu_links">
+          <a class="menu_link" href="#" target="_blank">Главная</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Наша продукция</a>
+        <div class="menu_links">
+          <a class="menu_link" href="#" target="_blank">Главная</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Почему Ehrle?</a>
+        <div class="menu_links">
+          <a class="menu_link" href="#" target="_blank">Главная</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+          <a class="menu_link" href="#" target="_blank">Основные продукты</a>
+        </div>
+        <div class="social_links">
+          <div class="menu_title social_label mb-0">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="menu_line"></div>
+    <div class="menu_footer menu_row">
+      <div class="menu_col">
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Реализованные проекты</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Пакеты для инвесторов</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Новости</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">О компании</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Команда</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Часто задаваемые вопросы</a>
+      </div>
+      <div class="menu_col menu_col-wide">
+        <div class="menu_col_title menu_title">Приходите к нам в гости</div>
+        <a href="#" target="_blank" class="menu_map">
+          <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+        </a>
+      </div>
+      <div class="menu_col"></div>
+    </div>
+  </div>
+</div>
 <nav class="nav">
   <div class="container d-flex">
     <a href="/" class="mr-xl-3 mr-1"><img class="nav_brand" src="./assets/images/ehrle_logo.png" height="40px" alt=""></a>
@@ -53,20 +123,21 @@
       </a>
     </div>
     <div class="icon_block ml-auto">
-      <button class="btn_custom">
+      <button class="btn_custom" @click="toggleMenu">
         <div class="icon_block_icon">
-          <img src="./assets/images/menu.svg" alt="">
+          <div class="menu_toggler" :class="{'menu_toggler-close': isMenuOpened}"><span></span><span></span><span></span></div>
         </div>
         <div class="d-none d-xl-block icon_block_value">Меню</div>
         <div class="d-none d-xl-block icon_block_subtitle">Все для бизнеса</div>
       </button>
     </div>
-    <div class="icon_block ml-xl-3 ml-1">
-      <button class="btn_custom">
+    <div class="icon_block ml-xl-3 ml-1 lang_select lang_select_container" :class="{'lang_select-opened': isLanguagesSelecting}">
+      <button class="btn_custom lang_select_item" v-for="lang in languages" @click="langButtonPressed(lang)" :class="{'lang_select_item-selected': lang===selectedLang}">
         <div class="icon_block_icon">
-          <span class="icon_block_icon_text fw-bold">RU</span>
+          <span class="icon_block_icon_text fw-bold">{{lang.toUpperCase()}}</span>
         </div>
       </button>
+      <div class="lang_select_backdrop"></div>
     </div>
   </div>
 </nav>
@@ -135,18 +206,18 @@
     <div class="item item-wide">
       <div class="d-flex flex-wrap">
         <div class="footer_label">Приходите к нам в гости</div>
-        <div class="footer_social">
-          <div class="footer_label">Мы в соц. сетях:</div>
-          <a class="footer_social_link" href="#" target="_blank">
+        <div class="footer_social social_links">
+          <div class="footer_label social_label">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
             <img src="./assets/images/social_vk.svg" alt="">
           </a>
-          <a class="footer_social_link" href="#" target="_blank">
+          <a class="social_link" href="#" target="_blank">
             <img src="./assets/images/social_instagram.svg" alt="">
           </a>
-          <a class="footer_social_link" href="#" target="_blank">
+          <a class="social_link" href="#" target="_blank">
             <img src="./assets/images/social_twitter.svg" alt="">
           </a>
-          <a class="footer_social_link" href="#" target="_blank">
+          <a class="social_link" href="#" target="_blank">
             <img src="./assets/images/social_facebook.svg" alt="">
           </a>
         </div>

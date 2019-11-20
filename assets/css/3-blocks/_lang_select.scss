@@ -1,0 +1,65 @@
+@import "../2-base/mixins";
+
+.lang_select {
+  @mixin topAlignment($size, $margin: 5px) {
+    @for $i from 1 to 10 {
+      &:nth-child(#{$i}) {
+        top: ($i - 1) * ($size + $margin);
+      }
+    }
+  }
+  &_container {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    overflow: visible;
+  }
+  &_item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    transition: .1s;
+    z-index: 1;
+    &:focus {
+      outline: none;
+    }
+    .icon_block_icon {
+      transition: .3s;
+    }
+    &:hover .icon_block_icon {
+      transition: 0s;
+      background: darken($c_gray_1, 10);
+    }
+    &-selected {
+      z-index: 2;
+      .icon_block_icon {
+        animation: fade_red 1s ease-in;
+      }
+    }
+  }
+  &_backdrop {
+    display: none;
+    @include backdrop;
+  }
+  &-opened & {
+    &_item {
+      @include topAlignment(50px);
+    }
+    &_backdrop {
+      display: block;
+      @include backdrop;
+    }
+  }
+}
+@keyframes fade_red {
+  from {
+    background: $c_red;
+    color: white;
+  }
+  from {
+    background: $c_red;
+    color: inherit;
+  }
+}

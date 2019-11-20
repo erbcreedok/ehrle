@@ -67,20 +67,7 @@
     }
   }
   &_social {
-    @include flex;
     margin-left: auto;
-    .footer_label {
-      margin-right: 10px;
-    }
-    &_link {
-      display: inline-block;
-      @include circle(20px, $c_red);
-      @include mx(2px);
-      @include my(2px);
-      img {
-        width: 100%;
-      }
-    }
   }
   &_map {
     display: block;

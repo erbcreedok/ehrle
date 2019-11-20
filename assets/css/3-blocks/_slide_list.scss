@@ -1,0 +1,74 @@
+@import "../2-base/mixins";
+
+.slide_list {
+  @include ul_custom;
+  position: relative;
+  $speed: .15s;
+  &_item {
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    transition: $speed;
+    background: white;
+    &-active {
+      opacity: 1;
+      background: white;
+      z-index: 1;
+      position: relative;
+      pointer-events: all;
+    }
+  }
+  &-go-left & {
+    &_item {
+      animation: slide_to_left $speed ease-out forwards;
+      &-active {
+        animation: slide_from_right $speed ease-in forwards;
+      }
+    }
+  }
+  &-go-right & {
+    &_item {
+      animation: slide_to_right $speed ease-out forwards;
+      &-active {
+        animation: slide_from_left $speed ease-in forwards;
+      }
+    }
+  }
+}
+
+@keyframes slide_to_left {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-100px);
+  }
+}
+@keyframes slide_from_right {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes slide_to_right {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+@keyframes slide_from_left {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}

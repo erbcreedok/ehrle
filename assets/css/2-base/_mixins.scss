@@ -21,13 +21,13 @@
   bottom: $bottom;
   left: $left;
 }
-@mixin square($size, $color: 'transparent') {
+@mixin square($size, $color: transparent) {
   display: inline-block;
   width: $size;
   height: $size;
   background: $color;
 }
-@mixin circle($size, $color: 'transparent') {
+@mixin circle($size, $color: transparent) {
   @include square($size, $color);
   border-radius: 50%;
 }
@@ -215,4 +215,10 @@
   border: none;
   background: url($images + '/arrow_down.svg') center no-repeat;
   background-size: contain;
+}
+@mixin backdrop() {
+  position: fixed;
+  @include trbl(0);
+  background: rgba($c_dark, .6);
+  cursor: pointer;
 }

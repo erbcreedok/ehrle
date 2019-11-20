@@ -21,10 +21,7 @@
     }
   }
   &_backdrop {
-    position: absolute;
-    @include trbl(0);
-    background: rgba($c_dark, .6);
-    cursor: pointer;
+    @include backdrop;
   }
   &_wrapper-show &_container {
     opacity: 0;

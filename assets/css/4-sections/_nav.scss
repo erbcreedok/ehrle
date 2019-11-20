@@ -15,7 +15,7 @@ header {
   background: #fff;
   height: 70px;
   @include py(10px);
-  @media (max-width: 768.98px) {
+  @media (max-width: 767.98px) {
     height: 50px;
     @include py(5px);
     .container {
@@ -26,6 +26,12 @@ header {
     }
     .nav_second_logo {
       height: 35px;
+    }
+  }
+  .btn_custom {
+    outline: none;
+    &:focus {
+      outline: none;
     }
   }
 }

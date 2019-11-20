@@ -12,6 +12,11 @@
     height: 229px;
     border-radius: 8px;
     background-color: $c_gray_1;
+    transition: .3s ease-out;
+    &:hover {
+      transition: 0s;
+      background-color: darken($c_gray_1, 10);
+    }
     @include mx($box_distance/2);
     @include my($box_distance/2);
     &_container {

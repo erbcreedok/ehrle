@@ -39,42 +39,6 @@
         <li>Разнообразие систем оплат и кассовые чеки;</li>
       </ul>
     </li>
-    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <factor-circle :percent="41" :is-selected="selectedFactor===3"></factor-circle>
-      <div class="title factor_item_title">
-        Месторасположение
-      </div>
-      <ul class="ul_classic factor_item_list">
-        <li>Парковки ТЦ и ГМ;</li>
-        <li>Первая линия;</li>
-        <li>Спальные районы;</li>
-        <li>Дороги с большим трафиком;</li>
-      </ul>
-    </li>
-    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <factor-circle :percent="35" :is-selected="selectedFactor===4"></factor-circle>
-      <div class="title factor_item_title">
-        Качество оборудования
-      </div>
-      <ul class="ul_classic factor_item_list">
-        <li>Качество мойки;</li>
-        <li>Бесперебойность оборудования;</li>
-        <li>Гарантия на оборудование;</li>
-        <li>Эстетичный внешний вид;</li>
-      </ul>
-    </li>
-    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
-      <factor-circle :percent="24" :is-selected="selectedFactor===5"></factor-circle>
-      <div class="title factor_item_title">
-        Маркетинговая стратегия
-      </div>
-      <ul class="ul_classic factor_item_list">
-        <li>План развития;</li>
-        <li>Бонусные программы;</li>
-        <li>Корпоративные клиенты;</li>
-        <li>Разнообразие систем оплат и кассовые чеки;</li>
-      </ul>
-    </li>
   </ul>
   <div class="factor-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
     <button class="btn_circle mr-auto" @click="prevFactor"><img src="./assets/images/arrow_prev.svg" alt=""></button>

@@ -109,11 +109,17 @@ Vue.component('factor-circle', {
     data: {
       showModal: false,
       productActiveIndex: null,
+      productGoing: '',
       conceptActiveIndex: null,
+      conceptGoing: '',
       selectedFactor: 0,
       selectedNumber: 0,
       selectedAward: 0,
       windowWidth: window.innerWidth,
+      selectedLang: 'ru',
+      languages: ['ru', 'kz', 'en'],
+      isLanguagesSelecting: false,
+      isMenuOpened: false,
     },
     computed: {
       factorElements() {
@@ -165,6 +171,29 @@ Vue.component('factor-circle', {
       },
     },
     methods: {
+      toggleMenu() {
+        if (this.isMenuOpened) {
+          this.closeMenu();
+        } else {
+          this.openMenu();
+        }
+      },
+      openMenu() {
+        this.isMenuOpened = true;
+        document.body.style.overflow = 'hidden';
+      },
+      closeMenu() {
+        this.isMenuOpened = false;
+        document.body.style.overflow = null;
+      },
+      langButtonPressed(lang) {
+        if (this.selectedLang === lang) {
+          this.isLanguagesSelecting = !this.isLanguagesSelecting;
+        } else {
+          this.selectedLang = lang;
+          this.isLanguagesSelecting = false;
+        }
+      },
       setDefaultIndexes(width = this.windowWidth) {
         if (width >= productsBreakpoint && this.productActiveIndex===null) {
           this.productActiveIndex = 0;
@@ -185,6 +214,7 @@ Vue.component('factor-circle', {
       },
       setProduct(value) {
         if (this.productActiveIndex !== value ) {
+          this.productGoing = this.productActiveIndex > value ? 'right' : 'left';
           this.productActiveIndex = value;
         } else {
           this.productActiveIndex = null;
@@ -192,6 +222,7 @@ Vue.component('factor-circle', {
       },
       setConcept(value) {
         if (this.conceptActiveIndex !== value) {
+          this.conceptGoing = this.conceptActiveIndex > value ? 'right' : 'left';
           this.conceptActiveIndex = value;
         } else {
           this.conceptActiveIndex = null;
@@ -222,9 +253,11 @@ Vue.component('factor-circle', {
       },
       closeModal() {
         this.showModal = false;
+        document.body.style.overflow = null;
       },
       openModal() {
         this.showModal = true;
+        document.body.style.overflow = 'hidden';
       },
     },
     mounted() {
