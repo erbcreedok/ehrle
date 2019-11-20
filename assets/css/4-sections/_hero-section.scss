@@ -43,7 +43,8 @@
   }
   .container {
     @include flex;
-    @include py(160px);
+    @include py(calc((100vh - (540px + 135px))/2));
+    @include my(85px, 50px);
     position: relative;
     z-index: 2;
   }
@@ -69,7 +70,7 @@
       max-width: 400px;
     }
     .container {
-      @include py(120px);
+      @include my(50px);
     }
   }
   @media (max-width: 991.98px) {
@@ -80,7 +81,7 @@
       font-size: 58px;
     }
     .container {
-      @include py(80px);
+      @include my(50px);
     }
   }
   @media (max-width: 767.98px) {
@@ -90,7 +91,7 @@
       }
     }
     .container {
-      @include py(40px, 80px);
+      @include my(40px, 80px);
     }
     .hero_container {
       max-width: 100%;

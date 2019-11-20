@@ -464,7 +464,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -webkit-transition: .15s;
+    -moz-transition: .15s;
     transition: .15s; }
   .form_field .input:-ms-input-placeholder {
     color: #95a5a6;
@@ -477,7 +477,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -webkit-transition: .15s;
+    -ms-transition: .15s;
     transition: .15s; }
   .form_field .input::-ms-input-placeholder {
     color: #95a5a6;
@@ -490,7 +490,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -webkit-transition: .15s;
+    -ms-transition: .15s;
     transition: .15s; }
   .form_field .input + .input_label, .form_field .input::placeholder {
     color: #95a5a6;
@@ -1838,8 +1838,7 @@ a.a_custom, a.a_custom:hover {
       padding-bottom: 40px; } }
 
 header {
-  position: relative;
-  height: 70px; }
+  position: relative; }
   @media (max-width: 768.98px) {
     header {
       height: 50px; } }
@@ -1922,8 +1921,10 @@ header {
   .hero_section .container {
     display: -webkit-box;
     display: flex;
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding-top: calc((100vh - (540px + 135px))/2);
+    padding-bottom: calc((100vh - (540px + 135px))/2);
+    margin-top: 85px;
+    margin-bottom: 50px;
     position: relative;
     z-index: 2; }
   .hero_section .hero_container {
@@ -1942,22 +1943,22 @@ header {
     .hero_section .hero_container {
       max-width: 400px; }
     .hero_section .container {
-      padding-top: 120px;
-      padding-bottom: 120px; } }
+      margin-top: 50px;
+      margin-bottom: 50px; } }
   @media (max-width: 991.98px) {
     .hero_section .hero_container {
       max-width: 320px; }
     .hero_section .landing_header {
       font-size: 58px; }
     .hero_section .container {
-      padding-top: 80px;
-      padding-bottom: 80px; } }
+      margin-top: 50px;
+      margin-bottom: 50px; } }
   @media (max-width: 767.98px) {
     .hero_section .slide:after, .hero_section .slide:before {
       content: none; }
     .hero_section .container {
-      padding-top: 40px;
-      padding-bottom: 80px; }
+      margin-top: 40px;
+      margin-bottom: 80px; }
     .hero_section .hero_container {
       max-width: 100%;
       margin-left: auto;
