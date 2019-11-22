@@ -1,0 +1,21 @@
+.content_header {
+  font-size: 3rem;
+}
+.content_subtitle {
+  font-size: 24px;
+  color: #717171;
+}
+.content_header-parallax {
+  font-size: 8rem;
+  display: block;
+  position: fixed;
+  opacity: .1;
+  white-space: nowrap;
+  -webkit-transform: translateZ(-2px) scale(2);
+  transform: translateZ(-2px) scale(2);
+}
+.content {
+  position: relative;
+  overflow-y: hidden;
+  perspective: 1px;
+}

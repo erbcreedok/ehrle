@@ -895,8 +895,8 @@ a.a_custom, a.a_custom:hover {
   .accordion_option_label {
     font-size: 20px;
     font-weight: 600;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     position: relative;
     cursor: pointer;
     padding-right: 30px; }
@@ -919,21 +919,83 @@ a.a_custom, a.a_custom:hover {
       transition: .3s; }
   .accordion_option_body {
     max-height: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    -webkit-transition: .3s ease-in;
-    transition: .3s ease-in; }
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-transition: .3s;
+    transition: .3s; }
   .accordion_option-selected .accordion_option_label {
     color: #d83139; }
-  .accordion_option-selected .accordion_option_label:after {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg); }
+    .accordion_option-selected .accordion_option_label:after {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); }
   .accordion_option-selected .accordion_option_body {
     overflow: hidden;
     display: block;
     max-height: 800px;
-    margin-top: 25px;
-    margin-bottom: 25px; }
+    padding-top: 25px;
+    padding-bottom: 25px; }
+
+.accordion-stepped .accordion {
+  content: .accordion; }
+  .accordion-stepped .accordion_option {
+    background: #ecf0f1;
+    margin-bottom: 25px;
+    overflow: visible; }
+    .accordion-stepped .accordion_option:not(:last-child):after {
+      content: '';
+      height: auto;
+      top: 100%;
+      right: 0;
+      bottom: auto;
+      left: 0;
+      margin: auto;
+      background: none;
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid #ecf0f1; }
+    .accordion-stepped .accordion_option_label {
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0; }
+      .accordion-stepped .accordion_option_label:after {
+        content: none; }
+      .accordion-stepped .accordion_option_label_title {
+        font-size: 1.4rem;
+        margin-top: 10px; }
+      .accordion-stepped .accordion_option_label_number {
+        top: 8px;
+        left: 0;
+        position: absolute;
+        font-size: 3rem; }
+      .accordion-stepped .accordion_option_label_image {
+        max-height: 0;
+        margin: 0;
+        overflow: hidden;
+        -webkit-transition: .4s;
+        transition: .4s; }
+    .accordion-stepped .accordion_option_body {
+      overflow: hidden;
+      color: white;
+      padding-top: 0;
+      padding-bottom: 0; }
+    .accordion-stepped .accordion_option-selected {
+      background: #d83139; }
+      .accordion-stepped .accordion_option-selected:not(:last-child):after {
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #d83139; }
+      .accordion-stepped .accordion_option-selected .accordion_option_label {
+        color: white; }
+        .accordion-stepped .accordion_option-selected .accordion_option_label_image {
+          max-height: 100px;
+          margin: 10px; }
+      .accordion-stepped .accordion_option-selected .accordion_option_body {
+        padding-top: 0;
+        padding-bottom: 0; }
 
 @-webkit-keyframes slide_down {
   from {
@@ -2161,6 +2223,28 @@ a.a_custom, a.a_custom:hover {
       padding-top: 40px;
       padding-bottom: 40px; } }
 
+.content_header {
+  font-size: 3rem; }
+
+.content_subtitle {
+  font-size: 24px;
+  color: #717171; }
+
+.content_header-parallax {
+  font-size: 8rem;
+  display: block;
+  position: fixed;
+  opacity: .1;
+  white-space: nowrap;
+  -webkit-transform: translateZ(-2px) scale(2);
+  transform: translateZ(-2px) scale(2); }
+
+.content {
+  position: relative;
+  overflow-y: hidden;
+  -webkit-perspective: 1px;
+          perspective: 1px; }
+
 header {
   position: relative; }
   @media (max-width: 768.98px) {
@@ -2539,5 +2623,15 @@ header {
         color: #d83139; }
     .footer_external_links > span {
       margin-left: auto; }
+
+.content_beskontakt {
+  padding-top: 70px; }
+  .content_beskontakt .paragraph {
+    text-align: justify; }
+  .content_beskontakt .accordion {
+    margin: 0 0 30px 60px;
+    float: right;
+    max-width: 100%;
+    width: 400px; }
 
 /*# sourceMappingURL=main.css.map */

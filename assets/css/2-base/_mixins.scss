@@ -1,11 +1,18 @@
 @import "./variables";
 
-@mixin arrow_triangle_up($color, $width, $height: $width){
+@mixin arrow_triangle_up($color: $c_gray_1, $width: 20px, $height: $width){
   width: 0;
   height: 0;
   border-left: $width/2 solid transparent;
   border-right: $width/2 solid transparent;
   border-bottom: $height solid $color;
+}
+@mixin arrow_triangle_down($color: $c_gray_1, $width: 20px, $height: $width){
+  width: 0;
+  height: 0;
+  border-left: $width/2 solid transparent;
+  border-right: $width/2 solid transparent;
+  border-top: $height solid $color;
 }
 @mixin pseudo_block {
   content: '';

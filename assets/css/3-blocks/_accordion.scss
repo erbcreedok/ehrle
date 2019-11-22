@@ -1,7 +1,7 @@
 @import "../2-base/variables";
 @import "../2-base/mixins";
 
-.accordion {
+.accordion{
   &_list {
     @include ul_custom;
   }
@@ -18,7 +18,7 @@
     &_label {
       font-size: 20px;
       font-weight: 600;
-      @include my(15px);
+      @include py(15px);
       position: relative;
       cursor: pointer;
       padding-right: 30px;
@@ -32,20 +32,85 @@
     }
     &_body {
       max-height: 0;
-      @include my(0);
-      transition: .3s ease-in;
+      @include py(0);
+      transition: .3s;
     }
-    &-selected &_label {
-      color: $c_red;
+    &-selected & {
+      &_label {
+        color: $c_red;
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+      &_body{
+        overflow: hidden;
+        display: block;
+        max-height: 800px;
+        @include py(25px);
+      }
     }
-    &-selected &_label:after {
-      transform: rotate(180deg);
-    }
-    &-selected &_body{
-      overflow: hidden;
-      display: block;
-      max-height: 800px;
-      @include my(25px);
+  }
+  $p: &;
+  &-stepped & {
+    content: #{$p};
+    &_option {
+      background: $c_gray_1;
+      margin-bottom: 25px;
+      overflow: visible;
+      &:not(:last-child):after {
+        content: '';
+        height: auto;
+        @include trbl(100%, 0, auto);
+        margin: auto;
+        background: none;
+        @include arrow_triangle_down($c_gray_1, 40px, 20px);
+      }
+      &_label {
+        text-align: center;
+        @include px(0);
+        &:after {
+          content: none;
+        }
+        &_title {
+          font-size: 1.4rem;
+          margin-top: 10px;
+        }
+        &_number {
+          top: 8px;
+          left: 0;
+          position: absolute;
+          font-size: 3rem;
+        }
+        &_image {
+          max-height: 0;
+          margin: 0;
+          overflow: hidden;
+          transition: .4s;
+        }
+      }
+      &_body {
+        overflow: hidden;
+        color: white;
+        @include py(0);
+      }
+      &-selected {
+        background: $c_red;
+        &:not(:last-child):after {
+          @include arrow_triangle_down($c_red, 40px, 20px);
+        }
+        #{$p}_option {
+          &_label {
+            color: white;
+            &_image {
+              max-height: 100px;
+              margin: 10px;
+            }
+          }
+          &_body {
+            @include py(0);
+          }
+        }
+      }
     }
   }
 }

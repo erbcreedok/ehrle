@@ -120,6 +120,7 @@ Vue.component('factor-circle', {
       languages: ['ru', 'kz', 'en'],
       isLanguagesSelecting: false,
       isMenuOpened: false,
+      selectedProgram: null,
     },
     computed: {
       factorElements() {
@@ -171,6 +172,13 @@ Vue.component('factor-circle', {
       },
     },
     methods: {
+      setProgram(value) {
+        if (value === this.selectedProgram) {
+          this.selectedProgram = null;
+        } else {
+          this.selectedProgram = value;
+        }
+      },
       toggleMenu() {
         if (this.isMenuOpened) {
           this.closeMenu();
