@@ -224,7 +224,7 @@ Vue.component('factor-circle', {
         if (this.productActiveIndex !== value ) {
           this.productGoing = this.productActiveIndex > value ? 'right' : 'left';
           this.productActiveIndex = value;
-        } else {
+        } else if (this.windowWidth < productsBreakpoint) {
           this.productActiveIndex = null;
         }
       },
@@ -232,7 +232,7 @@ Vue.component('factor-circle', {
         if (this.conceptActiveIndex !== value) {
           this.conceptGoing = this.conceptActiveIndex > value ? 'right' : 'left';
           this.conceptActiveIndex = value;
-        } else {
+        } else if (this.windowWidth < conceptsBreakpoint){
           this.conceptActiveIndex = null;
         }
       },

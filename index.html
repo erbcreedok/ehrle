@@ -137,7 +137,7 @@
           <span class="icon_block_icon_text fw-bold">{{lang.toUpperCase()}}</span>
         </div>
       </button>
-      <div class="lang_select_backdrop"></div>
+      <div class="lang_select_backdrop" @click="langButtonPressed(selectedLang)"></div>
     </div>
   </div>
 </nav>
@@ -918,7 +918,7 @@
       </ul>
     </div>
     <div class="item item-wide">
-      <div class="d-flex flex-wrap">
+      <div class="d-sm-flex flex-wrap">
         <div class="footer_label">Приходите к нам в гости</div>
         <div class="footer_social social_links">
           <div class="footer_label social_label">Мы в соц. сетях:</div>

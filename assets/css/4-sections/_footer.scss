@@ -94,6 +94,15 @@
     & > span {
       margin-left: auto;
     }
+    @media (max-width: 1172px) {
+      display: block;
+      & > a, & > span {
+        display: block;
+        text-align: center;
+        @include mx(0);
+        @include my(10px);
+      }
+    }
   }
 
 }

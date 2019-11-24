@@ -137,19 +137,22 @@
           <span class="icon_block_icon_text fw-bold">{{lang.toUpperCase()}}</span>
         </div>
       </button>
-      <div class="lang_select_backdrop"></div>
+      <div class="lang_select_backdrop" @click="langButtonPressed(selectedLang)"></div>
     </div>
   </div>
 </nav>
 </header>
+    <div class="video_beskontakt">
+<iframe style="height: 100vh; width: 100vw" src="https://www.youtube.com/embed/Rhl1DGsswIE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
     <section class="content content_beskontakt">
   <div class="container">
     <h1 class="content_header" title="Бесконтактная мойка">Бесконтактная мойка</h1>
     <p class="content_subtitle">Бренд EHRLE однозначно ассоциируется с бесконтактной технологией,<br/> совершенствуемой инженерами на протяжении многих лет</p>
     <div class="paragraph">
       <div class="accordion accordion-stepped">
-  <h3>Мойки EHRLE применяют 4 программы мытья</h3>
-  <p>чтобы узнать больше, нажмите на выбранную программу</p>
+  <h3 class="accordion_title">Мойки EHRLE применяют 4 программы мытья</h3>
+  <p class="accordion_subtitle">чтобы узнать больше, нажмите на выбранную программу</p>
   <ul class="accordion_list">
     <li class="accordion_option" :class="{'accordion_option-selected': selectedProgram===0}" @click="setProgram(0)">
       <div class="accordion_option_label">
@@ -285,7 +288,7 @@
       </ul>
     </div>
     <div class="item item-wide">
-      <div class="d-flex flex-wrap">
+      <div class="d-sm-flex flex-wrap">
         <div class="footer_label">Приходите к нам в гости</div>
         <div class="footer_social social_links">
           <div class="footer_label social_label">Мы в соц. сетях:</div>

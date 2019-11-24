@@ -105,7 +105,7 @@ gulp.task('renameSources', function() {
     .pipe(gulp.dest(dist + '/'));
 });
 
-gulp.task("build", ['minifyProdScripts', 'minifyCss'], function() {
+gulp.task("build", ['minifyProdScripts', 'minifyCss', 'fileInclude'], function() {
   return gulp.src([
     '*.html',
     '*.php',

@@ -19,6 +19,7 @@
   }
   &_row {
     @include flex;
+    @include flex_wrap;
     @include justify_content(space-between);
   }
   &_col {

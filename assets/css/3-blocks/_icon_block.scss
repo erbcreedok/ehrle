@@ -3,4 +3,5 @@
 
 .icon_block {
   @include icon_block;
+  overflow: hidden;
 }
