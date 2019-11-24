@@ -1,3 +1,4 @@
+@import "../2-base/variables";
 @import "../2-base/mixins";
 
 .content_header {
@@ -17,7 +18,45 @@
   transform: translateZ(-2px) scale(2);
 }
 .content {
+  $p: &;
   position: relative;
   overflow-y: hidden;
   @include py(50px);
+  .paragraph {
+    font-size: 16px;
+  }
+  &-color {
+    color: white;
+    background: $c_gray;
+    .paragraph {
+      color: white;
+    }
+    #{$p}_subtitle {
+      color: darken(white, 10);
+    }
+  }
+  &_image_wrapper {
+    $color: darken($c_gray_1, 60);
+    border: $color solid 1px;
+    border-radius: 4px;
+    padding: 10px;
+    position: relative;
+    &:before, &:after {
+      @include pseudo_absolute;
+      @include trbl(0,auto,0,auto);
+      @include my(auto);
+      height: 1px;
+      width: 100vw;
+      background: $color;
+    }
+    &:before {
+      left: 100%;
+    }
+    &:after {
+      right: 100%;
+    }
+    img {
+      border-radius: 2px;
+    }
+  }
 }

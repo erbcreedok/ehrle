@@ -92,6 +92,18 @@ body {
   @media (max-width: 767.98px) {
     font-size: 14px;
   }
+  &-j {
+    text-align: justify;
+  }
+  &-r {
+    text-align: right;
+  }
+  &-l {
+    text-align: left;
+  }
+  &-c {
+    text-align: center;
+  }
 }
 a.a_custom {
   &, &:hover {

@@ -130,6 +130,14 @@ body {
   @media (max-width: 767.98px) {
     .paragraph {
       font-size: 14px; } }
+  .paragraph-j {
+    text-align: justify; }
+  .paragraph-r {
+    text-align: right; }
+  .paragraph-l {
+    text-align: left; }
+  .paragraph-c {
+    text-align: center; }
 
 a.a_custom, a.a_custom:hover {
   color: inherit;
@@ -247,6 +255,14 @@ body {
   @media (max-width: 767.98px) {
     .paragraph {
       font-size: 14px; } }
+  .paragraph-j {
+    text-align: justify; }
+  .paragraph-r {
+    text-align: right; }
+  .paragraph-l {
+    text-align: left; }
+  .paragraph-c {
+    text-align: center; }
 
 a.a_custom, a.a_custom:hover {
   color: inherit;
@@ -2252,6 +2268,39 @@ a.a_custom, a.a_custom:hover {
   overflow-y: hidden;
   padding-top: 50px;
   padding-bottom: 50px; }
+  .content .paragraph {
+    font-size: 16px; }
+  .content-color {
+    color: white;
+    background: #6c757d; }
+    .content-color .paragraph {
+      color: white; }
+    .content-color .content_subtitle {
+      color: #e6e6e6; }
+  .content_image_wrapper {
+    border: #495d62 solid 1px;
+    border-radius: 4px;
+    padding: 10px;
+    position: relative; }
+    .content_image_wrapper:before, .content_image_wrapper:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+      height: 1px;
+      width: 100vw;
+      background: #495d62; }
+    .content_image_wrapper:before {
+      left: 100%; }
+    .content_image_wrapper:after {
+      right: 100%; }
+    .content_image_wrapper img {
+      border-radius: 2px; }
 
 header {
   position: relative; }
@@ -2642,17 +2691,60 @@ header {
           margin-top: 10px;
           margin-bottom: 10px; } }
 
-.content_beskontakt .paragraph {
-  text-align: justify; }
+.content_beskontakt {
+  padding-bottom: 100px;
+  border-bottom: 1px solid #ecf0f1; }
+  .content_beskontakt .paragraph {
+    text-align: justify; }
+  .content_beskontakt .accordion {
+    margin: 0 0 30px 60px;
+    float: right;
+    max-width: 100%;
+    width: 400px; }
+  .content_beskontakt + .content {
+    padding-top: 100px; }
 
-.content_beskontakt .accordion {
-  margin: 0 0 30px 60px;
-  float: right;
-  max-width: 100%;
-  width: 400px; }
+.video_beskontakt {
+  position: relative; }
+  .video_beskontakt .video_embed {
+    height: 100vh;
+    width: 100vw; }
+    @media (min-width: 768px) {
+      .video_beskontakt .video_embed {
+        padding-top: 70px; } }
+  .video_beskontakt .video_bg {
+    height: 100vh;
+    width: 100vw;
+    -o-object-fit: cover;
+       object-fit: cover; }
+    @media (min-width: 768px) {
+      .video_beskontakt .video_bg {
+        padding-top: 70px; } }
+  .video_beskontakt-paused:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(216, 49, 57, 0.2);
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(130, 7, 7, 0.75)), color-stop(50%, rgba(216, 49, 57, 0.4)), to(rgba(216, 49, 57, 0)));
+    background: linear-gradient(0deg, rgba(130, 7, 7, 0.75) 0%, rgba(216, 49, 57, 0.4) 50%, rgba(216, 49, 57, 0) 100%); }
+  .video_beskontakt_display {
+    top: 40%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    max-width: 700px;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    color: white;
+    text-align: center; }
 
-@media (min-width: 768px) {
-  .video_beskontakt iframe {
-    padding-top: 70px; } }
+.content_modul_line {
+  background: url("../images/etronic4_bg.jpg"); }
 
 /*# sourceMappingURL=main.css.map */

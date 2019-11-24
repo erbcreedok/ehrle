@@ -12231,6 +12231,7 @@ Vue.component('factor-circle', {
       isLanguagesSelecting: false,
       isMenuOpened: false,
       selectedProgram: null,
+      videoPlayed: false,
     },
     computed: {
       factorElements() {

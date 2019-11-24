@@ -142,8 +142,28 @@
   </div>
 </nav>
 </header>
-    <div class="video_beskontakt">
-<iframe style="height: 100vh; width: 100vw" src="https://www.youtube.com/embed/Rhl1DGsswIE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video_beskontakt content-color" :class="{'video_beskontakt-paused': !videoPlayed}">
+  <iframe v-if="videoPlayed" class="video_embed" src="https://www.youtube.com/embed/Rhl1DGsswIE?autoplay=1&loop=1&enablejsapi=1&&playerapiid=featuredytplayer&controls=0&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3&theme=light&wmode=transparent" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <template v-else>
+  <video src="../assets/images/video_bg.mp4" autoplay muted loop class="video_bg"></video>
+  <div class="video_beskontakt_display">
+    <button class="play_button btn_custom" @click="videoPlayed=true">
+      <svg width="70px" height="70px" viewBox="0 0 60 60">
+    <g stroke="none" stroke-width="1" fill="" fill-rule="evenodd">
+        <g transform="translate(-691.000000, -3514.000000)" fill="#FFFFFF">
+            <path d="M721,3574 C737.568542,3574 751,3560.56854 751,3544 C751,3527.43146 737.568542,3514 721,3514 C704.431458,3514 691,3527.43146 691,3544 C691,3560.56854 704.431458,3574 721,3574 Z M715,3534 L732,3544.5 L715,3555 L715,3534 Z"></path>
+        </g>
+    </g>
+</svg>
+    </button>
+    <h2 class="content_header mt-5 mb-3">
+      Технология моек EHRLE
+    </h2>
+    <p class="paragraph">
+      Бренд EHRLE однозначно ассоциируется с бесконтактной технологией, совершенствуемой инженерами на протяжении многих лет
+    </p>
+  </div>
+  </template>
 </div>
     <section class="content content_beskontakt">
   <div class="container">
@@ -223,6 +243,61 @@
       Умелое мытье автомобиля, инновационная технология и использованные высококачественные химические средства это причины, для которых бесконтактная мойка самообслуживания EHRLE, позволяет достичь отличного удовлетворяющего результата без риска получить царапины и другие возможные повреждения, связанные с применением щеток.<br/>
       <br/>
       Немецкая точность и инновационные технологические идеи получили много разных наград. Самым ценным является Сертификат качества VDA, который получила мойка самообслуживания EHRLE, подтверждающий безопасность бесконтактного мытья.
+    </div>
+  </div>
+</section>
+    <section class="content content_beskontakt">
+  <div class="container">
+    <h2 class="content_header" title="Бесконтактная мойка">Сертификат VDA</h2>
+    <p class="content_subtitle">Выдаваемый Союзом немецкой автомобильной промышленности Сертификат качества VDA (Verband der Automobilindustrie) является элитарной наградой для тех производителей, которые отвечают строгим требованиям и стандартам качества, установленным этим престижным институтом.</p>
+    <div class="text-center">
+      <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/vda.jpg" alt="" width="100%">
+      </span>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pr-md-4">
+        <p class="paragraph mb-md-5">Среди них – немецкая система менеджмента качества QMC автомобильной промышленности. VDA QMC это сертификат, выдаваемый экспертами качества, которые по заказу производителей и поставщиков автомобилей проводят исследования с целью разработки единых технологических стандартов качества продукции: [Certyfikat VDA dla myjni EHRLE]</p>
+        <p class="paragraph">
+          <strong>функциональность:</strong>&nbsp;уровень и диапазон реализации ожидаемых функций<br>
+          <strong>практичность:</strong>&nbsp;удобство пользования, легкость обслуживания и хранения и их эргономичность<br>
+          <strong>надежность:</strong>&nbsp;способность работать без недостатков и дефектов<br>
+          <strong>прочность:</strong>&nbsp;срок сохранения используемых свойств<br>
+          <strong>безопасность пользования</strong>
+        </p>
+      </div>
+      <div class="col-md-6 pl-md-4">
+        <p class="paragraph">Последний пункт бесспорно подтверждает, что автомойки EHRLE абсолютно безопасные для самого чувствительного к повреждениям лакокрасочного покрытия автомобилей, в том числе нового. Доказательством этого является существование бесконтактных автомоек самообслуживания EHRLE в автосалонах и сервисных центрах известных марок. Компания EHRLE – первый и единственный производитель бесконтактных автомоек на нашем рынке сертифицированный VDA для бесконтактной технологии мытья. Кроме техники высокую оценку получили химические средства, производимые компанией EHRLE.</p>
+        <p class="paragraph">Для убеждения клиента в качестве предлагаемой ему услуги, автомойки EHRLE дополнительно обладают знаком Сертифицированного качества мытья EHRLE.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="content content-color content_modul_line">
+  <div class="container">
+    <h2 class="content_header">Modul Line ETRONIC 4</h2>
+    <p class="content_subtitle">Новаторская модель автомойки ModulLine и операционная система ETRONIC 4 - это новейшие решения, достойные современного производства.</p>
+    <div class="text-center my-4">
+      <span style="max-width: 250px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/modul_line.png" alt="" width="100%">
+      </span>
+    </div>
+    <p class="paragraph paragraph-c">
+      Автомойки EHRLE более десятка лет обладают системой дистанционного управления данными и настройками через GSM либо интернет. В настоящее время старая система заменяется новой: ETRONIC 4, являющейся плодом сотрудничества с инженерами немецкой компании SIEMENS. Это инновационная и современная система в отрасли автомоек для контроля, автодиагностики, а так же диагностики оборудования для сервисного центра EHRLE.
+    </p>
+    <div class="text-center my-4">
+      <span class="content_image_wrapper" style="max-width: 400px; display: inline-block;">
+        <img src="./assets/images/module_line.jpg" alt="" width="100%">
+      </span>
+    </div>
+    <h2 class="mb-3 text-center">Для выбора Инвестором предоставляется две версии системы:</h2>
+    <div class="row">
+      <div class="col-md-6 pr-md-4">
+        <p class="paragraph paragraph-j mb-md-5">Basic – в стандартной комплектации автомойки CarWash Indoor Modul Line ETRONIC 4. Инвестор на сенсорном дисплее компьютера SIEMENS либо через ISDN/DSL или GSM, имеет доступ ко всем базовым настройкам: время работы оборудования, счастливые часы (happy hours), дозирование химии, а также доступ к статистическим данным по оборотам автомойки в течение определенного периода времени. Версия Basic информирует Инвестора об основных рабочих параметрах автомойки, отправляет электронные сообщения о сервисных проблемах. Опция мониторинга CM1 предоставляет Инвестору актуальную информацию о температуре воздуха и температуре технической воды. От отдельных контроллеров каждого поста данные передаются на главный компьютер.</p>
+      </div>
+      <div class="col-md-6 pl-md-4">
+        <p class="paragraph paragraph-j">Comfort&nbsp;– система позволяет осуществлять дистанционную диагностику оборудования и анализ возможных сервисных проблем на сенсорном дисплее с большим разрешением 12,1’’. Инвестор на сенсорной панели компьютера, либо через модем ISDN/DSL или GSM, имеет доступ к дополнительным информациям, в том: техническое состояние коммуникаций и отдельных модулей, а также отдельных элементов оборудования. Есть возможность контролировать заполнение емкостей жидкой химией и порошком. Предлагается 2 опции системы мониторинга: CM2 и CM3, есть также возможность комплектации согласно пожеланиям Инвестора. Опция CM2 позволяет контролировать все системы оборудования, которые отображаются на мониторе компьютера в форме графической схемы. Опция CM2 позволяет проверять следующие параметры: давление воды из сети, давление воды для мытья, давление осмотической воды или воды системы противзамерзания. Опция CM3 обладает всеми функциями опции CM2, а также позволяет следить за уровнем моющих средств в емкостях: МикроПорошка&nbsp;<em>Active PowerPearl MicroPowder™</em>, воска&nbsp;<em>UltraProtection</em>&nbsp;и осушителя&nbsp;<em>SuperFinish.</em></p>
+      </div>
     </div>
   </div>
 </section>
