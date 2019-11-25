@@ -74,7 +74,7 @@
       }
       &_label {
         text-align: center;
-        @include px(0);
+        @include px(10px);
         &:after {
           content: none;
         }
@@ -84,7 +84,7 @@
         }
         &_number {
           top: 8px;
-          left: 0;
+          left: -8px;
           position: absolute;
           font-size: 3rem;
           opacity: .2;

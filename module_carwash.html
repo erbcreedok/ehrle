@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="google-site-verification" content="" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Yerbol Syzdyk, Aidos Kurmashev">
+  <meta property="og:image" content="url_image">
+  <title>Бесконтакная мойка - EHRLE</title>
+  <meta property="og:title" content="">
+  <meta property="twitter:title" content="">
+  <meta property="og:description" content="">
+  <meta property="twitter:description" content="">
+  <meta name="twitter:image" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:locale" content="ru-RU">
+  <meta name="twitter:url" content="">
+  <meta name="yandex-verification" content=""/>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <!-- endbuild -->
+</head>
+<body class="lang-ru">
+<div id="app">
+  <input type="hidden" value="module_carwash" id="sitepage">
+  <header>
+<div class="menu" :class="{'menu-opened': isMenuOpened}">
+  <div class="container">
+    <div class="menu_nav menu_row">
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Продукты</a>
+        <div class="menu_links">
+          <a class="menu_link" href="./container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
+          <a class="menu_link" href="./module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
+          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка JetWash</a>
+          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
+          <a class="menu_link" href="./chemistry.html" @click="closeMenu">Химия</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/mietallokonstrukcyi/" target="_blank">Металлоконструкции</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/aksiessuary/" target="_blank">Аксессуары</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/apparaty_wysokogo_dawlenija/" target="_blank">Аппараты высокого давления</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/profiessionalnyje_pylesosy/" target="_blank">Профессиональные пылесосы</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Компания</a>
+        <div class="menu_links">
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/tradicyi/" target="_blank">Традиция</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/ehrle_w_mirie/" target="_blank">EHRLE в мире</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/naszy_zawody/" target="_blank">Наши заводы</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/nowosti_ehrle/" target="_blank">Новости EHRLE</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Технология</a>
+        <div class="menu_links">
+          <a class="menu_link" href="./beskontakt.html#beskontakt" @click="closeMenu">Бесконтакная мойка</a>
+          <a class="menu_link" href="./beskontakt.html#vda" @click="closeMenu">Сертификат VDA</a>
+          <a class="menu_link" href="./beskontakt.html#modul_line" @click="closeMenu">Modul Line ETRONIC 4</a>
+          <a class="menu_link" href="./beskontakt.html#ehrlesol"  @click="closeMenu">EHRLESol™</a>
+          <a class="menu_link" href="./beskontakt.html#real_time_display" @click="closeMenu">Real Time Display</a>
+          <a class="menu_link" href="./beskontakt.html#lce_slm" @click="closeMenu">LCE / SLM</a>
+          <a class="menu_link" href="./beskontakt.html#micropowder" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
+          <a class="menu_link" href="./beskontakt.html#foam" @click="closeMenu">Активная пена</a>
+        </div>
+        <div class="social_links">
+          <div class="menu_title social_label mb-0">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="menu_line"></div>
+    <div class="menu_footer menu_row">
+      <div class="menu_col">
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Почему Ehrle</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Программа лояльности</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Инвестиционный процесс шаг за шагом</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Галерея реализации</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Спроектируй свою мойку</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Стройка И Монтаж Автомойки EHRLE</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Ehrle в зимний период</a>
+      </div>
+      <div class="menu_col menu_col-wide">
+        <div class="menu_col_title menu_title">Приходите к нам в гости</div>
+        <a href="#" target="_blank" class="menu_map">
+          <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+        </a>
+      </div>
+      <div class="menu_col"></div>
+    </div>
+  </div>
+</div>
+<nav class="nav">
+  <div class="container d-flex">
+    <a href="/" class="mr-xl-3 mr-1"><img class="nav_brand" src="./assets/images/ehrle_logo.png" height="40px" alt=""></a>
+    <img class="nav_second_logo mr-xl-4 mr-2" src="./assets/images/german_logo.png" height="44px" alt="">
+    <div class="link_contact icon_block d-none d-md-block ml-auto mr-xl-3 mr-0">
+      <a href="tel: +77025026285" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/phone.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Номер телефона</div>
+      </a>
+    </div>
+    <div class="link_contact icon_block d-none d-md-block ml-xl-3 ml-1 mr-auto">
+      <a href="mailto: ehrle_carwash@gmail.com" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/email.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Адрес почты</div>
+      </a>
+    </div>
+    <div class="icon_block ml-auto">
+      <button class="btn_custom" @click="toggleMenu">
+        <div class="icon_block_icon">
+          <div class="menu_toggler" :class="{'menu_toggler-close': isMenuOpened}"><span></span><span></span><span></span></div>
+        </div>
+        <div class="d-none d-xl-block icon_block_value">Меню</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Все для бизнеса</div>
+      </button>
+    </div>
+    <div class="icon_block ml-xl-3 ml-1 lang_select lang_select_container" :class="{'lang_select-opened': isLanguagesSelecting}">
+      <button class="btn_custom lang_select_item" v-for="lang in languages" @click="langButtonPressed(lang)" :class="{'lang_select_item-selected': lang===selectedLang}">
+        <div class="icon_block_icon">
+          <span class="icon_block_icon_text fw-bold">{{lang.toUpperCase()}}</span>
+        </div>
+      </button>
+      <div class="lang_select_backdrop" @click="langButtonPressed(selectedLang)"></div>
+    </div>
+  </div>
+</nav>
+</header>
+  <div class="container content-first">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs-item">
+        <a href="./">Главная</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <a href="./#section_products">Продукты</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <span>Модульные автомойки CarWash</span>
+      </li>
+    </ul>
+  </div>
+  <div class="content pt-2 content-bordered">
+    <div class="container">
+      <h1 class="content_header">
+        Модульные автомойки CarWash
+      </h1>
+      <p class="content_subtitle">Модульная автомойка самообслуживания с системами точной дозации микропоршока и обратного осмоса на 2-3 поста.</p>
+      <div class="text-center mb-5">
+        <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+          <img src="./assets/images/module_carwash.jpg" alt="" width="100%">
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="paragraph paragraph-j"><strong>CarWash </strong>– модуль с системой управления мойкой, насосами высокого давления, котлом, клапанами и дозаторами химических средств.</p>
+
+          <p class="paragraph paragraph-j"><strong>AquaClean</strong> – блок водоподготовки с фильтрами, умягчителем, системой обратного осмоса и &nbsp;баком для деминерализованной воды.</p>
+
+          <p class="paragraph paragraph-j">Блоки устройства размещены между постами мойки. Существует возможность проектирования разных вариантов систем моек самообслуживания, благодаря соединению модулей CarWash и AquaClean.Главным преимуществом такого типа моек является их компактность, отсутствие технического контейнера ведёт к экономии пространства для размещения постов самообслуживания. Модульные мойки часто проектируются на небольших или угловых земельных участках.</p>
+
+          <p class="paragraph paragraph-j">Двойная система водоподготовки основана на производительном умягчителе воды и системе обратного осмоса, которые размещены в блоке AquaClean. Система гарантирует постоянно высокое качество воды, даже в случае круглосуточной работы мойки. Система обратного осмоса обеспечивает достаточное количество деминерализованной воды и отличный результат мойки без пятен и подтеков. Автомойки серии CarWash Outdoor выпускаются с дизельным, газовым или электрическим подогревом воды. Мойка управляется современным компьютером Siemens, а устанавливаемый в системе управления сенсорный TFT-дисплей дает владельцу автомойки доступ к информации о всех важных параметрах работы оборудования, а также точную финансовую информацию, &nbsp;в том числе доходы и обороты мойки.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="./assets/images/modules_cw.jpg" alt="" style="max-width: 450px; width: 100%" class="mx-auto mr-md-0 d-block">
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="./assets/images/modules_cw_large.jpg" width="100%"/>
+  <div class="content">
+    <div class="container">
+      <h2 class="content_header text-center">CarWash Outdoor</h2>
+      <p class="content_subtitle text-center">Устройство внутри</p>
+    </div>
+  </div>
+  <img src="./assets/images/modules_cw_indoor_ru.jpg" style="max-width: 1000px; width: 100%" class="d-block mx-auto"/>
+  <img src="./assets/images/modules_cw_indoor1.jpg" style="max-width: 1000px; width: 100%" class="d-block mx-auto mb-5"/>
+  <div class="content">
+    <div class="container">
+      <div class="content_header text-center">
+        <small>Технические данные</small>
+      </div>
+      <div class="table-container mx-auto mt-5" style="max-width: 800px">
+        <table class="table-classic table-lct">
+          <thead>
+            <tr>
+              <th>Технические данные</th>
+              <th>Единица</th>
+              <th>1 пост мойки*</th>
+              <th>2 поста мойки*</th>
+              <th>3 поста мойки*</th>
+              <th>4 поста мойки*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Расход воды на пост мойки</td>
+              <td>л/ч</td>
+              <td colspan="4">660</td>
+            </tr>
+            <tr>
+              <td>Рабочее давление</td>
+              <td>бар/МПа</td>
+              <td colspan="4">130/13</td>
+            </tr>
+            <tr>
+              <td>Способ обогрева</td>
+              <td>&nbsp;</td>
+              <td colspan="4">газовый / дизельный / электрический</td>
+            </tr>
+            <tr>
+              <td>Температура</td>
+              <td>oC</td>
+              <td colspan="4">60</td>
+            </tr>
+            <tr>
+              <td>Мощность горелки</td>
+              <td>кВт</td>
+              <td>35/18**</td>
+              <td>50/24**</td>
+              <td>74/36**</td>
+              <td>85</td>
+            </tr>
+            <tr>
+              <td>Производительность системы умягчения воды</td>
+              <td>m 3/ºdH</td>
+              <td colspan="4">2x120</td>
+            </tr>
+            <tr>
+              <td>Производительность мембраны (система обратного осмоса)*</td>
+              <td>л/сутки</td>
+              <td colspan="4">7200</td>
+            </tr>
+            <tr>
+              <td>Бак для деминерализованной воды*</td>
+              <td>л</td>
+              <td colspan="4">800</td>
+            </tr>
+            <tr>
+              <td>Емкость дозатора Микропорошка</td>
+              <td>л</td>
+              <td colspan="4">35</td>
+            </tr>
+            <tr>
+              <td>Емкость дозатора воска</td>
+              <td>л</td>
+              <td colspan="4">10</td>
+            </tr>
+            <tr>
+              <td>Емкость дозатора осушителя</td>
+              <td>л</td>
+              <td colspan="4">10</td>
+            </tr>
+            <tr>
+              <td>Параметры питания</td>
+              <td>Ph/V/Hz</td>
+              <td colspan="4">3F+N+Pe/400V/50Hz</td>
+            </tr>
+            <tr>
+              <td>Потребляемая мощность</td>
+              <td>кВт</td>
+              <td>6,8/24,8**</td>
+              <td>9/33*</td>
+              <td>11,2/47,2**</td>
+              <td>14,2</td>
+            </tr>
+            <tr>
+              <td>Габариты (Д*Ш*В)</td>
+              <td>см</td>
+              <td colspan="4">472x80x209</td>
+            </tr>
+            <tr>
+              <td>Вес</td>
+              <td>кг</td>
+              <td>1.360</td>
+              <td>1.450</td>
+              <td>1.540</td>
+              <td>1.630</td>
+            </tr>
+            <tr>
+              <td>Номер/Код для заказа</td>
+              <td>&nbsp;</td>
+              <td>500</td>
+              <td>501</td>
+              <td>506</td>
+              <td>506</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table_legend">
+          <p>*пост мойки (Wash Bay)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <p>**зависит от мощности эл. подогрева</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="footer_container_row">
+    <div class="item">
+      <div class="footer_label">
+        Еще больше информации
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link">
+          <a href="#" target="_blank">Почему Ehrle</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Программа лояльности</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Инвестиционный процесс шаг за шагом</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Галерея реализации</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Спроектируй свою мойку</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Стройка И Монтаж Автомойки EHRLE</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Ehrle в зимний период</a>
+        </li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="footer_label">
+        Контакты для связи
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/phone.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+            <div class="icon_block_subtitle">Номер телефона</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/email.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+            <div class="icon_block_subtitle">Адрес почты</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/map.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">г. Алматы, <br/>ул. Фурманова 38б</div>
+            <div class="icon_block_subtitle">Наш офис</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="item item-wide">
+      <div class="d-sm-flex flex-wrap">
+        <div class="footer_label">Приходите к нам в гости</div>
+        <div class="footer_social social_links">
+          <div class="footer_label social_label">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <a href="#" target="_blank" class="footer_map">
+        <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="footer_container">
+    <div class="footer_line"></div>
+    <div class="footer_external_links">
+      <!--<a href="#" target="_blank">Обработка персональных данных</a>-->
+      <!--<a href="#" target="_blank">Условия бронирования счёта</a>-->
+      <!--<a href="#" target="_blank">Пользовательское соглашение</a>-->
+      <span>Copyright © 2014 - 2019 <a href="/">EHRLE.</a> Все права защищены.</span>
+    </div>
+  </div>
+</footer>
+
+  <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
+    <div class="modal_backdrop" @click="closeModal"></div>
+    <div class="modal_container justify-content-between">
+        <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+        <div class="modal_body">
+            <h2 class="heading ">Введите ваши данные</h2>
+            <form class="modal_form">
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_name" placeholder=" ">
+                    <label for="modal_name" class="input_label"><span>Имя Фамилия</span></label>
+                </div>
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_phone" placeholder="+7 (000) 000 - 00 - 00">
+                    <label for="modal_phone" class="input_label"><span>Телефон</span></label>
+                </div>
+                <div class="form_item">
+                    <button type="submit" class="btn btn_primary">Оставить заявку</button>
+                </div>
+            </form>
+            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

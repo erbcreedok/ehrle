@@ -1,0 +1,34 @@
+@import "../2-base/mixins";
+
+.breadcrumbs {
+  @include ul_custom;
+  @include flex;
+  @include py(10px);
+  white-space: nowrap;
+  overflow-x: auto;
+  .breadcrumbs-item {
+    font-size: 14px;
+    position: relative;
+    a {
+      color: $c_dark;
+      &:hover {
+        color: $c_red;
+      }
+    }
+    padding-right: 20px;
+    &:after {
+      @include pseudo_absolute;
+      @include trbl(0,4px,0,auto);
+      @include my(auto);
+      background: url($images + '/arrow-right.svg') no-repeat center;
+      height: 12px;
+      width: 12px;
+    }
+    &:last-child {
+      padding-right: 0;
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

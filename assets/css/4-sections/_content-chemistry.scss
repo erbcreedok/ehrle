@@ -1,0 +1,25 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.content_chemistry {
+  .row > div {
+    margin-bottom: 30px;
+    ul {
+      list-style: none;
+      li {
+        text-align: left;
+        padding-left: 15px;
+        position: relative;
+        margin-bottom: 10px;
+        &:before {
+          @include pseudo_absolute;
+          @include circle(5px, $c_red);
+          @include trbl(6px, auto, auto, 0);
+        }
+      }
+    }
+  }
+  .row-colored {
+    background: #fafafa;
+  }
+}

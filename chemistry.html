@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="google-site-verification" content="" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Yerbol Syzdyk, Aidos Kurmashev">
+  <meta property="og:image" content="url_image">
+  <title>Бесконтакная мойка - EHRLE</title>
+  <meta property="og:title" content="">
+  <meta property="twitter:title" content="">
+  <meta property="og:description" content="">
+  <meta property="twitter:description" content="">
+  <meta name="twitter:image" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:locale" content="ru-RU">
+  <meta name="twitter:url" content="">
+  <meta name="yandex-verification" content=""/>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <!-- endbuild -->
+</head>
+<body class="lang-ru">
+<div id="app">
+  <input type="hidden" value="chemistry" id="sitepage">
+  <header>
+<div class="menu" :class="{'menu-opened': isMenuOpened}">
+  <div class="container">
+    <div class="menu_nav menu_row">
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Продукты</a>
+        <div class="menu_links">
+          <a class="menu_link" href="./container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
+          <a class="menu_link" href="./module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
+          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка JetWash</a>
+          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
+          <a class="menu_link" href="./chemistry.html" @click="closeMenu">Химия</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/mietallokonstrukcyi/" target="_blank">Металлоконструкции</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/aksiessuary/" target="_blank">Аксессуары</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/apparaty_wysokogo_dawlenija/" target="_blank">Аппараты высокого давления</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/profiessionalnyje_pylesosy/" target="_blank">Профессиональные пылесосы</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Компания</a>
+        <div class="menu_links">
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/tradicyi/" target="_blank">Традиция</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/ehrle_w_mirie/" target="_blank">EHRLE в мире</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/naszy_zawody/" target="_blank">Наши заводы</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/nowosti_ehrle/" target="_blank">Новости EHRLE</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Технология</a>
+        <div class="menu_links">
+          <a class="menu_link" href="./beskontakt.html#beskontakt" @click="closeMenu">Бесконтакная мойка</a>
+          <a class="menu_link" href="./beskontakt.html#vda" @click="closeMenu">Сертификат VDA</a>
+          <a class="menu_link" href="./beskontakt.html#modul_line" @click="closeMenu">Modul Line ETRONIC 4</a>
+          <a class="menu_link" href="./beskontakt.html#ehrlesol"  @click="closeMenu">EHRLESol™</a>
+          <a class="menu_link" href="./beskontakt.html#real_time_display" @click="closeMenu">Real Time Display</a>
+          <a class="menu_link" href="./beskontakt.html#lce_slm" @click="closeMenu">LCE / SLM</a>
+          <a class="menu_link" href="./beskontakt.html#micropowder" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
+          <a class="menu_link" href="./beskontakt.html#foam" @click="closeMenu">Активная пена</a>
+        </div>
+        <div class="social_links">
+          <div class="menu_title social_label mb-0">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="menu_line"></div>
+    <div class="menu_footer menu_row">
+      <div class="menu_col">
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Почему Ehrle</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Программа лояльности</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Инвестиционный процесс шаг за шагом</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Галерея реализации</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Спроектируй свою мойку</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Стройка И Монтаж Автомойки EHRLE</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Ehrle в зимний период</a>
+      </div>
+      <div class="menu_col menu_col-wide">
+        <div class="menu_col_title menu_title">Приходите к нам в гости</div>
+        <a href="#" target="_blank" class="menu_map">
+          <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+        </a>
+      </div>
+      <div class="menu_col"></div>
+    </div>
+  </div>
+</div>
+<nav class="nav">
+  <div class="container d-flex">
+    <a href="/" class="mr-xl-3 mr-1"><img class="nav_brand" src="./assets/images/ehrle_logo.png" height="40px" alt=""></a>
+    <img class="nav_second_logo mr-xl-4 mr-2" src="./assets/images/german_logo.png" height="44px" alt="">
+    <div class="link_contact icon_block d-none d-md-block ml-auto mr-xl-3 mr-0">
+      <a href="tel: +77025026285" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/phone.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Номер телефона</div>
+      </a>
+    </div>
+    <div class="link_contact icon_block d-none d-md-block ml-xl-3 ml-1 mr-auto">
+      <a href="mailto: ehrle_carwash@gmail.com" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/email.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Адрес почты</div>
+      </a>
+    </div>
+    <div class="icon_block ml-auto">
+      <button class="btn_custom" @click="toggleMenu">
+        <div class="icon_block_icon">
+          <div class="menu_toggler" :class="{'menu_toggler-close': isMenuOpened}"><span></span><span></span><span></span></div>
+        </div>
+        <div class="d-none d-xl-block icon_block_value">Меню</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Все для бизнеса</div>
+      </button>
+    </div>
+    <div class="icon_block ml-xl-3 ml-1 lang_select lang_select_container" :class="{'lang_select-opened': isLanguagesSelecting}">
+      <button class="btn_custom lang_select_item" v-for="lang in languages" @click="langButtonPressed(lang)" :class="{'lang_select_item-selected': lang===selectedLang}">
+        <div class="icon_block_icon">
+          <span class="icon_block_icon_text fw-bold">{{lang.toUpperCase()}}</span>
+        </div>
+      </button>
+      <div class="lang_select_backdrop" @click="langButtonPressed(selectedLang)"></div>
+    </div>
+  </div>
+</nav>
+</header>
+  <div class="container content-first">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs-item">
+        <a href="./">Главная</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <a href="./#section_products">Продукты</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <span>Химия</span>
+      </li>
+    </ul>
+  </div>
+  <div class="content pt-2 content-bordered">
+    <div class="container">
+      <h1 class="content_header">
+        Химия
+      </h1>
+      <p class="content_subtitle">Кроме оборудования высокого качества, компания EHRLE в своем постоянном ассортименте имеет оригинальные химические средства.</p>
+      <div class="row my-5">
+        <div class="col-sm-4">
+          <img src="./assets/images/chemical3.jpg" alt="" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <img src="./assets/images/chemical2.jpg" alt="" width="100%">
+        </div>
+        <div class="col-sm-4">
+          <img src="./assets/images/chemical1.jpg" alt="" width="100%">
+        </div>
+      </div>
+      <p class="paragraph paragraph-accent paragraph-c">
+        Наша химия в соединении с применяемой технологией EHRLE приносит двойной эффект мытья и обеспечивает безопасность использования для лакокрасочного покрытия автомашины (нет опасения по негативному влиянию или возникновению повреждении). Наша химия – необходимый элемент инновационной технологии EHRLE
+      </p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="text-center mb-5">
+          <span style="max-width: 250px; display: inline-block; padding: 10px 30px;">
+            <img src="./assets/images/chemical_icon.jpg" alt="" width="100%">
+          </span>
+      </div>
+      <div class="content_header text-center mb-3">
+        МикроПорошок Active Power Pearl MicroPowder™
+      </div>
+      <div class="content_subtitle text-center mb-5">
+        Основой эффективной бесконтактной технологии EHRLE является первая программа мойки -  микропорошком ActivePower Pearl™.
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="paragraph paragraph-j">
+            Это уникальный и единственный в своем роде моющий продукт созданный на основе исключительной формулы активных молекул. Он удаляет с поверхности автомобиля даже самую стойкую грязь. МикроПорошок полностью безопасен для лака. Реакция тысячи «микрогубок» нежно массирует кузов. Этот способ избавляет от необходимости использования например щеток, которые могли бы оставить следы на поверхности автомобиля.
+          </p>
+          <p class="paragraph paragraph-j">
+            Благодаря специальной технологии и высокому качеству компонентов микропорошок EHRLE легкий и объемный. Это повышает его производительность. Кроме того, специальная система точной дозации микропорошка EHRLE Globoid позволяет применить в процессе мытья точно столько микропорошка сколько нужно. Благодаря тому нет необходимости растворять большое количество и держать его до визита следующего Клиента. Одного мешка микропорошка хватает на большее количество моек автомобилей, чем других моющих средств предлагаемых на рынке - до 700 моек.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="paragraph paragraph-j">
+            Наибольшим спросом пользуется Active PowerPearl MicroPowder Plus™ (APPMP Plus™), светло розового цвета. Он характеризируется большой силой мытья и растворяемостью даже в холодной воде. Популярность среди владельцев автомоек APPMP Plus™ получил благодаря своей высокой эффективности и надежности.
+          </p>
+          <p class="paragraph paragraph-j">
+            Учитывая особенно важный экологический вопрос, компания EHRLE в своем ассортименте имеет также Active PowerPearl MicroPowder X LOP™ - порошок, содержащий на 50% меньше фосфатов, благодаря этому его можно использовать даже там, где самые строгие нормы по охране окружающей среды.
+          </p>
+          <p class="paragraph paragraph-j">
+            Характерная черта указанных микропорошков - приятный, фруктовый запах который Клиенты Автомойки чувствуют во время пользования первой программой. Соединение особенно эффективной технологии и замечательного запаха дает превосходный эффект.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="./assets/images/chemia_srodek.jpg" style="max-width: 1200px; width: 100%" class="d-block mx-auto"/>
+  <div class="content content_chemistry">
+    <div class="container-fluid">
+      <div class="row p-5">
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            ВОСК EHRLE UltraProtection™
+          </p>
+          <img src="../assets/images/chemical_type1.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <p class="paragraph paragraph-j">
+            Воск производства EHRLE UltraProtection™ - это синтетичное, консервирующее средство для обеспечения сохранности лакокрасочного покрытия автомобиля. Разогретый полимер равномерно распределяется по поверхности автомобиля и создает стойкую защитную пленку, которая предохраняет кузов от последующих загрязнений и помогает воде стекать с лобового стекла во время дождя, обладает водоотталкивающим эффектом и придает блеск.
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            ОСУШИТЕЛЬ EHRLE SuperFinish™
+          </p>
+          <img src="../assets/images/chemical_type2.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <p class="paragraph paragraph-j">
+            Применяемый в четвертой программе мытья осушитель EHRLE SuperFinish™ это современное средство для быстрой сушки и придания блеска после мытья.<br/>
+            <br/>
+            Данный состав обладает рядом полезных свойств. Обладая антистатическим свойством, он препятствует осаждению пыли на кузове автомобиля, и увеличивая силу поверхностного натяжения воды, позволяет ей беспрепятственно стекать с различных поверхностей. После ополаскивания не требуется вытирать поверхности автомобиля. Высохшие поверхности остаются без пятен и подтёков.<br/>
+            Ополаскивание деминерализованной водой с вспомогателем сушки вызывает эффект блеска. Кузов машины чистый, блестящий и защищенный от агрессивного влияния окружающей среды.
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            Таблетированная соль EHRLE
+          </p>
+          <img src="../assets/images/chemical_type3.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <p class="paragraph paragraph-j">
+            Специальная таблетированная соль EHRLE позволяет получить умягченную воду заданных параметров, нужную специально для высококачественного мытья автомобилей.<br/>
+            <br/>
+            Таблетированная соль EHRLE гарантирует эффективность работы блока умягчения воды, обеспечивающего защиту оборудования автомойки от известкового налета и помогает предотвратить образование пятен и водных подтеков на автомобиле.
+          </p>
+        </div>
+      </div>
+      <div class="row p-5 row-colored">
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            EHRLE Foam Plus
+          </p>
+          <img src="../assets/images/chemical-xft.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <div>
+            <p><strong>Специальное средство, применяемое как предварительная программа мойки.</strong></p>
+            <p>Опрыскивание активной пеной или густая пена для дополнительной мойки специальной щеткой.</p>
+            <ul>
+              <li>Прменяется как раствор с концентарцией 2 – 5 %</li>
+              <li>Нежный, свежий, весенний запах&nbsp;</li>
+              <li>Продукт жидкий высокой концентрации раствора</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            EHRLE XFT - для предварительной мойки
+          </p>
+          <img src="../assets/images/chemical-xft1.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <div>
+            <p><strong>Специальное средство для бесконтактной мойки автомобилей больших габаритов</strong></p>
+
+            <p>Пенющееся, выокоосновное средство для лучшего эффекта бесконтактной мойки.</p>
+
+            <ul>
+              <li>Максимальное удаление пыли и насекомых, а также грязи из дисков</li>
+              <li>Особенно эффективный в боротьбе с минеральной грязью</li>
+              <li>Образует пену</li>
+              <li>С приятным ароматом</li>
+              <li>Высококонцентрированный</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            EHRLE „IS” IntensiveShampoo
+          </p>
+          <img src="../assets/images/chemical-is.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <div>
+            <p><strong>Brush shampoo – нейтральная PH – исключительно мягкий для лака авто</strong></p>
+            <p>„Brush shampoo” – можно использовать в автомойках со стандартными щетками PE, в том числе, для чистки текстильных материалов</p>
+            <ul>
+              <li>Можно использовать исключительно с воском и осушителем EHRLE в автомойках с системами оборотного водоснабжения</li>
+              <li>Высокое содержание активных моющих веществ = экономная мойка</li>
+            </ul>
+            <p><br>
+              &nbsp;</p>
+          </div>
+        </div>
+      </div>
+      <div class="row p-5">
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            EHRLE DP ShinePolish
+          </p>
+          <img src="../assets/images/chemical-dp.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <div>
+            <p><strong>Может применяться как средство, придающее блеск, как жидкость для щеточных автомоек, а также для ручной мойки.</strong></p>
+            <ul>
+              <li>Мойка и уход без загрязнения щеток</li>
+              <li>Можно применять на мойках с системой очистки воды</li>
+              <li>Отличное средство для уходя за автомобилями типа кабриолет</li>
+              <li>С эффектом сушки</li>
+              <li>Без жирных кислот нефтепереработки</li>
+            </ul>
+
+            <p><strong>Для применения как пеновой блеск:</strong></p>
+
+            <ul>
+              <li>Для защиты и интенсивного ухода за лакированными, резиновыми и пластмассовыми элементами.</li>
+              <li>Отличный эффект блеска на лакированной и пластмассовой поверхности</li>
+              <li>Эффект импрегнации в течение 6-8 моек щеткой – максимум устойчивости к грязи</li>
+              <li>Длительная защита от вредных атмосферных условий и воздействия окружающей среды, например, ультрафиолетового излучения</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            EHRLE TS HighGlossDryer
+          </p>
+          <img src="../assets/images/chemical-ts.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <div>
+            <p><strong>Средство, придающее блеск – для автомоек самообслуживания и портальных моек.</strong></p>
+
+            <p>EHRLE TS HighGlossDryer характеризуется рядом исключительных характеристик:</p>
+
+            <ul>
+              <li>Способствует быстрой сушке, с приданием блеска</li>
+              <li>Предотвращает появление следов от воды и химии в процессе автоматической сушки, даже в случае оборудования с невысокой мощностью сушки</li>
+              <li>Даёт отличный эффект блеска на лакированной и пластмассовой поверхности</li>
+              <li>Отличается низким расходом благодаря высокой концентрации</li>
+              <li>Его можно применять с водой любой жёсткости (жесткая, мягкая, деминерализованная, дождевая вода и т.д.)</li>
+              <li>В нём отсутствуют жирные кислоты нефтепереработки</li>
+              <li>Создаёт супер-эффект при применении вместе с воском EHRLE UltraProtection™</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="paragraph paragraph-accent">
+            EHRLE RN ShinePreserve
+          </p>
+          <img src="../assets/images/chemical-rn.jpg" alt="" class="my-3 d-block mx-auto" style="max-width: 250px; width: 100%; height: 300px; object-fit: contain">
+          <div>
+            <p><strong>Средство со специальной формулой, обеспечивающей эффект блеска</strong></p>
+
+            <ul>
+              <li>Для защиты и интенсивного ухода за лакированными, резиновыми и пластмассовыми элементами – позволяет снизить скорость аммортизации автомобиля</li>
+              <li>Отличный эффект блеска на лакированной и пластмассовой поверхности</li>
+              <li>Длительная защита от вредных атмосферных условий и воздейством окружающей среды, напр. ультрафиолетовое излучение</li>
+              <li>Эффект импрегнации – максимум защиты от грязи</li>
+              <li>Идеальный для ухода за авто типа «кабриолет»</li>
+              <li>Превосходный результат мойки без необходимости применения дополнительных осушителей, даже в случае автомоек с невысокой силой вентляции и/или быстроработающих системах</li>
+              <li>Особенно производительный благодаря высокой концентрации средства</li>
+              <li>Без жирных кислот нефтепереработки</li>
+              <li>Обладает приятный запахом</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="footer_container_row">
+    <div class="item">
+      <div class="footer_label">
+        Еще больше информации
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link">
+          <a href="#" target="_blank">Почему Ehrle</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Программа лояльности</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Инвестиционный процесс шаг за шагом</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Галерея реализации</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Спроектируй свою мойку</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Стройка И Монтаж Автомойки EHRLE</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Ehrle в зимний период</a>
+        </li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="footer_label">
+        Контакты для связи
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/phone.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+            <div class="icon_block_subtitle">Номер телефона</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/email.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+            <div class="icon_block_subtitle">Адрес почты</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/map.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">г. Алматы, <br/>ул. Фурманова 38б</div>
+            <div class="icon_block_subtitle">Наш офис</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="item item-wide">
+      <div class="d-sm-flex flex-wrap">
+        <div class="footer_label">Приходите к нам в гости</div>
+        <div class="footer_social social_links">
+          <div class="footer_label social_label">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <a href="#" target="_blank" class="footer_map">
+        <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="footer_container">
+    <div class="footer_line"></div>
+    <div class="footer_external_links">
+      <!--<a href="#" target="_blank">Обработка персональных данных</a>-->
+      <!--<a href="#" target="_blank">Условия бронирования счёта</a>-->
+      <!--<a href="#" target="_blank">Пользовательское соглашение</a>-->
+      <span>Copyright © 2014 - 2019 <a href="/">EHRLE.</a> Все права защищены.</span>
+    </div>
+  </div>
+</footer>
+
+  <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
+    <div class="modal_backdrop" @click="closeModal"></div>
+    <div class="modal_container justify-content-between">
+        <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+        <div class="modal_body">
+            <h2 class="heading ">Введите ваши данные</h2>
+            <form class="modal_form">
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_name" placeholder=" ">
+                    <label for="modal_name" class="input_label"><span>Имя Фамилия</span></label>
+                </div>
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_phone" placeholder="+7 (000) 000 - 00 - 00">
+                    <label for="modal_phone" class="input_label"><span>Телефон</span></label>
+                </div>
+                <div class="form_item">
+                    <button type="submit" class="btn btn_primary">Оставить заявку</button>
+                </div>
+            </form>
+            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

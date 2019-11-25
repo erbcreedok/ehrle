@@ -102,6 +102,8 @@
     &_image {
       position: absolute;
       width: 456px;
+      height: 100%;
+      object-fit: contain;
       left: 100%;
       top: 0;
       @include mx(100px, 0);

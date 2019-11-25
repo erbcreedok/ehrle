@@ -12131,7 +12131,7 @@ Vue.component('percent-svg', {
   template:
     `<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewBox="0 0 190 190">
       <g fill="none" fill-rule="evenodd">
-       <circle cx="95" cy="95" r="85" stroke="#ECF0F1" stroke-width="8"/>
+       <circle cx="95" cy="95" r="85" stroke="#ecf0f1" stroke-width="8"/>
        <circle stroke="#D83139" stroke-width="8" cx="95" cy="95" r="85" transform="rotate(-90) translate(-190 0)" stroke-dasharray="534" :stroke-dashoffset="strokeDashOffset"/>
        <g transform="translate(95 95) rotate(-135)">
          <circle cx="60" cy="60" r="10" fill="#D83139" :transform="rotate"/>
@@ -12171,6 +12171,13 @@ Vue.component('factor-circle', {
     },
     isMobile() {
       return this.windowWidth <= factorBreakpoint;
+    }
+  },
+  watch: {
+    isSelected(to) {
+      if (to) {
+        this.handleView({percentInView: 1});
+      }
     }
   },
   methods: {
@@ -12232,6 +12239,7 @@ Vue.component('factor-circle', {
       isMenuOpened: false,
       selectedProgram: null,
       videoPlayed: false,
+      smallVideoPlayed: false,
     },
     computed: {
       factorElements() {

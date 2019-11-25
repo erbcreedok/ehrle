@@ -23,6 +23,9 @@
   max-width: 100vw;
   overflow-x: hidden;
   @include py(50px);
+  &-first {
+    @include section_top_padding;
+  }
   .paragraph {
     font-size: 16px;
     &-accent {
@@ -64,6 +67,15 @@
     }
     img {
       border-radius: 2px;
+    }
+  }
+  &-bordered {
+    &:after {
+      @include pseudo_block;
+      height: 1px;
+      background: $c_gray_1;
+      margin-top: 30px;
+      margin-bottom: -50px;
     }
   }
 }

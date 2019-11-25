@@ -28,7 +28,7 @@
   bottom: $bottom;
   left: $left;
 }
-@mixin square($size, $color: transparent) {
+@mixin square($size, $color: none) {
   display: inline-block;
   width: $size;
   height: $size;
