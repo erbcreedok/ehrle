@@ -159,6 +159,9 @@ body {
     font-size: 14px;
   }
 }
+.paragraph-accent {
+  font-size: 20px;
+}
 .paragraph-j {
   text-align: justify;
 }
@@ -321,6 +324,9 @@ body {
   .paragraph {
     font-size: 14px;
   }
+}
+.paragraph-accent {
+  font-size: 20px;
 }
 .paragraph-j {
   text-align: justify;
@@ -2469,12 +2475,18 @@ a.a_custom, a.a_custom:hover {
 .content .paragraph {
   font-size: 16px;
 }
+.content .paragraph-accent {
+  font-size: 18px;
+}
 .content-color {
   color: white;
   background: #6c757d;
 }
 .content-color .paragraph {
   color: white;
+}
+.content-color .paragraph-accent {
+  color: #e6e6e6;
 }
 .content-color .content_subtitle {
   color: #e6e6e6;

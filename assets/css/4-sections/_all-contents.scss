@@ -25,12 +25,18 @@
   @include py(50px);
   .paragraph {
     font-size: 16px;
+    &-accent {
+      font-size: 18px;
+    }
   }
   &-color {
     color: white;
     background: $c_gray;
     .paragraph {
       color: white;
+      &-accent {
+        color: darken(white, 10);
+      }
     }
     #{$p}_subtitle {
       color: darken(white, 10);
