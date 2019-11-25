@@ -2461,7 +2461,8 @@ a.a_custom, a.a_custom:hover {
 
 .content {
   position: relative;
-  overflow-y: hidden;
+  max-width: 100vw;
+  overflow-x: hidden;
   padding-top: 50px;
   padding-bottom: 50px;
 }
