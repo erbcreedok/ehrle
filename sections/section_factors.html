@@ -3,7 +3,7 @@
     Факторы успеха автомойки
   </h2>
   <ul class="ul_custom factor_container">
-    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+    <li class="factor_item mx-auto" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <factor-circle :percent="41" :is-selected="selectedFactor===0"></factor-circle>
       <div class="title factor_item_title">
         Месторасположение
@@ -15,7 +15,7 @@
         <li>Дороги с большим трафиком;</li>
       </ul>
     </li>
-    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+    <li class="factor_item mx-auto" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <factor-circle :percent="35" :is-selected="selectedFactor===1"></factor-circle>
       <div class="title factor_item_title">
         Качество оборудования
@@ -27,7 +27,7 @@
         <li>Эстетичный внешний вид;</li>
       </ul>
     </li>
-    <li class="factor_item" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
+    <li class="factor_item mx-auto" :style="{transform: 'translateX(' + (-100 * selectedFactor) + '%)'}">
       <factor-circle :percent="24" :is-selected="selectedFactor===2"></factor-circle>
       <div class="title factor_item_title">
         Маркетинговая стратегия

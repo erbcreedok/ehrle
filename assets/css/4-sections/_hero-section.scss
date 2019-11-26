@@ -3,6 +3,7 @@
 
 .hero_section {
   @mixin fixed_bg() {
+    background: url($images + '/main_bg-dark.jpg') center;
     background: url($images + '/main_bg-dark.jpg') center fixed;
     background-size: cover;
   }

@@ -34,7 +34,10 @@ gulp.task('fileInclude', function() {
       .pipe(fileInclude({
         filters: {
           prefix: '@@',
-          basepath: '../',
+          basepath: '@file',
+        },
+        context: {
+          title: 'EHRLE'
         }
       }))
       .pipe(gulp.dest('./'));
