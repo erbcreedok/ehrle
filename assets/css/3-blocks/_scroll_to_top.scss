@@ -1,0 +1,12 @@
+@import "../2-base/mixins";
+
+.scroll_to_top {
+  z-index: 90;
+  position: fixed;
+  @include trbl(auto, 20px, 20px, auto);
+  border: 1px solid white;
+  box-shadow: 0 0 5px 5px white;
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+}

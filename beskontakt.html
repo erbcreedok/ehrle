@@ -147,6 +147,7 @@
     </div>
   </div>
 </nav>
+  <scroll-top v-if="showScroll"/>
 </header>
     <div class="video_beskontakt content-color" :class="{'video_beskontakt-paused': !videoPlayed}">
   <iframe v-if="videoPlayed" class="video_embed" src="https://www.youtube.com/embed/Rhl1DGsswIE?autoplay=1&loop=1&enablejsapi=1&&playerapiid=featuredytplayer&controls=0&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3&theme=light&wmode=transparent" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -181,7 +182,7 @@
             </li>
         </ul>
     </div>
-    <section class="content content_beskontakt" id="beskontakt">
+    <section class="content content_beskontakt pt-2" id="beskontakt">
   <div class="container">
     <h1 class="content_header" title="Бесконтактная мойка">Бесконтактная мойка</h1>
     <p class="content_subtitle">Бренд EHRLE однозначно ассоциируется с бесконтактной технологией,<br/> совершенствуемой инженерами на протяжении многих лет</p>
