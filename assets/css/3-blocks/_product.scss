@@ -101,12 +101,11 @@
     }
     &_image {
       position: absolute;
-      width: 456px;
       height: 100%;
       object-fit: contain;
       left: 100%;
       top: 0;
-      @include mx(100px, 0);
+      @include mx(auto);
     }
     @media (max-width: 1199.98px) {
       &_image {
@@ -117,7 +116,8 @@
     @media (max-width: 991.98px) {
       &_image {
         position: static;
-        width: 75%;
+        width: 100%;
+        max-width: 400px;
         @include mx(0);
         @include my(0, 30px);
       }

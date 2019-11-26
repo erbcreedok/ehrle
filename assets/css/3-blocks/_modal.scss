@@ -59,10 +59,10 @@
   @media (max-width: 767.98px) {
     &_container {
       height: auto;
+      min-height: 0;
+      padding-bottom: 50px;
+      max-width: 400px;
       @include trbl(auto, 10px);
-    }
-    &_close {
-      position: fixed;
     }
   }
 }

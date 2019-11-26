@@ -653,14 +653,13 @@ a.a_custom, a.a_custom:hover {
     margin-bottom: 8px; }
   .product_description_image {
     position: absolute;
-    width: 456px;
     height: 100%;
     -o-object-fit: contain;
        object-fit: contain;
     left: 100%;
     top: 0;
-    margin-left: 100px;
-    margin-right: 0; }
+    margin-left: auto;
+    margin-right: auto; }
   @media (max-width: 1199.98px) {
     .product_description_image {
       right: 0;
@@ -669,7 +668,8 @@ a.a_custom, a.a_custom:hover {
   @media (max-width: 991.98px) {
     .product_description_image {
       position: static;
-      width: 75%;
+      width: 100%;
+      max-width: 400px;
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;
@@ -1826,12 +1826,13 @@ a.a_custom, a.a_custom:hover {
 @media (max-width: 767.98px) {
   .modal_container {
     height: auto;
+    min-height: 0;
+    padding-bottom: 50px;
+    max-width: 400px;
     top: auto;
     right: 10px;
     bottom: auto;
-    left: 10px; }
-  .modal_close {
-    position: fixed; } }
+    left: 10px; } }
 
 @-webkit-keyframes fade_in {
   0% {
@@ -2448,6 +2449,9 @@ header {
     background: url("../images/main_bg-dark.jpg") center;
     background: url("../images/main_bg-dark.jpg") center fixed;
     background-size: cover; }
+    @media (max-width: 767.98px) {
+      .hero_section .slide {
+        background: url("../images/main_bg-dark.jpg") center; } }
     .hero_section .slide:before {
       content: '';
       display: block;
@@ -2475,6 +2479,9 @@ header {
       background: url("../images/main_bg-dark.jpg") center;
       background: url("../images/main_bg-dark.jpg") center fixed;
       background-size: cover; }
+      @media (max-width: 767.98px) {
+        .hero_section .slide:after {
+          background: url("../images/main_bg-dark.jpg") center; } }
   .hero_section .landing_header {
     max-width: 440px;
     font-size: 72px;
