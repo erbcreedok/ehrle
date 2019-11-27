@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('../components/head_tags.html', {"title": "Калькулятор - EHRLE"})
+  <!-- endbuild -->
+</head>
+<body class="lang-ru">
+<div id="app">
+  <input type="hidden" value="chemistry" id="sitepage">
+  @@include('../components/nav.html')
+  <div class="container content-first my-3">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs-item">
+        <a href="./">Главная</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <span>Строительство мойки "под ключ"</span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="heading mb-3">
+      Строительство мойки “под ключ”
+    </div>
+    <p style="max-width: 555px;" class="text">
+      В этом калькуляторе Вы можете рассчитать «Под ключ» цену всех этапов строительства автомобильной мойки самообслуживания. Включая поставки котельного оборудования, обеспечивающего функцию «теплый пол» и режим подогрева воды.
+    </p>
+  </div>
+  <div class="container mt-5 calculator_container">
+    <div class="title mb-4">Калькулятор стройки</div>
+    <div class="row justify-content-between">
+      <div class="col-lg-7 col-md-8">
+        <div class="calculator">
+          <ul class="radio_tabs mb-4">
+            <li class="radio_tab radio_tab-selected">Навес "Premium"</li>
+            <li class="radio_tab">Навес "Econom"</li>
+            <li class="radio_tab">Навес "Future"</li>
+          </ul>
+          <div class="label my-3">1. Детали мойки</div>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <div class="text mb-2">Выберите вид мойки</div>
+              <div class="radio_buttons">
+                <div class="radio_button">Smart Wash</div>
+                <div class="radio_button">Smart Wash Plus</div>
+                <div class="radio_button">Jet Wash</div>
+                <div class="radio_button">Jet Wash Plus</div>
+                <div class="radio_button">Car Wash Plus Outdoor</div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="text mb-2">Количество постов для мойки</div>
+              <div class="radio_buttons ">
+                <div class="radio_button radio_button-squared radio_button-selected">1</div>
+                <div class="radio_button radio_button-squared">2</div>
+                <div class="radio_button radio_button-squared">3</div>
+                <div class="radio_button radio_button-squared">4</div>
+                <div class="radio_button radio_button-squared">5</div>
+                <div class="radio_button radio_button-squared">6</div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="text mb-2">Количество пылесосов</div>
+              <div class="radio_buttons">
+                <div class="radio_button radio_button-squared radio_button-selected">1</div>
+                <div class="radio_button radio_button-squared">2</div>
+                <div class="radio_button">Без пылесоса</div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 pr-md-5">
+              <div class="text mb-2">Тип котла</div>
+              <div class="form_select form_select-block pr-md-2">
+                <select>
+                  <option value="1">Буду покупать участок</option>
+                  <option value="1">Не буду покупать участок</option>
+                </select>
+                <span class="form_select_arrow"></span>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="text mb-2">Цена за участок</div>
+              <div class="form_input">
+                <input type="text" placeholder="10,000,000 ₸"/>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 pr-md-5">
+              <div class="text mb-2">Тип котла</div>
+              <div class="form_select form_select-block pr-md-2">
+                <select>
+                  <option value="1">На электричестве</option>
+                  <option value="1">На дровах</option>
+                  <option value="1">На углях</option>
+                </select>
+                <span class="form_select_arrow"></span>
+              </div>
+            </div>
+            <div class="col-12 mb-4">
+              <div class="text mb-2">Строительство под ключ</div>
+              <div class="form_checkboxes">
+                <label for="type" class="form_checkbox">
+                  <input type="checkbox" id="type">
+                  <span class="form_checkbox_label">Да, постройте мне мойку</span>
+                  <span class="form_checkbox_icon"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-4">
+        <div class="calculator_result">
+          <div class="calculator_result_wrapper">
+            <div class="title">Стоимость вашего проекта:</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @@include('../components/footer.html')
+  @@include('../components/modal_form.html')
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.form_checkbox {
+  $p: &;
+  position: relative;
+  input {
+    display: none;
+  }
+  &_icon, &:before {
+    @include square(20px);
+    content: '';
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 7px;
+  }
+  &_icon {
+    @include trbl(0, auto, auto, 0);
+    background: white;
+    position: absolute;
+    border: 2px solid $c_gray_2;
+    border-radius: 2px;
+    cursor: pointer;
+    @include checkbox_icon(lighten($c_gray_2, 10));
+    &:hover, #{$p}_label:hover + & {
+      background: lighten($c_gray_1, 3);
+      @include checkbox_checked(lighten($c_gray_2, 10));
+    }
+  }
+  input:checked {
+    & ~ #{$p}_icon {
+      border-color: $c_red;
+      background: $c_red;
+      @include checkbox_checked;
+    }
+    & ~ #{$p}_icon:hover, & ~ #{$p}_label:hover + #{$p}_icon {
+      @include checkbox_close;
+    }
+  }
+  &_label {
+    font-size: 16px;
+    font-weight: 500;
+    min-height: 20px;
+    cursor: pointer;
+  }
+}

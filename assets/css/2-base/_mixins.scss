@@ -234,3 +234,113 @@
     padding-top: 70px;
   }
 }
+@mixin form_input {
+  min-height: 40px;
+  min-width: 40px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background: $c_gray_1;
+  color: $c_dark;
+  border-radius: 8px;
+  font-weight: 500;
+}
+@mixin radio_container() {
+  @include ul_custom;
+  @include flex;
+  @include flex-wrap;
+  border-radius: 8px;
+  &-nowrap {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+@mixin radio_item() {
+  @include form_input;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  transition: .15s;
+  &-squared {
+    width: 40px;
+    height: 40px;
+    @include py(auto);
+  }
+  &:hover {
+    transition: 0s;
+    background: darken($c_gray_1, 3);
+  }
+  &-selected, &-selected:hover {
+    background: $c_dark;
+    color: white;
+  }
+}
+
+@mixin form_input_container() {
+  position: relative;
+  display: inline-block;
+  &-block {
+    display: block;
+  }
+  @include form_input;
+  @include py(0);
+  @include px(6px, 0);
+  select, input {
+    @include form_input;
+    @include px(10px, 16px);
+    @include py(0);
+    outline: none;
+    border: none;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    &::placeholder {
+      color: $c_gray_6;
+    }
+  }
+}
+
+@mixin checkbox_icon($color: white) {
+  &:before, &:after {
+    @include pseudo_absolute;
+    @include trbl(0);
+    width: 0;
+    height: 0;
+    margin: auto;
+    background: $color;
+    transform-origin: center;
+    transition: .3s;
+  }
+}
+
+@mixin checkbox_close($color: white) {
+  @include checkbox_icon($color);
+  &:before {
+    width: 2px;
+    height: 12px;
+    transform: rotate(45deg) translate(0, 0);
+    transition: .15s;
+  }
+  &:after {
+    width: 2px;
+    height: 12px;
+    transform: rotate(-45deg) translate(0, 0);
+    transition: .15s;
+  }
+}
+
+@mixin checkbox_checked($color: white) {
+  @include checkbox_icon($color);
+  &:before {
+    width: 2px;
+    height: 12px;
+    transform: rotate(42deg) translate(2px, -1px);
+    transition: .15s;
+  }
+  &:after {
+    width: 2px;
+    height: 7px;
+    transform: rotate(-49deg) translate(-4px, -1px);
+    transition: .15s;
+  }
+}

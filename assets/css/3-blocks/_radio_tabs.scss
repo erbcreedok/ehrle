@@ -1,0 +1,22 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+.radio_tabs {
+  @include radio_container;
+  background: $c_gray_1;
+  .radio_tab {
+    @include radio_item;
+    flex-grow: 1;
+  }
+}
+.radio_buttons {
+  @include radio_container;
+  .radio_button {
+    @include radio_item;
+    margin-right: 4px;
+    margin-bottom: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

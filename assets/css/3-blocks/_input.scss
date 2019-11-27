@@ -44,3 +44,7 @@
     }
   }
 }
+
+.form_input {
+  @include form_input_container;
+}

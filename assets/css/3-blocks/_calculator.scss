@@ -1,0 +1,12 @@
+@import "../2-base/variables";
+
+.calculator {
+  &_result {
+    border-radius: 8px;
+    border: solid 2px $c_gray_1;
+    background-color: white;
+    &_wrapper {
+      @include px(24px);
+    }
+  }
+}
