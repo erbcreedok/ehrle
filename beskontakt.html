@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Бесконтакная мойка - EHRLE</title>
+<meta name="google-site-verification" content="" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="Бесконтактные мойки самообслуживания, которые работают 24 часа в сутки, 7 дней в неделю - все время генерируя прибыль по всей Европе и за ее пределами">
+<meta name="keywords" content="мойка, автомойка, ehrle, самообслуживание, бесконтактные мойки, инвестиции">
+<meta name="author" content="Yerbol Syzdyk, Aidos Kurmashev">
+<!--<meta property="og:image" content="url_image">-->
+<!--<meta property="og:title" content="">-->
+<!--<meta property="twitter:title" content="">-->
+<!--<meta property="og:description" content="">-->
+<!--<meta property="twitter:description" content="">-->
+<!--<meta name="twitter:image" content="">-->
+<!--<meta property="og:image" content="">-->
+<!--<meta property="og:type" content="website">-->
+<!--<meta property="og:url" content="">-->
+<!--<meta property="og:site_name" content="">-->
+<!--<meta property="og:locale" content="ru-RU">-->
+<!--<meta name="twitter:url" content="">-->
+<!--<meta name="yandex-verification" content=""/>-->
+<link rel="stylesheet" href="./assets/css/main.css"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+    <!-- endbuild -->
+</head>
+<body class="lang-ru">
+<div id="app">
+    <input type="hidden" value="beskontakt" id="sitepage">
+    <header>
+<div class="menu" :class="{'menu-opened': isMenuOpened}">
+  <div class="container">
+    <div class="menu_nav menu_row">
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Продукты</a>
+        <div class="menu_links">
+          <a class="menu_link" href="./container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
+          <a class="menu_link" href="./module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
+          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка JetWash</a>
+          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
+          <a class="menu_link" href="./chemistry.html" @click="closeMenu">Химия</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/mietallokonstrukcyi/" target="_blank">Металлоконструкции</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/aksiessuary/" target="_blank">Аксессуары</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/apparaty_wysokogo_dawlenija/" target="_blank">Аппараты высокого давления</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/profiessionalnyje_pylesosy/" target="_blank">Профессиональные пылесосы</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="./beskontakt.html">Технология</a>
+        <div class="menu_links">
+          <a class="menu_link" href="./beskontakt.html#beskontakt" @click="closeMenu">Бесконтакная мойка</a>
+          <a class="menu_link" href="./beskontakt.html#vda" @click="closeMenu">Сертификат VDA</a>
+          <a class="menu_link" href="./beskontakt.html#modul_line" @click="closeMenu">Modul Line ETRONIC 4</a>
+          <a class="menu_link" href="./beskontakt.html#ehrlesol"  @click="closeMenu">EHRLESol™</a>
+          <a class="menu_link" href="./beskontakt.html#real_time_display" @click="closeMenu">Real Time Display</a>
+          <a class="menu_link" href="./beskontakt.html#lce_slm" @click="closeMenu">LCE / SLM</a>
+          <a class="menu_link" href="./beskontakt.html#micropowder" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
+          <a class="menu_link" href="./beskontakt.html#foam" @click="closeMenu">Активная пена</a>
+        </div>
+      </div>
+      <div class="menu_col">
+        <a class="menu_col_title menu_title" href="#" target="_blank">Компания</a>
+        <div class="menu_links">
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/tradicyi/" target="_blank">Традиция</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/ehrle_w_mirie/" target="_blank">EHRLE в мире</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/naszy_zawody/" target="_blank">Наши заводы</a>
+          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/nowosti_ehrle/" target="_blank">Новости EHRLE</a>
+        </div>
+        <div class="social_links">
+          <div class="menu_title social_label mb-0">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="menu_line"></div>
+    <div class="menu_footer menu_row">
+      <div class="menu_col">
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Почему Ehrle?</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Программа лояльности</a>
+<!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Инвестиционный процесс шаг за шагом</a>-->
+<!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Галерея реализации</a>-->
+<!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Спроектируй свою мойку</a>-->
+<!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Стройка И Монтаж Автомойки EHRLE</a>-->
+<!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Ehrle в зимний период</a>-->
+      </div>
+      <div class="menu_col menu_col-wide">
+        <div class="menu_col_title menu_title">Приходите к нам в гости</div>
+        <a href="#" target="_blank" class="menu_map">
+          <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+        </a>
+      </div>
+      <div class="menu_col"></div>
+    </div>
+  </div>
+</div>
+<nav class="nav">
+  <div class="container d-flex">
+    <a href="/" class="mr-xl-3 mr-1"><img class="nav_brand" src="./assets/images/ehrle_logo.png" height="40px" alt=""></a>
+    <img class="nav_second_logo mr-xl-4 mr-2" src="./assets/images/german_logo.png" height="44px" alt="">
+    <div class="link_contact icon_block d-none d-md-block ml-auto mr-xl-3 mr-0">
+      <a href="tel: +77025026285" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/phone.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Номер телефона</div>
+      </a>
+    </div>
+    <div class="link_contact icon_block d-none d-md-block ml-xl-3 ml-1 mr-auto">
+      <a href="mailto: ehrle_carwash@gmail.com" target="_blank">
+        <div class="icon_block_icon">
+          <img src="./assets/images/email.svg" alt="">
+        </div>
+        <div class="d-none d-xl-block icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Адрес почты</div>
+      </a>
+    </div>
+    <div class="icon_block ml-auto">
+      <button class="btn_custom" @click="toggleMenu">
+        <div class="icon_block_icon">
+          <div class="menu_toggler" :class="{'menu_toggler-close': isMenuOpened}"><span></span><span></span><span></span></div>
+        </div>
+        <div class="d-none d-xl-block icon_block_value">Меню</div>
+        <div class="d-none d-xl-block icon_block_subtitle">Все для бизнеса</div>
+      </button>
+    </div>
+    <div class="icon_block ml-xl-3 ml-1 lang_select lang_select_container" :class="{'lang_select-opened': isLanguagesSelecting}">
+      <button class="btn_custom lang_select_item" v-for="lang in languages" @click="langButtonPressed(lang)" :class="{'lang_select_item-selected': lang===selectedLang}">
+        <div class="icon_block_icon">
+          <span class="icon_block_icon_text fw-bold">{{lang.toUpperCase()}}</span>
+        </div>
+      </button>
+      <div class="lang_select_backdrop" @click="langButtonPressed(selectedLang)"></div>
+    </div>
+  </div>
+</nav>
+  <scroll-top v-if="showScroll"/>
+</header>
+    <div class="video_beskontakt content-color" :class="{'video_beskontakt-paused': !videoPlayed}">
+  <iframe v-if="videoPlayed" class="video_embed" src="https://www.youtube.com/embed/Rhl1DGsswIE?autoplay=1&loop=1&enablejsapi=1&&playerapiid=featuredytplayer&controls=0&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3&theme=light&wmode=transparent" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <template v-else>
+  <video src="../assets/images/video_bg.mp4" autoplay muted loop class="video_bg"></video>
+  <div class="video_beskontakt_display">
+    <button class="play_button btn_custom" @click="videoPlayed=true">
+      <svg width="70px" height="70px" viewBox="0 0 60 60">
+    <g stroke="none" stroke-width="1" fill="" fill-rule="evenodd">
+        <g transform="translate(-691.000000, -3514.000000)" fill="#FFFFFF">
+            <path d="M721,3574 C737.568542,3574 751,3560.56854 751,3544 C751,3527.43146 737.568542,3514 721,3514 C704.431458,3514 691,3527.43146 691,3544 C691,3560.56854 704.431458,3574 721,3574 Z M715,3534 L732,3544.5 L715,3555 L715,3534 Z"></path>
+        </g>
+    </g>
+</svg>
+    </button>
+    <h2 class="content_header mt-5 mb-3">
+      Технология моек EHRLE
+    </h2>
+    <p class="paragraph">
+      Бренд EHRLE однозначно ассоциируется с бесконтактной технологией, совершенствуемой инженерами на протяжении многих лет
+    </p>
+  </div>
+  </template>
+</div>
+    <div class="container pt-3">
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs-item">
+                <a href="./">Главная</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <span>Технология</span>
+            </li>
+        </ul>
+    </div>
+    <section class="content content_beskontakt pt-2" id="beskontakt">
+  <div class="container">
+    <h1 class="content_header" title="Бесконтактная мойка">Бесконтактная мойка</h1>
+    <p class="content_subtitle">Бренд EHRLE однозначно ассоциируется с бесконтактной технологией,<br/> совершенствуемой инженерами на протяжении многих лет</p>
+    <div class="paragraph">
+      <div class="accordion accordion-stepped">
+  <h3 class="accordion_title">Мойки EHRLE применяют 4 программы мытья</h3>
+  <p class="accordion_subtitle">чтобы узнать больше, нажмите на выбранную программу</p>
+  <ul class="accordion_list">
+    <li class="accordion_option" :class="{'accordion_option-selected': selectedProgram===0}" @click="setProgram(0)">
+      <div class="accordion_option_label">
+        <div class="accordion_option_label_number">1</div>
+        <figure class="accordion_option_label_image">
+          <img src="./assets/images/step_1ru.png" alt="">
+        </figure>
+        <h6 class="accordion_option_label_title">Мойка микропорошком</h6>
+      </div>
+      <div class="accordion_option_body">
+        <p>
+          Power Pearl™ быстро удаляет грязь с поверхности автомобиля. Благодаря специальной формуле активных молекул напоминающей реакцию тысячи микрогубок, МикроПорошок безопасен для лакокрасочного покрытия автомобиля
+        </p>
+      </div>
+    </li>
+    <li class="accordion_option" :class="{'accordion_option-selected': selectedProgram===1}" @click="setProgram(1)">
+      <div class="accordion_option_label">
+        <div class="accordion_option_label_number">2</div>
+        <figure class="accordion_option_label_image">
+          <img src="./assets/images/step_4ru.png" alt="">
+        </figure>
+        <h6 class="accordion_option_label_title">Споласкивание чистой водой</h6>
+      </div>
+      <div class="accordion_option_body">
+        <p>
+          Для споласкивания МикроПорошка, автомойки используют чистую, умягченную воду с программы 2-ой
+        </p>
+      </div>
+    </li>
+    <li class="accordion_option" :class="{'accordion_option-selected': selectedProgram===2}" @click="setProgram(2)">
+      <div class="accordion_option_label">
+        <div class="accordion_option_label_number">3</div>
+        <figure class="accordion_option_label_image">
+          <img src="./assets/images/step_2ru.png" alt="">
+        </figure>
+        <h6 class="accordion_option_label_title">UltraProtection</h6>
+      </div>
+      <div class="accordion_option_body">
+        <p>
+          3-я программа мойки обеспечивает защиту лакокрасочного покрытия, благодаря использованию горячего воска UltraProtection. Он создает пленку на поверхности автомобиля, что позволяет воде свободно стекать и одновременно улучшает работу стеклоочистителей
+        </p>
+      </div>
+    </li>
+    <li class="accordion_option" :class="{'accordion_option-selected': selectedProgram===3}" @click="setProgram(3)">
+      <div class="accordion_option_label">
+        <div class="accordion_option_label_number">4</div>
+        <figure class="accordion_option_label_image">
+          <img src="./assets/images/step_3ru.png" alt="">
+        </figure>
+        <h6 class="accordion_option_label_title">SuperFinish</h6>
+      </div>
+      <div class="accordion_option_body">
+        <p>
+          Последняя 4-я программа, в которой бесконтактная мойка использует чистую деминерализованную осмотическую воду и осушитель, гарантирует эффект блеска
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+      Бренд EHRLE и бесконтактная технология, совершенствованная инженерами, проектирующими мойки на протяжении многих лет, однозначно ассоциируются.<br/>
+      <br/>
+      Некоторое время тому назад щеточные автомойки самообслуживания вытеснили первоначальные ручные мойки. Сейчас щеточные сменяют бесконтактные решения, которые чаще всего выбирают клиенты. Компания EHRLE – лидер подготовляющий мойки самообслуживания, предлагает метод бесконтактной очистки, так как вместе с производимой техникой и высококачественными химическими средствами он самый эффективный и безопасный для автомобилей. Применяемая для аппаратов высокого давления и автомоек бесконтактная технология мытья подкрепляется бесспорным опытом, постоянно совершенствующим более полувека.<br/>
+      <br/>
+      Во время визита на автомойках EHRLE клиенты встречаются с приятным фруктовым ароматом. Это заслуга применяемого в 1-ой программе МикроПорошка Power Pearl™, который, кроме своих химических свойств, обладает приятным запахом.<br/>
+      <br/>
+      Четыре программы мойки достаточно для тщательной очистки автомобиля. Компания EHRLE продолжает работы по сокращении количества программ до минимума с целью создать самую легкообслуживаемую мойку для клиентов. Благодаря этому водители экономят время и получают возможность мыть автомобиль, нервозно не следя за временем мытья.<br/>
+      <br/>
+      Умелое мытье автомобиля, инновационная технология и использованные высококачественные химические средства это причины, для которых бесконтактная мойка самообслуживания EHRLE, позволяет достичь отличного удовлетворяющего результата без риска получить царапины и другие возможные повреждения, связанные с применением щеток.<br/>
+      <br/>
+      Немецкая точность и инновационные технологические идеи получили много разных наград. Самым ценным является Сертификат качества VDA, который получила мойка самообслуживания EHRLE, подтверждающий безопасность бесконтактного мытья.
+    </div>
+  </div>
+</section>
+    <section class="content content_beskontakt" id="vda">
+  <div class="container">
+    <h2 class="content_header">Сертификат VDA</h2>
+    <p class="content_subtitle">Выдаваемый Союзом немецкой автомобильной промышленности Сертификат качества VDA (Verband der Automobilindustrie) является элитарной наградой для тех производителей, которые отвечают строгим требованиям и стандартам качества, установленным этим престижным институтом.</p>
+    <div class="text-center">
+      <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/vda.jpg" alt="" width="100%">
+      </span>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pr-md-4">
+        <p class="paragraph mb-md-5">Среди них – немецкая система менеджмента качества QMC автомобильной промышленности. VDA QMC это сертификат, выдаваемый экспертами качества, которые по заказу производителей и поставщиков автомобилей проводят исследования с целью разработки единых технологических стандартов качества продукции: [Certyfikat VDA dla myjni EHRLE]</p>
+        <p class="paragraph">
+          <strong>функциональность:</strong>&nbsp;уровень и диапазон реализации ожидаемых функций<br>
+          <strong>практичность:</strong>&nbsp;удобство пользования, легкость обслуживания и хранения и их эргономичность<br>
+          <strong>надежность:</strong>&nbsp;способность работать без недостатков и дефектов<br>
+          <strong>прочность:</strong>&nbsp;срок сохранения используемых свойств<br>
+          <strong>безопасность пользования</strong>
+        </p>
+      </div>
+      <div class="col-md-6 pl-md-4">
+        <p class="paragraph">Последний пункт бесспорно подтверждает, что автомойки EHRLE абсолютно безопасные для самого чувствительного к повреждениям лакокрасочного покрытия автомобилей, в том числе нового. Доказательством этого является существование бесконтактных автомоек самообслуживания EHRLE в автосалонах и сервисных центрах известных марок. Компания EHRLE – первый и единственный производитель бесконтактных автомоек на нашем рынке сертифицированный VDA для бесконтактной технологии мытья. Кроме техники высокую оценку получили химические средства, производимые компанией EHRLE.</p>
+        <p class="paragraph">Для убеждения клиента в качестве предлагаемой ему услуги, автомойки EHRLE дополнительно обладают знаком Сертифицированного качества мытья EHRLE.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="content content-color content_modul_line" id="micropowder">
+  <div class="container">
+    <h2 class="content_header">Modul Line ETRONIC 4</h2>
+    <p class="content_subtitle">Новаторская модель автомойки ModulLine и операционная система ETRONIC 4 - это новейшие решения, достойные современного производства.</p>
+    <div class="text-center my-4">
+      <span style="max-width: 250px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/modul_line.png" alt="" width="100%">
+      </span>
+    </div>
+    <p class="paragraph paragraph-c">
+      Автомойки EHRLE более десятка лет обладают системой дистанционного управления данными и настройками через GSM либо интернет. В настоящее время старая система заменяется новой: ETRONIC 4, являющейся плодом сотрудничества с инженерами немецкой компании SIEMENS. Это инновационная и современная система в отрасли автомоек для контроля, автодиагностики, а так же диагностики оборудования для сервисного центра EHRLE.
+    </p>
+    <div class="text-center my-4">
+      <span class="content_image_wrapper" style="max-width: 400px; display: inline-block;">
+        <img src="./assets/images/module_line.jpg" alt="" width="100%">
+      </span>
+    </div>
+    <h2 class="mb-3 text-center">Для выбора Инвестором предоставляется две версии системы:</h2>
+    <div class="row">
+      <div class="col-md-6 pr-md-4">
+        <p class="paragraph paragraph-j mb-md-5">Basic – в стандартной комплектации автомойки CarWash Indoor Modul Line ETRONIC 4. Инвестор на сенсорном дисплее компьютера SIEMENS либо через ISDN/DSL или GSM, имеет доступ ко всем базовым настройкам: время работы оборудования, счастливые часы (happy hours), дозирование химии, а также доступ к статистическим данным по оборотам автомойки в течение определенного периода времени. Версия Basic информирует Инвестора об основных рабочих параметрах автомойки, отправляет электронные сообщения о сервисных проблемах. Опция мониторинга CM1 предоставляет Инвестору актуальную информацию о температуре воздуха и температуре технической воды. От отдельных контроллеров каждого поста данные передаются на главный компьютер.</p>
+      </div>
+      <div class="col-md-6 pl-md-4">
+        <p class="paragraph paragraph-j">Comfort&nbsp;– система позволяет осуществлять дистанционную диагностику оборудования и анализ возможных сервисных проблем на сенсорном дисплее с большим разрешением 12,1’’. Инвестор на сенсорной панели компьютера, либо через модем ISDN/DSL или GSM, имеет доступ к дополнительным информациям, в том: техническое состояние коммуникаций и отдельных модулей, а также отдельных элементов оборудования. Есть возможность контролировать заполнение емкостей жидкой химией и порошком. Предлагается 2 опции системы мониторинга: CM2 и CM3, есть также возможность комплектации согласно пожеланиям Инвестора. Опция CM2 позволяет контролировать все системы оборудования, которые отображаются на мониторе компьютера в форме графической схемы. Опция CM2 позволяет проверять следующие параметры: давление воды из сети, давление воды для мытья, давление осмотической воды или воды системы противзамерзания. Опция CM3 обладает всеми функциями опции CM2, а также позволяет следить за уровнем моющих средств в емкостях: МикроПорошка&nbsp;<em>Active PowerPearl MicroPowder™</em>, воска&nbsp;<em>UltraProtection</em>&nbsp;и осушителя&nbsp;<em>SuperFinish.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="content content_ehrlesol" id="ehrlesol">
+  <div class="container">
+    <h2 class="content_header">EHRLESol™</h2>
+    <p class="content_subtitle">EHRLESol™ это инновационная, экономная и прежде всего экологическая солярная система, которую используют на автомойках EHRLE</p>
+    <div class="text-center mb-5">
+      <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/ehrlesol_logo.png" alt="" width="100%">
+      </span>
+    </div>
+    <div class="row mb-2">
+      <div class="col-sm-4 mb-2 mx-auto" style="max-width: 320px">
+        <img src="./assets/images/ehrlesol0.jpg" alt="" width="100%">
+      </div>
+      <div class="col-sm-4 mb-2 mx-auto" style="max-width: 320px">
+        <img src="./assets/images/ehrlesol2.jpg" alt="" width="100%">
+      </div>
+      <div class="col-sm-4 mb-2 mx-auto" style="max-width: 320px">
+        <img src="./assets/images/ehrlesol3.jpg" alt="" width="100%">
+      </div>
+    </div>
+    <p class="paragraph paragraph-c mb-4">
+      Компания EHRLE эффективно реализирует политику сбалансированного развития. Учитывая состояние нашей планеты и ее ограниченные природные ресурсы, а так же экономическую ситуацию, связанную с ростом цен на нефть и другие источники энергии, предлагаем инновационную систему EHRLESol™.
+    </p>
+    <div class="row">
+      <div class="col-md-6 pr-md-4">
+        <p class="paragraph paragraph-j">Компания EHRLE эффективно реализирует политику сбалансированного развития. Учитывая состояние нашей планеты и ее ограниченные природные ресурсы, а так же экономическую ситуацию, связанную с ростом цен на нефть и другие источники энергии, предлагаем инновационную систему EHRLESol™.</p>
+        <p class="paragraph paragraph-j">Спроектированные инженерами EHRLE специальные солярные панели располагаются на крыше бесконтактной автомойки. Для беспребойного функционирования система EHRLESol™ интегрирована с  системой отопления и другими системами оборудования. Благодаря EHRLESol™ инвестор может снизить до 40% расхода газа в год. Повышенный интерес к системе вытекает не только из-за заботы об окружающей среде, но также из-за колебаний рынка энергетических ресурсов, повышенного спроса и исчерпания запасов.</p>
+      </div>
+      <div class="col-md-6 pl-md-4">
+        <p class="paragraph paragraph-j">Благодаря близкому сотрудничеству с ведущим производителем отопительных систем, компания EHRLE в состоянии предложить инвесторам технологические решения, которые позволяют сэкономить расходы на отопление и способствуют охране окружающей среды. Это дает основу обращаться за грантом ЕС, где экономические и экологические инвестиции положительно оцениваемые.</p>
+        <p class="paragraph paragraph-j">На Международной выставке STACJA PALIW  немецкая система EhrleSOL™ была награждена Польской палатой жидкого топлива дипломом «Продукт года 2009.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="content content-color content_real_time_display" id="real_time_display">
+  <div class="container">
+    <h2 class="content_header">Real Time Display</h2>
+    <div class="text-center my-4">
+      <span style="max-width: 250px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/realtimedisplay_logo.png" alt="" width="100%">
+      </span>
+    </div>
+    <div class="row">
+      <div class="col-md-6 px-md-5 mb-4">
+        <img src="./assets/images/realtimedisplay1.png" alt="" class="mx-auto" style="max-width: 500px; width: 100%">
+      </div>
+      <div class="col-md-6 pr-md-0">
+        <p class="paragraph paragraph-accent paragraph-j">Предлагаемые с самого начала панели управления из нержавеющей стали, за последние несколько лет прошли модернизацию. Кроме самого дизайна, характеризующегося приятной графикой и брызгозащищенными клавишами, на протяжении последних лет применено и добавлено: защита для монетоприемников, возможность монтажа системы отсасывания монет, возможность выбора версии панели с коротким или высоким коробом. В этом году панель управления полностью преобразовалась.</p>
+        <p class="paragraph paragraph-j">Теперь Инвестор вместе с автомойкой получает абсолютно новую модель панели управления - Real Time Display. Вместо используемого до сих пор дисплея, отображающего оставшееся количество импульсов, предлагается новый дисплей оставшегося реального времени мытья за данную денежную единицу. Это значительное облегчает посетителям контролировать время мойки, которые видят сколько точно времени осталось до окончания процесса мытья, и тем самым могут его лучше и эффективнее использовать. Инвестор в свою очередь может быть уверен, что данный водитель не заблокирует пост другим клиентам.</p>
+        <p class="paragraph paragraph-j">С этого года панели управления EHRLE укомплектованы системой предоставляющей возможность новых форм оплаты, кроме доступных до сих пор. Компания EHRLE - это единый производитель в отрасли, который предлагает 6 способов оплаты за мойку: при помощи монет, жетонов, ключей EHRLE KeySystem, купюр, кредитных карт и мобильного телефона, из которых 3 последних это абсолютная новинка. Тем самым решается проблема отсутствия наличных денег у клиентов, которые хотят помыть автомобиль. Это, несомненно, большой успех компании EHRLE, так как никакой другой компании из данной отрасли не удалось ввести на рынок такого решения, в том числе  дисплея реального времени.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="content content_lce_slm" id="lce_slm">
+  <div class="container">
+    <h2 class="content_header">LCE / SLM - Профессиональные системы отопления</h2>
+    <div class="text-center mb-5">
+      <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/lce_sle.jpg" alt="" width="100%">
+      </span>
+    </div>
+    <p class="paragraph paragraph-c mb-4">
+      Компания EHRLE эффективно реализирует политику сбалансированного развития. Учитывая состояние нашей планеты и ее ограниченные природные ресурсы, а так же экономическую ситуацию, связанную с ростом цен на нефть и другие источники энергии, предлагаем инновационную систему EHRLESol™.
+    </p>
+  </div>
+  <div class="px-3 mx-auto" style="max-width: 1200px">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <img src="./assets/images/lce-typ1.jpg" alt="" style="max-width: 300px; width: 100%;">
+        <p class="paragraph paragraph-c paragraph-accent">
+          Обогревательные атмосферные котлы EHRLE LCE 20-85кВт с газовой горелкой
+        </p>
+        <p class="paragraph paragraph-j">
+          Основной обогревательный модуль EHRLE с котлом из нержавеющей стали может обеспечивать горячей водой даже 4 поста мойки.
+        </p>
+        <p class="paragraph paragraph-j">
+          Модуляционная газовая горелка с плавной регулировкой мощности от 5% до 100% в сочетании с самой современной конденсационной технологией составляют систему обогрева  с максимальной производительностью и экономией энергии.
+        </p>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <img src="./assets/images/lce-typ2.jpg" alt="" style="max-width: 300px; width: 100%;">
+        <p class="paragraph paragraph-c paragraph-accent">
+          Атмосферный котел EHRLE LCE 30-160 кВт
+        </p>
+        <p class="paragraph paragraph-j">
+          Котел из нержавеющей стали может обеспечивать горячей водой даже 8 постов мойки.
+        </p>
+        <p class="paragraph paragraph-j">
+          Модуляционная газовая горелка в сочетании с самой современной конденсационной технологией составляют систему обогрева с максимальной производительностью и экономией энергии.
+        </p>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <img src="./assets/images/lce-typ3.jpg" alt="" style="max-width: 300px; width: 100%;">
+        <p class="paragraph paragraph-c paragraph-accent">
+          Модуль обогрева – дизельный обогрев LCE 50-74 кВт
+        </p>
+        <p class="paragraph paragraph-j">
+          Обогрев воды осуществляется котлом на дизельном топливе. EHRLE пользуется проверенной технологией отопительного змеевика, изготовленного из нержавеющей стали, с высокопроизводительной камерой сгорания.
+        </p>
+        <p class="paragraph paragraph-j">
+          Нагретая таким образом вода хранится в специально изолированном котле.
+        </p>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <img src="./assets/images/lce-typ4.jpg" alt="" style="max-width: 300px; width: 100%;">
+        <p class="paragraph paragraph-c paragraph-accent">
+          Модуль SLM – 50-160 кВт
+        </p>
+        <p class="paragraph paragraph-j">
+          Модули SLM - теплообменники, используемые для подключения источников тепла, в случаях, когда теплоноситель подается в мойку под давлением и возвращается в систему обогрева. SLM необходимы для работы с котлами типа BUDERUS, а также для решений с подачей горячей воды из узлов центрального отопления, либо из внешней котельной и т.д. Модули фабрично оборудованы теплообменниками и циркуляционными насосами. Они сразу приспособлены к обслуживанию системы обогрева полов на постах мойки.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="content content-color content_micropowder" id="micropowder">
+  <div class="container">
+    <h2 class="content_header">Система Тoчнoй Дoзaции Микpoпopoшкa</h2>
+    <p class="content_subtitle">Авторская система точной дозации МикроПорошка применяемая компанией EHRLE, отлчиается интересным решением и эксклюзивным механизмом</p>
+    <div class="text-center my-4">
+      <span style="max-width: 250px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/micropowder_logo.png" alt="" width="100%">
+      </span>
+    </div>
+    <div class="d-md-flex d-block">
+      <div>
+        <p class="paragraph paragraph-accent paragraph-j">Компания EHRLE, прежде всего, известна бесконтактной и порошковой технологией. Сердцем нашего оборудования является система точной дозации МикроПорошка EHRLE Globoid, которая является нашей большой гордостью. Все элементы системы изготовлены из современной, профессиональной пластмассы и тефлона, что обеспечивает долговечную и безотказную работу изделия. Система EHRLE Globoid управляется компь ютером, благодаря чему Инвестор имеет возможность дистанционно проверять количество использованного порошка. Применяемая специальная червячная система дозации точно дозирует количество порошка, необходимого для первой программы – основной мойки с МикроПорошком Active PowerPearl. Предлагаемые моющие средства характеризуются двумя важными свойствами - они  экономичные и экологические. Благодаря своей уникальной структуре они более эффективные, одного мешка порошка хватает на большее количество моек автомобилей, чем другие средства предлагаемые на рынке. Кроме того, специальная серия порошка X LOP содержит 50% фосфатов меньше, благодаря чему их можно использовать даже там, где очень строгие нормы по охране окружающей среды.</p>
+      </div>
+      <div class="pl-md-5 mt-4 mt-md-2 text-center" style="max-width: 300px; width: 100%">
+        <img src="./assets/images/micropowder1.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="content content_foam" id="foam">
+  <div class="container">
+    <h2 class="content_header">Активная пена</h2>
+    <p class="content_subtitle">Генератор пены является дополнительным оборудованием, которое можно установить на мойках EHRLE. Активная пена подается на посты мойки отдельным пистолетом и позволяет расширить возможности автомойки следующей программой мойки.</p>
+    <div class="text-center mb-5">
+      <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/foam.jpg" alt="" width="100%">
+      </span>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-5">
+        <div class="video_embed">
+          <iframe v-if="smallVideoPlayed" src="https://www.youtube.com/embed/9TH7N2sIk38?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div v-else @click="smallVideoPlayed=true" class="video_embed_image" style="background-image: url(./assets/images/video_play.jpg)"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p class="paragraph paragraph-j">Компания EHRLE является первым производителем бесконтактных автомоек использующих инновационную технологию активной пены с системой точной дозации МикроПорошка. Активная пена повышает эффективность мойки; под её воздействием грязь размягчается, что позволяет удалить даже самые стойкие загрязнения. При исползовании современного пневматического генератора пены нужно только 1,5 – 2% химического средства для получения густой, активной пены.</p>
+        <p class="paragraph paragraph-j">Современный генератор пены из-за своих габаритов может применяется как в автомойках контейнерного типа так и модульного.</p>
+        <p class="paragraph paragraph-j">Автономный компрессор и вспомогательный насос с регулятором давления гарантируют достижение постоянно одинаковых параметров пены, несмотря на число работающих постов. Регулировка пропорции смешивания компонентов позволяет получить оптимальный химический состав, а также густоту и объём пены. А благодаря отдельной системе хранения и подачи, мягкая пена всегда готова для применения.</p>
+        <p class="paragraph paragraph-j">Опцией активной пены могут быть оборудованы как все посты на мойке, так и только выбранные. Генератор пены EHRLE может производить деликатную пену от 0,5 мм до 80 мм.</p>
+      </div>
+    </div>
+    <div class="row px-5">
+      <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0 px-0">
+        <img src="./assets/images/foam1.jpg" alt="" style="width: 100%">
+      </div>
+      <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0  px-0">
+        <img src="./assets/images/foam2.jpg" alt="" style="width: 100%">
+      </div>
+      <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0  px-0">
+        <img src="./assets/images/foam3.jpg" alt="" style="width: 100%">
+      </div>
+      <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0  px-0">
+        <img src="./assets/images/foam4.jpg" alt="" style="width: 100%">
+      </div>
+    </div>
+  </div>
+</section>
+    <footer class="footer">
+  <div class="footer_container_row">
+    <div class="item">
+      <div class="footer_label">
+        Еще больше информации
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link">
+          <a href="#" target="_blank">Почему Ehrle?</a>
+        </li>
+        <li class="footer_link">
+          <a href="#" target="_blank">Программа лояльности</a>
+        </li>
+<!--        <li class="footer_link">-->
+<!--          <a href="#" target="_blank">Инвестиционный процесс шаг за шагом</a>-->
+<!--        </li>-->
+<!--        <li class="footer_link">-->
+<!--          <a href="#" target="_blank">Галерея реализации</a>-->
+<!--        </li>-->
+<!--        <li class="footer_link">-->
+<!--          <a href="#" target="_blank">Спроектируй свою мойку</a>-->
+<!--        </li>-->
+<!--        <li class="footer_link">-->
+<!--          <a href="#" target="_blank">Стройка И Монтаж Автомойки EHRLE</a>-->
+<!--        </li>-->
+<!--        <li class="footer_link">-->
+<!--          <a href="#" target="_blank">Ehrle в зимний период</a>-->
+<!--        </li>-->
+      </ul>
+    </div>
+    <div class="item">
+      <div class="footer_label">
+        Контакты для связи
+      </div>
+      <ul class="ul_custom">
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/phone.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">+7 (702) 502-62-85</div>
+            <div class="icon_block_subtitle">Номер телефона</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/email.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">ehrle_carwash@gmail.com</div>
+            <div class="icon_block_subtitle">Адрес почты</div>
+          </a>
+        </li>
+        <li class="footer_link footer_link_contact icon_block link_contact">
+          <a href="#" target="_blank">
+            <div class="icon_block_icon">
+              <img src="./assets/images/map.svg" alt="">
+            </div>
+            <div class="icon_block_value pseudo_link">г. Алматы, <br/>ул. Фурманова 38б</div>
+            <div class="icon_block_subtitle">Наш офис</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="item item-wide">
+      <div class="d-sm-flex flex-wrap">
+        <div class="footer_label">Приходите к нам в гости</div>
+        <div class="footer_social social_links">
+          <div class="footer_label social_label">Мы в соц. сетях:</div>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_vk.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_instagram.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_twitter.svg" alt="">
+          </a>
+          <a class="social_link" href="#" target="_blank">
+            <img src="./assets/images/social_facebook.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <a href="#" target="_blank" class="footer_map">
+        <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="footer_container">
+    <div class="footer_line"></div>
+    <div class="footer_external_links">
+      <!--<a href="#" target="_blank">Обработка персональных данных</a>-->
+      <!--<a href="#" target="_blank">Условия бронирования счёта</a>-->
+      <!--<a href="#" target="_blank">Пользовательское соглашение</a>-->
+      <span>Copyright © 2014 - 2019 <a href="/">EHRLE.</a> Все права защищены.</span>
+    </div>
+  </div>
+</footer>
+
+    <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
+    <div class="modal_backdrop" @click="closeModal"></div>
+    <div class="modal_container justify-content-between">
+        <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+        <div class="modal_body">
+            <h2 class="heading ">Введите ваши данные</h2>
+            <form class="modal_form">
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_name" placeholder=" ">
+                    <label for="modal_name" class="input_label"><span>Имя Фамилия</span></label>
+                </div>
+                <div class="form_item form_field">
+                    <input type="text" class="input" id="modal_phone" placeholder="+7 (000) 000 - 00 - 00">
+                    <label for="modal_phone" class="input_label"><span>Телефон</span></label>
+                </div>
+                <div class="form_item">
+                    <button type="submit" class="btn btn_primary">Оставить заявку</button>
+                </div>
+            </form>
+<!--            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>-->
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

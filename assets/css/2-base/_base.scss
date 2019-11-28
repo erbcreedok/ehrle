@@ -65,6 +65,9 @@ body {
   font-size: 36px;
   font-weight: 600;
   color: $c_dark;
+  &-light {
+    font-weight: 400;
+  }
   @media (max-width: 991.98px) {
     font-size: 30px;
   }

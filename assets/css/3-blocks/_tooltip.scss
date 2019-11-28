@@ -1,0 +1,50 @@
+@import "../2-base/mixins";
+
+.tooltip {
+  &_container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  &_body {
+    $color: lighten(black, 40);
+    font-size: 14px;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    display: block;
+    position: absolute;
+    width: 200px;
+    background: $color;
+    box-shadow: 0 3px 10px rgba(black, .2);
+    margin-bottom: 3px;
+    @include trbl(auto, 0, 100%, -94px);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: .15s;
+    cursor: auto;
+    pointer-events: none;
+    &:before {
+      @include pseudo_absolute;
+      @include trbl(-10px, -10px, -50px);
+      transition: .15s;
+    }
+    &:after {
+      @include pseudo_absolute;
+      @include mx(auto);
+      @include trbl(100%, 0, 0);
+      @include arrow_triangle_down($color, 10px, 5px);
+    }
+  }
+  &_container:hover &_body {
+    animation: none;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    &:before {
+      @include trbl(-10px, -10px, -30px);
+    }
+  }
+}
