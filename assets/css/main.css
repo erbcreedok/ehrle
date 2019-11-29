@@ -2933,6 +2933,15 @@ select:focus ~ .form_select_arrow {
   position: relative;
   cursor: pointer;
 }
+.tooltip_container:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+}
 .tooltip_body {
   font-size: 14px;
   padding: 8px;

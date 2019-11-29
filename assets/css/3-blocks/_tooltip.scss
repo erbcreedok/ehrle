@@ -5,6 +5,10 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
+    &:before {
+      @include pseudo_absolute;
+      @include trbl(-5px);
+    }
   }
   &_body {
     $color: lighten(black, 40);

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @@include('../components/head_tags.html', {"title": "Бизнес с EHRLE"})
+    <!-- endbuild -->
+</head>
+<body class="lang-ru">
+<div id="app">
+    <input type="hidden" value="beskontakt" id="sitepage">
+    @@include('../components/nav.html')
+    <div class="content content-first">
+        <div class="container pt-3">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs-item">
+                    <a href="./">Главная</a>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span>Технология</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @@include('../components/footer.html')
+    @@include('../components/modal_form.html')
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
