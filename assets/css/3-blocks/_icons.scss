@@ -1,13 +1,19 @@
 @import "../2-base/mixins";
 
+
 .icon {
-  @include square(12px);
-  display: inline-block;
+  @include iconBase;
+  @each $icon in $icons {
+    &-#{$icon} {
+      @include icon($icon);
+    }
+  }
   &-faq {
     &:before {
       content: '?';
     }
-    @include circle(12px, $c_gray_6);
+    border-radius: 50%;
+    background: $c_gray_6;
     line-height: 12px;
     font-size: 11px;
     color: white;

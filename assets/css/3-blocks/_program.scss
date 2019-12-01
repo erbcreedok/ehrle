@@ -1,0 +1,79 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.program {
+  &s_body {
+    position: relative;
+  }
+  &_bg {
+    position: fixed;
+    transition: .1s;
+    @include trbl(0);
+    &_wrapper {
+      position: absolute;
+      @include trbl(0);
+      z-index: -1;
+      perspective: 30px;
+    }
+  }
+  &_container {
+    @include flex;
+    &-left {
+      justify-content: flex-start;
+    }
+    &-right {
+      justify-content: flex-end;
+    }
+    @include py(50px);
+    & .program_box {
+      //min-height: 250px;
+    }
+  }
+  &_box {
+    //height: 100%;
+    max-width: 600px;
+    @include flex;
+  }
+  &_image {
+    //background: $c_gray_1;
+    border: 4px solid $c_red;
+    border-radius: 8px;
+    min-width: 130px;
+    max-width: 130px;
+    height: 130px;
+    img {
+      width: 100%;
+      @include my(auto);
+    }
+    margin-right: 20px;
+    @include my(0);
+  }
+  &_text {
+    .title {
+      font-size: 28px;
+      max-width: 280px;
+      @include my(10px, 30px);
+    }
+  }
+  &_icon {
+    display: block;
+    position: absolute;
+    @include trbl(0);
+    overflow: hidden;
+    color: $c_gray_1;
+    .icon {
+      display: block;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      @include trbl(0);
+      margin: auto;
+      opacity: .7;
+    }
+    @for $i from 1 through 30 {
+      &:nth-child(#{$i}) {
+        opacity: random(2)/10 + .8;
+      }
+    }
+  }
+}

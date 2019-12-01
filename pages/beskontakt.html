@@ -8,8 +8,7 @@
 <div id="app">
     <input type="hidden" value="beskontakt" id="sitepage">
     @@include('../components/nav.html')
-    @@include('../sections/video_beskontakt.html')
-    <div class="container pt-3">
+    <div class="container content-first">
         <ul class="breadcrumbs">
             <li class="breadcrumbs-item">
                 <a href="./">Главная</a>
@@ -19,14 +18,25 @@
             </li>
         </ul>
     </div>
-    @@include('../sections/content_beskontakt.html')
-    @@include('../sections/content_vda.html')
-    @@include('../sections/content_modul_line.html')
-    @@include('../sections/content_ehrlesol.html')
-    @@include('../sections/content_real_time_display.html')
-    @@include('../sections/content_lce_slm.html')
-    @@include('../sections/content_micropowder.html')
-    @@include('../sections/content_foam.html')
+    <section class="content content_beskontakt pt-2 pb-4" id="beskontakt">
+        <div class="container">
+            <h1 class="content_header">Бесконтактная мойка</h1>
+            <div class="paragraph" style="max-width: 700px">
+                Умелое мытье автомобиля, инновационная технология и использованные высококачественные химические средства это причины, для которых бесконтактная мойка самообслуживания EHRLE, позволяет достичь отличного удовлетворяющего результата без риска получить царапины и другие возможные повреждения, связанные с применением щеток.
+            </div>
+        </div>
+    </section>
+    <section class="section py-4">
+        <div class="container mt-3">
+            <h2 class="heading">
+                Мойки EHRLE применяют 4 программы мытья
+            </h2>
+            <div class="programs_body">
+                <program-bg></program-bg>
+                @@loop("../components/beskontakt_program.html", "../data/data_beskontakt.json")
+            </div>
+        </div>
+    </section>
     @@include('../components/footer.html')
     @@include('../components/modal_form.html')
 </div>

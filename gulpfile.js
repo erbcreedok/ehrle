@@ -113,6 +113,7 @@ gulp.task("build", ['minifyProdScripts', 'minifyCss', 'fileInclude'], function()
     '*.html',
     '*.php',
     'favicon.ico',
+    "assets/icons/**",
     "assets/images/**",
     "assets/fonts/**",
     "assets/css/**/*.css"
