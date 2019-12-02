@@ -3,10 +3,16 @@
 
 .content_header {
   font-size: 3rem;
+  @media (max-width: 575.98px) {
+    font-size: 2rem;
+  }
 }
 .content_subtitle {
   font-size: 24px;
   color: #717171;
+  @media (max-width: 575.98px) {
+    font-size: 18px;
+  }
 }
 .content_header-parallax {
   font-size: 8rem;

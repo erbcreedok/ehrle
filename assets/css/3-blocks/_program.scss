@@ -1,7 +1,13 @@
 @import "../2-base/variables";
 @import "../2-base/mixins";
 
+
 .program {
+  @mixin mobileBreakpoint(){
+    @media (max-width: 576px) {
+      @content
+    }
+  }
   &s_body {
     position: relative;
   }
@@ -33,6 +39,10 @@
     //height: 100%;
     max-width: 600px;
     @include flex;
+    @include mobileBreakpoint {
+      @include flex_wrap;
+      text-align: center;
+    }
   }
   &_image {
     //background: $c_gray_1;
@@ -47,12 +57,19 @@
     }
     margin-right: 20px;
     @include my(0);
+    @include mobileBreakpoint {
+      @include mx(auto);
+    }
   }
   &_text {
     .title {
       font-size: 28px;
       max-width: 280px;
       @include my(10px, 30px);
+      @include mobileBreakpoint {
+        @include my(20px, 10px);
+        @include mx(auto);
+      }
     }
   }
   &_icon {
