@@ -19,10 +19,12 @@ body {
     padding-left: 13px;
     position: relative;
     &:before {
-      @include pseudo_absolute();
+      @include pseudo_block;
       @include circle(5px, $c_red);
       left: 0;
       top: 9px;
+      margin-bottom: 2px;
+      margin-right: 6px;
     }
   }
 }

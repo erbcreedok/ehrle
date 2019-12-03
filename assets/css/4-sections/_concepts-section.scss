@@ -31,6 +31,9 @@
     max-width: 870px;
     @include mx(auto);
     @include trbl(0);
+    @media (max-width: 1050px) {
+      max-width: 720px;
+    }
   }
 
   //radio

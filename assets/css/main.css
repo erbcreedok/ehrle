@@ -61,7 +61,6 @@ body {
 .ul_classic > li:before {
   content: "";
   display: block;
-  position: absolute;
   display: inline-block;
   width: 5px;
   height: 5px;
@@ -69,6 +68,8 @@ body {
   border-radius: 50%;
   left: 0;
   top: 9px;
+  margin-bottom: 2px;
+  margin-right: 6px;
 }
 
 .p-static {
@@ -3022,16 +3023,16 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(6) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(7) {
   opacity: 1;
 }
 .program_icon:nth-child(8) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(9) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(10) {
   opacity: 1;
@@ -3046,19 +3047,19 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(14) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(15) {
   opacity: 1;
 }
 .program_icon:nth-child(16) {
-  opacity: 1;
-}
-.program_icon:nth-child(17) {
   opacity: 0.9;
 }
-.program_icon:nth-child(18) {
+.program_icon:nth-child(17) {
   opacity: 1;
+}
+.program_icon:nth-child(18) {
+  opacity: 0.9;
 }
 .program_icon:nth-child(19) {
   opacity: 1;
@@ -3067,22 +3068,22 @@ select:focus ~ .form_select_arrow {
   opacity: 0.9;
 }
 .program_icon:nth-child(21) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(22) {
   opacity: 0.9;
 }
 .program_icon:nth-child(23) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(24) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(25) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(26) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(27) {
   opacity: 1;
@@ -3091,7 +3092,7 @@ select:focus ~ .form_select_arrow {
   opacity: 0.9;
 }
 .program_icon:nth-child(29) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(30) {
   opacity: 0.9;
@@ -3485,6 +3486,11 @@ header {
   right: 0;
   bottom: 0;
   left: 0;
+}
+@media (max-width: 1050px) {
+  .concepts_section .slide_list_controls {
+    max-width: 720px;
+  }
 }
 @media (max-width: 919.98px) {
   .concepts_section .hide_mobile {
