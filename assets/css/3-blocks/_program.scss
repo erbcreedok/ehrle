@@ -37,7 +37,7 @@
   }
   &_box {
     //height: 100%;
-    max-width: 600px;
+    max-width: 900px;
     @include flex;
     @include mobileBreakpoint {
       @include flex_wrap;
@@ -64,8 +64,7 @@
   &_text {
     .title {
       font-size: 28px;
-      max-width: 280px;
-      @include my(10px, 30px);
+      @include my(10px, 10px);
       @include mobileBreakpoint {
         @include my(20px, 10px);
         @include mx(auto);

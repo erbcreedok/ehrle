@@ -2894,7 +2894,7 @@ select:focus ~ .form_select_arrow {
   justify-content: flex-end;
 }
 .program_box {
-  max-width: 600px;
+  max-width: 900px;
   display: -ms-flexbox;
   display: flex;
 }
@@ -2928,9 +2928,8 @@ select:focus ~ .form_select_arrow {
 }
 .program_text .title {
   font-size: 28px;
-  max-width: 280px;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 @media (max-width: 576px) {
   .program_text .title {
@@ -2963,25 +2962,25 @@ select:focus ~ .form_select_arrow {
   opacity: 0.7;
 }
 .program_icon:nth-child(1) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(2) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(3) {
   opacity: 1;
 }
 .program_icon:nth-child(4) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(5) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(6) {
   opacity: 0.9;
 }
 .program_icon:nth-child(7) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(8) {
   opacity: 1;
@@ -2990,7 +2989,7 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(10) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(11) {
   opacity: 0.9;
@@ -2999,43 +2998,43 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(13) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(14) {
   opacity: 1;
 }
 .program_icon:nth-child(15) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(16) {
   opacity: 0.9;
 }
 .program_icon:nth-child(17) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(18) {
   opacity: 0.9;
 }
 .program_icon:nth-child(19) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(20) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(21) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(22) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(23) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(24) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(25) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(26) {
   opacity: 1;
@@ -3044,13 +3043,13 @@ select:focus ~ .form_select_arrow {
   opacity: 0.9;
 }
 .program_icon:nth-child(28) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(29) {
   opacity: 1;
 }
 .program_icon:nth-child(30) {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .section {

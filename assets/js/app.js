@@ -7,13 +7,13 @@ var DEFAULT_DELAY = 50;
 Vue.use(vueView());
 
 var defIcons = [
-  {name: 'leaves', x: 45, y: -30, z: 0, rotate: 33},
-  {name: 'sparkles', x: -50, y: -31, z: 0, rotate: -33},
-  {name: 'water', x: 14, y: -43, z: 0, rotate: 0},
-  {name: 'windshield', x: -33, y: -10, z: 0, rotate: -100},
-  {name: 'wiper', x: 10, y: 5, z: 0, rotate: 0},
-  {name: 'water', x: 30, y: -10, z: 0, rotate: -60},
-  {name: 'leaves', x: -44, y: 25, z: -10, rotate: 0},
+  {name: 'leaves', x: 45, y: -50, z: 0, rotate: 33},
+  {name: 'sparkles', x: -10, y: -28, z: 0, rotate: -33},
+  {name: 'water', x: 15, y: -43, z: 0, rotate: 0},
+  {name: 'windshield', x: 45, y: -20, z: 0, rotate: -100},
+  {name: 'wiper', x: 50, y: 9, z: 0, rotate: 0},
+  {name: 'water', x: 10, y: -10, z: 0, rotate: -60},
+  {name: 'leaves', x: 20, y: 25, z: -10, rotate: 0},
 ];
 
 Vue.component('program-bg', {
