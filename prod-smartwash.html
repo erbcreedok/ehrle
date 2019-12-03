@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Калькулятор - EHRLE</title>
+  <title>Автомойка SmartWash - EHRLE</title>
 <meta name="google-site-verification" content="" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +28,7 @@
 </head>
 <body class="lang-ru">
 <div id="app">
-  <input type="hidden" value="chemistry" id="sitepage">
+  <input type="hidden" value="smartwash" id="sitepage">
   <header>
 <div class="menu" :class="{'menu-opened': isMenuOpened}">
   <div class="container">
@@ -149,145 +149,210 @@
 </nav>
   <scroll-top v-if="showScroll"/>
 </header>
-  <div class="container content-first my-3">
+  <div class="container content-first">
     <ul class="breadcrumbs">
       <li class="breadcrumbs-item">
         <a href="./">Главная</a>
       </li>
       <li class="breadcrumbs-item">
-        <span>Строительство мойки "под ключ"</span>
+        <a href="./#section_products">Продукты</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <span>Автомойки SmartWash</span>
       </li>
     </ul>
   </div>
-  <div class="container">
-    <div class="heading mb-3">
-      Строительство мойки “под ключ”
+  <div class="content pt-2 content-bordered">
+    <div class="container">
+      <h1 class="content_header">
+        Автомойкa SmartWash
+      </h1>
+      <p class="content_subtitle">Бесконтактная автомойка в компактной версии</p>
+      <div class="text-center mb-5">
+        <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+          <img src="./assets/images/smartwash.jpg" alt="" width="100%">
+        </span>
+      </div>
     </div>
-    <p style="max-width: 555px;" class="text">
-      В этом калькуляторе Вы можете рассчитать «Под ключ» цену всех этапов строительства автомобильной мойки самообслуживания. Включая поставки котельного оборудования, обеспечивающего функцию «теплый пол» и режим подогрева воды.
-    </p>
   </div>
-  <div class="container mt-5 calculator_container">
-    <div class="title mb-4">Калькулятор стройки</div>
-    <div class="row justify-content-between">
-      <div class="col-lg-7 col-md-8">
-        <div class="calculator">
-          <ul class="radio_tabs mb-4">
-            <li class="radio_tab radio_tab-selected">Модульная мойка</li>
-            <li class="radio_tab">Контейнерная мойка</li>
-          </ul>
-          <div class="label my-3">1. Детали мойки</div>
-          <div class="row">
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Выберите вид мойки</div>
-              <div class="radio_buttons">
-                <div class="radio_button">Smart Wash</div>
-                <div class="radio_button">Smart Wash Plus</div>
-                <div class="radio_button">Jet Wash</div>
-                <div class="radio_button">Jet Wash Plus</div>
-                <div class="radio_button">Car Wash Plus Outdoor</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество постов для мойки</div>
-              <div class="radio_buttons ">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button radio_button-squared">3</div>
-                <div class="radio_button radio_button-squared">4</div>
-                <div class="radio_button radio_button-squared">5</div>
-                <div class="radio_button radio_button-squared">6</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество пылесосов <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Количество пылесосов в автомойке</span></span></div>
-              <div class="radio_buttons">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button">Без пылесоса</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">Буду покупать участок</option>
-                  <option value="1">Не буду покупать участок</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Цена за участок</div>
-              <div class="form_input">
-                <input type="text" placeholder="10,000,000 ₸"/>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">На электричестве</option>
-                  <option value="1">На дровах</option>
-                  <option value="1">На углях</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Строительство под ключ</div>
-              <div class="form_checkboxes">
-                <label for="type" class="form_checkbox">
-                  <input type="checkbox" id="type">
-                  <span class="form_checkbox_label">Да, постройте мне мойку</span>
-                  <span class="form_checkbox_icon"></span>
-                </label>
-              </div>
-            </div>
-          </div>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="paragraph paragraph-j">1-постовые мойки <strong>SmartWash </strong>и <strong>SmartWash Plus</strong> предназначены для небольших объектов, или там, где инвестиции ограничены. Однако небольшое оборудование не означает небольшую прибыль. Оно является отличным дополнением к бизнесу типа АЗС, станция техосмотра автомобилей, автосервисный центр.</p>
+          <p class="paragraph paragraph-j"><strong>SmartWash </strong>это экономный, простой в обслуживании, и компактный вариант 1-постовой автомойки самообслуживания EHRLE. Оборудование позволяет безопасно и современно помыть автомобиль. При бесконтактной технологии, используя Микропорошок PPMP PowerPearl MicroPowder и теплую умягченную воду, грязь удаляется быстрее и эффективнее.SmartWash выпускается в стандартной версии, укомплектованной системой умягчения воды, и в версии PLUS – с дополнительной системой обратного осмоса. Вода на 1-постовой мойке подогревается с помощью дизельного либо электрического котла.</p>
+        </div>
+        <div class="col-md-6 px-0">
+          <img src="./assets/images/smartwash_right.jpg" alt="" style="width: 100%" class="d-block">
         </div>
       </div>
-      <div class="col-lg-5 col-md-4">
-        <div class="calculator_result">
-          <div class="calculator_result_wrapper">
-            <div class="calculator_result_header my-4">
-              <div class="label mb-2">Стоимость вашего проекта:</div>
-              <div class="heading heading-light">12,220,000 <span class="small" style="font-weight: 500">₸</span></div>
-            </div>
-            <div class="calculator_result_label d-flex justify-content-between flex-wrap align-items-center mt-4 mb-2">
-              <div class="label mb-1">Результаты расчёта</div>
-              <span class="pseudo_link">Скрыть детали</span>
-            </div>
-            <ul class="calculator_result_list ul_custom mb-4">
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-            </ul>
-            <div class="my-4 pt-2">
-              <button class="btn btn_primary">Получить консультацию</button>
-            </div>
-          </div>
+    </div>
+  </div>
+  <img src="./assets/images/smartwash_centrum.jpg" width="100%"/>
+  <div class="content">
+    <div class="container">
+      <h2 class="content_header text-center">Оборудование SmartWash</h2>
+      <p class="content_subtitle text-center">Компактная однопостовая автомойка самообслуживания EHRLE.</p>
+    </div>
+  </div>
+  <img src="./assets/images/smartwash_indoor_ru.jpg" style="max-width: 700px; width: 100%" class="d-block mx-auto mb-5"/>
+  <img src="./assets/images/smartwash_bg1.jpg" style="width: 100%"/>
+  <div class="content">
+    <div class="container">
+      <div class="content_header text-center">
+        <small>Технические данные</small>
+      </div>
+      <div class="table-container mx-auto mt-5" style="max-width: 800px">
+        <table class="table-classic table-lct">
+          <thead>
+          <tr>
+            <th>Данные</th>
+            <th>SmartWash</th>
+            <th>SmartWash Plus</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>количество постов</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>количество систем дозации на одном посте</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>программа лояльности</td>
+            <td>KeySystem ○</td>
+            <td>KeySystem ○</td>
+          </tr>
+          <tr>
+            <td>платеж</td>
+            <td>монеты, жетоны, ключ KeySystem ○, банкноты ○ ○</td>
+            <td>монеты, жетоны, ключ KeySystem ○, банкноты ○</td>
+          </tr>
+          <tr>
+            <td>количество программ мытья</td>
+            <td>4</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>монтаж дополнительной моющей щетки</td>
+            <td>○</td>
+            <td>○</td>
+          </tr>
+          <tr>
+            <td>программа "Активная пена EHRLE"</td>
+            <td><strong>▬</strong></td>
+            <td><strong>▬</strong></td>
+          </tr>
+          <tr>
+            <td>система контроля</td>
+            <td>● (on side)</td>
+            <td>● (on side)</td>
+          </tr>
+          <tr>
+            <td>отображение сервисной информации</td>
+            <td>●</td>
+            <td>●</td>
+          </tr>
+          <tr>
+            <td>изготовлено в</td>
+            <td>Германия</td>
+            <td>Германия</td>
+          </tr>
+          <tr>
+            <td>сертификат</td>
+            <td>CE, VDA</td>
+            <td>CE, VDA</td>
+          </tr>
+          <tr>
+            <td>управление</td>
+            <td>компютер SIEMENS, PC</td>
+            <td>компютер SIEMENS, PC</td>
+          </tr>
+          <tr>
+            <td>внешний размер оборудования (выс. х шир. х гл.)</td>
+            <td>175(325) x&nbsp;120 x&nbsp;82 см</td>
+            <td>175(325) x&nbsp;120 x&nbsp;105 см</td>
+          </tr>
+          <tr>
+            <td>расход воды на 1 пост</td>
+            <td>400 - 660 л/ч</td>
+            <td>400 - 660 л/ч</td>
+          </tr>
+          <tr>
+            <td>максимальное давление</td>
+            <td>135 бар</td>
+            <td>135 бар</td>
+          </tr>
+          <tr>
+            <td>рабочее давление</td>
+            <td>30 - 120 бар (регулируемое поплавком)</td>
+            <td>30 - 120 бар (регулируемое поплавком)</td>
+          </tr>
+          <tr>
+            <td>обороты насоса высокого давления</td>
+            <td>900 об/мин.</td>
+            <td>900 об/мин.</td>
+          </tr>
+          <tr>
+            <td>способ подогрева воды</td>
+            <td>дизельный/электрический</td>
+            <td>дизельный/электрический</td>
+          </tr>
+          <tr>
+            <td>мощность грелки</td>
+            <td>35 кВт (дизель.), 6/12 кВт (электр.)</td>
+            <td>35 кВт (дизель.), 6/12 кВт (электр.)</td>
+          </tr>
+          <tr>
+            <td>емкость котла</td>
+            <td>10 л (дизель.), 50 л (электр.)</td>
+            <td>10 л (дизель.), 50 л (электр.)</td>
+          </tr>
+          <tr>
+            <td>бак WAB</td>
+            <td>40 л</td>
+            <td>40 л</td>
+          </tr>
+          <tr>
+            <td>система умягчения воды</td>
+            <td>1x32 cbm/⁰dH</td>
+            <td>1x32 cbm/⁰dH</td>
+          </tr>
+          <tr>
+            <td>система обратного осмоза</td>
+            <td><strong>▬</strong></td>
+            <td>производительность до 1440 л/сутки*</td>
+          </tr>
+          <tr>
+            <td>бак для деминерализованной воды</td>
+            <td><strong>▬</strong></td>
+            <td>100 л</td>
+          </tr>
+          <tr>
+            <td>вес</td>
+            <td>ок. &nbsp;450 кг</td>
+            <td>ок. &nbsp;560 кг</td>
+          </tr>
+          <tr>
+            <td>емкость бака для дизельного топлива</td>
+            <td>20 л</td>
+            <td>20 л</td>
+          </tr>
+          <tr>
+            <td>бак для соли в таблетках</td>
+            <td>20 кг</td>
+            <td>20 кг</td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="table_legend">
+          <p>● стандарт<br>
+            ○ платная опция<br>
+            ▬ недоступно</p>
         </div>
       </div>
     </div>

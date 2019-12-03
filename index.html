@@ -34,13 +34,13 @@
   <div class="container">
     <div class="menu_nav menu_row">
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="#" target="_blank">Продукты</a>
+        <a class="menu_col_title menu_title" href="./#section_products" @click="closeMenu">Продукты</a>
         <div class="menu_links">
-          <a class="menu_link" href="./container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
-          <a class="menu_link" href="./module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
-          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка JetWash</a>
-          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
-          <a class="menu_link" href="./chemistry.html" @click="closeMenu">Химия</a>
+          <a class="menu_link" href="./prod-container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
+          <a class="menu_link" href="./prod-module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
+          <a class="menu_link" href="./prod-smartwash.html" @click="closeMenu">Автомойка JetWash</a>
+          <a class="menu_link" href="./prod-smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
+          <a class="menu_link" href="./prod-chemistry.html" @click="closeMenu">Химия</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/mietallokonstrukcyi/" target="_blank">Металлоконструкции</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/aksiessuary/" target="_blank">Аксессуары</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/apparaty_wysokogo_dawlenija/" target="_blank">Аппараты высокого давления</a>
@@ -48,16 +48,16 @@
         </div>
       </div>
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="./beskontakt.html">Технология</a>
+        <a class="menu_col_title menu_title" href="./tech-beskontakt.html">Технология</a>
         <div class="menu_links">
-          <a class="menu_link" href="./beskontakt.html#beskontakt" @click="closeMenu">Бесконтакная мойка</a>
-          <a class="menu_link" href="./beskontakt.html#vda" @click="closeMenu">Сертификат VDA</a>
-          <a class="menu_link" href="./beskontakt.html#modul_line" @click="closeMenu">Modul Line ETRONIC 4</a>
-          <a class="menu_link" href="./beskontakt.html#ehrlesol"  @click="closeMenu">EHRLESol™</a>
-          <a class="menu_link" href="./beskontakt.html#real_time_display" @click="closeMenu">Real Time Display</a>
-          <a class="menu_link" href="./beskontakt.html#lce_slm" @click="closeMenu">LCE / SLM</a>
-          <a class="menu_link" href="./beskontakt.html#micropowder" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
-          <a class="menu_link" href="./beskontakt.html#foam" @click="closeMenu">Активная пена</a>
+          <a class="menu_link" href="./tech-beskontakt.html" @click="closeMenu">Бесконтакная мойка</a>
+          <a class="menu_link" href="./tech-vda.html" @click="closeMenu">Сертификат VDA</a>
+          <a class="menu_link" href="./tech-modul_line.html" @click="closeMenu">Modul Line ETRONIC 4</a>
+          <a class="menu_link" href="./tech-ehrlesol.html"  @click="closeMenu">EHRLESol™</a>
+          <a class="menu_link" href="./tech-real_time_display.html" @click="closeMenu">Real Time Display</a>
+          <a class="menu_link" href="./tech-lce_slm.html" @click="closeMenu">LCE / SLM</a>
+          <a class="menu_link" href="./tech-micropowder.html" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
+          <a class="menu_link" href="./tech-foam.html" @click="closeMenu">Активная пена</a>
         </div>
       </div>
       <div class="menu_col">
@@ -163,7 +163,7 @@
           в бизнесе!
         </div>
         <p class="paragraph">
-          <span class="colored">Бесконтактная мойка для бережливых и заботливых автолюбителей.</span> <a href="./beskontakt.html" class="pseudo_link link_masked">Подробнее</a>
+          <span class="colored">Бесконтактная мойка для бережливых и заботливых автолюбителей.</span> <a href="./tech-beskontakt.html" class="pseudo_link link_masked">Подробнее</a>
         </p>
         <button class="btn btn_primary" @click="openModal">
           Оставить заявку
@@ -192,7 +192,7 @@
           <li>2. Оборудование максимальная производительность;</li>
           <li>3. Высокая защита оборудования и модулей;</li>
         </ul>
-        <a href="./container_carwash.html" class="d-block mt-5">
+        <a href="./prod-container_carwash.html" class="d-block mt-5">
           <button class="btn btn_primary btn_big">
             Узнать подробнее
           </button>
@@ -213,7 +213,7 @@
           <li>2. Не требует контейнера под размещение;</li>
           <li>3. Очень простой монтаж, при высокой надежности;</li>
         </ul>
-        <a href="./module_carwash.html" class="d-block mt-5">
+        <a href="./prod-module_carwash.html" class="d-block mt-5">
           <button class="btn btn_primary btn_big">
             Узнать подробнее
           </button>
@@ -234,7 +234,7 @@
           <li>2. Помещается там, где ни одна мойка не встает;</li>
           <li>3. Самый простой монтаж, высокая рентабельность;</li>
         </ul>
-        <a href="./smartwash.html" class="d-block mt-5">
+        <a href="./prod-smartwash.html" class="d-block mt-5">
           <button class="btn btn_primary btn_big">
             Узнать подробнее
           </button>
@@ -255,7 +255,7 @@
           <li>2. Максимальный эффект за счет единой технологии с оборудованием;</li>
           <li>3. Соответствует всем международным стандартам качества и безопасности;</li>
         </ul>
-        <a href="./chemistry.html" class="d-block mt-5">
+        <a href="./prod-chemistry.html" class="d-block mt-5">
           <button class="btn btn_primary btn_big">
             Узнать подробнее
           </button>
@@ -278,7 +278,7 @@
             <li>2. Индивидуальные подход к каждому клиенту</li>
             <li>3. Полный пакет необходимых документов и споровождение</li>
           </ul>
-          <a href="./container_carwash.html" class="d-block mt-5">
+          <a href="./prod-container_carwash.html" class="d-block mt-5">
             <button class="btn btn_primary btn_big">
               Узнать подробнее
             </button>
@@ -295,7 +295,7 @@
             <li>2. Не требует контейнера под размещение;</li>
             <li>3. Очень простой монтаж, при высокой надежности;</li>
           </ul>
-          <a href="./module_carwash.html" class="d-block mt-5">
+          <a href="./prod-module_carwash.html" class="d-block mt-5">
             <button class="btn btn_primary btn_big">
               Узнать подробнее
             </button>
@@ -312,7 +312,7 @@
             <li>2. Помещается там, где ни одна мойка не встает;</li>
             <li>3. Самый простой монтаж, высокая рентабельность;</li>
           </ul>
-          <a href="./smartwash.html" class="d-block mt-5">
+          <a href="./prod-smartwash.html" class="d-block mt-5">
             <button class="btn btn_primary btn_big">
               Узнать подробнее
             </button>
@@ -329,7 +329,7 @@
             <li>2. Максимальный эффект за счет единой технологии с оборудованием;</li>
             <li>3. Соответствует всем международным стандартам качества и безопасности;</li>
           </ul>
-          <a href="./chemistry.html" class="d-block mt-5">
+          <a href="./prod-chemistry.html" class="d-block mt-5">
             <button class="btn btn_primary btn_big">
               Узнать подробнее
             </button>
@@ -345,21 +345,21 @@
     Легкая концепция бизнеса подходит для каждого сегмента
   </h2>
   <ul class="ul_custom d-flex flex-wrap justify-content-center mb-5 pb-5 hide_mobile">
-    <li class="radio_field" @click="setConcept(0)">
+    <li class="radio_field concept_radio" @click="setConcept(0)">
       <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===0}"></div>
       <span class="radio_field_label">Для частных инвесторов</span>
     </li>
-    <li class="radio_field" @click="setConcept(1)">
+    <li class="radio_field concept_radio" @click="setConcept(1)">
       <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===1}"></div>
       <span class="radio_field_label">Для действующих владельцев автомоек</span>
     </li>
-    <li class="radio_field" @click="setConcept(2)">
+    <li class="radio_field concept_radio" @click="setConcept(2)">
       <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===2}"></div>
       <span class="radio_field_label">Для сетей АЗС, Супермаркетов, ТРЦ</span>
     </li>
   </ul>
-  <ul class="slide_list hide_mobile" :class="'slide_list-go-' + conceptGoing">
-    <li class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===0}">
+  <div class="slide_list hide_mobile" :class="'slide_list-go-' + conceptGoing">
+    <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===0}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
           <img src="./assets/images/1-concept.svg" alt="">
@@ -368,16 +368,20 @@
           <h3 class="heading mb-3">
             Для частного инвестирования
           </h3>
-          <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-            и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-          </p>
+          <ul class="ul_classic mt-4 mb-5">
+            <li class="text">ROE = 35%></li>
+            <li class="text">CIR = 75%></li>
+            <li class="text">Стабильный бизнес</li>
+            <li class="text">Срок запуска до 8-и месяцев</li>
+            <li class="text">Размер инвестиций от 40,000$ (+ банковское финансирование)</li>
+          </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
           </button>
         </div>
       </div>
-    </li>
-    <li class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===1}">
+    </div>
+    <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===1}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
           <img src="./assets/images/1-concept.svg" alt="">
@@ -386,16 +390,21 @@
           <h3 class="heading mb-3">
             Для действующих владельцев автомоек
           </h3>
-          <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-            и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-          </p>
+
+          <ul class="ul_classic mt-4 mb-5">
+            <li class="text">Повышение доходности</li>
+            <li class="text">Рыночные тренды</li>
+            <li class="text">Быстрый запуск</li>
+            <li class="text">Минимальные инвестиции</li>
+            <li class="text">Действующая клиентская база</li>
+          </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
           </button>
         </div>
       </div>
-    </li>
-    <li class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===2}">
+    </div>
+    <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===2}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
           <img src="./assets/images/1-concept.svg" alt="">
@@ -404,16 +413,24 @@
           <h3 class="heading mb-3">
             Для сетей АЗС, Супермаркетов, ТРЦ
           </h3>
-          <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-            и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-          </p>
+          <ul class="ul_classic mt-4 mb-5">
+            <li class="text">Дополнительный источник доходов</li>
+            <li class="text">Увеличение клиентской базы</li>
+            <li class="text">Наличие инфраструктуры</li>
+            <li class="text">Лояльность клиентов</li>
+            <li class="text">Быстрый запуск</li>
+          </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
           </button>
         </div>
       </div>
-    </li>
-  </ul>
+    </div>
+    <div class="slide_list_controls">
+      <button class="btn_circle ml-auto" :disabled="conceptActiveIndex<=0" @click="setConcept(conceptActiveIndex-1)"><img src="./assets/images/arrow_prev.svg" alt=""></button>
+      <button class="btn_circle ml-auto" :disabled="conceptActiveIndex>=conceptsLength-1" @click="setConcept(conceptActiveIndex+1)"><img src="./assets/images/arrow_next.svg" alt=""></button>
+    </div>
+  </div>
   <ul class="hide_desktop accordion_list">
     <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===0}">
       <div class="accordion_option_label" @click="setConcept(0)">Для частных инвесторов</div>
@@ -426,9 +443,13 @@
             <h3 class="heading mb-3">
               Для частного инвестирования
             </h3>
-            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-            </p>
+            <ul class="ul_classic mt-4 mb-5">
+              <li class="text">ROE = 35%></li>
+              <li class="text">CIR = 75%></li>
+              <li class="text">Стабильный бизнес</li>
+              <li class="text">Срок запуска до 8-и месяцев</li>
+              <li class="text">Размер инвестиций от 40,000$ (+ банковское финансирование)</li>
+            </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
             </button>
@@ -447,9 +468,13 @@
             <h3 class="heading mb-3">
               Для действующих владельцев автомоек
             </h3>
-            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-            </p>
+            <ul class="ul_classic mt-4 mb-5">
+              <li class="text">Повышение доходности</li>
+              <li class="text">Рыночные тренды</li>
+              <li class="text">Быстрый запуск</li>
+              <li class="text">Минимальные инвестиции</li>
+              <li class="text">Действующая клиентская база</li>
+            </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
             </button>
@@ -468,9 +493,13 @@
             <h3 class="heading mb-3">
               Для сетей АЗС, Супермаркетов, ТРЦ
             </h3>
-            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-            </p>
+            <ul class="ul_classic mt-4 mb-5">
+              <li class="text">Дополнительный источник доходов</li>
+              <li class="text">Увеличение клиентской базы</li>
+              <li class="text">Наличие инфраструктуры</li>
+              <li class="text">Лояльность клиентов</li>
+              <li class="text">Быстрый запуск</li>
+            </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
             </button>
@@ -633,7 +662,7 @@
         <img src="./assets/images/6_focus.svg" alt="">
       </div>
       <p class="title quality_title">
-        Безлюдная техника
+        Минимум человеческого фактора
       </p>
     </li>
   </ul>

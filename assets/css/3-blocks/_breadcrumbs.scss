@@ -6,7 +6,7 @@
   @include py(10px);
   white-space: nowrap;
   overflow-x: auto;
-  .breadcrumbs-item {
+  &-item {
     font-size: 14px;
     position: relative;
     a {
@@ -28,6 +28,22 @@
       padding-right: 0;
       &:after {
         content: none;
+      }
+    }
+  }
+  &-on_color {
+    .breadcrumbs-item {
+      a {
+        color: white;
+        &:hover {
+          color: $c_red;
+        }
+      }
+      span {
+        color: $c_gray_2;
+      }
+      &:after {
+        background: url($images + '/arrow-right_white.svg') no-repeat center;
       }
     }
   }

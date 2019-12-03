@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Калькулятор - EHRLE</title>
+    <title>Бесконтакная мойка - EHRLE</title>
 <meta name="google-site-verification" content="" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,12 +24,12 @@
 <!--<meta name="yandex-verification" content=""/>-->
 <link rel="stylesheet" href="./assets/css/main.css"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
-  <!-- endbuild -->
+    <!-- endbuild -->
 </head>
 <body class="lang-ru">
 <div id="app">
-  <input type="hidden" value="chemistry" id="sitepage">
-  <header>
+    <input type="hidden" value="beskontakt" id="sitepage">
+    <header>
 <div class="menu" :class="{'menu-opened': isMenuOpened}">
   <div class="container">
     <div class="menu_nav menu_row">
@@ -149,150 +149,76 @@
 </nav>
   <scroll-top v-if="showScroll"/>
 </header>
-  <div class="container content-first my-3">
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs-item">
-        <a href="./">Главная</a>
-      </li>
-      <li class="breadcrumbs-item">
-        <span>Строительство мойки "под ключ"</span>
-      </li>
-    </ul>
-  </div>
-  <div class="container">
-    <div class="heading mb-3">
-      Строительство мойки “под ключ”
+    <div class="container content-first">
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs-item">
+                <a href="./">Главная</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <span>Технология</span>
+            </li>
+        </ul>
     </div>
-    <p style="max-width: 555px;" class="text">
-      В этом калькуляторе Вы можете рассчитать «Под ключ» цену всех этапов строительства автомобильной мойки самообслуживания. Включая поставки котельного оборудования, обеспечивающего функцию «теплый пол» и режим подогрева воды.
-    </p>
-  </div>
-  <div class="container mt-5 calculator_container">
-    <div class="title mb-4">Калькулятор стройки</div>
-    <div class="row justify-content-between">
-      <div class="col-lg-7 col-md-8">
-        <div class="calculator">
-          <ul class="radio_tabs mb-4">
-            <li class="radio_tab radio_tab-selected">Модульная мойка</li>
-            <li class="radio_tab">Контейнерная мойка</li>
-          </ul>
-          <div class="label my-3">1. Детали мойки</div>
-          <div class="row">
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Выберите вид мойки</div>
-              <div class="radio_buttons">
-                <div class="radio_button">Smart Wash</div>
-                <div class="radio_button">Smart Wash Plus</div>
-                <div class="radio_button">Jet Wash</div>
-                <div class="radio_button">Jet Wash Plus</div>
-                <div class="radio_button">Car Wash Plus Outdoor</div>
-              </div>
+    <section class="content content_beskontakt pt-2 pb-4" id="beskontakt">
+        <div class="container">
+            <h1 class="content_header">Бесконтактная мойка</h1>
+            <div class="content_subtitle" style="max-width: 800px">
+                Умелое мытье автомобиля, инновационная технология и использованные высококачественные химические средства это причины, для которых бесконтактная мойка самообслуживания EHRLE, позволяет достичь отличного удовлетворяющего результата без риска получить царапины и другие возможные повреждения, связанные с применением щеток.
             </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество постов для мойки</div>
-              <div class="radio_buttons ">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button radio_button-squared">3</div>
-                <div class="radio_button radio_button-squared">4</div>
-                <div class="radio_button radio_button-squared">5</div>
-                <div class="radio_button radio_button-squared">6</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество пылесосов <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Количество пылесосов в автомойке</span></span></div>
-              <div class="radio_buttons">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button">Без пылесоса</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">Буду покупать участок</option>
-                  <option value="1">Не буду покупать участок</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Цена за участок</div>
-              <div class="form_input">
-                <input type="text" placeholder="10,000,000 ₸"/>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">На электричестве</option>
-                  <option value="1">На дровах</option>
-                  <option value="1">На углях</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Строительство под ключ</div>
-              <div class="form_checkboxes">
-                <label for="type" class="form_checkbox">
-                  <input type="checkbox" id="type">
-                  <span class="form_checkbox_label">Да, постройте мне мойку</span>
-                  <span class="form_checkbox_icon"></span>
-                </label>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-5 col-md-4">
-        <div class="calculator_result">
-          <div class="calculator_result_wrapper">
-            <div class="calculator_result_header my-4">
-              <div class="label mb-2">Стоимость вашего проекта:</div>
-              <div class="heading heading-light">12,220,000 <span class="small" style="font-weight: 500">₸</span></div>
-            </div>
-            <div class="calculator_result_label d-flex justify-content-between flex-wrap align-items-center mt-4 mb-2">
-              <div class="label mb-1">Результаты расчёта</div>
-              <span class="pseudo_link">Скрыть детали</span>
-            </div>
-            <ul class="calculator_result_list ul_custom mb-4">
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-            </ul>
-            <div class="my-4 pt-2">
-              <button class="btn btn_primary">Получить консультацию</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </section>
+    <section class="section py-4">
+        <div class="container mt-3">
+            <h2 class="heading">
+                Мойки EHRLE применяют 4 программы мытья
+            </h2>
+            <div class="programs_body">
+                <program-bg></program-bg>
+                <div class="program_container">
+  <div class="program_box">
+    <div class="program_image">
+      <img src="./assets/images/carwash.svg" alt="">
+    </div>
+    <div class="program_text">
+      <div class="title">Мойка микропорошком</div>
+      <p class="paragraph">Power Pearl™ быстро удаляет грязь с поверхности автомобиля. Благодаря специальной формуле активных молекул напоминающей реакцию тысячи микрогубок, МикроПорошок безопасен для лакокрасочного покрытия автомобиля</p>
     </div>
   </div>
-  <footer class="footer">
+</div><div class="program_container">
+  <div class="program_box">
+    <div class="program_image">
+      <img src="./assets/images/carwash2.svg" alt="">
+    </div>
+    <div class="program_text">
+      <div class="title">Споласкивание чистой водой</div>
+      <p class="paragraph">Для споласкивания МикроПорошка, автомойки используют чистую, умягченную воду с программы 2-ой</p>
+    </div>
+  </div>
+</div><div class="program_container">
+  <div class="program_box">
+    <div class="program_image">
+      <img src="./assets/images/carwash3.svg" alt="">
+    </div>
+    <div class="program_text">
+      <div class="title">UltraProtection</div>
+      <p class="paragraph">3-я программа мойки обеспечивает защиту лакокрасочного покрытия, благодаря использованию горячего воска UltraProtection. Он создает пленку на поверхности автомобиля, что позволяет воде свободно стекать и одновременно улучшает работу стеклоочистителей</p>
+    </div>
+  </div>
+</div><div class="program_container">
+  <div class="program_box">
+    <div class="program_image">
+      <img src="./assets/images/carwash1.svg" alt="">
+    </div>
+    <div class="program_text">
+      <div class="title">SuperFinish</div>
+      <p class="paragraph">Последняя 4-я программа, в которой бесконтактная мойка использует чистую деминерализованную осмотическую воду и осушитель, гарантирует эффект блеска</p>
+    </div>
+  </div>
+</div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
   <div class="footer_container_row">
     <div class="item">
       <div class="footer_label">
@@ -391,7 +317,7 @@
   </div>
 </footer>
 
-  <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
+    <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
     <div class="modal_backdrop" @click="closeModal"></div>
     <div class="modal_container justify-content-between">
         <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>

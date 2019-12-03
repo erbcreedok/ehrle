@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Модульная автомойка CarWash - EHRLE</title>
+    <title>Real Time Display - EHRLE</title>
 <meta name="google-site-verification" content="" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,23 +24,23 @@
 <!--<meta name="yandex-verification" content=""/>-->
 <link rel="stylesheet" href="./assets/css/main.css"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
-  <!-- endbuild -->
+    <!-- endbuild -->
 </head>
 <body class="lang-ru">
 <div id="app">
-  <input type="hidden" value="module_carwash" id="sitepage">
-  <header>
+    <input type="hidden" value="chemistry" id="sitepage">
+    <header>
 <div class="menu" :class="{'menu-opened': isMenuOpened}">
   <div class="container">
     <div class="menu_nav menu_row">
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="#" target="_blank">Продукты</a>
+        <a class="menu_col_title menu_title" href="./#section_products" @click="closeMenu">Продукты</a>
         <div class="menu_links">
-          <a class="menu_link" href="./container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
-          <a class="menu_link" href="./module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
-          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка JetWash</a>
-          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
-          <a class="menu_link" href="./chemistry.html" @click="closeMenu">Химия</a>
+          <a class="menu_link" href="./prod-container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
+          <a class="menu_link" href="./prod-module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
+          <a class="menu_link" href="./prod-smartwash.html" @click="closeMenu">Автомойка JetWash</a>
+          <a class="menu_link" href="./prod-smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
+          <a class="menu_link" href="./prod-chemistry.html" @click="closeMenu">Химия</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/mietallokonstrukcyi/" target="_blank">Металлоконструкции</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/aksiessuary/" target="_blank">Аксессуары</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/apparaty_wysokogo_dawlenija/" target="_blank">Аппараты высокого давления</a>
@@ -48,16 +48,16 @@
         </div>
       </div>
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="./beskontakt.html">Технология</a>
+        <a class="menu_col_title menu_title" href="./tech-beskontakt.html">Технология</a>
         <div class="menu_links">
-          <a class="menu_link" href="./beskontakt.html#beskontakt" @click="closeMenu">Бесконтакная мойка</a>
-          <a class="menu_link" href="./beskontakt.html#vda" @click="closeMenu">Сертификат VDA</a>
-          <a class="menu_link" href="./beskontakt.html#modul_line" @click="closeMenu">Modul Line ETRONIC 4</a>
-          <a class="menu_link" href="./beskontakt.html#ehrlesol"  @click="closeMenu">EHRLESol™</a>
-          <a class="menu_link" href="./beskontakt.html#real_time_display" @click="closeMenu">Real Time Display</a>
-          <a class="menu_link" href="./beskontakt.html#lce_slm" @click="closeMenu">LCE / SLM</a>
-          <a class="menu_link" href="./beskontakt.html#micropowder" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
-          <a class="menu_link" href="./beskontakt.html#foam" @click="closeMenu">Активная пена</a>
+          <a class="menu_link" href="./tech-beskontakt.html" @click="closeMenu">Бесконтакная мойка</a>
+          <a class="menu_link" href="./tech-vda.html" @click="closeMenu">Сертификат VDA</a>
+          <a class="menu_link" href="./tech-modul_line.html" @click="closeMenu">Modul Line ETRONIC 4</a>
+          <a class="menu_link" href="./tech-ehrlesol.html"  @click="closeMenu">EHRLESol™</a>
+          <a class="menu_link" href="./tech-real_time_display.html" @click="closeMenu">Real Time Display</a>
+          <a class="menu_link" href="./tech-lce_slm.html" @click="closeMenu">LCE / SLM</a>
+          <a class="menu_link" href="./tech-micropowder.html" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
+          <a class="menu_link" href="./tech-foam.html" @click="closeMenu">Активная пена</a>
         </div>
       </div>
       <div class="menu_col">
@@ -149,179 +149,40 @@
 </nav>
   <scroll-top v-if="showScroll"/>
 </header>
-  <div class="container content-first">
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs-item">
-        <a href="./">Главная</a>
-      </li>
-      <li class="breadcrumbs-item">
-        <a href="./#section_products">Продукты</a>
-      </li>
-      <li class="breadcrumbs-item">
-        <span>Модульные автомойки CarWash</span>
-      </li>
-    </ul>
-  </div>
-  <div class="content pt-2 content-bordered">
-    <div class="container">
-      <h1 class="content_header">
-        Модульные автомойки CarWash
-      </h1>
-      <p class="content_subtitle">Модульная автомойка самообслуживания с системами точной дозации микропоршока и обратного осмоса на 2-3 поста.</p>
-      <div class="text-center mb-5">
-        <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
-          <img src="./assets/images/module_carwash.jpg" alt="" width="100%">
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p class="paragraph paragraph-j"><strong>CarWash </strong>– модуль с системой управления мойкой, насосами высокого давления, котлом, клапанами и дозаторами химических средств.</p>
-
-          <p class="paragraph paragraph-j"><strong>AquaClean</strong> – блок водоподготовки с фильтрами, умягчителем, системой обратного осмоса и &nbsp;баком для деминерализованной воды.</p>
-
-          <p class="paragraph paragraph-j">Блоки устройства размещены между постами мойки. Существует возможность проектирования разных вариантов систем моек самообслуживания, благодаря соединению модулей CarWash и AquaClean.Главным преимуществом такого типа моек является их компактность, отсутствие технического контейнера ведёт к экономии пространства для размещения постов самообслуживания. Модульные мойки часто проектируются на небольших или угловых земельных участках.</p>
-
-          <p class="paragraph paragraph-j">Двойная система водоподготовки основана на производительном умягчителе воды и системе обратного осмоса, которые размещены в блоке AquaClean. Система гарантирует постоянно высокое качество воды, даже в случае круглосуточной работы мойки. Система обратного осмоса обеспечивает достаточное количество деминерализованной воды и отличный результат мойки без пятен и подтеков. Автомойки серии CarWash Outdoor выпускаются с дизельным, газовым или электрическим подогревом воды. Мойка управляется современным компьютером Siemens, а устанавливаемый в системе управления сенсорный TFT-дисплей дает владельцу автомойки доступ к информации о всех важных параметрах работы оборудования, а также точную финансовую информацию, &nbsp;в том числе доходы и обороты мойки.</p>
+    <section class="content content-first content-color content_real_time_display" id="real_time_display">
+        <div class="container py-3">
+            <ul class="breadcrumbs breadcrumbs-on_color">
+                <li class="breadcrumbs-item">
+                    <a href="./">Главная</a>
+                </li>
+                <li class="breadcrumbs-item">
+                    <a href="tech-beskontakt.html">Технология</a>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span>Real Time Display</span>
+                </li>
+            </ul>
         </div>
-        <div class="col-md-6">
-          <img src="./assets/images/modules_cw.jpg" alt="" style="max-width: 450px; width: 100%" class="mx-auto mr-md-0 d-block">
+        <div class="container">
+            <h2 class="content_header">Real Time Display</h2>
+            <div class="text-center my-4">
+              <span style="max-width: 250px; display: inline-block; padding: 10px 30px;">
+                <img src="./assets/images/realtimedisplay_logo.png" alt="" width="100%">
+              </span>
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-md-5 mb-4">
+                    <img src="./assets/images/realtimedisplay1.png" alt="" class="mx-auto" style="max-width: 500px; width: 100%">
+                </div>
+                <div class="col-md-6 pr-md-0">
+                    <p class="paragraph paragraph-accent paragraph-j">Предлагаемые с самого начала панели управления из нержавеющей стали, за последние несколько лет прошли модернизацию. Кроме самого дизайна, характеризующегося приятной графикой и брызгозащищенными клавишами, на протяжении последних лет применено и добавлено: защита для монетоприемников, возможность монтажа системы отсасывания монет, возможность выбора версии панели с коротким или высоким коробом. В этом году панель управления полностью преобразовалась.</p>
+                    <p class="paragraph paragraph-j">Теперь Инвестор вместе с автомойкой получает абсолютно новую модель панели управления - Real Time Display. Вместо используемого до сих пор дисплея, отображающего оставшееся количество импульсов, предлагается новый дисплей оставшегося реального времени мытья за данную денежную единицу. Это значительное облегчает посетителям контролировать время мойки, которые видят сколько точно времени осталось до окончания процесса мытья, и тем самым могут его лучше и эффективнее использовать. Инвестор в свою очередь может быть уверен, что данный водитель не заблокирует пост другим клиентам.</p>
+                    <p class="paragraph paragraph-j">С этого года панели управления EHRLE укомплектованы системой предоставляющей возможность новых форм оплаты, кроме доступных до сих пор. Компания EHRLE - это единый производитель в отрасли, который предлагает 6 способов оплаты за мойку: при помощи монет, жетонов, ключей EHRLE KeySystem, купюр, кредитных карт и мобильного телефона, из которых 3 последних это абсолютная новинка. Тем самым решается проблема отсутствия наличных денег у клиентов, которые хотят помыть автомобиль. Это, несомненно, большой успех компании EHRLE, так как никакой другой компании из данной отрасли не удалось ввести на рынок такого решения, в том числе  дисплея реального времени.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <img src="./assets/images/modules_cw_large.jpg" width="100%"/>
-  <div class="content">
-    <div class="container">
-      <h2 class="content_header text-center">CarWash Outdoor</h2>
-      <p class="content_subtitle text-center">Устройство внутри</p>
-    </div>
-  </div>
-  <img src="./assets/images/modules_cw_indoor_ru.jpg" style="max-width: 1000px; width: 100%" class="d-block mx-auto"/>
-  <img src="./assets/images/modules_cw_indoor1.jpg" style="max-width: 1000px; width: 100%" class="d-block mx-auto mb-5"/>
-  <div class="content">
-    <div class="container">
-      <div class="content_header text-center">
-        <small>Технические данные</small>
-      </div>
-      <div class="table-container mx-auto mt-5" style="max-width: 800px">
-        <table class="table-classic table-lct">
-          <thead>
-            <tr>
-              <th>Технические данные</th>
-              <th>Единица</th>
-              <th>1 пост мойки*</th>
-              <th>2 поста мойки*</th>
-              <th>3 поста мойки*</th>
-              <th>4 поста мойки*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Расход воды на пост мойки</td>
-              <td>л/ч</td>
-              <td colspan="4">660</td>
-            </tr>
-            <tr>
-              <td>Рабочее давление</td>
-              <td>бар/МПа</td>
-              <td colspan="4">130/13</td>
-            </tr>
-            <tr>
-              <td>Способ обогрева</td>
-              <td>&nbsp;</td>
-              <td colspan="4">газовый / дизельный / электрический</td>
-            </tr>
-            <tr>
-              <td>Температура</td>
-              <td>oC</td>
-              <td colspan="4">60</td>
-            </tr>
-            <tr>
-              <td>Мощность горелки</td>
-              <td>кВт</td>
-              <td>35/18**</td>
-              <td>50/24**</td>
-              <td>74/36**</td>
-              <td>85</td>
-            </tr>
-            <tr>
-              <td>Производительность системы умягчения воды</td>
-              <td>m 3/ºdH</td>
-              <td colspan="4">2x120</td>
-            </tr>
-            <tr>
-              <td>Производительность мембраны (система обратного осмоса)*</td>
-              <td>л/сутки</td>
-              <td colspan="4">7200</td>
-            </tr>
-            <tr>
-              <td>Бак для деминерализованной воды*</td>
-              <td>л</td>
-              <td colspan="4">800</td>
-            </tr>
-            <tr>
-              <td>Емкость дозатора Микропорошка</td>
-              <td>л</td>
-              <td colspan="4">35</td>
-            </tr>
-            <tr>
-              <td>Емкость дозатора воска</td>
-              <td>л</td>
-              <td colspan="4">10</td>
-            </tr>
-            <tr>
-              <td>Емкость дозатора осушителя</td>
-              <td>л</td>
-              <td colspan="4">10</td>
-            </tr>
-            <tr>
-              <td>Параметры питания</td>
-              <td>Ph/V/Hz</td>
-              <td colspan="4">3F+N+Pe/400V/50Hz</td>
-            </tr>
-            <tr>
-              <td>Потребляемая мощность</td>
-              <td>кВт</td>
-              <td>6,8/24,8**</td>
-              <td>9/33*</td>
-              <td>11,2/47,2**</td>
-              <td>14,2</td>
-            </tr>
-            <tr>
-              <td>Габариты (Д*Ш*В)</td>
-              <td>см</td>
-              <td colspan="4">472x80x209</td>
-            </tr>
-            <tr>
-              <td>Вес</td>
-              <td>кг</td>
-              <td>1.360</td>
-              <td>1.450</td>
-              <td>1.540</td>
-              <td>1.630</td>
-            </tr>
-            <tr>
-              <td>Номер/Код для заказа</td>
-              <td>&nbsp;</td>
-              <td>500</td>
-              <td>501</td>
-              <td>506</td>
-              <td>506</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="table_legend">
-          <p>*пост мойки (Wash Bay)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-          <p>**зависит от мощности эл. подогрева</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
+    </section>
+    <footer class="footer">
   <div class="footer_container_row">
     <div class="item">
       <div class="footer_label">
@@ -420,7 +281,7 @@
   </div>
 </footer>
 
-  <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
+    <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
     <div class="modal_backdrop" @click="closeModal"></div>
     <div class="modal_container justify-content-between">
         <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>

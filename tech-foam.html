@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Бесконтакная мойка - EHRLE</title>
+    <title>Активная пена - EHRLE</title>
 <meta name="google-site-verification" content="" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,19 +28,19 @@
 </head>
 <body class="lang-ru">
 <div id="app">
-    <input type="hidden" value="beskontakt" id="sitepage">
+    <input type="hidden" value="chemistry" id="sitepage">
     <header>
 <div class="menu" :class="{'menu-opened': isMenuOpened}">
   <div class="container">
     <div class="menu_nav menu_row">
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="#" target="_blank">Продукты</a>
+        <a class="menu_col_title menu_title" href="./#section_products" @click="closeMenu">Продукты</a>
         <div class="menu_links">
-          <a class="menu_link" href="./container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
-          <a class="menu_link" href="./module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
-          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка JetWash</a>
-          <a class="menu_link" href="./smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
-          <a class="menu_link" href="./chemistry.html" @click="closeMenu">Химия</a>
+          <a class="menu_link" href="./prod-container_carwash.html" @click="closeMenu">Контейнерные автомойки CarWash</a>
+          <a class="menu_link" href="./prod-module_carwash.html" @click="closeMenu">Модульные автомойки CarWash</a>
+          <a class="menu_link" href="./prod-smartwash.html" @click="closeMenu">Автомойка JetWash</a>
+          <a class="menu_link" href="./prod-smartwash.html" @click="closeMenu">Автомойка SmartWash</a>
+          <a class="menu_link" href="./prod-chemistry.html" @click="closeMenu">Химия</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/mietallokonstrukcyi/" target="_blank">Металлоконструкции</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/aksiessuary/" target="_blank">Аксессуары</a>
           <a class="menu_link" href="http://www.ehrle.kz/ru/produkty1/apparaty_wysokogo_dawlenija/" target="_blank">Аппараты высокого давления</a>
@@ -48,16 +48,16 @@
         </div>
       </div>
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="./beskontakt.html">Технология</a>
+        <a class="menu_col_title menu_title" href="./tech-beskontakt.html">Технология</a>
         <div class="menu_links">
-          <a class="menu_link" href="./beskontakt.html#beskontakt" @click="closeMenu">Бесконтакная мойка</a>
-          <a class="menu_link" href="./beskontakt.html#vda" @click="closeMenu">Сертификат VDA</a>
-          <a class="menu_link" href="./beskontakt.html#modul_line" @click="closeMenu">Modul Line ETRONIC 4</a>
-          <a class="menu_link" href="./beskontakt.html#ehrlesol"  @click="closeMenu">EHRLESol™</a>
-          <a class="menu_link" href="./beskontakt.html#real_time_display" @click="closeMenu">Real Time Display</a>
-          <a class="menu_link" href="./beskontakt.html#lce_slm" @click="closeMenu">LCE / SLM</a>
-          <a class="menu_link" href="./beskontakt.html#micropowder" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
-          <a class="menu_link" href="./beskontakt.html#foam" @click="closeMenu">Активная пена</a>
+          <a class="menu_link" href="./tech-beskontakt.html" @click="closeMenu">Бесконтакная мойка</a>
+          <a class="menu_link" href="./tech-vda.html" @click="closeMenu">Сертификат VDA</a>
+          <a class="menu_link" href="./tech-modul_line.html" @click="closeMenu">Modul Line ETRONIC 4</a>
+          <a class="menu_link" href="./tech-ehrlesol.html"  @click="closeMenu">EHRLESol™</a>
+          <a class="menu_link" href="./tech-real_time_display.html" @click="closeMenu">Real Time Display</a>
+          <a class="menu_link" href="./tech-lce_slm.html" @click="closeMenu">LCE / SLM</a>
+          <a class="menu_link" href="./tech-micropowder.html" @click="closeMenu">Система Дoзaции Микpoпopoшкa</a>
+          <a class="menu_link" href="./tech-foam.html" @click="closeMenu">Активная пена</a>
         </div>
       </div>
       <div class="menu_col">
@@ -155,66 +155,49 @@
                 <a href="./">Главная</a>
             </li>
             <li class="breadcrumbs-item">
-                <span>Технология</span>
+                <a href="tech-beskontakt.html">Технология</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <span>Активная пена</span>
             </li>
         </ul>
     </div>
-    <section class="content content_beskontakt pt-2 pb-4" id="beskontakt">
+    <section class="content pt-3 content_foam" id="foam">
         <div class="container">
-            <h1 class="content_header">Бесконтактная мойка</h1>
-            <div class="content_subtitle" style="max-width: 800px">
-                Умелое мытье автомобиля, инновационная технология и использованные высококачественные химические средства это причины, для которых бесконтактная мойка самообслуживания EHRLE, позволяет достичь отличного удовлетворяющего результата без риска получить царапины и другие возможные повреждения, связанные с применением щеток.
+            <h2 class="content_header">Активная пена</h2>
+            <p class="content_subtitle">Генератор пены является дополнительным оборудованием, которое можно установить на мойках EHRLE. Активная пена подается на посты мойки отдельным пистолетом и позволяет расширить возможности автомойки следующей программой мойки.</p>
+            <div class="text-center mb-5">
+      <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+        <img src="./assets/images/foam.jpg" alt="" width="100%">
+      </span>
             </div>
-        </div>
-    </section>
-    <section class="section py-4">
-        <div class="container mt-3">
-            <h2 class="heading">
-                Мойки EHRLE применяют 4 программы мытья
-            </h2>
-            <div class="programs_body">
-                <program-bg></program-bg>
-                <div class="program_container">
-  <div class="program_box">
-    <div class="program_image">
-      <img src="./assets/images/carwash.svg" alt="">
-    </div>
-    <div class="program_text">
-      <div class="title">Мойка микропорошком</div>
-      <p class="paragraph">Power Pearl™ быстро удаляет грязь с поверхности автомобиля. Благодаря специальной формуле активных молекул напоминающей реакцию тысячи микрогубок, МикроПорошок безопасен для лакокрасочного покрытия автомобиля</p>
-    </div>
-  </div>
-</div><div class="program_container">
-  <div class="program_box">
-    <div class="program_image">
-      <img src="./assets/images/carwash2.svg" alt="">
-    </div>
-    <div class="program_text">
-      <div class="title">Споласкивание чистой водой</div>
-      <p class="paragraph">Для споласкивания МикроПорошка, автомойки используют чистую, умягченную воду с программы 2-ой</p>
-    </div>
-  </div>
-</div><div class="program_container">
-  <div class="program_box">
-    <div class="program_image">
-      <img src="./assets/images/carwash3.svg" alt="">
-    </div>
-    <div class="program_text">
-      <div class="title">UltraProtection</div>
-      <p class="paragraph">3-я программа мойки обеспечивает защиту лакокрасочного покрытия, благодаря использованию горячего воска UltraProtection. Он создает пленку на поверхности автомобиля, что позволяет воде свободно стекать и одновременно улучшает работу стеклоочистителей</p>
-    </div>
-  </div>
-</div><div class="program_container">
-  <div class="program_box">
-    <div class="program_image">
-      <img src="./assets/images/carwash1.svg" alt="">
-    </div>
-    <div class="program_text">
-      <div class="title">SuperFinish</div>
-      <p class="paragraph">Последняя 4-я программа, в которой бесконтактная мойка использует чистую деминерализованную осмотическую воду и осушитель, гарантирует эффект блеска</p>
-    </div>
-  </div>
-</div>
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <div class="video_embed">
+                        <iframe v-if="smallVideoPlayed" src="https://www.youtube.com/embed/9TH7N2sIk38?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div v-else @click="smallVideoPlayed=true" class="video_embed_image" style="background-image: url(./assets/images/video_play.jpg)"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="paragraph paragraph-j">Компания EHRLE является первым производителем бесконтактных автомоек использующих инновационную технологию активной пены с системой точной дозации МикроПорошка. Активная пена повышает эффективность мойки; под её воздействием грязь размягчается, что позволяет удалить даже самые стойкие загрязнения. При исползовании современного пневматического генератора пены нужно только 1,5 – 2% химического средства для получения густой, активной пены.</p>
+                    <p class="paragraph paragraph-j">Современный генератор пены из-за своих габаритов может применяется как в автомойках контейнерного типа так и модульного.</p>
+                    <p class="paragraph paragraph-j">Автономный компрессор и вспомогательный насос с регулятором давления гарантируют достижение постоянно одинаковых параметров пены, несмотря на число работающих постов. Регулировка пропорции смешивания компонентов позволяет получить оптимальный химический состав, а также густоту и объём пены. А благодаря отдельной системе хранения и подачи, мягкая пена всегда готова для применения.</p>
+                    <p class="paragraph paragraph-j">Опцией активной пены могут быть оборудованы как все посты на мойке, так и только выбранные. Генератор пены EHRLE может производить деликатную пену от 0,5 мм до 80 мм.</p>
+                </div>
+            </div>
+            <div class="row px-5">
+                <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0 px-0">
+                    <img src="./assets/images/foam1.jpg" alt="" style="width: 100%">
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0  px-0">
+                    <img src="./assets/images/foam2.jpg" alt="" style="width: 100%">
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0  px-0">
+                    <img src="./assets/images/foam3.jpg" alt="" style="width: 100%">
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-2 mb-sm-0  px-0">
+                    <img src="./assets/images/foam4.jpg" alt="" style="width: 100%">
+                </div>
             </div>
         </div>
     </section>

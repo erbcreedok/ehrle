@@ -38,4 +38,16 @@
   img {
     width: 100%;
   }
+  &:disabled {
+    pointer-events: none;
+    opacity: .5;
+    border-color: darken($c_gray_1, 10);;
+    background: darken($c_gray_1, 10);
+    img {
+      opacity: .5;
+    }
+    &:hover {
+      background: $c_gray_1;
+    }
+  }
 }

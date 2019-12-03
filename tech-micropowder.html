@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Калькулятор - EHRLE</title>
+    <title>Система Тoчнoй Дoзaции Микpoпopoшкa - EHRLE</title>
 <meta name="google-site-verification" content="" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,12 +24,12 @@
 <!--<meta name="yandex-verification" content=""/>-->
 <link rel="stylesheet" href="./assets/css/main.css"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
-  <!-- endbuild -->
+    <!-- endbuild -->
 </head>
 <body class="lang-ru">
 <div id="app">
-  <input type="hidden" value="chemistry" id="sitepage">
-  <header>
+    <input type="hidden" value="chemistry" id="sitepage">
+    <header>
 <div class="menu" :class="{'menu-opened': isMenuOpened}">
   <div class="container">
     <div class="menu_nav menu_row">
@@ -149,150 +149,39 @@
 </nav>
   <scroll-top v-if="showScroll"/>
 </header>
-  <div class="container content-first my-3">
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs-item">
-        <a href="./">Главная</a>
-      </li>
-      <li class="breadcrumbs-item">
-        <span>Строительство мойки "под ключ"</span>
-      </li>
-    </ul>
-  </div>
-  <div class="container">
-    <div class="heading mb-3">
-      Строительство мойки “под ключ”
-    </div>
-    <p style="max-width: 555px;" class="text">
-      В этом калькуляторе Вы можете рассчитать «Под ключ» цену всех этапов строительства автомобильной мойки самообслуживания. Включая поставки котельного оборудования, обеспечивающего функцию «теплый пол» и режим подогрева воды.
-    </p>
-  </div>
-  <div class="container mt-5 calculator_container">
-    <div class="title mb-4">Калькулятор стройки</div>
-    <div class="row justify-content-between">
-      <div class="col-lg-7 col-md-8">
-        <div class="calculator">
-          <ul class="radio_tabs mb-4">
-            <li class="radio_tab radio_tab-selected">Модульная мойка</li>
-            <li class="radio_tab">Контейнерная мойка</li>
-          </ul>
-          <div class="label my-3">1. Детали мойки</div>
-          <div class="row">
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Выберите вид мойки</div>
-              <div class="radio_buttons">
-                <div class="radio_button">Smart Wash</div>
-                <div class="radio_button">Smart Wash Plus</div>
-                <div class="radio_button">Jet Wash</div>
-                <div class="radio_button">Jet Wash Plus</div>
-                <div class="radio_button">Car Wash Plus Outdoor</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество постов для мойки</div>
-              <div class="radio_buttons ">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button radio_button-squared">3</div>
-                <div class="radio_button radio_button-squared">4</div>
-                <div class="radio_button radio_button-squared">5</div>
-                <div class="radio_button radio_button-squared">6</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество пылесосов <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Количество пылесосов в автомойке</span></span></div>
-              <div class="radio_buttons">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button">Без пылесоса</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">Буду покупать участок</option>
-                  <option value="1">Не буду покупать участок</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Цена за участок</div>
-              <div class="form_input">
-                <input type="text" placeholder="10,000,000 ₸"/>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">На электричестве</option>
-                  <option value="1">На дровах</option>
-                  <option value="1">На углях</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Строительство под ключ</div>
-              <div class="form_checkboxes">
-                <label for="type" class="form_checkbox">
-                  <input type="checkbox" id="type">
-                  <span class="form_checkbox_label">Да, постройте мне мойку</span>
-                  <span class="form_checkbox_icon"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-5 col-md-4">
-        <div class="calculator_result">
-          <div class="calculator_result_wrapper">
-            <div class="calculator_result_header my-4">
-              <div class="label mb-2">Стоимость вашего проекта:</div>
-              <div class="heading heading-light">12,220,000 <span class="small" style="font-weight: 500">₸</span></div>
-            </div>
-            <div class="calculator_result_label d-flex justify-content-between flex-wrap align-items-center mt-4 mb-2">
-              <div class="label mb-1">Результаты расчёта</div>
-              <span class="pseudo_link">Скрыть детали</span>
-            </div>
-            <ul class="calculator_result_list ul_custom mb-4">
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
+    <section class="content content-first content-color content_micropowder" id="micropowder">
+        <div class="container py-3">
+            <ul class="breadcrumbs breadcrumbs-on_color">
+                <li class="breadcrumbs-item">
+                    <a href="./">Главная</a>
+                </li>
+                <li class="breadcrumbs-item">
+                    <a href="tech-beskontakt.html">Технология</a>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span>Система Тoчнoй Дoзaции Микpoпopoшкa</span>
+                </li>
             </ul>
-            <div class="my-4 pt-2">
-              <button class="btn btn_primary">Получить консультацию</button>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
+        <div class="container">
+            <h2 class="content_header">Система Тoчнoй Дoзaции Микpoпopoшкa</h2>
+            <p class="content_subtitle">Авторская система точной дозации МикроПорошка применяемая компанией EHRLE, отлчиается интересным решением и эксклюзивным механизмом</p>
+            <div class="text-center my-4">
+              <span style="max-width: 250px; display: inline-block; padding: 10px 30px;">
+                <img src="./assets/images/micropowder_logo.png" alt="" width="100%">
+              </span>
+            </div>
+            <div class="d-md-flex d-block">
+                <div>
+                    <p class="paragraph paragraph-accent paragraph-j">Компания EHRLE, прежде всего, известна бесконтактной и порошковой технологией. Сердцем нашего оборудования является система точной дозации МикроПорошка EHRLE Globoid, которая является нашей большой гордостью. Все элементы системы изготовлены из современной, профессиональной пластмассы и тефлона, что обеспечивает долговечную и безотказную работу изделия. Система EHRLE Globoid управляется компь ютером, благодаря чему Инвестор имеет возможность дистанционно проверять количество использованного порошка. Применяемая специальная червячная система дозации точно дозирует количество порошка, необходимого для первой программы – основной мойки с МикроПорошком Active PowerPearl. Предлагаемые моющие средства характеризуются двумя важными свойствами - они  экономичные и экологические. Благодаря своей уникальной структуре они более эффективные, одного мешка порошка хватает на большее количество моек автомобилей, чем другие средства предлагаемые на рынке. Кроме того, специальная серия порошка X LOP содержит 50% фосфатов меньше, благодаря чему их можно использовать даже там, где очень строгие нормы по охране окружающей среды.</p>
+                </div>
+                <div class="pl-md-5 mt-4 mt-md-2 text-center" style="max-width: 300px; width: 100%">
+                    <img src="./assets/images/micropowder1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
   <div class="footer_container_row">
     <div class="item">
       <div class="footer_label">
@@ -391,7 +280,7 @@
   </div>
 </footer>
 
-  <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
+    <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
     <div class="modal_backdrop" @click="closeModal"></div>
     <div class="modal_container justify-content-between">
         <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>

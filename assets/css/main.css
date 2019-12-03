@@ -374,6 +374,18 @@ a.a_custom, a.a_custom:hover {
 .btn_circle img {
   width: 100%;
 }
+.btn_circle:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  border-color: #cfd9db;
+  background: #cfd9db;
+}
+.btn_circle:disabled img {
+  opacity: 0.5;
+}
+.btn_circle:disabled:hover {
+  background: #ecf0f1;
+}
 
 .icon {
   display: inline-block;
@@ -2489,6 +2501,27 @@ select:focus ~ .form_select_arrow {
   margin-bottom: 0;
   position: relative;
 }
+.slide_list_controls {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.slide_list_controls button {
+  position: absolute;
+}
+.slide_list_controls button:first-child {
+  left: -80px;
+}
+.slide_list_controls button:last-child {
+  right: -80px;
+}
 .slide_list_item {
   top: 0;
   right: 0;
@@ -2588,18 +2621,18 @@ select:focus ~ .form_select_arrow {
   white-space: nowrap;
   overflow-x: auto;
 }
-.breadcrumbs .breadcrumbs-item {
+.breadcrumbs-item {
   font-size: 14px;
   position: relative;
   padding-right: 20px;
 }
-.breadcrumbs .breadcrumbs-item a {
+.breadcrumbs-item a {
   color: #2c3e50;
 }
-.breadcrumbs .breadcrumbs-item a:hover {
+.breadcrumbs-item a:hover {
   color: #d83139;
 }
-.breadcrumbs .breadcrumbs-item:after {
+.breadcrumbs-item:after {
   content: "";
   display: block;
   position: absolute;
@@ -2613,11 +2646,23 @@ select:focus ~ .form_select_arrow {
   height: 12px;
   width: 12px;
 }
-.breadcrumbs .breadcrumbs-item:last-child {
+.breadcrumbs-item:last-child {
   padding-right: 0;
 }
-.breadcrumbs .breadcrumbs-item:last-child:after {
+.breadcrumbs-item:last-child:after {
   content: none;
+}
+.breadcrumbs-on_color .breadcrumbs-item a {
+  color: white;
+}
+.breadcrumbs-on_color .breadcrumbs-item a:hover {
+  color: #d83139;
+}
+.breadcrumbs-on_color .breadcrumbs-item span {
+  color: #95a5a6;
+}
+.breadcrumbs-on_color .breadcrumbs-item:after {
+  background: url("../images/arrow-right_white.svg") no-repeat center;
 }
 
 .table-classic {
@@ -2965,7 +3010,7 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(2) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(3) {
   opacity: 1;
@@ -2977,10 +3022,10 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(6) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(7) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(8) {
   opacity: 1;
@@ -2989,7 +3034,7 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(10) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(11) {
   opacity: 0.9;
@@ -2998,25 +3043,25 @@ select:focus ~ .form_select_arrow {
   opacity: 1;
 }
 .program_icon:nth-child(13) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(14) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(15) {
   opacity: 1;
 }
 .program_icon:nth-child(16) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(17) {
   opacity: 0.9;
 }
 .program_icon:nth-child(18) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(19) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(20) {
   opacity: 0.9;
@@ -3025,28 +3070,28 @@ select:focus ~ .form_select_arrow {
   opacity: 0.9;
 }
 .program_icon:nth-child(22) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(23) {
   opacity: 1;
 }
 .program_icon:nth-child(24) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(25) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(26) {
   opacity: 1;
 }
 .program_icon:nth-child(27) {
-  opacity: 0.9;
+  opacity: 1;
 }
 .program_icon:nth-child(28) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(29) {
-  opacity: 1;
+  opacity: 0.9;
 }
 .program_icon:nth-child(30) {
   opacity: 0.9;
@@ -3431,6 +3476,15 @@ header {
 }
 .concepts_section .concept_description_body {
   max-width: 556px;
+}
+.concepts_section .slide_list_controls {
+  max-width: 870px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 @media (max-width: 919.98px) {
   .concepts_section .hide_mobile {

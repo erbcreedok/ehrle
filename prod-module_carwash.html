@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Калькулятор - EHRLE</title>
+  <title>Модульная автомойка CarWash - EHRLE</title>
 <meta name="google-site-verification" content="" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +28,7 @@
 </head>
 <body class="lang-ru">
 <div id="app">
-  <input type="hidden" value="chemistry" id="sitepage">
+  <input type="hidden" value="module_carwash" id="sitepage">
   <header>
 <div class="menu" :class="{'menu-opened': isMenuOpened}">
   <div class="container">
@@ -149,145 +149,174 @@
 </nav>
   <scroll-top v-if="showScroll"/>
 </header>
-  <div class="container content-first my-3">
+  <div class="container content-first">
     <ul class="breadcrumbs">
       <li class="breadcrumbs-item">
         <a href="./">Главная</a>
       </li>
       <li class="breadcrumbs-item">
-        <span>Строительство мойки "под ключ"</span>
+        <a href="./#section_products">Продукты</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <span>Модульные автомойки CarWash</span>
       </li>
     </ul>
   </div>
-  <div class="container">
-    <div class="heading mb-3">
-      Строительство мойки “под ключ”
+  <div class="content pt-2 content-bordered">
+    <div class="container">
+      <h1 class="content_header">
+        Модульные автомойки CarWash
+      </h1>
+      <p class="content_subtitle">Модульная автомойка самообслуживания с системами точной дозации микропоршока и обратного осмоса на 2-3 поста.</p>
+      <div class="text-center mb-5">
+        <span style="max-width: 500px; display: inline-block; padding: 10px 30px;">
+          <img src="./assets/images/module_carwash.jpg" alt="" width="100%">
+        </span>
+      </div>
     </div>
-    <p style="max-width: 555px;" class="text">
-      В этом калькуляторе Вы можете рассчитать «Под ключ» цену всех этапов строительства автомобильной мойки самообслуживания. Включая поставки котельного оборудования, обеспечивающего функцию «теплый пол» и режим подогрева воды.
-    </p>
   </div>
-  <div class="container mt-5 calculator_container">
-    <div class="title mb-4">Калькулятор стройки</div>
-    <div class="row justify-content-between">
-      <div class="col-lg-7 col-md-8">
-        <div class="calculator">
-          <ul class="radio_tabs mb-4">
-            <li class="radio_tab radio_tab-selected">Модульная мойка</li>
-            <li class="radio_tab">Контейнерная мойка</li>
-          </ul>
-          <div class="label my-3">1. Детали мойки</div>
-          <div class="row">
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Выберите вид мойки</div>
-              <div class="radio_buttons">
-                <div class="radio_button">Smart Wash</div>
-                <div class="radio_button">Smart Wash Plus</div>
-                <div class="radio_button">Jet Wash</div>
-                <div class="radio_button">Jet Wash Plus</div>
-                <div class="radio_button">Car Wash Plus Outdoor</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество постов для мойки</div>
-              <div class="radio_buttons ">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button radio_button-squared">3</div>
-                <div class="radio_button radio_button-squared">4</div>
-                <div class="radio_button radio_button-squared">5</div>
-                <div class="radio_button radio_button-squared">6</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Количество пылесосов <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Количество пылесосов в автомойке</span></span></div>
-              <div class="radio_buttons">
-                <div class="radio_button radio_button-squared radio_button-selected">1</div>
-                <div class="radio_button radio_button-squared">2</div>
-                <div class="radio_button">Без пылесоса</div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">Буду покупать участок</option>
-                  <option value="1">Не буду покупать участок</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <div class="text mb-2">Цена за участок</div>
-              <div class="form_input">
-                <input type="text" placeholder="10,000,000 ₸"/>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4 pr-md-5">
-              <div class="text mb-2">Тип котла</div>
-              <div class="form_select form_select-block pr-md-2">
-                <select>
-                  <option value="1">На электричестве</option>
-                  <option value="1">На дровах</option>
-                  <option value="1">На углях</option>
-                </select>
-                <span class="form_select_arrow"></span>
-              </div>
-            </div>
-            <div class="col-12 mb-4">
-              <div class="text mb-2">Строительство под ключ</div>
-              <div class="form_checkboxes">
-                <label for="type" class="form_checkbox">
-                  <input type="checkbox" id="type">
-                  <span class="form_checkbox_label">Да, постройте мне мойку</span>
-                  <span class="form_checkbox_icon"></span>
-                </label>
-              </div>
-            </div>
-          </div>
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="paragraph paragraph-j"><strong>CarWash </strong>– модуль с системой управления мойкой, насосами высокого давления, котлом, клапанами и дозаторами химических средств.</p>
+
+          <p class="paragraph paragraph-j"><strong>AquaClean</strong> – блок водоподготовки с фильтрами, умягчителем, системой обратного осмоса и &nbsp;баком для деминерализованной воды.</p>
+
+          <p class="paragraph paragraph-j">Блоки устройства размещены между постами мойки. Существует возможность проектирования разных вариантов систем моек самообслуживания, благодаря соединению модулей CarWash и AquaClean.Главным преимуществом такого типа моек является их компактность, отсутствие технического контейнера ведёт к экономии пространства для размещения постов самообслуживания. Модульные мойки часто проектируются на небольших или угловых земельных участках.</p>
+
+          <p class="paragraph paragraph-j">Двойная система водоподготовки основана на производительном умягчителе воды и системе обратного осмоса, которые размещены в блоке AquaClean. Система гарантирует постоянно высокое качество воды, даже в случае круглосуточной работы мойки. Система обратного осмоса обеспечивает достаточное количество деминерализованной воды и отличный результат мойки без пятен и подтеков. Автомойки серии CarWash Outdoor выпускаются с дизельным, газовым или электрическим подогревом воды. Мойка управляется современным компьютером Siemens, а устанавливаемый в системе управления сенсорный TFT-дисплей дает владельцу автомойки доступ к информации о всех важных параметрах работы оборудования, а также точную финансовую информацию, &nbsp;в том числе доходы и обороты мойки.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="./assets/images/modules_cw.jpg" alt="" style="max-width: 450px; width: 100%" class="mx-auto mr-md-0 d-block">
         </div>
       </div>
-      <div class="col-lg-5 col-md-4">
-        <div class="calculator_result">
-          <div class="calculator_result_wrapper">
-            <div class="calculator_result_header my-4">
-              <div class="label mb-2">Стоимость вашего проекта:</div>
-              <div class="heading heading-light">12,220,000 <span class="small" style="font-weight: 500">₸</span></div>
-            </div>
-            <div class="calculator_result_label d-flex justify-content-between flex-wrap align-items-center mt-4 mb-2">
-              <div class="label mb-1">Результаты расчёта</div>
-              <span class="pseudo_link">Скрыть детали</span>
-            </div>
-            <ul class="calculator_result_list ul_custom mb-4">
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-              <li class="calculator_result_item d-flex flex-wrap justify-content-between">
-                <span class="text">Стоймость мойка</span>
-                <strong class="text">8,820,000 ₸</strong>
-              </li>
-            </ul>
-            <div class="my-4 pt-2">
-              <button class="btn btn_primary">Получить консультацию</button>
-            </div>
-          </div>
+    </div>
+  </div>
+  <img src="./assets/images/modules_cw_large.jpg" width="100%"/>
+  <div class="content">
+    <div class="container">
+      <h2 class="content_header text-center">CarWash Outdoor</h2>
+      <p class="content_subtitle text-center">Устройство внутри</p>
+    </div>
+  </div>
+  <img src="./assets/images/modules_cw_indoor_ru.jpg" style="max-width: 1000px; width: 100%" class="d-block mx-auto"/>
+  <img src="./assets/images/modules_cw_indoor1.jpg" style="max-width: 1000px; width: 100%" class="d-block mx-auto mb-5"/>
+  <div class="content">
+    <div class="container">
+      <div class="content_header text-center">
+        <small>Технические данные</small>
+      </div>
+      <div class="table-container mx-auto mt-5" style="max-width: 800px">
+        <table class="table-classic table-lct">
+          <thead>
+            <tr>
+              <th>Технические данные</th>
+              <th>Единица</th>
+              <th>1 пост мойки*</th>
+              <th>2 поста мойки*</th>
+              <th>3 поста мойки*</th>
+              <th>4 поста мойки*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Расход воды на пост мойки</td>
+              <td>л/ч</td>
+              <td colspan="4">660</td>
+            </tr>
+            <tr>
+              <td>Рабочее давление</td>
+              <td>бар/МПа</td>
+              <td colspan="4">130/13</td>
+            </tr>
+            <tr>
+              <td>Способ обогрева</td>
+              <td>&nbsp;</td>
+              <td colspan="4">газовый / дизельный / электрический</td>
+            </tr>
+            <tr>
+              <td>Температура</td>
+              <td>oC</td>
+              <td colspan="4">60</td>
+            </tr>
+            <tr>
+              <td>Мощность горелки</td>
+              <td>кВт</td>
+              <td>35/18**</td>
+              <td>50/24**</td>
+              <td>74/36**</td>
+              <td>85</td>
+            </tr>
+            <tr>
+              <td>Производительность системы умягчения воды</td>
+              <td>m 3/ºdH</td>
+              <td colspan="4">2x120</td>
+            </tr>
+            <tr>
+              <td>Производительность мембраны (система обратного осмоса)*</td>
+              <td>л/сутки</td>
+              <td colspan="4">7200</td>
+            </tr>
+            <tr>
+              <td>Бак для деминерализованной воды*</td>
+              <td>л</td>
+              <td colspan="4">800</td>
+            </tr>
+            <tr>
+              <td>Емкость дозатора Микропорошка</td>
+              <td>л</td>
+              <td colspan="4">35</td>
+            </tr>
+            <tr>
+              <td>Емкость дозатора воска</td>
+              <td>л</td>
+              <td colspan="4">10</td>
+            </tr>
+            <tr>
+              <td>Емкость дозатора осушителя</td>
+              <td>л</td>
+              <td colspan="4">10</td>
+            </tr>
+            <tr>
+              <td>Параметры питания</td>
+              <td>Ph/V/Hz</td>
+              <td colspan="4">3F+N+Pe/400V/50Hz</td>
+            </tr>
+            <tr>
+              <td>Потребляемая мощность</td>
+              <td>кВт</td>
+              <td>6,8/24,8**</td>
+              <td>9/33*</td>
+              <td>11,2/47,2**</td>
+              <td>14,2</td>
+            </tr>
+            <tr>
+              <td>Габариты (Д*Ш*В)</td>
+              <td>см</td>
+              <td colspan="4">472x80x209</td>
+            </tr>
+            <tr>
+              <td>Вес</td>
+              <td>кг</td>
+              <td>1.360</td>
+              <td>1.450</td>
+              <td>1.540</td>
+              <td>1.630</td>
+            </tr>
+            <tr>
+              <td>Номер/Код для заказа</td>
+              <td>&nbsp;</td>
+              <td>500</td>
+              <td>501</td>
+              <td>506</td>
+              <td>506</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table_legend">
+          <p>*пост мойки (Wash Bay)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <p>**зависит от мощности эл. подогрева</p>
         </div>
       </div>
     </div>

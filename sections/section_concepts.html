@@ -3,21 +3,21 @@
     Легкая концепция бизнеса подходит для каждого сегмента
   </h2>
   <ul class="ul_custom d-flex flex-wrap justify-content-center mb-5 pb-5 hide_mobile">
-    <li class="radio_field" @click="setConcept(0)">
+    <li class="radio_field concept_radio" @click="setConcept(0)">
       <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===0}"></div>
       <span class="radio_field_label">Для частных инвесторов</span>
     </li>
-    <li class="radio_field" @click="setConcept(1)">
+    <li class="radio_field concept_radio" @click="setConcept(1)">
       <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===1}"></div>
       <span class="radio_field_label">Для действующих владельцев автомоек</span>
     </li>
-    <li class="radio_field" @click="setConcept(2)">
+    <li class="radio_field concept_radio" @click="setConcept(2)">
       <div class="input_radio" :class="{input_radio_checked: conceptActiveIndex===2}"></div>
       <span class="radio_field_label">Для сетей АЗС, Супермаркетов, ТРЦ</span>
     </li>
   </ul>
-  <ul class="slide_list hide_mobile" :class="'slide_list-go-' + conceptGoing">
-    <li class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===0}">
+  <div class="slide_list hide_mobile" :class="'slide_list-go-' + conceptGoing">
+    <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===0}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
           <img src="./assets/images/1-concept.svg" alt="">
@@ -26,16 +26,20 @@
           <h3 class="heading mb-3">
             Для частного инвестирования
           </h3>
-          <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-            и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-          </p>
+          <ul class="ul_classic mt-4 mb-5">
+            <li class="text">ROE = 35%></li>
+            <li class="text">CIR = 75%></li>
+            <li class="text">Стабильный бизнес</li>
+            <li class="text">Срок запуска до 8-и месяцев</li>
+            <li class="text">Размер инвестиций от 40,000$ (+ банковское финансирование)</li>
+          </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
           </button>
         </div>
       </div>
-    </li>
-    <li class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===1}">
+    </div>
+    <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===1}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
           <img src="./assets/images/1-concept.svg" alt="">
@@ -44,16 +48,21 @@
           <h3 class="heading mb-3">
             Для действующих владельцев автомоек
           </h3>
-          <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-            и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-          </p>
+
+          <ul class="ul_classic mt-4 mb-5">
+            <li class="text">Повышение доходности</li>
+            <li class="text">Рыночные тренды</li>
+            <li class="text">Быстрый запуск</li>
+            <li class="text">Минимальные инвестиции</li>
+            <li class="text">Действующая клиентская база</li>
+          </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
           </button>
         </div>
       </div>
-    </li>
-    <li class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===2}">
+    </div>
+    <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===2}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
           <img src="./assets/images/1-concept.svg" alt="">
@@ -62,16 +71,24 @@
           <h3 class="heading mb-3">
             Для сетей АЗС, Супермаркетов, ТРЦ
           </h3>
-          <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-            и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-          </p>
+          <ul class="ul_classic mt-4 mb-5">
+            <li class="text">Дополнительный источник доходов</li>
+            <li class="text">Увеличение клиентской базы</li>
+            <li class="text">Наличие инфраструктуры</li>
+            <li class="text">Лояльность клиентов</li>
+            <li class="text">Быстрый запуск</li>
+          </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
           </button>
         </div>
       </div>
-    </li>
-  </ul>
+    </div>
+    <div class="slide_list_controls">
+      <button class="btn_circle ml-auto" :disabled="conceptActiveIndex<=0" @click="setConcept(conceptActiveIndex-1)"><img src="./assets/images/arrow_prev.svg" alt=""></button>
+      <button class="btn_circle ml-auto" :disabled="conceptActiveIndex>=conceptsLength-1" @click="setConcept(conceptActiveIndex+1)"><img src="./assets/images/arrow_next.svg" alt=""></button>
+    </div>
+  </div>
   <ul class="hide_desktop accordion_list">
     <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===0}">
       <div class="accordion_option_label" @click="setConcept(0)">Для частных инвесторов</div>
@@ -84,9 +101,13 @@
             <h3 class="heading mb-3">
               Для частного инвестирования
             </h3>
-            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-            </p>
+            <ul class="ul_classic mt-4 mb-5">
+              <li class="text">ROE = 35%></li>
+              <li class="text">CIR = 75%></li>
+              <li class="text">Стабильный бизнес</li>
+              <li class="text">Срок запуска до 8-и месяцев</li>
+              <li class="text">Размер инвестиций от 40,000$ (+ банковское финансирование)</li>
+            </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
             </button>
@@ -105,9 +126,13 @@
             <h3 class="heading mb-3">
               Для действующих владельцев автомоек
             </h3>
-            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-            </p>
+            <ul class="ul_classic mt-4 mb-5">
+              <li class="text">Повышение доходности</li>
+              <li class="text">Рыночные тренды</li>
+              <li class="text">Быстрый запуск</li>
+              <li class="text">Минимальные инвестиции</li>
+              <li class="text">Действующая клиентская база</li>
+            </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
             </button>
@@ -126,9 +151,13 @@
             <h3 class="heading mb-3">
               Для сетей АЗС, Супермаркетов, ТРЦ
             </h3>
-            <p class="paragraph mb-5">Благодаря точному следованию нашим указаниям, советам
-              и замечаниям Инвесторы всегда достигают намеченной цели. <span class="pseudo_link">Подробнее</span>
-            </p>
+            <ul class="ul_classic mt-4 mb-5">
+              <li class="text">Дополнительный источник доходов</li>
+              <li class="text">Увеличение клиентской базы</li>
+              <li class="text">Наличие инфраструктуры</li>
+              <li class="text">Лояльность клиентов</li>
+              <li class="text">Быстрый запуск</li>
+            </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
             </button>

@@ -27,6 +27,12 @@
     }
   }
 
+  .slide_list_controls {
+    max-width: 870px;
+    @include mx(auto);
+    @include trbl(0);
+  }
+
   //radio
   @media (max-width: 919.98px) {
     .hide_mobile {
