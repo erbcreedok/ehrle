@@ -61,14 +61,21 @@
         </div>
       </div>
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="#" target="_blank">Компания</a>
-        <div class="menu_links">
-          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/tradicyi/" target="_blank">Традиция</a>
-          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/ehrle_w_mirie/" target="_blank">EHRLE в мире</a>
-          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/naszy_zawody/" target="_blank">Наши заводы</a>
-          <a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/nowosti_ehrle/" target="_blank">Новости EHRLE</a>
-        </div>
-        <div class="social_links">
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Почему Ehrle?</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Программа лояльности</a>
+        <!--<a class="menu_col_title menu_title" href="#" target="_blank">Компания</a>-->
+        <!--<div class="menu_links">-->
+          <!--<a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/tradicyi/" target="_blank">Традиция</a>-->
+          <!--<a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/ehrle_w_mirie/" target="_blank">EHRLE в мире</a>-->
+          <!--<a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/naszy_zawody/" target="_blank">Наши заводы</a>-->
+          <!--<a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/nowosti_ehrle/" target="_blank">Новости EHRLE</a>-->
+        <!--</div>-->
+      </div>
+    </div>
+    <div class="menu_line"></div>
+    <div class="menu_footer menu_row">
+      <div class="menu_col">
+        <div class="social_links mt-0">
           <div class="menu_title social_label mb-0">Мы в соц. сетях:</div>
           <a class="social_link" href="#" target="_blank">
             <img src="./assets/images/social_vk.svg" alt="">
@@ -83,13 +90,6 @@
             <img src="./assets/images/social_facebook.svg" alt="">
           </a>
         </div>
-      </div>
-    </div>
-    <div class="menu_line"></div>
-    <div class="menu_footer menu_row">
-      <div class="menu_col">
-        <a href="#" target="_blank" class="menu_link menu_link-accent">Почему Ehrle?</a>
-        <a href="#" target="_blank" class="menu_link menu_link-accent">Программа лояльности</a>
 <!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Инвестиционный процесс шаг за шагом</a>-->
 <!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Галерея реализации</a>-->
 <!--        <a href="#" target="_blank" class="menu_link menu_link-accent">Спроектируй свою мойку</a>-->
@@ -102,7 +102,8 @@
           <img src="./assets/images/map.jpg" srcset="./assets/images/map@2x.jpg 2x" alt="">
         </a>
       </div>
-      <div class="menu_col"></div>
+      <div class="menu_col">
+      </div>
     </div>
   </div>
 </div>
@@ -365,15 +366,12 @@
           <img src="./assets/images/1-concept.svg" alt="">
         </div>
         <div class="concept_description_body">
-          <h3 class="heading mb-3">
-            Для частного инвестирования
-          </h3>
           <ul class="ul_classic mt-4 mb-5">
-            <li class="text">ROE = 35%></li>
-            <li class="text">CIR = 75%></li>
-            <li class="text">Стабильный бизнес</li>
-            <li class="text">Срок запуска до 8-и месяцев</li>
-            <li class="text">Размер инвестиций от 40,000$ (+ банковское финансирование)</li>
+            <li class="paragraph">ROE = 35%></li>
+            <li class="paragraph">CIR = 75%></li>
+            <li class="paragraph">Стабильный бизнес</li>
+            <li class="paragraph">Срок запуска до 8-и месяцев</li>
+            <li class="paragraph">Размер инвестиций от 40,000$<br/> (+ банковское финансирование)</li>
           </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
@@ -384,19 +382,14 @@
     <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===1}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
-          <img src="./assets/images/1-concept.svg" alt="">
+          <img src="./assets/images/2_concept.png" alt="">
         </div>
-        <div class="concept_description_body">
-          <h3 class="heading mb-3">
-            Для действующих владельцев автомоек
-          </h3>
-
-          <ul class="ul_classic mt-4 mb-5">
-            <li class="text">Повышение доходности</li>
-            <li class="text">Рыночные тренды</li>
-            <li class="text">Быстрый запуск</li>
-            <li class="text">Минимальные инвестиции</li>
-            <li class="text">Действующая клиентская база</li>
+        <div class="concept_description_body"><ul class="ul_classic mt-4 mb-5">
+            <li class="paragraph">Повышение доходности</li>
+            <li class="paragraph">Рыночные тренды</li>
+            <li class="paragraph">Быстрый запуск</li>
+            <li class="paragraph">Минимальные инвестиции</li>
+            <li class="paragraph">Действующая клиентская база</li>
           </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
@@ -407,18 +400,15 @@
     <div class="slide_list_item" :class="{'slide_list_item-active': conceptActiveIndex===2}">
       <div class="concept_description d-flex flex-wrap justify-content-center">
         <div class="concept_description_image">
-          <img src="./assets/images/1-concept.svg" alt="">
+          <img src="./assets/images/3_concept.png" alt="">
         </div>
         <div class="concept_description_body">
-          <h3 class="heading mb-3">
-            Для сетей АЗС, Супермаркетов, ТРЦ
-          </h3>
           <ul class="ul_classic mt-4 mb-5">
-            <li class="text">Дополнительный источник доходов</li>
-            <li class="text">Увеличение клиентской базы</li>
-            <li class="text">Наличие инфраструктуры</li>
-            <li class="text">Лояльность клиентов</li>
-            <li class="text">Быстрый запуск</li>
+            <li class="paragraph">Дополнительный источник доходов</li>
+            <li class="paragraph">Увеличение клиентской базы</li>
+            <li class="paragraph">Наличие инфраструктуры</li>
+            <li class="paragraph">Лояльность клиентов</li>
+            <li class="paragraph">Быстрый запуск</li>
           </ul>
           <button class="btn btn_primary" @click="openModal">
             Оставить заявку
@@ -440,15 +430,12 @@
             <img src="./assets/images/1-concept.svg" alt="">
           </div>
           <div class="concept_description_body">
-            <h3 class="heading mb-3">
-              Для частного инвестирования
-            </h3>
             <ul class="ul_classic mt-4 mb-5">
-              <li class="text">ROE = 35%></li>
-              <li class="text">CIR = 75%></li>
-              <li class="text">Стабильный бизнес</li>
-              <li class="text">Срок запуска до 8-и месяцев</li>
-              <li class="text">Размер инвестиций от 40,000$ (+ банковское финансирование)</li>
+              <li class="paragraph">ROE = 35%></li>
+              <li class="paragraph">CIR = 75%></li>
+              <li class="paragraph">Стабильный бизнес</li>
+              <li class="paragraph">Срок запуска до 8-и месяцев</li>
+              <li class="paragraph">Размер инвестиций от 40,000$ (+ банковское финансирование)</li>
             </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
@@ -462,18 +449,15 @@
       <div class="accordion_option_body">
         <div class="concept_description">
           <div class="concept_description_image">
-            <img src="./assets/images/1-concept.svg" alt="">
+            <img src="./assets/images/2_concept.png" alt="">
           </div>
           <div class="concept_description_body">
-            <h3 class="heading mb-3">
-              Для действующих владельцев автомоек
-            </h3>
             <ul class="ul_classic mt-4 mb-5">
-              <li class="text">Повышение доходности</li>
-              <li class="text">Рыночные тренды</li>
-              <li class="text">Быстрый запуск</li>
-              <li class="text">Минимальные инвестиции</li>
-              <li class="text">Действующая клиентская база</li>
+              <li class="paragraph">Повышение доходности</li>
+              <li class="paragraph">Рыночные тренды</li>
+              <li class="paragraph">Быстрый запуск</li>
+              <li class="paragraph">Минимальные инвестиции</li>
+              <li class="paragraph">Действующая клиентская база</li>
             </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
@@ -483,22 +467,19 @@
       </div>
     </li>
     <li class="accordion_option" :class="{'accordion_option-selected': conceptActiveIndex===2}">
-      <div class="accordion_option_label" @click="conceptActiveIndex=2">Для сетей АЗС, Супермаркетов, ТРЦ</div>
+      <div class="accordion_option_label" @click="setConcept(2)">Для сетей АЗС, Супермаркетов, ТРЦ</div>
       <div class="accordion_option_body">
         <div class="concept_description">
           <div class="concept_description_image">
-            <img src="./assets/images/1-concept.svg" alt="">
+            <img src="./assets/images/3_concept.png" alt="">
           </div>
           <div class="concept_description_body">
-            <h3 class="heading mb-3">
-              Для сетей АЗС, Супермаркетов, ТРЦ
-            </h3>
             <ul class="ul_classic mt-4 mb-5">
-              <li class="text">Дополнительный источник доходов</li>
-              <li class="text">Увеличение клиентской базы</li>
-              <li class="text">Наличие инфраструктуры</li>
-              <li class="text">Лояльность клиентов</li>
-              <li class="text">Быстрый запуск</li>
+              <li class="paragraph">Дополнительный источник доходов</li>
+              <li class="paragraph">Увеличение клиентской базы</li>
+              <li class="paragraph">Наличие инфраструктуры</li>
+              <li class="paragraph">Лояльность клиентов</li>
+              <li class="paragraph">Быстрый запуск</li>
             </ul>
             <button class="btn btn_primary" @click="openModal">
               Оставить заявку
@@ -763,7 +744,7 @@
         <img src="./assets/images/5_reward.jpg" alt="">
       </div>
       <div class="award_title">
-        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+        <span class="fw-600">Сертификат качества VDA</span> (Verband der Automobilindustrie)
       </div>
     </li>
   </ul>

@@ -418,7 +418,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -moz-transition: .15s;
+    -webkit-transition: .15s;
     transition: .15s; }
   .form_field .input:-ms-input-placeholder {
     color: #95a5a6;
@@ -431,7 +431,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -ms-transition: .15s;
+    -webkit-transition: .15s;
     transition: .15s; }
   .form_field .input::-ms-input-placeholder {
     color: #95a5a6;
@@ -444,7 +444,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -ms-transition: .15s;
+    -webkit-transition: .15s;
     transition: .15s; }
   .form_field .input + .input_label, .form_field .input::placeholder {
     color: #95a5a6;
@@ -2817,27 +2817,27 @@ a.a_custom, a.a_custom:hover {
   .program_icon:nth-child(2) {
     opacity: 1; }
   .program_icon:nth-child(3) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(4) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(5) {
     opacity: 0.9; }
   .program_icon:nth-child(6) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(7) {
     opacity: 0.9; }
   .program_icon:nth-child(8) {
-    opacity: 0.9; }
-  .program_icon:nth-child(9) {
     opacity: 1; }
+  .program_icon:nth-child(9) {
+    opacity: 0.9; }
   .program_icon:nth-child(10) {
     opacity: 1; }
   .program_icon:nth-child(11) {
-    opacity: 0.9; }
+    opacity: 1; }
   .program_icon:nth-child(12) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(13) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(14) {
     opacity: 0.9; }
   .program_icon:nth-child(15) {
@@ -2845,19 +2845,19 @@ a.a_custom, a.a_custom:hover {
   .program_icon:nth-child(16) {
     opacity: 0.9; }
   .program_icon:nth-child(17) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(18) {
     opacity: 1; }
   .program_icon:nth-child(19) {
-    opacity: 1; }
-  .program_icon:nth-child(20) {
     opacity: 0.9; }
+  .program_icon:nth-child(20) {
+    opacity: 1; }
   .program_icon:nth-child(21) {
     opacity: 0.9; }
   .program_icon:nth-child(22) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(23) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(24) {
     opacity: 1; }
   .program_icon:nth-child(25) {
@@ -2871,7 +2871,7 @@ a.a_custom, a.a_custom:hover {
   .program_icon:nth-child(29) {
     opacity: 1; }
   .program_icon:nth-child(30) {
-    opacity: 0.9; }
+    opacity: 1; }
 
 .section {
   padding-top: 80px;
