@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @@include('../components/head_tags.html', {"title": "Бизнес с EHRLE"})
+    <!-- endbuild -->
+</head>
+<body class="lang-ru">
+<div id="app">
+    <input type="hidden" value="business" id="sitepage">
+    @@include('../components/nav.html')
+    <div class="content content-first pb-3">
+        <div class="container pt-3">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs-item">
+                    <a href="./">Главная</a>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span>Мойка под ключ</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content pt-2">
+        <div class="container">
+            <h1 class="content_header">Мойка под ключ</h1>
+            <p class="content_subtitle" style="max-width: 800px;">Мы не просто предлагаем вам строительство мойки самообслуживания под ключ, а готовую бизнес-модель, которая будет приносить гарантированный доход с первых дней открытия.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container" style="position: relative">
+            <business-bg class=""></business-bg>
+            @@loop("../components/business_step.html", "../data/data_business_steps.json")
+        </div>
+    </div>
+    @@include('../components/footer.html')
+    @@include('../components/modal_form.html')
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

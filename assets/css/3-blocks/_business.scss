@@ -1,0 +1,101 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.business {
+  &_step {
+    position: relative;
+    max-width: 100%;
+    padding-bottom: 48px;
+    overflow: hidden;
+    @include flex;
+    &:before {
+      @include pseudo_absolute;
+      background: $c_gray_1;
+      width: 8px;
+      @include trbl(0);
+      @include mx(auto);
+    }
+    &:after {
+      @include pseudo_absolute;
+      @include circle(36px, $c_red);
+      border: 5px solid $c_gray_5;
+      @include trbl(0);
+      @include mx(auto);
+      margin-top: 0;
+    }
+
+  }
+  &_block {
+    $p: &;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transition: .5s ease-in;
+    &-left {
+      @include mx(auto, 50%);
+      transform: translate(-24px, 0);
+      &#{$p}-hidden {
+        transform: translate(-100px, 0);
+      }
+    }
+    &-right{
+      @include mx(50%, auto);
+      transform: translate(24px, 0);
+      &#{$p}-hidden {
+        transform: translate(100px, 0);
+      }
+    }
+    &-hidden {
+      opacity: 0;
+      visibility: hidden;
+      transition: .5s ease-out;
+    }
+    border-radius: 8px;
+    width: 400px;
+    max-width: 95%;
+    @include py(24px);
+    @include px(48px, 10px);
+    background: $c_gray_1;
+    .title {
+      margin-bottom: 12px;
+    }
+    .number {
+      position: absolute;
+      color: $c_red;
+      font-size: 48px;
+      @include trbl(3px, auto, auto, 0);
+      font-weight: 800;
+      text-align: center;
+      width: 48px;
+    }
+    .ul_classic {
+      @include my(5px, 10px);
+    }
+  }
+  @media (max-width: 991.98px) {
+    &_step {
+      @include px(0, 24px);
+      &:before {
+        margin-left: auto;
+        margin-right: 14px;
+        width: 4px;
+      }
+      &:after {
+        @include circle(24px, $c_red);
+        margin-left: auto;
+        margin-right: 4px;
+      }
+    }
+    &_block {
+      $p: &;
+      width: 100%;
+      transform: translate(0, 0);
+      @include mx(0);
+      &-hidden {
+        &, &#{$p}-left, &#{$p}-right {
+          transform: translate(-100px, 0);
+        }
+      }
+    }
+  }
+}

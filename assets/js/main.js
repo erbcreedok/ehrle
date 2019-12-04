@@ -12111,12 +12111,9 @@ function vueView() {
 var factorBreakpoint = 795;
 var conceptsBreakpoint = 920;
 var productsBreakpoint = 776;
-var CONST_HEIGHT = 1000;
-var DEFAULT_HEADER = 50;
-var DEFAULT_DELAY = 50;
 Vue.use(vueView());
 
-var defIcons = [
+var programIcons = [
   {name: 'leaves', x: 45, y: -50, z: 0, rotate: 33},
   {name: 'sparkles', x: -10, y: -28, z: 0, rotate: -33},
   {name: 'water', x: 15, y: -43, z: 0, rotate: 0},
@@ -12126,7 +12123,36 @@ var defIcons = [
   {name: 'leaves', x: 20, y: 25, z: -10, rotate: 0},
 ];
 
-Vue.component('program-bg', {
+var businessIcons = [
+  {name: 'leaves', x: -45, y: -40, z: 0, rotate: 33},
+  {name: 'sparkles', x: 4, y: -20, z: 0, rotate: -33},
+  {name: 'water', x: 15, y: -46, z: 0, rotate: 30},
+  {name: 'windshield', x: 33, y: -31, z: 0, rotate: -10},
+  {name: 'wiper', x: 20, y: -5, z: 0, rotate: 0},
+  {name: 'leaves', x: -20, y: 15, z: -10, rotate: 180},
+  {name: 'water', x: -40, y: -7, z: 0, rotate: 30},
+];
+
+Vue.component('business-block', {
+  name: 'business-block',
+  template: `
+    <div class="business_block" :class="{'business_block-hidden': !inView}" v-view="handleView"><slot></slot></div>
+    `,
+  data() {
+    return {
+      inView: false,
+    };
+  },
+  methods: {
+    handleView(options) {
+      if (!this.inView && options.percentInView > 0.3) {
+       this.inView = true;
+      }
+    }
+  }
+});
+
+Vue.component('scroll-bg', {
   template: `
     <div class="program_bg_wrapper" :style="style">
       <div v-for="icon in iconBlocks" :key="icon.name" :style="icon.style" class="program_icon">
@@ -12134,6 +12160,13 @@ Vue.component('program-bg', {
       </div>
     </div>
   `,
+  props: {
+    initIcons: Array,
+    parallaxDepth: {
+      type: Number,
+      default: 5
+    }
+  },
   computed: {
     iconBlocks() {
       return this.icons.map(({name, x, y, z, rotate, ...icon}, index) => ({
@@ -12152,21 +12185,20 @@ Vue.component('program-bg', {
     },
   },
   data: function() {
-   return {
-     top: 0,
-     timeout: null,
-     delayPassed: true,
-     icons: [...defIcons],
-   };
+    return {
+      top: 0,
+      timeout: null,
+      delayPassed: true,
+      icons: [...this.initIcons],
+    };
   },
   methods: {
     updateIcons() {
-      console.log('updating icons');
       const top = window.scrollY;
-      this.top = top/5;
+      this.top = top/this.parallaxDepth;
       this.icons = this.icons.map((i, index) => {
         const icon = {...i};
-        const dIcon = defIcons[index];
+        const dIcon = this.initIcons[index];
         icon.rotate = dIcon.rotate + (top/50 * (index%3 + 1) * (index%2 ? 1 : -1));
         icon.z = dIcon.z + top/500;
         return icon;
@@ -12182,7 +12214,30 @@ Vue.component('program-bg', {
     });
     this.handleScroll();
   },
-})
+});
+
+Vue.component('program-bg', {
+  template: `
+    <scroll-bg :initIcons="defIcons"></scroll-bg>
+  `,
+  data() {
+    return {
+      defIcons: [...programIcons],
+    }
+  }
+});
+Vue.component('business-bg', {
+  template: `
+    <scroll-bg :initIcons="defIcons" :parallaxDepth="3"></scroll-bg>
+  `,
+  data() {
+    return {
+      defIcons: [...businessIcons],
+    }
+  }
+});
+
+
 
 Vue.component('scroll-top', {
   props: ['percent'],
