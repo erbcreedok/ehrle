@@ -1,5 +1,5 @@
 git add .
-git commit -m '$0'
+git commit -m $0
 git push
 
 cd ../ehrle-build
@@ -11,6 +11,6 @@ gulp build
 
 cd ../ehrle-build
 git add .
-git commit -m '$0'
+git commit -m $0
 git push
 
