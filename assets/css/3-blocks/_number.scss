@@ -9,9 +9,13 @@
     @include row(4, '.number_item', $item_width, $item_distance, 15px, 2);
   }
   &_header_image {
-    height: 44px;
+    height: 100px;
     display: block;
     @include mx(auto);
+    margin-bottom: 10px;
+    @media (max-width: 767.98px) {
+      height: 60px;
+    }
   }
   &_item {
     background: $c_gray_1;

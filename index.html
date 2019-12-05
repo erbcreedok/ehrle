@@ -677,7 +677,7 @@
 </section>
 
     <section class="section numbers_section">
-  <img src="./assets/images/german_logo.jpg" alt="" class="number_header_image">
+  <img src="./assets/images/german_logo_hq.png" alt="" class="number_header_image">
   <h2 class="section_title mb-3">
     Ehrle в цифрах
   </h2>
@@ -732,31 +732,17 @@
         <img src="./assets/images/1_reward.jpg" alt="">
       </div>
       <div class="award_title">
-        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+        <span class="fw-600">Марка Года 2018 и Лидер Юбилейного XV-летия,</span>
+        выделение марки за многократные награды и лидерство в отрасли
       </div>
     </li>
     <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
       <div class="award_image">
-        <img src="./assets/images/2_reward.jpg" alt="">
+        <img src="./assets/images/award-6.jpg" alt="">
       </div>
       <div class="award_title">
-        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
-      </div>
-    </li>
-    <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
-      <div class="award_image">
-        <img src="./assets/images/3_reward.jpg" alt="">
-      </div>
-      <div class="award_title">
-        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
-      </div>
-    </li>
-    <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
-      <div class="award_image">
-        <img src="./assets/images/4_reward.jpg" alt="">
-      </div>
-      <div class="award_title">
-        <span class="fw-600">Потребительский лавр</span> в категории Открытие года
+        <span class="fw-600">Золотой Потребительский Лавр,</span> награда независимой исследовательской
+        организации потребителей в категории лучшие Мойки Самообслуживания в годах 2015-2019
       </div>
     </li>
     <li class="award_item"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
@@ -767,8 +753,16 @@
         <span class="fw-600">Сертификат качества VDA</span> (Verband der Automobilindustrie)
       </div>
     </li>
+    <li class="award_item award_item-wide"  :style="{transform: 'translateX(' + (-awardContainerWidth * selectedAward) + 'px)'}">
+      <div class="award_image">
+        <img src="./assets/images/award-7.jpg" alt="">
+      </div>
+      <div class="award_title">
+        <span class="fw-600">Сертификат в категории Сетевые Мойки Самообслуживания</span>
+      </div>
+    </li>
   </ul>
-  <div class="number-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
+  <div class="award-hide_desktop d-flex align-items-center mx-auto mb-4" style="max-width: 263px">
     <button class="btn_circle mr-auto" @click="prevAward"><img src="./assets/images/arrow_prev.svg" alt=""></button>
     <ul class="ul_custom dot_list">
       <li class="dot_list_item" v-for="i in awardsLength" :class="{'dot_list_item-selected': selectedAward === i-1}" :key="i"></li>
