@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="menu_col">
-        <a class="menu_col_title menu_title" href="./tech-beskontakt.html">Технология</a>
+        <a class="menu_col_title menu_title" href="./tech-beskontakt.html" @click="closeMenu">Технология</a>
         <div class="menu_links">
           <a class="menu_link" href="./tech-beskontakt.html" @click="closeMenu">Бесконтакная мойка</a>
           <a class="menu_link" href="./tech-vda.html" @click="closeMenu">Сертификат VDA</a>
@@ -61,8 +61,11 @@
         </div>
       </div>
       <div class="menu_col">
-        <a href="#" target="_blank" class="menu_link menu_link-accent">Почему Ehrle?</a>
-        <a href="#" target="_blank" class="menu_link menu_link-accent">Программа лояльности</a>
+        <a class="menu_col_title menu_title" href="./business.html" @click="closeMenu">Бизнес с EHRLE</a>
+        <div class="menu_links">
+          <a class="menu_link" href="./business.html" @click="closeMenu">Мойка под ключ</a>
+          <a class="menu_link" href="./calculator.html" @click="closeMenu">Рассчёт стройки и рентабельности</a>
+        </div>
         <!--<a class="menu_col_title menu_title" href="#" target="_blank">Компания</a>-->
         <!--<div class="menu_links">-->
           <!--<a class="menu_link" href="http://www.ehrle.kz/ru/kompanija/tradicyi/" target="_blank">Традиция</a>-->
@@ -75,6 +78,8 @@
     <div class="menu_line"></div>
     <div class="menu_footer menu_row">
       <div class="menu_col">
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Почему Ehrle?</a>
+        <a href="#" target="_blank" class="menu_link menu_link-accent">Программа лояльности</a>
         <div class="social_links mt-0">
           <div class="menu_title social_label mb-0">Мы в соц. сетях:</div>
           <a class="social_link" href="#" target="_blank">
