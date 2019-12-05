@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('../components/head_tags.html', {"title": "Аксессуары - EHRLE"})
+  <!-- endbuild -->
+</head>
+<body class="lang-ru">
+<div id="app">
+  <input type="hidden" value="accessories" id="sitepage">
+  @@include('../components/nav.html')
+  <div class="container content-first">
+    <ul class="breadcrumbs">
+      <li class="breadcrumbs-item">
+        <a href="./">Главная</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <a href="./#section_products">Продукты</a>
+      </li>
+      <li class="breadcrumbs-item">
+        <span>Аксессуары</span>
+      </li>
+    </ul>
+  </div>
+  <div class="content pt-2 content-bordered">
+    <div class="container">
+      <h1 class="content_header">
+        Аксессуары
+      </h1>
+      <p class="content_subtitle" style="max-width: 800px">Каждая автомойка EHRLE имеет богатую стандартную комплектацию, однако Инвестору предлагается большой ассортимент аксессуаров.</p>
+    </div>
+  </div>
+  <div class="content">
+      @@loop("../components/accessory_item.html", "../data/data_accessories.json")
+
+  </div>
+  @@include('../components/footer.html')
+  @@include('../components/modal_form.html')
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

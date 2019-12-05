@@ -1,0 +1,26 @@
+@import "../2-base/variables";
+@import "../2-base/mixins";
+
+.content_metal {
+  background-image: url($images + '/metal_bg.jpg');
+  background-size: cover;
+  .title {
+    @include my(30px);
+    font-size: 30px;
+  }
+  .metal_image {
+    width: 100%;
+    height: 1px;
+    padding-top: 50%;
+    position: relative;
+    border-bottom: 4px solid $c_red;
+    margin-bottom: 20px;
+    img {
+      position: absolute;
+      @include trbl(0);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

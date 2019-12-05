@@ -41,6 +41,9 @@
   &-color {
     color: white;
     background: $c_gray;
+    .title {
+      color: white;
+    }
     .paragraph {
       color: white;
       &-accent {
