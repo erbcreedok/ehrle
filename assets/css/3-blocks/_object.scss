@@ -25,6 +25,7 @@
     &_selected_image {
       @include square_image_container(100%, 8px);
       margin-bottom: 20px;
+      cursor: zoom-in;
     }
     &_thumbnails {
       width: 100%;
@@ -32,10 +33,12 @@
     }
     &_thumbnail {
       @include square_image_container(20.8333333333%, 8px);
+      cursor: zoom-in;
       &-blurred {
         &:before {
           @include pseudo_absolute;
           @include trbl(0);
+          z-index: 1;
           background: rgba($c_dark, .5);
         }
         & > span {
