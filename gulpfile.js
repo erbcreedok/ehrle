@@ -15,6 +15,8 @@ var gulp = require('gulp'),
   cssmin = require('gulp-cssmin');
 
 const scripts = [
+  'assets/js/constants.js',
+  'assets/js/components/*.js',
   'assets/js/functions.js',
   'assets/js/app.js',
 ];
@@ -96,7 +98,7 @@ gulp.task("minifyCss", ["compileSass"], function() {
 
 gulp.task('watchFiles', function() {
   gulp.watch('assets/css/**/*.scss', ['compileSass']);
-  gulp.watch('assets/js/*.js', ['concatScripts']);
+  gulp.watch('assets/js/**/*.js', ['concatScripts']);
 });
 
 gulp.task('clean', function() {

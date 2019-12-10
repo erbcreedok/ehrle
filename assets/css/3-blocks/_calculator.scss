@@ -2,12 +2,67 @@
 @import "../2-base/mixins";
 
 .calculator {
+  &_container {
+    overflow: hidden;
+  }
   &_result {
     border-radius: 8px;
     border: solid 2px $c_gray_1;
     background-color: white;
+    &-fixed {
+      position: fixed;
+      @include trbl(100%, 10px, auto);
+      z-index: 10;
+      margin-top: -100px;
+      max-width: 690px;
+      box-shadow: 0 -5px 30px rgba(0,0,0,.05);
+      @include mx(auto);
+      @media (max-width: 767.98px) {
+        max-width: 510px;
+      }
+      @media (max-width: 575.98px) {
+        max-width: 100%;
+        .label {
+          max-width: 100%;
+          font-size: 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    &_bound {
+      margin-top: 99px;
+      height: 1px;
+      position: absolute;
+    }
     &_wrapper {
       @include px(24px);
+    }
+    &_item {
+      @include py(8px);
+      border-bottom: 1px solid $c_gray_1;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    &_list {
+      transform: scaleY(1);
+      transform-origin: top;
+      transition: .3s ease-in;
+      visibility: visible;
+      max-height: 1000px;
+      overflow: auto;
+      opacity: 1;
+      margin-bottom: 1.5rem;
+      &-hide {
+        margin-bottom: 0;
+        opacity: 0;
+        max-height: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        transition: .3s ease-out;
+      }
     }
   }
 }

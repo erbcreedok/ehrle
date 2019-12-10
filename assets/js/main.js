@@ -12116,37 +12116,277 @@ function VueLazyLoad(){"use strict";function e(e){return e.constructor&&"functio
 
 }));
 
-
 var factorBreakpoint = 795;
 var conceptsBreakpoint = 920;
 var productsBreakpoint = 776;
+var calculatorBreakpoint = 992;
+Vue.component('business-block', {
+	name: 'business-block',
+	template: `
+    <div class="business_block" :class="{'business_block-hidden': !inView}" v-view="handleView"><slot></slot></div>
+    `,
+	data() {
+		return {
+			inView: false,
+		};
+	},
+	methods: {
+		handleView(options) {
+			if (!this.inView && options.percentInView > 0.3) {
+				this.inView = true;
+			}
+		}
+	}
+});
+var calculatorTemplate = `
+<div class="calculator">
+	<div class="label my-3">1. Детали мойки</div>
+	<div class="row">
+		<div class="col-md-6 mb-4">
+			<div class="text mb-2">Количество постов для мойки</div>
+			<div class="radio_buttons ">
+				<div v-for="i in posts" :key="i" class="radio_button radio_button-squared" :class="{'radio_button-selected': i===selected.posts}" @click="selected.posts = i; handleUpdate()">{{i}}</div>
+			</div>
+		</div>
+		<div class="col-md-6 mb-4">
+			<div class="text mb-2">Количество постов пылесоса <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Количество постов с пылесосом в автомойке</span></span></div>
+			<div class="radio_buttons">
+				<div class="radio_button" :class="{'radio_button-selected': 1===selected.vacuum}" @click="selected.vacuum = 1; handleUpdate()">1</div>
+				<div class="radio_button" :class="{'radio_button-selected': 2===selected.vacuum}" @click="selected.vacuum = 2; handleUpdate()">2</div>
+				<div class="radio_button" :class="{'radio_button-selected': 3===selected.vacuum}" @click="selected.vacuum = 3; handleUpdate()">Без пылесоса</div>
+			</div>
+		</div>
+		<div class="col-md-6 mb-4 pr-md-5">
+			<div class="text mb-2">Собственный участок</div>
+			<div class="form_select form_select-block pr-md-2">
+				<select v-model="selected.land" @change="handleUpdate">
+					<option v-if="!selected.land" :value="null" disabled selected>Выберите вариант</option>
+					<option v-for="i in land" :key="i.value" :value="i.value">{{i.text}}</option>
+				</select>
+				<span class="form_select_arrow"></span>
+			</div>
+		</div>
+		<template v-if="selected.land && selected.land !== 1">
+			<div class="col-md-6 mb-4">
+				<div class="text mb-2">Цена за участок <strong class="small opacity-middle">(в тенге)</strong></div>
+				<div class="form_input">
+					<input type="text" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+				</div>
+			</div>
+		</template>
+		<div class="col-md-6 mb-4" v-else></div>
+		<div class="col-md-6 mb-4 pr-md-5">
+			<div class="text mb-2">Тип котла</div>
+			<div class="form_select form_select-block pr-md-2">
+				<select v-model="selected.boiler" @change="handleUpdate">
+					<option v-if="!selected.boiler" :value="null" disabled selected>Выберите вариант</option>
+					<option v-for="i in boiler" :value="i.value">{{i.text}}</option>
+				</select>
+				<span class="form_select_arrow"></span>
+			</div>
+		</div>
+		<div class="col-12 mb-4">
+			<div class="text mb-2">Строительство под ключ</div>
+			<div class="form_checkboxes">
+				<label for="type" class="form_checkbox">
+					<input type="checkbox" id="type" v-model="selected.build" @change="handleUpdate">
+					<span class="form_checkbox_label">Да, постройте мне мойку</span>
+					<span class="form_checkbox_icon"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>
+`;
+Vue.component('calculator', {
+	name: 'calculator',
+	template: calculatorTemplate,
+	data() {
+		return {
+			selected: {
+				posts: null,
+				vacuum: null,
+				boiler: null,
+				build: null,
+				land: null,
+				price: null,
+			},
+			posts: [1, 2, 3, 4, 5, 6],
+			land: [
+				{value: 1, text: 'У меня собственный участок'},
+				{value: 2, text: 'Я буду покупать участок'},
+				{value: 3, text: 'Я буду арендовать участок'}
+			],
+			boiler: [
+				{value: 1, text: 'На газе'},
+				{value: 2, text: 'На дизеле'},
+				{value: 3, text: 'На электричестве'}
+			],
+		};
+	},
+	methods: {
+		handleUpdate() {
+			this.$emit('change', {...this.selected});
+		}
+	}
+});
+var calculatorResultsTemplate = `
+<div class="calculator_result" :class="{'calculator_result-fixed': fixed}">
+	<div class="calculator_result_wrapper">
+		<div class="calculator_result_header my-4">
+			<div class="label mb-2">Стоимость вашего проекта:</div>
+			<div class="heading heading-light">12,220,000 <span class="small" style="font-weight: 500">₸</span></div>
+		</div>
+		<div class="calculator_result_label d-flex justify-content-between flex-wrap align-items-center mt-4 mb-2">
+			<div class="label mb-1">Результаты расчёта</div>
+			<span class="pseudo_link" v-if="showDetails" @click="closeDetails">Скрыть детали</span>
+			<span class="pseudo_link" v-if="!showDetails" @click="openDetails">Показать детали</span>
+		</div>
+		<ul class="calculator_result_list ul_custom" :class="{'calculator_result_list-hide': !showDetails}">
+			<li class="calculator_result_item d-flex flex-wrap justify-content-between">
+				<span class="text">Стоймость мойка</span>
+				<strong class="text">8,820,000 ₸</strong>
+			</li>
+			<li class="calculator_result_item d-flex flex-wrap justify-content-between">
+				<span class="text">Стоймость мойка</span>
+				<strong class="text">8,820,000 ₸</strong>
+			</li>
+			<li class="calculator_result_item d-flex flex-wrap justify-content-between">
+				<span class="text">Стоймость мойка</span>
+				<strong class="text">8,820,000 ₸</strong>
+			</li>
+			<li class="calculator_result_item d-flex flex-wrap justify-content-between">
+				<span class="text">Стоймость мойка</span>
+				<strong class="text">8,820,000 ₸</strong>
+			</li>
+			<li class="calculator_result_item d-flex flex-wrap justify-content-between">
+				<span class="text">Стоймость мойка</span>
+				<strong class="text">8,820,000 ₸</strong>
+			</li>
+			<li class="calculator_result_item d-flex flex-wrap justify-content-between">
+				<span class="text">Стоймость мойка</span>
+				<strong class="text">8,820,000 ₸</strong>
+			</li>
+		</ul>
+		<div class="mb-4 pt-2">
+			<button class="btn btn_primary">Получить консультацию</button>
+		</div>
+	</div>
+</div>
+`;
 
-Vue.use(VueLazyLoad());
-Vue.use(vueView());
-
-var programIcons = [
-  {name: 'leaves', x: 45, y: -50, z: 0, rotate: 33},
-  {name: 'sparkles', x: -10, y: -28, z: 0, rotate: -33},
-  {name: 'water', x: 15, y: -43, z: 0, rotate: 0},
-  {name: 'windshield', x: 45, y: -20, z: 0, rotate: -100},
-  {name: 'wiper', x: 50, y: 9, z: 0, rotate: 0},
-  {name: 'water', x: 10, y: -10, z: 0, rotate: -60},
-  {name: 'leaves', x: 20, y: 25, z: -10, rotate: 0},
-];
-
-var businessIcons = [
-  {name: 'leaves', x: -45, y: -40, z: 0, rotate: 33},
-  {name: 'sparkles', x: 4, y: -20, z: 0, rotate: -33},
-  {name: 'water', x: 15, y: -46, z: 0, rotate: 30},
-  {name: 'windshield', x: 33, y: -31, z: 0, rotate: -10},
-  {name: 'wiper', x: 20, y: -5, z: 0, rotate: 0},
-  {name: 'leaves', x: -20, y: 15, z: -10, rotate: 180},
-  {name: 'water', x: -40, y: -7, z: 0, rotate: 30},
-];
-
+Vue.component('calculator-result', {
+	name: 'calculator-result',
+	template: calculatorResultsTemplate,
+	props: {
+		values: Object,
+		fixed: Boolean,
+	},
+	data() {
+		return {
+			showDetails: true,
+		}
+	},
+	watch: {
+		values(to) {
+			if (to) {
+				this.calculate({...to});
+			}
+		}
+	},
+	methods: {
+		calculate(values) {
+		},
+		closeDetails() {
+			this.showDetails = false;
+		},
+		openDetails() {
+			this.showDetails = true;
+		},
+	},
+});
+Vue.component('factor-circle', {
+	template:
+		`<div class="factor_item_image" v-view="handleView">
+      <percent-svg :percent="percentShow"></percent-svg>
+      <div class="title">{{percentShow}}%</div>
+    </div>`,
+	props: ['percent', 'duration', 'isSelected'],
+	data() {
+		return {
+			percentShow: this.percent - 0,
+			interval: null,
+			animatedOnce: false,
+			windowWidth: window.innerWidth,
+		};
+	},
+	computed: {
+		durationInt() {
+			if (!this.duration) {
+				return 1000;
+			}
+			return this.duration - 0;
+		},
+		percentInt() {
+			return this.percent - 0;
+		},
+		delay() {
+			if (this.percentInt === 0) return 0;
+			return this.durationInt / this.percentInt;
+		},
+		isMobile() {
+			return this.windowWidth <= factorBreakpoint;
+		}
+	},
+	watch: {
+		isSelected(to) {
+			if (to) {
+				this.handleView({percentInView: 1});
+			}
+		}
+	},
+	methods: {
+		prepareToAnimate() {
+			this.stopAnimate();
+			this.percentShow = 0;
+		},
+		startAnimate() {
+			this.interval = setInterval((function() {
+				this.percentShow += 1;
+				if (this.percentShow >= this.percentInt) {
+					this.stopAnimate();
+				}
+			}).bind(this), this.delay);
+		},
+		stopAnimate() {
+			this.percentShow = this.percentInt;
+			if (this.interval) {
+				clearInterval(this.interval);
+			}
+		},
+		handleView(options) {
+			if (options.percentInView > .5 && !this.animatedOnce) {
+				this.prepareToAnimate();
+				if (!this.isMobile || this.isSelected) {
+					this.startAnimate();
+					this.animatedOnce = true;
+				}
+			}
+		},
+		getWindowWidth() {
+			this.windowWidth = window.innerWidth;
+		},
+	},
+	mounted() {
+		this.$nextTick(function() {
+			window.addEventListener('resize', this.getWindowWidth);
+		});
+		this.getWindowWidth();
+	},
+});
 Vue.component('gallery-block', {
-  template:
-    `<div class="object_gallery">
+	template:
+		`<div class="object_gallery">
       <div class="object_gallery_selected_image" @click="openImage(0)"><img :src="mainImage" alt=""></div>
        <ul class="ul_custom object_gallery_thumbnails">
         <li v-for="image in thumbs" :key="image.index" :class="{'object_gallery_thumbnail-blurred': !!image.plus}" class="object_gallery_thumbnail" @click="openImage(image.index)">
@@ -12156,175 +12396,58 @@ Vue.component('gallery-block', {
       </ul>
       <LightBox :images="images" :showLightBox="false" ref="modalRef"/>
     </div>`,
-  components: {
-    LightBox: Lightbox.default,
-  },
-  computed: {
-    modal() {
-      return this.$refs.modalRef;
-    },
-    mainImage() {
-      return this.images[0] ? this.images[0].src : null;
-    },
-    thumbs() {
-      return this.images.slice(1, 5).map((image, index) => ({...image, index:index+1, plus: (index===3) ? this.images.length - 4 : null}));
-    },
-  },
-  data() {
-    return {
-      images: [
-        {src: './assets/images/gallery/1.jpg', thumb: './assets/images/gallery/1_tn.jpg'},
-        {src: './assets/images/gallery/2.jpg', thumb: './assets/images/gallery/2_tn.jpg'},
-        {src: './assets/images/gallery/3.jpg', thumb: './assets/images/gallery/3_tn.jpg'},
-        {src: './assets/images/gallery/4.jpg', thumb: './assets/images/gallery/4_tn.jpg'},
-        {src: './assets/images/gallery/5.jpg', thumb: './assets/images/gallery/5_tn.jpg'},
-        {src: './assets/images/gallery/6.jpg', thumb: './assets/images/gallery/6_tn.jpg'},
-        {src: './assets/images/gallery/7.jpg', thumb: './assets/images/gallery/7_tn.jpg'},
-        {src: './assets/images/gallery/8.jpg', thumb: './assets/images/gallery/8_tn.jpg'},
-        {src: './assets/images/gallery/9.jpg', thumb: './assets/images/gallery/9_tn.jpg'},
-      ]
-    }
-  },
-  methods: {
-    openImage(index) {
-      this.modal.showImage(index);
-    }
-  }
+	components: {
+		LightBox: Lightbox.default,
+	},
+	computed: {
+		modal() {
+			return this.$refs.modalRef;
+		},
+		mainImage() {
+			return this.images[0] ? this.images[0].src : null;
+		},
+		thumbs() {
+			return this.images.slice(1, 5).map((image, index) => ({...image, index:index+1, plus: (index===3) ? this.images.length - 4 : null}));
+		},
+	},
+	data() {
+		return {
+			images: [
+				{src: './assets/images/gallery/1.jpg', thumb: './assets/images/gallery/1_tn.jpg'},
+				{src: './assets/images/gallery/2.jpg', thumb: './assets/images/gallery/2_tn.jpg'},
+				{src: './assets/images/gallery/3.jpg', thumb: './assets/images/gallery/3_tn.jpg'},
+				{src: './assets/images/gallery/4.jpg', thumb: './assets/images/gallery/4_tn.jpg'},
+				{src: './assets/images/gallery/5.jpg', thumb: './assets/images/gallery/5_tn.jpg'},
+				{src: './assets/images/gallery/6.jpg', thumb: './assets/images/gallery/6_tn.jpg'},
+				{src: './assets/images/gallery/7.jpg', thumb: './assets/images/gallery/7_tn.jpg'},
+				{src: './assets/images/gallery/8.jpg', thumb: './assets/images/gallery/8_tn.jpg'},
+				{src: './assets/images/gallery/9.jpg', thumb: './assets/images/gallery/9_tn.jpg'},
+			]
+		}
+	},
+	methods: {
+		openImage(index) {
+			this.modal.showImage(index);
+		}
+	}
 });
-
-Vue.component('business-block', {
-  name: 'business-block',
-  template: `
-    <div class="business_block" :class="{'business_block-hidden': !inView}" v-view="handleView"><slot></slot></div>
-    `,
-  data() {
-    return {
-      inView: false,
-    };
-  },
-  methods: {
-    handleView(options) {
-      if (!this.inView && options.percentInView > 0.3) {
-        this.inView = true;
-      }
-    }
-  }
-});
-
-Vue.component('scroll-bg', {
-  template: `
-    <div class="program_bg_wrapper" :style="style">
-      <div v-for="icon in iconBlocks" :key="icon.name" :style="icon.style" class="program_icon">
-        <div :class="icon.class"></div>
-      </div>
-    </div>
-  `,
-  props: {
-    initIcons: Array,
-    parallaxDepth: {
-      type: Number,
-      default: 5
-    }
-  },
-  computed: {
-    iconBlocks() {
-      return this.icons.map(({name, x, y, z, rotate, ...icon}, index) => ({
-        ...icon,
-        name: name + index,
-        class: 'icon icon-' + name,
-        style: {
-          transform: `translate3d(${x}%, ${y}%, ${z}px) rotate(${rotate}deg)`,
-        },
-      }));
-    },
-    style() {
-      return {
-        transform: `translateY(${this.top}px)`,
-      }
-    },
-  },
-  data: function() {
-    return {
-      top: 0,
-      timeout: null,
-      delayPassed: true,
-      icons: [...this.initIcons],
-    };
-  },
-  methods: {
-    updateIcons() {
-      const top = window.scrollY;
-      this.top = top/this.parallaxDepth;
-      this.icons = this.icons.map((i, index) => {
-        const icon = {...i};
-        const dIcon = this.initIcons[index];
-        icon.rotate = dIcon.rotate + (top/50 * (index%3 + 1) * (index%2 ? 1 : -1));
-        icon.z = dIcon.z + top/500;
-        return icon;
-      });
-    },
-    handleScroll() {
-      this.updateIcons();
-    },
-  },
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('scroll', this.handleScroll);
-    });
-    this.handleScroll();
-  },
-});
-
-Vue.component('program-bg', {
-  template: `
-    <scroll-bg :initIcons="defIcons"></scroll-bg>
-  `,
-  data() {
-    return {
-      defIcons: [...programIcons],
-    }
-  }
-});
-
-Vue.component('business-bg', {
-  template: `
-    <scroll-bg :initIcons="defIcons" :parallaxDepth="3"></scroll-bg>
-  `,
-  data() {
-    return {
-      defIcons: [...businessIcons],
-    }
-  }
-});
-
-Vue.component('scroll-top', {
-  props: ['percent'],
-  methods: {
-    scrollTop() {
-      window.scrollTo(0, 0);
-    }
-  },
-  template:
-    `<button class="btn_circle scroll_to_top" @click="scrollTop"><img src="./assets/images/arrow-up.svg" alt=""></button>`,
-});
-
 Vue.component('percent-svg', {
-  props: ['percent'],
-  computed: {
-    strokeDashOffset() {
-      var hundred = 534;
-      var part = this.percent / 100;
-      return hundred - hundred*part;
-    },
-    degree() {
-      return 360 * this.percent / 100;
-    },
-    rotate() {
-      return `rotate(${this.degree})`;
-    }
-  },
-  template:
-    `<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewBox="0 0 190 190">
+	props: ['percent'],
+	computed: {
+		strokeDashOffset() {
+			var hundred = 534;
+			var part = this.percent / 100;
+			return hundred - hundred*part;
+		},
+		degree() {
+			return 360 * this.percent / 100;
+		},
+		rotate() {
+			return `rotate(${this.degree})`;
+		}
+	},
+	template:
+		`<svg xmlns="http://www.w3.org/2000/svg" width="190" height="190" viewBox="0 0 190 190">
       <g fill="none" fill-rule="evenodd">
        <circle cx="95" cy="95" r="85" stroke="#ecf0f1" stroke-width="8"/>
        <circle stroke="#D83139" stroke-width="8" cx="95" cy="95" r="85" transform="rotate(-90) translate(-190 0)" stroke-dasharray="534" :stroke-dashoffset="strokeDashOffset"/>
@@ -12334,86 +12457,123 @@ Vue.component('percent-svg', {
       </g>
     </svg>`,
 });
+var programIcons = [
+	{name: 'leaves', x: 45, y: -50, z: 0, rotate: 33},
+	{name: 'sparkles', x: -10, y: -28, z: 0, rotate: -33},
+	{name: 'water', x: 15, y: -43, z: 0, rotate: 0},
+	{name: 'windshield', x: 45, y: -20, z: 0, rotate: -100},
+	{name: 'wiper', x: 50, y: 9, z: 0, rotate: 0},
+	{name: 'water', x: 10, y: -10, z: 0, rotate: -60},
+	{name: 'leaves', x: 20, y: 25, z: -10, rotate: 0},
+];
 
-Vue.component('factor-circle', {
-  template:
-    `<div class="factor_item_image" v-view="handleView">
-      <percent-svg :percent="percentShow"></percent-svg>
-      <div class="title">{{percentShow}}%</div>
-    </div>`,
-  props: ['percent', 'duration', 'isSelected'],
-  data() {
-    return {
-      percentShow: this.percent - 0,
-      interval: null,
-      animatedOnce: false,
-      windowWidth: window.innerWidth,
-    };
-  },
-  computed: {
-    durationInt() {
-      if (!this.duration) {
-        return 1000;
-      }
-      return this.duration - 0;
-    },
-    percentInt() {
-      return this.percent - 0;
-    },
-    delay() {
-      if (this.percentInt === 0) return 0;
-      return this.durationInt / this.percentInt;
-    },
-    isMobile() {
-      return this.windowWidth <= factorBreakpoint;
-    }
-  },
-  watch: {
-    isSelected(to) {
-      if (to) {
-        this.handleView({percentInView: 1});
-      }
-    }
-  },
-  methods: {
-    prepareToAnimate() {
-      this.stopAnimate();
-      this.percentShow = 0;
-    },
-    startAnimate() {
-      this.interval = setInterval((function() {
-        this.percentShow += 1;
-        if (this.percentShow >= this.percentInt) {
-          this.stopAnimate();
-        }
-      }).bind(this), this.delay);
-    },
-    stopAnimate() {
-      this.percentShow = this.percentInt;
-      if (this.interval) {
-        clearInterval(this.interval);
-      }
-    },
-    handleView(options) {
-      if (options.percentInView > .5 && !this.animatedOnce) {
-        this.prepareToAnimate();
-        if (!this.isMobile || this.isSelected) {
-          this.startAnimate();
-          this.animatedOnce = true;
-        }
-      }
-    },
-    getWindowWidth() {
-      this.windowWidth = window.innerWidth;
-    },
-  },
-  mounted() {
-    this.$nextTick(function() {
-      window.addEventListener('resize', this.getWindowWidth);
-    });
-    this.getWindowWidth();
-  },
+var businessIcons = [
+	{name: 'leaves', x: -45, y: -40, z: 0, rotate: 33},
+	{name: 'sparkles', x: 4, y: -20, z: 0, rotate: -33},
+	{name: 'water', x: 15, y: -46, z: 0, rotate: 30},
+	{name: 'windshield', x: 33, y: -31, z: 0, rotate: -10},
+	{name: 'wiper', x: 20, y: -5, z: 0, rotate: 0},
+	{name: 'leaves', x: -20, y: 15, z: -10, rotate: 180},
+	{name: 'water', x: -40, y: -7, z: 0, rotate: 30},
+];
+
+Vue.component('scroll-bg', {
+	template: `
+    <div class="program_bg_wrapper" :style="style">
+      <div v-for="icon in iconBlocks" :key="icon.name" :style="icon.style" class="program_icon">
+        <div :class="icon.class"></div>
+      </div>
+    </div>
+  `,
+	props: {
+		initIcons: Array,
+		parallaxDepth: {
+			type: Number,
+			default: 5
+		}
+	},
+	computed: {
+		iconBlocks() {
+			return this.icons.map(({name, x, y, z, rotate, ...icon}, index) => ({
+				...icon,
+				name: name + index,
+				class: 'icon icon-' + name,
+				style: {
+					transform: `translate3d(${x}%, ${y}%, ${z}px) rotate(${rotate}deg)`,
+				},
+			}));
+		},
+		style() {
+			return {
+				transform: `translateY(${this.top}px)`,
+			}
+		},
+	},
+	data: function() {
+		return {
+			top: 0,
+			timeout: null,
+			delayPassed: true,
+			icons: [...this.initIcons],
+		};
+	},
+	methods: {
+		updateIcons() {
+			const top = window.scrollY;
+			this.top = top/this.parallaxDepth;
+			this.icons = this.icons.map((i, index) => {
+				const icon = {...i};
+				const dIcon = this.initIcons[index];
+				icon.rotate = dIcon.rotate + (top/50 * (index%3 + 1) * (index%2 ? 1 : -1));
+				icon.z = dIcon.z + top/500;
+				return icon;
+			});
+		},
+		handleScroll() {
+			this.updateIcons();
+		},
+	},
+	mounted() {
+		this.$nextTick(() => {
+			window.addEventListener('scroll', this.handleScroll);
+		});
+		this.handleScroll();
+	},
 });
+Vue.component('program-bg', {
+	template: `
+    <scroll-bg :initIcons="defIcons"></scroll-bg>
+  `,
+	data() {
+		return {
+			defIcons: [...programIcons],
+		}
+	}
+});
+Vue.component('business-bg', {
+	template: `
+    <scroll-bg :initIcons="defIcons" :parallaxDepth="3"></scroll-bg>
+  `,
+	data() {
+		return {
+			defIcons: [...businessIcons],
+		}
+	}
+});
+
+Vue.component('scroll-top', {
+	props: ['percent'],
+	methods: {
+		scrollTop() {
+			window.scrollTo(0, 0);
+		}
+	},
+	template:
+		`<button class="btn_circle scroll_to_top" @click="scrollTop"><img src="./assets/images/arrow-up.svg" alt=""></button>`,
+});
+
+Vue.use(VueLazyLoad());
+Vue.use(vueView());
 
 (function () {
   new Vue({
@@ -12437,8 +12597,14 @@ Vue.component('factor-circle', {
       videoPlayed: false,
       smallVideoPlayed: false,
       showScroll: false,
+      calcValues: null,
+      isCalcFixed: false,
+      isCalcRequiresFixed: false,
     },
     computed: {
+      fixCalcResults() {
+        return this.isCalcFixed && !!this.calcValues;
+      },
       conceptsLength() {
         return document.querySelectorAll('.concept_radio').length;
       },
@@ -12488,12 +12654,37 @@ Vue.component('factor-circle', {
       },
       windowWidth(to) {
         this.setDefaultIndexes(to);
+        this.handleIsCalcFixed(to);
       },
       windowScrollTop(to) {
         this.showScroll = to > 800;
+      },
+      calcValues(to, from) {
+        if (!!to && !from) {
+          window.scrollTo(0, window.scrollY + 100);
+        }
       }
     },
     methods: {
+      handleIsCalcFixed(width = this.windowWidth) {
+        this.isCalcRequiresFixed = width < calculatorBreakpoint;
+        if (!this.isCalcRequiresFixed) {
+          this.isCalcFixed = false;
+        }
+      },
+      handleCalcView(options) {
+        if (this.isCalcRequiresFixed) {
+          if (options.type === 'enter') {
+            this.isCalcFixed = false;
+          }
+          if (options.type === 'exit' && options.percentTop >= 0) {
+            this.isCalcFixed = true;
+          }
+        }
+      },
+      setCalcValues(e) {
+        this.calcValues = {...e};
+      },
       setProgram(value) {
         if (value === this.selectedProgram) {
           this.selectedProgram = null;
@@ -12580,6 +12771,7 @@ Vue.component('factor-circle', {
       },
       getWindowWidth() {
         this.windowWidth = window.innerWidth;
+        this.handleIsCalcFixed();
       },
       closeModal() {
         this.showModal = false;
