@@ -86,7 +86,7 @@ Vue.use(vueView());
         this.showScroll = to > 800;
       },
       calcValues(to, from) {
-        if (!!to && !from) {
+        if (!!to && !from && this.isCalcRequiresFixed) {
           window.scrollTo(0, window.scrollY + 100);
         }
       }
