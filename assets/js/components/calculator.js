@@ -11,11 +11,22 @@ var calculatorTemplate = `
 		<div class="col-md-6 mb-4">
 			<div class="text mb-2">Количество постов пылесоса <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Количество постов с пылесосом в автомойке</span></span></div>
 			<div class="radio_buttons">
-				<div class="radio_button" :class="{'radio_button-selected': 1===selected.vacuum}" @click="selected.vacuum = 1; handleUpdate()">1</div>
-				<div class="radio_button" :class="{'radio_button-selected': 2===selected.vacuum}" @click="selected.vacuum = 2; handleUpdate()">2</div>
+				<div class="radio_button" :class="{'radio_button-selected': 1===selected.vacuum}" @click="selected.vacuum = 1; handleUpdate()">2</div>
+				<div class="radio_button" :class="{'radio_button-selected': 2===selected.vacuum}" @click="selected.vacuum = 2; handleUpdate()">1</div>
 				<div class="radio_button" :class="{'radio_button-selected': 3===selected.vacuum}" @click="selected.vacuum = 3; handleUpdate()">Без пылесоса</div>
 			</div>
 		</div>
+		<div class="col-md-6 mb-4 pr-md-5">
+			<div class="text mb-2">Тип котла</div>
+			<div class="form_select form_select-block pr-md-2">
+				<select v-model="selected.boiler" @change="handleUpdate">
+					<option v-if="!selected.boiler" :value="null" disabled selected>Выберите вариант</option>
+					<option v-for="i in boiler" :disabled="i.value===1 && selected.posts===1" :value="i.value">{{i.text}}</option>
+				</select>
+				<span class="form_select_arrow"></span>
+			</div>
+		</div>
+		<div class="col-md-6"></div>
 		<div class="col-md-6 mb-4 pr-md-5">
 			<div class="text mb-2">Собственный участок</div>
 			<div class="form_select form_select-block pr-md-2">
@@ -26,26 +37,15 @@ var calculatorTemplate = `
 				<span class="form_select_arrow"></span>
 			</div>
 		</div>
-		<template v-if="selected.land && selected.land !== 1">
-			<div class="col-md-6 mb-4">
+		<div class="col-md-6 mb-4">
+			<template v-if="selected.land && selected.land !== 1">
 				<div class="text mb-2">Цена за участок <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
 					<input type="text" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
 				</div>
-			</div>
-		</template>
-		<div class="col-md-6 mb-4" v-else></div>
-		<div class="col-md-6 mb-4 pr-md-5">
-			<div class="text mb-2">Тип котла</div>
-			<div class="form_select form_select-block pr-md-2">
-				<select v-model="selected.boiler" @change="handleUpdate">
-					<option v-if="!selected.boiler" :value="null" disabled selected>Выберите вариант</option>
-					<option v-for="i in boiler" :value="i.value">{{i.text}}</option>
-				</select>
-				<span class="form_select_arrow"></span>
-			</div>
+			</template>
 		</div>
-		<div class="col-12 mb-4">
+		<div class="col-md-6 mb-4">
 			<div class="text mb-2">Строительство под ключ</div>
 			<div class="form_checkboxes">
 				<label for="type" class="form_checkbox">
@@ -54,6 +54,14 @@ var calculatorTemplate = `
 					<span class="form_checkbox_icon"></span>
 				</label>
 			</div>
+		</div>
+		<div class="col-md-6 mb-4">
+			<template v-if="selected.build">
+				<div class="text mb-2">Цена за строительство <strong class="small opacity-middle">(в тенге)</strong></div>
+				<div class="form_input">
+					<input type="text" v-model="selected.buildPrice" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+				</div>
+			</template>
 		</div>
 	</div>
 </div>
@@ -70,6 +78,7 @@ Vue.component('calculator', {
 				build: null,
 				land: null,
 				price: null,
+				buildPrice: null,
 			},
 			posts: [1, 2, 3, 4, 5, 6],
 			land: [
@@ -86,6 +95,9 @@ Vue.component('calculator', {
 	},
 	methods: {
 		handleUpdate() {
+			if (this.selected.posts === 1 && this.selected.boiler === 1) {
+				this.selected.boiler = null;
+			}
 			this.$emit('change', {...this.selected});
 		}
 	}
