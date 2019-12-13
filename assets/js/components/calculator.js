@@ -56,7 +56,7 @@ var calculatorTemplate = `
 			</div>
 		</div>
 		<div class="col-md-6 mb-4">
-			<template v-if="selected.build">
+			<template v-if="!selected.build">
 				<div class="text mb-2">Цена за строительство <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
 					<input type="text" v-model="selected.buildPrice" @input="handleUpdate" placeholder="10,000,000 ₸"/>

@@ -26,16 +26,20 @@ var calculatorResultsTemplate = `
 </div>
 `;
 
-const POSTS_BOILER = [
-	[null, 		14557, 		13702	],
-	[56059, 	56059, 		50897	],
-	[67506, 	67506, 		62344	],
-	[84897, 	85628, 		74985	],
-	[100077, 	100808, 	90165	],
-	[111470, 	112201, 	102743],
-];
+const BUILD = [10020000,	19590000,	27752500,	33400000,	34282500,	35915000];
+
+const BOILER_PERCENTS = [99.5, 100, 90];
 
 const POSTS_VACUUM = [
+	[	27991119,	27368436,	25863780],
+	[	43412172, 38731794, 41284833],
+	[	56004661, 51698512,	53877322],
+	[	68382478, 70178932, 66255139],
+	[	75139638, 75865650, 73012299],
+	[	81181229, 82302368, 79053890],
+];
+
+const POSTS_BOILER = [
 	[null, 		14557, 		13702	],
 	[56059, 	56059, 		50897	],
 	[67506, 	67506, 		62344	],
@@ -77,8 +81,21 @@ Vue.component('calculator-result', {
 		calculate(values) {
 			const accounts = [];
 			let sum = 0;
-			if (values.posts && values.boiler) {
-				sum += POSTS_BOILER[values.posts-1][values.boiler-1] * EURO_CURRENCY;
+			if (values.posts && values.vacuum) {
+				sum += POSTS_VACUUM[values.posts-1][values.vacuum-1];
+			}
+			if (values.boiler) {
+				sum *= (BOILER_PERCENTS[values.boiler - 1] / 100);
+			}
+			if (values.land === 2 && values.price) {
+				sum += (values.price - 0)
+			}
+			if (values.land === 3 && values.price) {
+				sum += (values.price - 0)
+			}
+			if (values.posts && !values.build && values.buildPrice) {
+				sum -= BUILD[values.posts - 1];
+				sum += (values.buildPrice - 0);
 			}
 			this.accountingList = [...accounts];
 			this.sum = sum;

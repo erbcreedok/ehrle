@@ -2882,29 +2882,29 @@ a.a_custom, a.a_custom:hover {
     margin: auto;
     opacity: .7; }
   .program_icon:nth-child(1) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(2) {
     opacity: 0.9; }
   .program_icon:nth-child(3) {
     opacity: 0.9; }
   .program_icon:nth-child(4) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(5) {
     opacity: 1; }
   .program_icon:nth-child(6) {
-    opacity: 0.9; }
+    opacity: 1; }
   .program_icon:nth-child(7) {
     opacity: 0.9; }
   .program_icon:nth-child(8) {
-    opacity: 0.9; }
-  .program_icon:nth-child(9) {
     opacity: 1; }
-  .program_icon:nth-child(10) {
+  .program_icon:nth-child(9) {
     opacity: 0.9; }
+  .program_icon:nth-child(10) {
+    opacity: 1; }
   .program_icon:nth-child(11) {
     opacity: 0.9; }
   .program_icon:nth-child(12) {
-    opacity: 0.9; }
+    opacity: 1; }
   .program_icon:nth-child(13) {
     opacity: 1; }
   .program_icon:nth-child(14) {
@@ -2914,21 +2914,21 @@ a.a_custom, a.a_custom:hover {
   .program_icon:nth-child(16) {
     opacity: 0.9; }
   .program_icon:nth-child(17) {
-    opacity: 0.9; }
-  .program_icon:nth-child(18) {
     opacity: 1; }
-  .program_icon:nth-child(19) {
+  .program_icon:nth-child(18) {
     opacity: 0.9; }
+  .program_icon:nth-child(19) {
+    opacity: 1; }
   .program_icon:nth-child(20) {
     opacity: 1; }
   .program_icon:nth-child(21) {
     opacity: 0.9; }
   .program_icon:nth-child(22) {
-    opacity: 0.9; }
+    opacity: 1; }
   .program_icon:nth-child(23) {
     opacity: 1; }
   .program_icon:nth-child(24) {
-    opacity: 0.9; }
+    opacity: 1; }
   .program_icon:nth-child(25) {
     opacity: 0.9; }
   .program_icon:nth-child(26) {
@@ -2936,11 +2936,11 @@ a.a_custom, a.a_custom:hover {
   .program_icon:nth-child(27) {
     opacity: 1; }
   .program_icon:nth-child(28) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(29) {
-    opacity: 1; }
+    opacity: 0.9; }
   .program_icon:nth-child(30) {
-    opacity: 1; }
+    opacity: 0.9; }
 
 .business_step {
   position: relative;
