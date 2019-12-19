@@ -27,45 +27,45 @@ var calculatorResultsTemplate = `
 </div>
 `;
 
-const BUILD = [10020000,	19590000,	27752500,	33400000,	34282500,	35915000];
+var BUILD = [10020000,	19590000,	27752500,	33400000,	34282500,	35915000];
 
-const PAYBACK_PERIOD = [
+var PAYBACK_PERIOD = [
 	[142, 	 36, 	 26, 	 27, 	 23, 	 20],
 	[168, 	 33, 	 25, 	 29, 	 24, 	 21],
 	[230, 	 38, 	 28, 	 29, 	 24, 	 22],
 ];
 
-const CIR = [
+var CIR = [
 	[50.5,	38.2,	31.6,	38.0,	34.1,	31.4,],
 	[59.0,	41.0,	34.1,	40.5,	36.5,	33.8,],
 	[63.0,	40.6,	33.2,	40.1,	35.80,	32.9,],
 ];
 
-const CARS_PER_BOX = [	2500,	2400,	2300,	2200,	2100,	2000];
+var CARS_PER_BOX = [	2500,	2400,	2300,	2200,	2100,	2000];
 
-const NET_PROFIT = [
+var NET_PROFIT = [
 	[84375,		137700,		197943.75,	252450,		301218.75,	344250],
 	[50625,		82620,		118766.25,	151470,		180731.25,	206550],
 	[112500,	1075600,	1954600,		2285600,	3020500,		3676000],
 ];
 
-const WASH_PRICE = [	500,	500,	500,	500,	500,	500];
+var WASH_PRICE = [	500,	500,	500,	500,	500,	500];
 
-const BOILER_PERCENTS = [99.5, 100, 90];
-const CONTAINER_PRICE = [	5633559,	21694833,	26124822,	32855139,	38729799,	43138890];
-const REVENUE = [
+var BOILER_PERCENTS = [99.5, 100, 90];
+var CONTAINER_PRICE = [	5633559,	21694833,	26124822,	32855139,	38729799,	43138890];
+var REVENUE = [
 	[93750,	153000,	219937.5,	280500,	334687.5,	382500,],
 	[56250,	91800,	131962.5,	168300,	200812.5,	229500,],
 	[304054.054054054,	1810774.41077441,	2926047.90419162,	3815692.82136895,	4704828.66043614,	5478390.46199702,],
 ];
-const PURE_REVENUE = [
+var PURE_REVENUE = [
   [84375, 	  137700, 	  197944, 	  252450, 	  301219, 	  344250],
   [50625, 	  82620, 	  118766, 	  151470, 	  180731, 	  206550],
   [112500, 		1075600, 	  1954600, 	  2285600, 	  3020500, 	  3676000],
 ]
 
 
-const POSTS_VACUUM = [
+var POSTS_VACUUM = [
 	[	27991119,	27368436,	25863780],
 	[	43412172, 38731794, 41284833],
 	[	56004661, 51698512,	53877322],
@@ -74,7 +74,7 @@ const POSTS_VACUUM = [
 	[	81181229, 82302368, 79053890],
 ];
 
-const POSTS_BOILER = [
+var POSTS_BOILER = [
 	[null, 		14557, 		13702	],
 	[56059, 	56059, 		50897	],
 	[67506, 	67506, 		62344	],
@@ -82,8 +82,8 @@ const POSTS_BOILER = [
 	[100077, 	100808, 	90165	],
 	[111470, 	112201, 	102743],
 ];
-const EURO_CURRENCY = 430;
-const DOLLAR_CURRENCY = 384;
+var EURO_CURRENCY = 430;
+var DOLLAR_CURRENCY = 384;
 
 function getNumbers(str) {
 	return str.match(/\d+/g).join('');
@@ -112,8 +112,8 @@ Vue.component('calculator-result', {
 	},
 	methods: {
 		calculate(values) {
-			const accounts = [];
-			let sum = 0;
+			var accounts = [];
+			var sum = 0;
 			var revenue = 0;
 			var pure_revenue = 0;
 			var total_outcomes = 0;
@@ -126,9 +126,8 @@ Vue.component('calculator-result', {
           pure_revenue += PURE_REVENUE[values.vacuum-1][values.posts - 1];
         }
         total_outcomes = revenue - pure_revenue;
-        console.log(revenue, '-',pure_revenue, '=', total_outcomes);
         if (values.boiler) {
-          const cr = CONTAINER_PRICE[values.posts - 1];
+          var cr = CONTAINER_PRICE[values.posts - 1];
           sum -=  (cr - cr * (BOILER_PERCENTS[values.boiler - 1] / 100));
         }
         if (values.land === 2 && values.price) {
