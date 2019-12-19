@@ -133,8 +133,13 @@ Vue.component('calculator-result', {
 			if (values.posts && !values.build && values.buildPrice) {
 				sum -= BUILD[values.posts - 1];
 				sum += (values.buildPrice - 0);
+			} else if (values.posts && !values.build){
+				sum -= BUILD[values.posts - 1];
 			}
 			this.accountingList = [...accounts];
+			if (sum < 0) {
+				sum = 0;
+			}
 			this.sum = sum;
 		},
 		calcDetails(values) {

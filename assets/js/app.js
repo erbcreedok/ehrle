@@ -1,9 +1,11 @@
 Vue.use(VueLazyLoad());
 Vue.use(vueView());
+Vue.use(VueTheMask);
 
 (function () {
   new Vue({
     el: '#app',
+    directives: {mask: VueTheMask.mask},
     data: {
       showModal: false,
       productActiveIndex: null,

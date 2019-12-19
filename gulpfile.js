@@ -24,6 +24,7 @@ const devScripts = [
   'assets/js/vendor/vue-view.js',
   'assets/js/vendor/vue-image-lightbox.min.js',
   'assets/js/vendor/vue-lazyload.js',
+  'assets/js/vendor/vue-the-mask.js',
   'assets/js/vendor/vue.js',
   ...scripts
 ];
@@ -31,6 +32,7 @@ const prodScripts = [
   'assets/js/vendor/vue-view.js',
   'assets/js/vendor/vue-image-lightbox.min.js',
   'assets/js/vendor/vue-lazyload.js',
+  'assets/js/vendor/vue-the-mask.js',
   'assets/js/vendor/vue.min.js',
   ...scripts
 ];

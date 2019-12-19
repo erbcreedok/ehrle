@@ -41,7 +41,7 @@ var calculatorTemplate = `
 			<template v-if="selected.land && selected.land !== 1">
 				<div class="text mb-2">Цена за участок <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
-					<input type="text" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+					<input type="text" v-mask="'### ### ### ###'" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
 				</div>
 			</template>
 		</div>
@@ -69,6 +69,7 @@ var calculatorTemplate = `
 Vue.component('calculator', {
 	name: 'calculator',
 	template: calculatorTemplate,
+	directives: {mask: VueTheMask.mask},
 	data() {
 		return {
 			selected: {
