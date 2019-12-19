@@ -1,9 +1,9 @@
 @import "./variables";
 
-@mixin iconBase($pseudo: false) {
+@mixin iconBase($pseudo: false, $size: 1.5rem) {
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: $size;
+  height: $size;
   -webkit-mask-size: cover;
   mask-size: cover;
   -webkit-mask-position: 50% 50%;
@@ -54,19 +54,21 @@
   @include pseudo_block();
   position: absolute;
 }
-@mixin trbl($top, $right: $top, $bottom: $top, $left: $right) {
+@mixin trbl($top: 0, $right: $top, $bottom: $top, $left: $right) {
   top: $top;
   right: $right;
   bottom: $bottom;
   left: $left;
 }
-@mixin square($size, $color: none) {
+@mixin square($size, $color: false) {
   display: inline-block;
   width: $size;
   height: $size;
-  background: $color;
+  @if $color {
+    background: $color;
+  }
 }
-@mixin circle($size, $color: transparent) {
+@mixin circle($size, $color: false) {
   @include square($size, $color);
   border-radius: 50%;
 }
@@ -266,13 +268,13 @@
     padding-top: 70px;
   }
 }
-@mixin form_input {
+@mixin form_input($background: $c_gray_1, $color: $c_dark) {
   min-height: 40px;
   min-width: 40px;
   padding: 10px 16px;
   font-size: 16px;
-  background: $c_gray_1;
-  color: $c_dark;
+  background: $background;
+  color: $color;
   border-radius: 8px;
   font-weight: 500;
 }
@@ -308,6 +310,7 @@
 }
 
 @mixin form_input_container() {
+  $p: &;
   position: relative;
   display: inline-block;
   &-block {
@@ -328,6 +331,43 @@
     width: 100%;
     &::placeholder {
       color: $c_gray_6;
+    }
+  }
+  &_arrow {
+    @include pseudo_absolute;
+    @include square(40px);
+    @include form_input;
+    @include trbl(0, 0, auto, auto);
+    background-image: url($images + "/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-origin: center;
+    background-size: 12px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  select:focus ~ &_arrow, &:not(&-selected) select:focus ~ &_arrow ~ {
+    transform: scaleY(-1);
+  }
+  &-selected {
+    #{$p}_arrow {
+      background-image: none;
+      transform: none;
+      &:before {
+        @include pseudo_absolute;
+        @include trbl;
+        @include circle(30px);
+        margin: auto;
+        border: 3px solid $c_red;
+      }
+      &:after {
+        @include iconBase(true, 15px);
+        @include icon('check');
+        @include trbl;
+        margin: auto;
+        color: $c_red;
+        animation: spin-round .3s .1s ease-in-out;
+      }
     }
   }
 }
@@ -374,5 +414,16 @@
     height: 7px;
     transform: rotate(-49deg) translate(-4px, -1px);
     transition: .15s;
+  }
+}
+
+
+@keyframes spin-round {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+  to {
+    transform: rotate(720deg);
   }
 }

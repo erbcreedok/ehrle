@@ -2,9 +2,10 @@ var calculatorResultsTemplate = `
 <div class="calculator_result" :class="{'calculator_result-fixed': fixed}">
 	<div class="calculator_result_wrapper">
 		<div class="calculator_result_header my-4">
-			<div class="label mb-2">Стоимость вашего проекта:</div>
-			<div class="heading heading-light" v-if="sum">{{price}} <span class="small" style="font-weight: 500">₸</span></div>
-			<div class="heading heading-light" v-else><span class="small">Стоймость не расчитана</span></div>
+			<div class="label mb-2" v-if="revenue">Ежемесячная выручка:</div>
+			<div class="label mb-2" v-else>Стоймость не расчитана:</div>
+			<div class="heading heading-light" v-if="revenue" v-html="revenue"></div>
+			<div class="opacity-middle" v-else>Выберите кол-во постов и пылесосов</div>
 		</div>
 		<template v-if="accountingList.length">
 			<div class="calculator_result_label d-flex justify-content-between flex-wrap align-items-center mt-4 mb-2">
@@ -14,7 +15,7 @@ var calculatorResultsTemplate = `
 			</div>
 			<ul class="calculator_result_list ul_custom" :class="{'calculator_result_list-hide': !showDetails}">
 				<li class="calculator_result_item d-flex flex-wrap justify-content-between" v-for="account in accountingList" :key="account.text">
-					<span class="text">{{account.text}}</span>
+					<span class="text" v-html="account.text"></span>
 					<strong class="text">{{account.value}}</strong>
 				</li>
 			</ul>
@@ -51,12 +52,19 @@ const NET_PROFIT = [
 const WASH_PRICE = [	500,	500,	500,	500,	500,	500];
 
 const BOILER_PERCENTS = [99.5, 100, 90];
-const CONTAINER_PRICE = [	15843780,	21694833,	26124822,	32855139,	38729799,	43138890];
+const CONTAINER_PRICE = [	5633559,	21694833,	26124822,	32855139,	38729799,	43138890];
 const REVENUE = [
-	[304054.054054054,	1810774.41077441,	2926047.90419162,	3815692.82136895,	4704828.66043614,	5478390.46199702,],
 	[93750,	153000,	219937.5,	280500,	334687.5,	382500,],
-	[56250,	91800,	131962.5,	168300,	200812.5,	229500,]
+	[56250,	91800,	131962.5,	168300,	200812.5,	229500,],
+	[304054.054054054,	1810774.41077441,	2926047.90419162,	3815692.82136895,	4704828.66043614,	5478390.46199702,],
 ];
+const PURE_REVENUE = [
+  [84375, 	  137700, 	  197944, 	  252450, 	  301219, 	  344250],
+  [50625, 	  82620, 	  118766, 	  151470, 	  180731, 	  206550],
+  [112500, 		1075600, 	  1954600, 	  2285600, 	  3020500, 	  3676000],
+]
+
+
 const POSTS_VACUUM = [
 	[	27991119,	27368436,	25863780],
 	[	43412172, 38731794, 41284833],
@@ -77,6 +85,9 @@ const POSTS_BOILER = [
 const EURO_CURRENCY = 430;
 const DOLLAR_CURRENCY = 384;
 
+function getNumbers(str) {
+	return str.match(/\d+/g).join('');
+}
 
 Vue.component('calculator-result', {
 	name: 'calculator-result',
@@ -87,15 +98,10 @@ Vue.component('calculator-result', {
 	},
 	data() {
 		return {
-			sum: 0,
+			revenue: 0,
 			showDetails: true,
 			accountingList: [],
 		}
-	},
-	computed: {
-		price() {
-			return this.maskPrice(this.sum);
-		},
 	},
 	watch: {
 		values(to) {
@@ -108,43 +114,57 @@ Vue.component('calculator-result', {
 		calculate(values) {
 			const accounts = [];
 			let sum = 0;
+			var revenue = 0;
+			var pure_revenue = 0;
+			var total_outcomes = 0;
 			if (values.posts && values.vacuum) {
 				sum += POSTS_VACUUM[values.posts-1][values.vacuum-1];
-				accounts.push({text: 'Средний срок окупаемости', value: PAYBACK_PERIOD[values.vacuum-1][values.posts - 1] + ' мес.'});
-				accounts.push({text: 'CIR', value: CIR[values.vacuum-1][values.posts - 1] + '%'});
-				accounts.push({text: 'Количество машин в сутки на 1 бокс', value: CARS_PER_BOX[values.posts - 1] + ''});
-				accounts.push({text: 'Средний чек (1 мойка)', value: this.maskPrice(WASH_PRICE[values.posts - 1]) + ' тг.'});
-				var revenue = REVENUE[1][values.posts - 1];
-				if (values.vacuum === 1 || values.vacuum === 2) {
-					revenue += REVENUE[values.vacuum-1][values.posts - 1];
+        revenue = REVENUE[2][values.posts - 1];
+        pure_revenue = PURE_REVENUE[2][values.posts - 1];
+        if (values.vacuum === 1 || values.vacuum === 2) {
+          revenue += REVENUE[values.vacuum-1][values.posts - 1];
+          pure_revenue += PURE_REVENUE[values.vacuum-1][values.posts - 1];
+        }
+        total_outcomes = revenue - pure_revenue;
+        console.log(revenue, '-',pure_revenue, '=', total_outcomes);
+        if (values.boiler) {
+          const cr = CONTAINER_PRICE[values.posts - 1];
+          sum -=  (cr - cr * (BOILER_PERCENTS[values.boiler - 1] / 100));
+        }
+        if (values.land === 2 && values.price) {
+          sum += (getNumbers(values.price) - 0)
+        }
+        if (values.land === 3 && values.price) {
+        	revenue -= (getNumbers(values.price) - 0)
+        	pure_revenue -= (getNumbers(values.price) - 0)
+        }
+        if (!values.build && values.buildPrice) {
+          sum -= BUILD[values.posts - 1];
+          sum += (getNumbers(values.buildPrice) - 0);
+        } else if (!values.build){
+          sum -= BUILD[values.posts - 1];
+        }
+        accounts.push({text: 'Средний срок окупаемости', value: Math.ceil(sum/revenue) + ' мес.'});
+        accounts.push({
+					text: `CIR <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Cost Income Ratio (CIR) -- отношение операционных затрат к операционному доходу. CIR активно используется во всем мире для оценки эффективности банка инвесторами, акционерами, рейтинговыми агентствами и т.д.</span></span>`,
+					value: CIR[values.vacuum-1][values.posts - 1] + '%'});
+        accounts.push({text: 'Количество машин в сутки на 1 бокс', value: Math.floor(CARS_PER_BOX[values.posts - 1]/30.5) + ''});
+        accounts.push({text: 'Средний чек (1 мойка)', value: this.maskPrice(WASH_PRICE[values.posts - 1]) + ' тг.'});
+        accounts.push({text: 'Среднемесячная выручка', value: this.maskPrice(revenue) + ' тг.'});
+        if (values.land === 3 && values.buildPrice) {
+          accounts.push({text: 'Аренда в месяц', value: this.maskPrice(getNumbers(values.price) - 0) + ' тг.'});
 				}
-				accounts.push({text: 'Среднемесячная выручка ', value: this.maskPrice(revenue) + ' тг.'});
-			}
-			if (values.posts && values.boiler) {
-				const cr = CONTAINER_PRICE[values.posts - 1];
-				sum -=  (cr - cr * (BOILER_PERCENTS[values.boiler - 1] / 100));
-			}
-			if (values.land === 2 && values.price) {
-				sum += (values.price - 0)
-			}
-			// if (values.land === 3 && values.price) {
-			// 	sum += (values.price - 0)
-			// }
-			if (values.posts && !values.build && values.buildPrice) {
-				sum -= BUILD[values.posts - 1];
-				sum += (values.buildPrice - 0);
-			} else if (values.posts && !values.build){
-				sum -= BUILD[values.posts - 1];
-			}
-			this.accountingList = [...accounts];
-			if (sum < 0) {
-				sum = 0;
-			}
-			this.sum = sum;
-		},
-		calcDetails(values) {
-			const accounts = [];
+				accounts.push({text: 'Все расходы на месяц', value: this.maskPrice(total_outcomes) + ' тг.'});
 
+
+        accounts.push({text: 'Полная стоймость стройки ', value: this.maskPrice(sum) + ' тг.'});
+        if (revenue < 0) {
+          this.revenue = '<span class="small opacity-high">Мойка не окупается</span>';
+        } else {
+        	this.revenue = this.maskPrice(pure_revenue) + '  <span class="small" style="font-weight: 500">₸</span>';
+				}
+        this.accountingList = [...accounts];
+			}
 		},
 		closeDetails() {
 			this.showDetails = false;
@@ -152,8 +172,8 @@ Vue.component('calculator-result', {
 		openDetails() {
 			this.showDetails = true;
 		},
-		maskPrice(sum) {
-			return (sum.toFixed(0)+'').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		maskPrice(revenue) {
+			return (revenue.toFixed(0)+'').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		},
 	},
 });

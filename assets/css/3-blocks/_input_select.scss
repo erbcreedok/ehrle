@@ -22,21 +22,6 @@
 }
 
 .form_select {
+  $p: &;
   @include form_input_container;
-  &_arrow {
-    @include pseudo_absolute;
-    @include square(40px);
-    @include form_input;
-    @include trbl(0, 0, auto, auto);
-    background-image: url($images + "/arrow_down.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    transform-origin: center;
-    background-size: 12px;
-    z-index: 2;
-    pointer-events: none;
-  }
-  select:focus ~ &_arrow {
-    transform: scaleY(-1);
-  }
 }

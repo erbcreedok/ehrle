@@ -15,6 +15,7 @@ var gulp = require('gulp'),
   cssmin = require('gulp-cssmin');
 
 const scripts = [
+  'assets/js/vendor/vue-currency-input.umd.js',
   'assets/js/constants.js',
   'assets/js/components/*.js',
   'assets/js/functions.js',

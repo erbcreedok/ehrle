@@ -18,8 +18,8 @@ var calculatorTemplate = `
 		</div>
 		<div class="col-md-6 mb-4 pr-md-5">
 			<div class="text mb-2">Тип котла</div>
-			<div class="form_select form_select-block pr-md-2">
-				<select v-model="selected.boiler" @change="handleUpdate">
+			<div class="form_select form_select-block pr-md-2" :class="{'form_select-selected': !!selected.boiler}">
+				<select v-model="selected.boiler" @change="handleUpdate" :class="{'opacity-middle': !selected.boiler}">
 					<option v-if="!selected.boiler" :value="null" disabled selected>Выберите вариант</option>
 					<option v-for="i in boiler" :disabled="i.value===1 && selected.posts===1" :value="i.value">{{i.text}}</option>
 				</select>
@@ -29,8 +29,8 @@ var calculatorTemplate = `
 		<div class="col-md-6"></div>
 		<div class="col-md-6 mb-4 pr-md-5">
 			<div class="text mb-2">Собственный участок</div>
-			<div class="form_select form_select-block pr-md-2">
-				<select v-model="selected.land" @change="handleUpdate">
+			<div class="form_select form_select-block pr-md-2" :class="{'form_select-selected': !!selected.land}">
+				<select v-model="selected.land" @change="handleUpdate" :class="{'opacity-middle': !selected.land}">
 					<option v-if="!selected.land" :value="null" disabled selected>Выберите вариант</option>
 					<option v-for="i in land" :key="i.value" :value="i.value">{{i.text}}</option>
 				</select>
@@ -39,9 +39,10 @@ var calculatorTemplate = `
 		</div>
 		<div class="col-md-6 mb-4">
 			<template v-if="selected.land && selected.land !== 1">
-				<div class="text mb-2">Цена за участок <strong class="small opacity-middle">(в тенге)</strong></div>
+				<div class="text mb-2" v-if="selected.land == 3">Цена за аренду в месяц <strong class="small opacity-middle">(в тенге)</strong></div>
+				<div class="text mb-2" v-else>Цена за участок <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
-					<input type="text" v-mask="'### ### ### ###'" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+					<input type="text" v-currency="currency" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
 				</div>
 			</template>
 		</div>
@@ -59,7 +60,7 @@ var calculatorTemplate = `
 			<template v-if="!selected.build">
 				<div class="text mb-2">Цена за строительство <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
-					<input type="text" v-model="selected.buildPrice" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+					<input type="text" v-currency="currency" v-model="selected.buildPrice" @input="handleUpdate" placeholder="10,000,000 ₸"/>
 				</div>
 			</template>
 		</div>
@@ -72,6 +73,7 @@ Vue.component('calculator', {
 	directives: {mask: VueTheMask.mask},
 	data() {
 		return {
+      currency: {distractionFree: false, currency: {'suffix': ' ₸'}, valueAsInteger: true, precision: 0},
 			selected: {
 				posts: null,
 				vacuum: null,
