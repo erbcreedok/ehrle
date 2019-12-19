@@ -28,6 +28,7 @@ Vue.use(VueTheMask);
       calcValues: null,
       isCalcFixed: false,
       isCalcRequiresFixed: false,
+      showCalcModal: false,
     },
     computed: {
       fixCalcResults() {
@@ -94,6 +95,14 @@ Vue.use(VueTheMask);
       }
     },
     methods: {
+      openCalcModal() {
+        this.showCalcModal = true;
+        document.body.style.overflow = 'hidden';
+      },
+      closeCalcModal() {
+        this.showCalcModal = false;
+        document.body.style.overflow = null;
+      },
       handleIsCalcFixed(width = this.windowWidth) {
         this.isCalcRequiresFixed = width < calculatorBreakpoint;
         if (!this.isCalcRequiresFixed) {

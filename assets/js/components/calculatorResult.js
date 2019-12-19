@@ -21,7 +21,7 @@ var calculatorResultsTemplate = `
 			</ul>
 		</template>
 		<div class="mb-4 pt-2">
-			<button class="btn btn_primary">Получить консультацию</button>
+			<button class="btn btn_primary" @click="handleClick">Получить консультацию</button>
 		</div>
 	</div>
 </div>
@@ -174,5 +174,8 @@ Vue.component('calculator-result', {
 		maskPrice(revenue) {
 			return (revenue.toFixed(0)+'').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		},
+    handleClick(e) {
+			this.$emit('click', e, {...this.values});
+		}
 	},
 });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  @@include('../components/head_tags.html', {"title": "Калькулятор - EHRLE"})
+  @@include('../components/head_tags.html', {"title": "Рассчёт стройки и рентабельности - EHRLE"})
   <!-- endbuild -->
 </head>
 <body class="lang-ru">
@@ -34,12 +34,13 @@
       </div>
       <div class="col-lg-5 col-md-12">
         <div v-if="isCalcRequiresFixed" v-view="handleCalcView" class="calculator_result_bound"></div>
-        <calculator-result :values="calcValues" :fixed="fixCalcResults"></calculator-result>
+        <calculator-result :values="calcValues" :fixed="fixCalcResults" @click="openCalcModal"></calculator-result>
       </div>
     </div>
   </div>
   @@include('../components/footer.html')
   @@include('../components/modal_form.html')
+  @@include('../components/modal_calc.html')
 </div>
 <script src="./assets/js/main.js"></script>
 </body>
