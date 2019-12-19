@@ -12259,7 +12259,7 @@ var calculatorResultsTemplate = `
 			<ul class="calculator_result_list ul_custom" :class="{'calculator_result_list-hide': !showDetails}">
 				<li class="calculator_result_item d-flex flex-wrap justify-content-between" v-for="account in accountingList" :key="account.text">
 					<span class="text">{{account.text}}</span>
-					<strong class="text">{{maskPrice(account.price)}} ₸</strong>
+					<strong class="text">{{account.value}}</strong>
 				</li>
 			</ul>
 		</template>
@@ -12272,8 +12272,35 @@ var calculatorResultsTemplate = `
 
 const BUILD = [10020000,	19590000,	27752500,	33400000,	34282500,	35915000];
 
-const BOILER_PERCENTS = [99.5, 100, 90];
+const PAYBACK_PERIOD = [
+	[142, 	 36, 	 26, 	 27, 	 23, 	 20],
+	[168, 	 33, 	 25, 	 29, 	 24, 	 21],
+	[230, 	 38, 	 28, 	 29, 	 24, 	 22],
+];
 
+const CIR = [
+	[50.5,	38.2,	31.6,	38.0,	34.1,	31.4,],
+	[59.0,	41.0,	34.1,	40.5,	36.5,	33.8,],
+	[63.0,	40.6,	33.2,	40.1,	35.80,	32.9,],
+];
+
+const CARS_PER_BOX = [	2500,	2400,	2300,	2200,	2100,	2000];
+
+const NET_PROFIT = [
+	[84375,		137700,		197943.75,	252450,		301218.75,	344250],
+	[50625,		82620,		118766.25,	151470,		180731.25,	206550],
+	[112500,	1075600,	1954600,		2285600,	3020500,		3676000],
+];
+
+const WASH_PRICE = [	500,	500,	500,	500,	500,	500];
+
+const BOILER_PERCENTS = [99.5, 100, 90];
+const CONTAINER_PRICE = [	15843780,	21694833,	26124822,	32855139,	38729799,	43138890];
+const REVENUE = [
+	[304054.054054054,	1810774.41077441,	2926047.90419162,	3815692.82136895,	4704828.66043614,	5478390.46199702,],
+	[93750,	153000,	219937.5,	280500,	334687.5,	382500,],
+	[56250,	91800,	131962.5,	168300,	200812.5,	229500,]
+];
 const POSTS_VACUUM = [
 	[	27991119,	27368436,	25863780],
 	[	43412172, 38731794, 41284833],
@@ -12327,22 +12354,36 @@ Vue.component('calculator-result', {
 			let sum = 0;
 			if (values.posts && values.vacuum) {
 				sum += POSTS_VACUUM[values.posts-1][values.vacuum-1];
+				accounts.push({text: 'Средний срок окупаемости', value: PAYBACK_PERIOD[values.vacuum-1][values.posts - 1] + ' мес.'});
+				accounts.push({text: 'CIR', value: CIR[values.vacuum-1][values.posts - 1] + '%'});
+				accounts.push({text: 'Количество машин в сутки на 1 бокс', value: CARS_PER_BOX[values.posts - 1] + ''});
+				accounts.push({text: 'Средний чек (1 мойка)', value: this.maskPrice(WASH_PRICE[values.posts - 1]) + ' тг.'});
+				var revenue = REVENUE[1][values.posts - 1];
+				if (values.vacuum === 1 || values.vacuum === 2) {
+					revenue += REVENUE[values.vacuum-1][values.posts - 1];
+				}
+				accounts.push({text: 'Среднемесячная выручка ', value: this.maskPrice(revenue) + ' тг.'});
 			}
-			if (values.boiler) {
-				sum *= (BOILER_PERCENTS[values.boiler - 1] / 100);
+			if (values.posts && values.boiler) {
+				const cr = CONTAINER_PRICE[values.posts - 1];
+				sum -=  (cr - cr * (BOILER_PERCENTS[values.boiler - 1] / 100));
 			}
 			if (values.land === 2 && values.price) {
 				sum += (values.price - 0)
 			}
-			if (values.land === 3 && values.price) {
-				sum += (values.price - 0)
-			}
+			// if (values.land === 3 && values.price) {
+			// 	sum += (values.price - 0)
+			// }
 			if (values.posts && !values.build && values.buildPrice) {
 				sum -= BUILD[values.posts - 1];
 				sum += (values.buildPrice - 0);
 			}
 			this.accountingList = [...accounts];
 			this.sum = sum;
+		},
+		calcDetails(values) {
+			const accounts = [];
+
 		},
 		closeDetails() {
 			this.showDetails = false;
