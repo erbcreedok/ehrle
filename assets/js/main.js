@@ -13126,10 +13126,8 @@ Vue.component('gallery-block', {
 				{src: './assets/images/gallery/3.jpg', thumb: './assets/images/gallery/3_tn.jpg'},
 				{src: './assets/images/gallery/4.jpg', thumb: './assets/images/gallery/4_tn.jpg'},
 				{src: './assets/images/gallery/5.jpg', thumb: './assets/images/gallery/5_tn.jpg'},
-				{src: './assets/images/gallery/6.jpg', thumb: './assets/images/gallery/6_tn.jpg'},
 				{src: './assets/images/gallery/7.jpg', thumb: './assets/images/gallery/7_tn.jpg'},
 				{src: './assets/images/gallery/8.jpg', thumb: './assets/images/gallery/8_tn.jpg'},
-				{src: './assets/images/gallery/9.jpg', thumb: './assets/images/gallery/9_tn.jpg'},
 			]
 		}
 	},
