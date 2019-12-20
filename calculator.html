@@ -179,9 +179,9 @@
       <div class="col-lg-7 col-md-12">
         <calculator @change="setCalcValues" ></calculator>
       </div>
-      <div class="col-lg-5 col-md-12">
+      <div class="col-lg-5 col-md-12" ref="calcResultBoundRef">
         <div v-if="isCalcRequiresFixed" v-view="handleCalcView" class="calculator_result_bound"></div>
-        <calculator-result :values="calcValues" :fixed="fixCalcResults" @click="openCalcModal"></calculator-result>
+        <calculator-result :values="calcValues" :fixed="fixCalcResults" @click="scrollToCalc" @pressed="openCalcModal"></calculator-result>
       </div>
     </div>
   </div>

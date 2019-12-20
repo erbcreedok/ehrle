@@ -1,5 +1,5 @@
 var calculatorResultsTemplate = `
-<div class="calculator_result" :class="{'calculator_result-fixed': fixed}">
+<div class="calculator_result" :class="{'calculator_result-fixed': fixed}" @click="handleClick">
 	<div class="calculator_result_wrapper">
 		<div class="calculator_result_header my-4">
 			<div class="label mb-2" v-if="revenue">Ежемесячная выручка:</div>
@@ -21,7 +21,7 @@ var calculatorResultsTemplate = `
 			</ul>
 		</template>
 		<div class="mb-4 pt-2">
-			<button class="btn btn_primary" @click="handleClick">Получить консультацию</button>
+			<button class="btn btn_primary" @click="handlePress">Получить консультацию</button>
 		</div>
 	</div>
 </div>
@@ -62,7 +62,7 @@ var PURE_REVENUE = [
   [84375, 	  137700, 	  197944, 	  252450, 	  301219, 	  344250],
   [50625, 	  82620, 	  118766, 	  151470, 	  180731, 	  206550],
   [112500, 		1075600, 	  1954600, 	  2285600, 	  3020500, 	  3676000],
-]
+];
 
 
 var POSTS_VACUUM = [
@@ -174,8 +174,12 @@ Vue.component('calculator-result', {
 		maskPrice(revenue) {
 			return (revenue.toFixed(0)+'').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		},
-    handleClick(e) {
-			this.$emit('click', e, {...this.values});
-		}
+    handlePress(e) {
+			e.stopPropagation();
+			this.$emit('pressed', e, {...this.values});
+		},
+		handleClick(e) {
+			this.$emit('click', e);
+		},
 	},
 });
