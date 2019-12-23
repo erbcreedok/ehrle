@@ -34,7 +34,7 @@
       @include checkbox_checked;
     }
     & ~ #{$p}_icon:hover, & ~ #{$p}_label:hover + #{$p}_icon {
-      @include checkbox_close;
+      //@include checkbox_close;
     }
   }
   &_label {

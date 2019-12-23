@@ -1335,33 +1335,6 @@ select:focus ~ .form_select_arrow, .form_select:not(.form_select-selected) selec
   transform: rotate(-49deg) translate(-4px, -1px);
   transition: 0.15s;
 }
-.form_checkbox input:checked ~ .form_checkbox_icon:hover:before, .form_checkbox input:checked ~ .form_checkbox_icon:hover:after, .form_checkbox input:checked ~ .form_checkbox_label:hover + .form_checkbox_icon:before, .form_checkbox input:checked ~ .form_checkbox_label:hover + .form_checkbox_icon:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  margin: auto;
-  background: white;
-  transform-origin: center;
-  transition: 0.3s;
-}
-.form_checkbox input:checked ~ .form_checkbox_icon:hover:before, .form_checkbox input:checked ~ .form_checkbox_label:hover + .form_checkbox_icon:before {
-  width: 2px;
-  height: 12px;
-  transform: rotate(45deg) translate(0, 0);
-  transition: 0.15s;
-}
-.form_checkbox input:checked ~ .form_checkbox_icon:hover:after, .form_checkbox input:checked ~ .form_checkbox_label:hover + .form_checkbox_icon:after {
-  width: 2px;
-  height: 12px;
-  transform: rotate(-45deg) translate(0, 0);
-  transition: 0.15s;
-}
 .form_checkbox_label {
   font-size: 16px;
   font-weight: 500;
