@@ -3929,7 +3929,7 @@ select:focus ~ .form_select_arrow, .form_select:not(.form_select-selected) selec
   color: #e6e6e6;
 }
 .content_image_wrapper {
-  border: #495d62 solid 1px;
+  border: #cfd9db solid 1px;
   border-radius: 4px;
   padding: 10px;
   position: relative;
@@ -3946,7 +3946,7 @@ select:focus ~ .form_select_arrow, .form_select:not(.form_select-selected) selec
   margin-bottom: auto;
   height: 1px;
   width: 100vw;
-  background: #495d62;
+  background: #cfd9db;
 }
 .content_image_wrapper:before {
   left: 100%;
@@ -4670,11 +4670,6 @@ header {
   text-align: center;
 }
 
-.content_modul_line {
-  background: url("../images/etronic4_bg.jpg");
-  background-size: cover;
-}
-
 .content_lce_slm .paragraph-accent {
   color: #507192;
 }
@@ -4718,12 +4713,7 @@ header {
 }
 
 .content_real_time_display {
-  background: url("../images/realtimedisplay_bg.jpg");
-  background-size: cover;
-}
-
-.content_micropowder {
-  background: url("../images/micropowder_bg.jpg");
+  background: url("../images/realtimedisplay_bg_white.jpg");
   background-size: cover;
 }
 
@@ -4774,10 +4764,6 @@ header {
   to {
     transform: rotate(720deg);
   }
-}
-.content_metal {
-  background-image: url("../images/metal_bg.jpg");
-  background-size: cover;
 }
 .content_metal .title {
   margin-top: 30px;
