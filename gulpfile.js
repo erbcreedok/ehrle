@@ -40,16 +40,18 @@ const prodScripts = [
 
 gulp.task('fileInclude', function() {
   gulp.src(['./pages/*.html'])
-      .pipe(fileInclude({
-        filters: {
-          prefix: '@@',
-          basepath: '@file',
-        },
-        context: {
-          title: 'EHRLE'
-        }
-      }))
-      .pipe(gulp.dest('./'));
+    .pipe(fileInclude({
+      filters: {
+        prefix: '@@',
+        basepath: '@file',
+      },
+      context: {
+        title: 'EHRLE',
+        prev: false,
+        next: false,
+      }
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task("concatScripts", function() {

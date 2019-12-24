@@ -55,6 +55,14 @@ body {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
 .ul_custom {
   list-style: none;
   padding: 0;
@@ -445,12 +453,33 @@ a.a_custom, a.a_custom:hover {
   -webkit-mask-position: 50% 50%;
   mask-position: 50% 50%;
   background-color: currentColor;
+  vertical-align: middle;
+  line-height: 1.5rem;
 }
 .icon-small {
   width: 12px;
   height: 12px;
 }
 .icon-big {
+  width: 30px;
+  height: 30px;
+}
+.icon-small {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+  background-color: currentColor;
+  line-height: 1rem;
+}
+.icon-small-small {
+  width: 12px;
+  height: 12px;
+}
+.icon-small-big {
   width: 30px;
   height: 30px;
 }
@@ -477,6 +506,14 @@ a.a_custom, a.a_custom:hover {
 .icon-check {
   -webkit-mask-image: url("../icons/check.svg");
   mask-image: url("../icons/check.svg");
+}
+.icon-arrow_next {
+  -webkit-mask-image: url("../icons/arrow_next.svg");
+  mask-image: url("../icons/arrow_next.svg");
+}
+.icon-arrow_prev {
+  -webkit-mask-image: url("../icons/arrow_prev.svg");
+  mask-image: url("../icons/arrow_prev.svg");
 }
 .icon-wiper2 {
   -webkit-mask-image: url("../icons/wiper2.svg");
@@ -3012,8 +3049,10 @@ select:focus ~ .form_select_arrow, .form_select:not(.form_select-selected) selec
     transform: rotate(720deg);
   }
 }
+.table-container {
+  overflow: auto;
+}
 .table-classic {
-  border: 1px solid #dde4e6;
   background: transparent;
   border-spacing: 0;
   border-collapse: collapse;

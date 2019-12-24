@@ -2,9 +2,11 @@
 @import "../2-base/mixins";
 
 .table {
+  &-container {
+    overflow: auto;
+  }
   &-classic {
     $borderColor: darken($c_gray_1, 5);
-    border: 1px solid $borderColor;
     background: transparent;
     border-spacing: 0;
     border-collapse: collapse;

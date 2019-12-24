@@ -32,6 +32,7 @@
             @@loop("../components/business_step.html", "../data/data_business_steps.json")
         </div>
     </div>
+    @@include('../components/product_navigation.html', {"prev": {"link": "/tech-foam.html", "title": "Активная пена"}, "next": {"link": "/calculator.html", "title": "Рассчёт стройки и рентабельности"}})
     @@include('../components/footer.html')
     @@include('../components/modal_form.html')
 </div>

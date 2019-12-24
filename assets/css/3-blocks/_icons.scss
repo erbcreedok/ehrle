@@ -3,6 +3,12 @@
 
 .icon {
   @include iconBase;
+  vertical-align: middle;
+  line-height: 1.5rem;
+  &-small {
+    @include iconBase(false, 1rem);
+    line-height: 1rem;
+  }
   @each $icon in $icons {
     &-#{$icon} {
       @include icon($icon);
