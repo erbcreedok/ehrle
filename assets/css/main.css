@@ -1674,8 +1674,9 @@ select:focus ~ .form_select_arrow, .form_select:not(.form_select-selected) selec
   margin-left: auto;
   margin-right: auto;
 }
-.factor_item_image img {
+.factor_item_image img, .factor_item_image svg {
   width: 100%;
+  height: 100%;
 }
 .factor_item_image .title {
   top: 0;
@@ -1719,6 +1720,40 @@ select:focus ~ .form_select_arrow, .form_select:not(.form_select-selected) selec
 @media (min-width: 796px) {
   .factor-hide_desktop {
     display: none !important;
+  }
+}
+@media (min-width: 796px) and (max-width: 1185px) {
+  .factor_container .factor_item {
+    width: 250px;
+    max-width: 100%;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .factor_container .factor_item:nth-child(4n+1) {
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .factor_container .factor_item:nth-child(3n+1) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .factor_container .factor_item_image {
+    width: 170px;
+    height: 170px;
+  }
+  .factor_container .factor_item_image .title {
+    line-height: 170px;
+  }
+  .factor_container .factor_item_title {
+    font-size: 18px;
+  }
+  .factor_container .factor_item_list {
+    text-align: center;
   }
 }
 
