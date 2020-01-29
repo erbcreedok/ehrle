@@ -13555,7 +13555,11 @@ Vue.use(VueTheMask);
           xhr.setRequestHeader('Content-Type', 'application/json');
           xhr.send();
           xhr.onload = (res) => {
-            resolve(res);
+            if (res.target.status === 200) {
+              resolve(res);
+            } else {
+              reject(res);
+            }
           };
           xhr.onerror = (err) => {
             console.error(err);
