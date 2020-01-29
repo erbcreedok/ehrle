@@ -12789,7 +12789,7 @@ var calculatorTemplate = `
 			<template v-if="!selected.build">
 				<div class="text mb-2">Цена за строительство <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
-					<input type="text" v-currency="currency" v-model="selected.buildPrice" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+					<input type="text" v-currency="currency" v-model="selected.buildPrice" @input="handleUpdate" placeholder="200,000 ₸"/>
 				</div>
 			</template>
 		</div>
