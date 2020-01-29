@@ -29,6 +29,10 @@ Vue.use(VueTheMask);
       isCalcFixed: false,
       isCalcRequiresFixed: false,
       showCalcModal: false,
+      name: '',
+      phone: '',
+      email: '',
+      showSuccess: false,
     },
     computed: {
       fixCalcResults() {
@@ -218,8 +222,65 @@ Vue.use(VueTheMask);
         this.showModal = true;
         document.body.style.overflow = 'hidden';
       },
+      closeSuccessModal() {
+        this.showSuccess = false;
+        document.body.style.overflow = null;
+      },
+      openSuccessModal() {
+        this.showSuccess = true;
+        document.body.style.overflow = 'hidden';
+      },
       getWindowScrollTop() {
         this.windowScrollTop = window.scrollY;
+      },
+      sendMail(form='', name='', phone='', email='', data='') {
+        return new Promise((resolve, reject) => {
+          var date = (new Date()).toLocaleDateString() + " " + (new Date()).toLocaleTimeString();
+          var url = '/sendform.php';
+          function generateGETData(obj) {
+            var arr = Object.keys(obj).map(key => ({key, val: obj[key]}));
+            return arr.reduce((acc, {key, val}) => {
+              return acc + `${key}=${encodeURI(val)}&`;
+            }, '?')
+          }
+          var data = {
+            form: form,
+            name: name,
+            phone: phone,
+            email: email,
+            data: data,
+            date: date,
+          };
+          url += generateGETData(data);
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send();
+          xhr.onload = (res) => {
+            console.log(res);
+            resolve(res);
+          };
+          xhr.onerror = (err) => {
+            console.error(err);
+            reject(err);
+          }
+        });
+      },
+      handleSubmit(formName) {
+        var data = JSON.stringify(this.calcValues);
+        if (!this.name || this.phone.length !== 16) {
+          alert('Пожалуйста, заполните все поля формы');
+          return;
+        }
+        if (formName === 'form calculator' && !this.email) {
+          alert('Пожалуйста, заполните все поля формы');
+          return;
+        }
+        this.sendMail(formName, this.name, this.phone, this.email, data).then(() => {
+          this.closeCalcModal();
+          this.closeModal();
+          this.openSuccessModal();
+        });
       }
     },
     mounted() {

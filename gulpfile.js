@@ -1,5 +1,11 @@
 "use strict";
 
+const context = {
+  title: 'EHRLE',
+  phone: '+7 (702) 777-77-77',
+  email: 'EhrleCA@gmail.com',
+};
+
 var dist = '../ehrle-build';
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
@@ -45,9 +51,7 @@ gulp.task('fileInclude', function() {
           prefix: '@@',
           basepath: '@file',
         },
-        context: {
-          title: 'EHRLE'
-        }
+        context,
       }))
       .pipe(gulp.dest('./'));
 });

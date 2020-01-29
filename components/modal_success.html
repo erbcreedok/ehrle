@@ -1,0 +1,11 @@
+<div class="modal_wrapper" :class="{'modal_wrapper-show': showSuccess}">
+    <div class="modal_backdrop" @click="closeSuccessModal"></div>
+    <div class="modal_container justify-content-between">
+        <button class="btn_custom modal_close" @click="closeSuccessModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+        <div class="modal_body">
+            <img class="mt-5" src="./assets/images/checked.svg" alt="" width="100%" style="max-width: 100%; max-height: 150px">
+            <h2 class="heading ">Спасибо за вашу заявку, {{name}}</h2>
+            <p class="paragraph">Наш менеджер очень скоро свяжется с вами!</p>
+        </div>
+    </div>
+</div>
