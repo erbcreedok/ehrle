@@ -292,7 +292,7 @@ Vue.use(VueTheMask);
         this.openSuccessModal();
         this.request = 'loading';
         this.sendMail(formName, this.name, this.phone, this.email, data).then(() => {
-          this.request = 'error';
+          this.request = 'success';
         }).catch(() => {
           this.request = 'error';
         });
