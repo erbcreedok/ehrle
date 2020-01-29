@@ -13538,7 +13538,7 @@ Vue.use(VueTheMask);
               return acc + `${key}=${encodeURI(val)}&`;
             }, '?')
           }
-          var data = {
+          var sending = {
             form: form,
             name: name,
             phone: phone,
@@ -13546,7 +13546,7 @@ Vue.use(VueTheMask);
             data: data,
             date: date,
           };
-          url += generateGETData(data);
+          url += generateGETData(sending);
           var xhr = new XMLHttpRequest();
           xhr.open('GET', url);
           xhr.setRequestHeader('Content-Type', 'application/json');
