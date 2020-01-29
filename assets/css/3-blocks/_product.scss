@@ -107,14 +107,27 @@
       top: 0;
       @include mx(auto);
     }
-    @media (max-width: 1199.98px) {
+    @media (max-width: 1299.98px) {
+      max-width: 578px;
       &_image {
-        right: 0;
-        @include mx(0);
+        width: 532px;
+        right: -532px;
+        @include mx(auto);
+      }
+    }
+    @media (max-width: 1199.98px) {
+      max-width: 450px;
+      &_image {
+        width: 510px;
+        right: -510px;
+        @include mx(auto);
       }
     }
     @media (max-width: 991.98px) {
+      max-width: 578px;
       &_image {
+        left: 100%;
+        right: 0;
         position: static;
         width: 100%;
         max-width: 400px;

@@ -4,6 +4,8 @@ const context = {
   title: 'EHRLE',
   phone: '+7 (702) 777-77-77',
   email: 'EhrleCA@gmail.com',
+  prev: false,
+  next: false,
 };
 
 var dist = '../ehrle-build';

@@ -74,6 +74,9 @@ Vue.use(VueTheMask);
       awardContainerWidth() {
         return document.querySelector('.award_container').clientWidth;
       },
+      calcResultBound() {
+        return this.$refs['calcResultBoundRef'];
+      }
     },
     watch: {
       isFactorSlide() {
@@ -99,6 +102,12 @@ Vue.use(VueTheMask);
       }
     },
     methods: {
+      scrollToCalc() {
+        if (this.fixCalcResults && this.calcResultBound) {
+          var top = this.calcResultBound.offsetTop;
+          window.scrollTo(0, top - 120);
+        }
+      },
       openCalcModal() {
         this.showCalcModal = true;
         document.body.style.overflow = 'hidden';

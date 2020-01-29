@@ -31,8 +31,8 @@
   </div>
   <div class="content">
       @@loop("../components/accessory_item.html", "../data/data_accessories.json")
-
   </div>
+  @@include('../components/product_navigation.html', {"prev": {"link": "/prod-metal.html", "title": "Металлоконструкции", "label": "Предыдущий продукт"}, "next": {"link": "/prod-apparatuses.html", "title": "Аппараты высокого давления", "label": "Следующий продукт"}})
   @@include('../components/footer.html')
   @@include('../components/modal_form.html')
 </div>

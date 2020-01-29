@@ -8,9 +8,9 @@
 <div id="app">
     <input type="hidden" value="chemistry" id="sitepage">
     @@include('../components/nav.html')
-    <section class="content content-first content-color content_micropowder" id="micropowder">
+    <section class="content content-first content_micropowder" id="micropowder">
         <div class="container py-3">
-            <ul class="breadcrumbs breadcrumbs-on_color">
+            <ul class="breadcrumbs">
                 <li class="breadcrumbs-item">
                     <a href="./">Главная</a>
                 </li>
@@ -40,6 +40,7 @@
             </div>
         </div>
     </section>
+    @@include('../components/product_navigation.html', {"prev": {"link": "/tech-lce_slm.html", "title": "LCE / SLM"}, "next": {"link": "/tech-foam.html", "title": "Активная пена"}})
     @@include('../components/footer.html')
     @@include('../components/modal_form.html')
 </div>

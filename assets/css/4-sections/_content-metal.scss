@@ -2,8 +2,6 @@
 @import "../2-base/mixins";
 
 .content_metal {
-  background-image: url($images + '/metal_bg.jpg');
-  background-size: cover;
   .title {
     @include my(30px);
     font-size: 30px;
