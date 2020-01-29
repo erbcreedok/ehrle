@@ -12771,7 +12771,7 @@ var calculatorTemplate = `
 				<div class="text mb-2" v-if="selected.land == 3">Цена за аренду в месяц <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="text mb-2" v-else>Цена за участок <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
-					<input type="text" v-currency="currency" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+					<input type="text" v-currency="currency" v-model="selected.price" @input="handleUpdate" placeholder="200,000 ₸"/>
 				</div>
 			</template>
 		</div>
@@ -13319,6 +13319,7 @@ Vue.use(VueTheMask);
       phone: '',
       email: '',
       showSuccess: false,
+      request: 'clean',
     },
     computed: {
       fixCalcResults() {
@@ -13519,6 +13520,7 @@ Vue.use(VueTheMask);
       },
       closeSuccessModal() {
         this.showSuccess = false;
+        this.request = 'clean';
         document.body.style.overflow = null;
       },
       openSuccessModal() {
@@ -13545,6 +13547,7 @@ Vue.use(VueTheMask);
             email: email,
             data: data,
             date: date,
+            lang: this.selectedLang,
           };
           url += generateGETData(sending);
           var xhr = new XMLHttpRequest();
@@ -13552,7 +13555,6 @@ Vue.use(VueTheMask);
           xhr.setRequestHeader('Content-Type', 'application/json');
           xhr.send();
           xhr.onload = (res) => {
-            console.log(res);
             resolve(res);
           };
           xhr.onerror = (err) => {
@@ -13571,10 +13573,14 @@ Vue.use(VueTheMask);
           alert('Пожалуйста, заполните все поля формы');
           return;
         }
+        this.closeCalcModal();
+        this.closeModal();
+        this.openSuccessModal();
+        this.request = 'loading';
         this.sendMail(formName, this.name, this.phone, this.email, data).then(() => {
-          this.closeCalcModal();
-          this.closeModal();
-          this.openSuccessModal();
+          this.request = 'error';
+        }).catch(() => {
+          this.request = 'error';
         });
       }
     },

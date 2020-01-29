@@ -33,6 +33,7 @@ Vue.use(VueTheMask);
       phone: '',
       email: '',
       showSuccess: false,
+      request: 'clean',
     },
     computed: {
       fixCalcResults() {
@@ -233,6 +234,7 @@ Vue.use(VueTheMask);
       },
       closeSuccessModal() {
         this.showSuccess = false;
+        this.request = 'clean';
         document.body.style.overflow = null;
       },
       openSuccessModal() {
@@ -259,6 +261,7 @@ Vue.use(VueTheMask);
             email: email,
             data: data,
             date: date,
+            lang: this.selectedLang,
           };
           url += generateGETData(sending);
           var xhr = new XMLHttpRequest();
@@ -266,7 +269,6 @@ Vue.use(VueTheMask);
           xhr.setRequestHeader('Content-Type', 'application/json');
           xhr.send();
           xhr.onload = (res) => {
-            console.log(res);
             resolve(res);
           };
           xhr.onerror = (err) => {
@@ -285,10 +287,14 @@ Vue.use(VueTheMask);
           alert('Пожалуйста, заполните все поля формы');
           return;
         }
+        this.closeCalcModal();
+        this.closeModal();
+        this.openSuccessModal();
+        this.request = 'loading';
         this.sendMail(formName, this.name, this.phone, this.email, data).then(() => {
-          this.closeCalcModal();
-          this.closeModal();
-          this.openSuccessModal();
+          this.request = 'error';
+        }).catch(() => {
+          this.request = 'error';
         });
       }
     },

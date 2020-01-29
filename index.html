@@ -1031,10 +1031,19 @@
     <div class="modal_backdrop" @click="closeSuccessModal"></div>
     <div class="modal_container justify-content-between">
         <button class="btn_custom modal_close" @click="closeSuccessModal"><img src="./assets/images/menu_close.svg" alt=""></button>
-        <div class="modal_body">
+        <div class="modal_body" v-if="request==='success'">
             <img class="mt-5" src="./assets/images/checked.svg" alt="" width="100%" style="max-width: 100%; max-height: 150px">
             <h2 class="heading ">Спасибо за вашу заявку, {{name}}</h2>
             <p class="paragraph">Наш менеджер очень скоро свяжется с вами!</p>
+        </div>
+        <div class="modal_body" v-if="request==='error'">
+            <img class="mt-5" src="./assets/images/cancel.svg" alt="" width="100%" style="max-width: 100%; max-height: 120px">
+            <h2 class="heading ">Произошла ошибка</h2>
+            <p class="paragraph">К сожалению нам не удалось получить Вашу заявку.<br/>Пожалуйста, попробуйте отправить заявку снова</p>
+        </div>
+        <div class="modal_body" v-if="request==='loading'">
+            <img class="mt-5 animate_icon-spin" src="./assets/images/spinner-of-dots.svg" alt="" width="100%" style="max-width: 100%; max-height: 150px">
+            <h2 class="heading ">Отправляем вашу заявку</h2>
         </div>
     </div>
 </div>

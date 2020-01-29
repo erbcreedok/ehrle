@@ -42,7 +42,7 @@ var calculatorTemplate = `
 				<div class="text mb-2" v-if="selected.land == 3">Цена за аренду в месяц <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="text mb-2" v-else>Цена за участок <strong class="small opacity-middle">(в тенге)</strong></div>
 				<div class="form_input">
-					<input type="text" v-currency="currency" v-model="selected.price" @input="handleUpdate" placeholder="10,000,000 ₸"/>
+					<input type="text" v-currency="currency" v-model="selected.price" @input="handleUpdate" placeholder="200,000 ₸"/>
 				</div>
 			</template>
 		</div>
