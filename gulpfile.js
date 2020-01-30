@@ -2,10 +2,12 @@
 
 const context = {
   title: 'EHRLE',
-  phone: '+7 (702) 777-77-77',
+  phone: '+7 (777) 323-36-78',
   email: 'EhrleCA@gmail.com',
   prev: false,
   next: false,
+  address: 'ул. Кунаева 181Б',
+  gisLink: 'https://2gis.kz',
 };
 
 var dist = '../ehrle-build';
