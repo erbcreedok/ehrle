@@ -7,7 +7,7 @@ const context = {
   prev: false,
   next: false,
   address: 'ул. Кунаева 181Б',
-  gisLink: 'https://2gis.kz',
+  gisLink: 'https://yandex.kz/maps/-/CKEPE05p',
 };
 
 var dist = '../ehrle-build';
