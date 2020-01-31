@@ -2422,6 +2422,13 @@ a.a_custom, a.a_custom:hover {
     left: 0;
     max-width: none; } }
 
+@media (max-width: 767.98px) and (min-height: 500px) {
+  .modal_scroll {
+    padding: 0; }
+  .modal_container {
+    min-height: 0;
+    height: 100vh; } }
+
 .body-with_modal {
   overflow: hidden; }
 

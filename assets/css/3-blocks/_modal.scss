@@ -70,6 +70,15 @@
       @include trbl(0, 0, auto);
       max-width: none;
     }
+    @media (min-height: 500px) {
+      &_scroll {
+        padding: 0;
+      }
+      &_container {
+        min-height: 0;
+        height: 100vh;
+      }
+    }
   }
 }
 
