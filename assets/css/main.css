@@ -2402,16 +2402,32 @@ a.a_custom, a.a_custom:hover {
   .modal_form .form_field {
     margin-bottom: 16px; }
 
+.modal_scroller {
+  position: fixed;
+  overflow: auto;
+  padding: 30px 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
 @media (max-width: 767.98px) {
   .modal_container {
     height: auto;
     min-height: 0;
     padding-bottom: 50px;
-    max-width: 400px;
-    top: auto;
-    right: 10px;
+    top: 0;
+    right: 0;
     bottom: auto;
-    left: 10px; } }
+    left: 0;
+    max-width: none; } }
+
+.body-with_modal {
+  overflow: hidden; }
+
+@media (max-width: 767.98px) {
+  .body-with_modal #app > *:not(.modal_wrapper) {
+    display: none; } }
 
 @-webkit-keyframes fade_in {
   0% {
@@ -2601,6 +2617,9 @@ a.a_custom, a.a_custom:hover {
       opacity: 1;
       -webkit-transform: rotate(-45deg) translateY(0);
               transform: rotate(-45deg) translateY(0); }
+
+.body-with_menu {
+  overflow: hidden; }
 
 @keyframes spin-round {
   from {

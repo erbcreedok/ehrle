@@ -56,14 +56,29 @@
       margin-bottom: 16px;
     }
   }
+  &_scroller {
+    position: fixed;
+    overflow: auto;
+    padding: 30px 0;
+    @include trbl(0);
+  }
   @media (max-width: 767.98px) {
     &_container {
       height: auto;
       min-height: 0;
       padding-bottom: 50px;
-      max-width: 400px;
-      @include trbl(auto, 10px);
+      @include trbl(0, 0, auto);
+      max-width: none;
     }
+  }
+}
+
+.body-with_modal {
+  overflow: hidden;
+}
+@media (max-width: 767.98px) {
+  .body-with_modal #app > *:not(.modal_wrapper){
+    display: none;
   }
 }
 

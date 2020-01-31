@@ -104,7 +104,7 @@
       <div class="menu_col menu_col-wide">
         <div class="menu_col_title menu_title">Приходите к нам в гости</div>
         <div class="menu_map">
-          <iframe src="https://yandex.kz/map-widget/v1/-/CKELjC2h" allowfullscreen="true"></iframe>
+          <iframe src="https://yandex.kz/map-widget/v1/-/CKEdRI2C" allowfullscreen="true"></iframe>
         </div>
       </div>
       <div class="menu_col">
@@ -282,7 +282,7 @@
         </div>
       </div>
       <div class="menu_map">
-        <iframe src="https://yandex.kz/map-widget/v1/-/CKELjC2h" allowfullscreen="true"></iframe>
+        <iframe src="https://yandex.kz/map-widget/v1/-/CKEdRI2C" allowfullscreen="true"></iframe>
       </div>
     </div>
   </div>
@@ -299,72 +299,78 @@
 
   <div class="modal_wrapper" :class="{'modal_wrapper-show': showModal}">
     <div class="modal_backdrop" @click="closeModal"></div>
-    <div class="modal_container justify-content-between">
-        <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>
-        <div class="modal_body">
-            <h2 class="heading ">Введите ваши данные</h2>
-            <form class="modal_form" @submit.prevent="handleSubmit('form modal')">
-                <div class="form_item form_field">
-                    <input type="text" class="input" id="modal_name" placeholder=" " v-model="name">
-                    <label for="modal_name" class="input_label"><span>Имя Фамилия</span></label>
-                </div>
-                <div class="form_item form_field">
-                    <input type="text" class="input" id="modal_phone" placeholder="+7 (000) 000 - 00 - 00"  v-mask="'+7(7##)### ## ##'" v-model="phone">
-                    <label for="modal_phone" class="input_label"><span>Телефон</span></label>
-                </div>
-                <div class="form_item">
-                    <button type="submit" class="btn btn_primary">Оставить заявку</button>
-                </div>
-            </form>
-<!--            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>-->
+    <div class="modal_scroller">
+        <div class="modal_container justify-content-between">
+            <button class="btn_custom modal_close" @click="closeModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+            <div class="modal_body">
+                <h2 class="heading ">Введите ваши данные</h2>
+                <form class="modal_form" @submit.prevent="handleSubmit('form modal')">
+                    <div class="form_item form_field">
+                        <input type="text" class="input" id="modal_name" placeholder=" " v-model="name">
+                        <label for="modal_name" class="input_label"><span>Имя Фамилия</span></label>
+                    </div>
+                    <div class="form_item form_field">
+                        <input type="text" class="input" id="modal_phone" placeholder="+7 (000) 000 - 00 - 00"  v-mask="'+7(7##)### ## ##'" v-model="phone">
+                        <label for="modal_phone" class="input_label"><span>Телефон</span></label>
+                    </div>
+                    <div class="form_item">
+                        <button type="submit" class="btn btn_primary">Оставить заявку</button>
+                    </div>
+                </form>
+    <!--            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>-->
+            </div>
         </div>
     </div>
 </div>
 
   <div class="modal_wrapper" :class="{'modal_wrapper-show': showCalcModal}">
   <div class="modal_backdrop" @click="closeCalcModal"></div>
-  <div class="modal_container justify-content-between">
-    <button class="btn_custom modal_close" @click="closeCalcModal"><img src="./assets/images/menu_close.svg" alt=""></button>
-    <div class="modal_body">
-      <h2 class="heading ">Получите нашу консультацию</h2>
-      <form class="modal_form" @submit.prevent="handleSubmit('form calculator')">
-        <div class="form_item form_field">
-          <input type="text" class="input" id="calc_name" placeholder=" " v-model="name">
-          <label for="calc_name" class="input_label"><span>Имя Фамилия</span></label>
-        </div>
-        <div class="form_item form_field">
-          <input type="text" class="input" id="calc_phone" placeholder="+7 (000) 000 - 00 - 00" v-mask="'+7(7##)### ## ##'" v-model="phone">
-          <label for="calc_phone" class="input_label"><span>Телефон</span></label>
-        </div>
-        <div class="form_item form_field">
-          <input type="mail" class="input" id="calc_mail" placeholder="example@mail.com" v-model="email">
-          <label for="calc_mail" class="input_label"><span>Эл. почта</span></label>
-        </div>
-        <div class="form_item">
-          <button type="submit" class="btn btn_primary">Отправить заявку</button>
-        </div>
-      </form>
-      <!--            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>-->
+  <div class="modal_scroller">
+    <div class="modal_container justify-content-between">
+      <button class="btn_custom modal_close" @click="closeCalcModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+      <div class="modal_body">
+        <h2 class="heading ">Получите нашу консультацию</h2>
+        <form class="modal_form" @submit.prevent="handleSubmit('form calculator')">
+          <div class="form_item form_field">
+            <input type="text" class="input" id="calc_name" placeholder=" " v-model="name">
+            <label for="calc_name" class="input_label"><span>Имя Фамилия</span></label>
+          </div>
+          <div class="form_item form_field">
+            <input type="text" class="input" id="calc_phone" placeholder="+7 (000) 000 - 00 - 00" v-mask="'+7(7##)### ## ##'" v-model="phone">
+            <label for="calc_phone" class="input_label"><span>Телефон</span></label>
+          </div>
+          <div class="form_item form_field">
+            <input type="mail" class="input" id="calc_mail" placeholder="example@mail.com" v-model="email">
+            <label for="calc_mail" class="input_label"><span>Эл. почта</span></label>
+          </div>
+          <div class="form_item">
+            <button type="submit" class="btn btn_primary">Отправить заявку</button>
+          </div>
+        </form>
+        <!--            <p class="form_subtitle text-center mt-4">Оставляя заявку, вы соглашаетесь на <a href="#" target="_blank">обработку персональных данных</a> и c <a href="#" target="_blank">условиями бронирования счёта</a></p>-->
+      </div>
     </div>
   </div>
 </div>
   <div class="modal_wrapper" :class="{'modal_wrapper-show': showSuccess}">
     <div class="modal_backdrop" @click="closeSuccessModal"></div>
-    <div class="modal_container justify-content-between">
-        <button class="btn_custom modal_close" @click="closeSuccessModal"><img src="./assets/images/menu_close.svg" alt=""></button>
-        <div class="modal_body" v-if="request==='success'">
-            <img class="mt-5" src="./assets/images/checked.svg" alt="" width="100%" style="max-width: 100%; max-height: 150px">
-            <h2 class="heading ">Спасибо за вашу заявку, {{name}}</h2>
-            <p class="paragraph">Наш менеджер очень скоро свяжется с вами!</p>
-        </div>
-        <div class="modal_body" v-if="request==='error'">
-            <img class="mt-5" src="./assets/images/cancel.svg" alt="" width="100%" style="max-width: 100%; max-height: 120px">
-            <h2 class="heading ">Произошла ошибка</h2>
-            <p class="paragraph">К сожалению нам не удалось получить Вашу заявку.<br/>Пожалуйста, попробуйте отправить заявку снова</p>
-        </div>
-        <div class="modal_body" v-if="request==='loading'">
-            <img class="mt-5 animate_icon-spin" src="./assets/images/spinner-of-dots.svg" alt="" width="100%" style="max-width: 100%; max-height: 150px">
-            <h2 class="heading ">Отправляем вашу заявку</h2>
+    <div class="modal_scroller">
+        <div class="modal_container justify-content-between text-center">
+            <button class="btn_custom modal_close" @click="closeSuccessModal"><img src="./assets/images/menu_close.svg" alt=""></button>
+            <div class="modal_body" v-if="request==='success'">
+                <img class="mt-5" src="./assets/images/checked.svg" alt="" width="100%" style="max-width: 100%; max-height: 150px">
+                <h2 class="heading ">Спасибо за вашу заявку, {{name}}</h2>
+                <p class="paragraph">Наш менеджер очень скоро свяжется с вами!</p>
+            </div>
+            <div class="modal_body" v-if="request==='error'">
+                <img class="mt-5" src="./assets/images/cancel.svg" alt="" width="100%" style="max-width: 100%; max-height: 120px">
+                <h2 class="heading ">Произошла ошибка</h2>
+                <p class="paragraph">К сожалению нам не удалось получить Вашу заявку.<br/>Пожалуйста, попробуйте отправить заявку снова</p>
+            </div>
+            <div class="modal_body" v-if="request==='loading'">
+                <img class="mt-5 animate_icon-spin" src="./assets/images/spinner-of-dots.svg" alt="" width="100%" style="max-width: 100%; max-height: 150px">
+                <h2 class="heading ">Отправляем вашу заявку</h2>
+            </div>
         </div>
     </div>
 </div>
