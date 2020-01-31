@@ -282,20 +282,38 @@ Vue.use(VueTheMask);
         });
       },
       handleSubmit(formName) {
-        var data = JSON.stringify(this.calcValues);
+        // var data = JSON.stringify(this.calcValues);
+        var data = '';
+        var form = 'Стандартная форма';
+        if (this.calcValues) {
+          const vacuum = ['Пылесос не выбран', '2 пылесоса', '1 пылесос', 'Без пылесоса'];
+          const boiler = ['не выбран', 'на газе', 'на дизеле', 'на электричестве'];
+          const land = ['тип участка не указан', 'собственный участок', 'покупка участка', 'аренда участка'];
+          data += `Посты: ${this.calcValues.posts};
+           ${vacuum[this.calcValues.vacuum]};
+            котел: ${boiler[this.calcValues.boiler]}:
+            ${land[this.calcValues.land]};
+            Цена за землю: ${this.calcValues.price};
+            ${!!this.calcValues.build ? 'Посторить мне мойку' : 'Построю сам'};
+            Цена на стройку: ${this.calcValues.buildPrice};
+            `;
+        }
         if (!this.name || this.phone.length !== 16) {
           alert('Пожалуйста, заполните все поля формы');
           return;
         }
-        if (formName === 'form calculator' && !this.email) {
-          alert('Пожалуйста, заполните все поля формы');
-          return;
+        if (formName === 'form calculator') {
+          form = 'Форма калькулятора';
+          if (!this.email) {
+            alert('Пожалуйста, заполните все поля формы');
+            return;
+          }
         }
         this.closeCalcModal();
         this.closeModal();
         this.openSuccessModal();
         this.request = 'loading';
-        this.sendMail(formName, this.name, this.phone, this.email, data).then(() => {
+        this.sendMail(form, this.name, this.phone, this.email, data).then(() => {
           this.request = 'success';
         }).catch(() => {
           this.request = 'error';

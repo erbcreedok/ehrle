@@ -517,7 +517,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -webkit-transition: .15s;
+    -moz-transition: .15s;
     transition: .15s; }
   .form_field .input:-ms-input-placeholder {
     color: #95a5a6;
@@ -530,7 +530,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -webkit-transition: .15s;
+    -ms-transition: .15s;
     transition: .15s; }
   .form_field .input::-ms-input-placeholder {
     color: #95a5a6;
@@ -543,7 +543,7 @@ a.a_custom, a.a_custom:hover {
     bottom: 0;
     left: 0;
     text-align: center;
-    -webkit-transition: .15s;
+    -ms-transition: .15s;
     transition: .15s; }
   .form_field .input + .input_label, .form_field .input::placeholder {
     color: #95a5a6;
