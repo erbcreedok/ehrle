@@ -75,11 +75,11 @@ Vue.component('calculator', {
 		return {
       currency: {distractionFree: false, currency: {'suffix': ' ₸'}, valueAsInteger: true, precision: 0},
 			selected: {
-				posts: 0,
-				vacuum: 0,
-				boiler: 0,
+				posts: null,
+				vacuum: null,
+				boiler: null,
 				build: null,
-				land: 0,
+				land: null,
 				price: null,
 				buildPrice: null,
 			},

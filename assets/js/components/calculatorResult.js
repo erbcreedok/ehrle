@@ -145,7 +145,7 @@ Vue.component('calculator-result', {
         }
         accounts.push({text: 'Средний срок окупаемости', value: Math.ceil(sum/revenue) + ' мес.'});
         accounts.push({
-					text: `CIR <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Cost Income Ratio (CIR) -- отношение операционных затрат к операционному доходу. CIR активно используется во всем мире для оценки эффективности банка инвесторами, акционерами, рейтинговыми агентствами и т.д.</span></span>`,
+					text: `CIR`,
 					value: CIR[values.vacuum-1][values.posts - 1] + '%'});
         accounts.push({text: 'Количество машин в сутки на 1 бокс', value: Math.floor(CARS_PER_BOX[values.posts - 1]/30.5) + ''});
         accounts.push({text: 'Средний чек (1 мойка)', value: this.maskPrice(WASH_PRICE[values.posts - 1]) + ' тг.'});
@@ -162,7 +162,10 @@ Vue.component('calculator-result', {
         } else {
         	this.revenue = this.maskPrice(pure_revenue) + '  <span class="small" style="font-weight: 500">₸</span>';
 				}
+        var calcResults = `Выручка ${pure_revenue}тг;\n` + accounts.reduce((acc, v) => acc + `${v.text}: ${v.value};\n`, '');
+        accounts[1].text = `CIR  <span class="tooltip_container"><span class="icon icon-small icon-faq"></span><span class="tooltip_body">Cost Income Ratio (CIR) -- отношение операционных затрат к операционному доходу. CIR активно используется во всем мире для оценки эффективности банка инвесторами, акционерами, рейтинговыми агентствами и т.д.</span></span>`;
         this.accountingList = [...accounts];
+        this.$emit('change', calcResults)
 			}
 		},
 		closeDetails() {

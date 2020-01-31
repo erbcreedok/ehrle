@@ -34,6 +34,7 @@ Vue.use(VueTheMask);
       email: '',
       showSuccess: false,
       request: 'clean',
+      calcResults: null,
     },
     computed: {
       fixCalcResults() {
@@ -103,6 +104,9 @@ Vue.use(VueTheMask);
       }
     },
     methods: {
+      setCalcResults(data) {
+        this.calcResults = data;
+      },
       scrollToCalc() {
         if (this.fixCalcResults && this.calcResultBound) {
           var top = this.calcResultBound.offsetTop;
@@ -289,14 +293,10 @@ Vue.use(VueTheMask);
           const vacuum = ['Пылесос не выбран', '2 пылесоса', '1 пылесос', 'Без пылесоса'];
           const boiler = ['не выбран', 'на газе', 'на дизеле', 'на электричестве'];
           const land = ['тип участка не указан', 'собственный участок', 'покупка участка', 'аренда участка'];
-          data += `Посты: ${this.calcValues.posts};
-           ${vacuum[this.calcValues.vacuum]};
-            котел: ${boiler[this.calcValues.boiler]}:
-            ${land[this.calcValues.land]};
-            Цена за землю: ${this.calcValues.price};
-            ${!!this.calcValues.build ? 'Посторить мне мойку' : 'Построю сам'};
-            Цена на стройку: ${this.calcValues.buildPrice};
-            `;
+          data += `Посты: ${this.calcValues.posts};\n${vacuum[this.calcValues.vacuum]};\nкотел: ${boiler[this.calcValues.boiler]}:\n${land[this.calcValues.land]};\nЦена за землю: ${this.calcValues.price};\n${!!this.calcValues.build ? 'Посторить мне мойку' : 'Построю сам'};\nЦена на стройку: ${this.calcValues.buildPrice};`;
+          if (this.calcResults) {
+            data += '\n' + this.calcResults;
+          }
         }
         if (!this.name || this.phone.length !== 16) {
           alert('Пожалуйста, заполните все поля формы');
