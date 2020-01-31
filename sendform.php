@@ -5,10 +5,7 @@ $tg_api = '1003245073:AAEgjRgpNBx0a9d47g6PSGU4_OQrCcW6ur8';
 $chat_id = '-1001313269104';
 $message = urlencode('Заявка: '.$_GET['name'].".\nТелефон: ".$_GET['phone']."\nФорма: ".$_GET['form']);
 $url_tg = "https://api.telegram.org/bot$tg_api/sendMessage?chat_id=$chat_id&text=$message";
-file_get_contents($url_tg);
-$result = json_decode(file_get_contents($url))->result;
-if ($result == 'success') {
-    http_response_code(200);
-} else {
-    http_response_code(400);
-}
+$tg_response = file_get_contents($url_tg);
+$google_script_response = file_get_contents($url);
+$result = json_decode($google_script_response)->result;
+http_response_code(200);
