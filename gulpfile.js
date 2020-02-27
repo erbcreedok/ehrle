@@ -133,7 +133,8 @@ gulp.task("build", ['minifyProdScripts', 'minifyCss', 'fileInclude'], function()
     "assets/icons/**",
     "assets/images/**",
     "assets/fonts/**",
-    "assets/css/**/*.css"
+    "assets/css/**/*.css",
+    "PHPMailer/**",
   ], { base: './'})
     .pipe(gulp.dest(dist));
 });
